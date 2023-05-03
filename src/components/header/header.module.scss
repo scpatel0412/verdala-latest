@@ -1,0 +1,37 @@
+@import './../../assets/scss/variable.scss';
+.searchtxt
+{
+    display: inline-block;
+    white-space: nowrap;
+    @media screen and (max-width:$xl__screen)
+    {
+        display: none;
+    }
+}
+.menu_togglebtn {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+    background: #ffffff;
+    height: 41px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    min-width: 41px;
+    @media screen and (max-width:$xl__screen)
+    {
+        display: flex;
+    }
+    span {
+        width: 14px;
+        height: 2px;
+        background: #7b9e6b;
+        display: block;
+        line-height: 1;
+    }
+}
+.searchbtnwrap
+{
+    width: auto;
+}

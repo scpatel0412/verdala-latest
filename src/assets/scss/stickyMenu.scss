@@ -1,0 +1,90 @@
+@import './../../assets/scss/variable.scss';
+.sticky-menu {
+    padding: 0;
+    position: sticky;
+    top: 0px;
+    padding-top: 15px;
+    border-top: solid 1px rgba($brown, 0.3);
+    .sticky-inner
+    {
+        position: relative;
+        min-height: 860px;
+        @media screen and (max-width:$lg__screen)
+        {
+            min-height: 200px;
+        }
+        .stickybtn{
+            position: absolute;
+            bottom: 60px;
+            @media screen and (max-width:$lg__screen)
+            {
+                margin-top: 20px;
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .button {
+        position: absolute;
+        bottom: 50px;
+        max-width: 230px;
+    }
+
+    ul {
+        display: inline-block;
+
+        li {
+            color: $mainGreen;
+            opacity: 0.25;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                bottom: 0;
+                background-color: $mainGreen;
+            }
+            
+            &.active {
+                opacity: 1;
+                transition: opacity 0.5s;
+                
+                &:before {
+                    width: 100%;
+                    height: 1px;
+                    background-color: $mainGreen;
+                    transition: width 0.5s;
+                }
+            }
+
+            a {
+                font-family: $font__header;
+                text-transform: uppercase;
+                font-size: 2em;
+            }
+        }
+    }
+}
+@media screen and (max-width:$lg__screen)
+{
+.sticky-mobile
+{
+    background: rgb(248, 248, 241);
+    border: none;
+    top: 100px;
+    z-index: 9999;
+    ul {
+        display: block;
+        li {
+            display: inline-block;
+            margin-right: 25px;
+            a{
+            
+        }
+    }
+}
+}
+}

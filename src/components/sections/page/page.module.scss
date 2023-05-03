@@ -1,0 +1,471 @@
+@import './../../../assets/scss/variable.scss';
+.secpageintro
+{
+    padding: 40px 0 100px 0;
+    @media screen and (max-width:$md__screen)
+        {
+            padding: 24px 0 80px 0;
+        }
+}
+.schoolheading
+{
+    background-color: transparent;
+    @media screen and (max-width:$sm__screen)
+        {
+            margin-top: 15px;
+        }
+}
+.fervently
+{
+    padding-left: 15%;
+    height: 100%;
+    position: relative;
+    @media screen and (max-width:$lg__screen)
+    {
+        padding-left: 0;
+    }
+}
+.ferventlyimg
+{
+    min-height: 540px;
+    object-fit: cover;
+    @media screen and (max-width:$lg__screen)
+    {
+        margin-bottom: 0px;
+    }
+}
+.ferventlybutton
+{
+    position: absolute;
+    right: 20px;
+    text-align: right;
+    bottom: 0px;
+    @media screen and (max-width:$lg__screen)
+    {
+        position: static;
+        right: auto;
+        text-align: left;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    @media screen and (max-width:$md__screen)
+    {
+        margin-top: 20px;
+    }
+    a{
+        width: auto;
+        display: inline-block;
+    }
+}
+.page_image_columns
+{
+    margin-bottom: 18px;
+    padding: 0 20px;
+}
+.seclifestyle
+{
+    padding: 40px 0 25px 0;
+}
+.nerrowtxt {
+    max-width: 890px;
+    padding: 55px 0 130px 0;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    @media screen and (max-width:$xl__screen)
+    {
+        padding: 0px 0 65px 0;
+        max-width: 100%;
+    }
+}
+.secgeneric
+{
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.locationarea
+{
+    padding-top: 145px;
+    padding-bottom: 0px;
+    @media screen and (max-width:$xl__screen)
+    {
+        padding-top: 80px;
+    }
+}
+
+.locationtitle {
+    padding-left: 120px;
+    @media screen and (max-width:$lg__screen)
+    {
+        padding-left: 0px;
+    }
+        
+}
+.locationheading
+{
+    max-width: 414px;
+    line-height: 1;
+    @media screen and (max-width:$xl__screen)
+    {
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+}
+.connectivity
+{
+    padding-bottom: 80px;
+    @media screen and (max-width:$lg__screen)
+    {
+        padding-top: 280px;
+    }
+
+}
+.pb0
+{
+    padding-bottom: 0;
+}
+.p0
+{
+    padding: 0;
+}
+.pt80
+{
+    padding-top: 80px;
+}
+.alignself
+{
+    align-self: flex-end;
+    @media screen and (max-width:$lg__screen)
+    {
+        padding: 0 20px;   
+    }
+}
+
+.h100
+{
+    height: 100%;
+}
+.attrcontainer
+{
+    position: relative;
+}
+
+
+.mainattrcontainer
+{
+    position: relative;
+    .activattr_0{
+        &::after{
+            position: absolute;
+            content: "";
+            left: 245px;
+            right: 0;
+            height: 1px;
+            background: #7B9E6B;
+            top: 255px;
+            @media screen and (max-width:$lg__screen)
+            {
+                
+                left: 0;
+            }
+        }
+    }
+    .activattr_1{
+        &::after{
+            position: absolute;
+            content: "";
+            left: calc(275px + 70px);
+            right: 0;
+            height: 1px;
+            background: #7B9E6B;
+            top: 255px;
+            @media screen and (max-width:$lg__screen)
+                {
+                    
+                    left: 0;
+                    
+                }
+    }
+}
+    .activattr_2{
+        &::after{
+            position: absolute;
+            content: "";
+            left: calc(275px + 70px + 100px);
+            right: 0;
+            height: 1px;
+            background: #7B9E6B;
+            top: 255px;
+        }
+    }
+   
+
+    .connectattr
+    {
+        display: flex;
+        gap: 8px;
+        .attritem
+        {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            position: initial;
+            z-index: 9999;
+            min-width: 100px;
+           
+            .attrdistance
+            {
+                display: none;
+            }
+            svg path{
+                stroke: #D9E4D4;
+            }
+            &.attractive
+            {
+                svg path{
+                    stroke: #7B9E6B;
+                }
+                .attrdistance{
+                    display: block;
+                }
+            }
+            &:hover{
+                svg path{
+                    stroke: #7B9E6B;
+                }
+            }
+        }
+        .attritem:nth-of-type(1).attractive
+        {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            position: initial;
+            z-index: 9999;
+            min-width: 100px;
+            &::after{
+                position: absolute;
+                content: "";
+                top: 250px;
+                height: 8px;
+                background: #7B9E6B;
+                left: calc(150px + 17px);
+                width: 8px;
+                border-radius: 50%;
+                box-shadow: 0px 0px 0px 8px #e6e3cf;
+                @media screen and (max-width:$lg__screen)
+                    {
+                        
+                        left: 46px;
+                    }
+            }
+            &::before{
+                    position: absolute;
+                    content: "";
+                    top: 100px;
+                    bottom: 0;
+                    left: calc(150px + 20px);
+                    width: 0;
+                    border: 1px dashed #7B9E6B;
+                    @media screen and (max-width:$lg__screen)
+                    {
+                        
+                        top: 250px;
+                        left: 50px;
+                        height: 125px;
+                    }
+            }
+            .attrdistance
+            {
+                position: absolute;
+                left: 110px;
+                right: 0;
+                color: #635245;
+                font-size: 16px;
+                font-weight: 500;
+                top: 245px;
+                display: none;
+                @media screen and (max-width:$lg__screen)
+                    {
+                        
+                        left: 33px;
+                        top: 185px;
+                    }
+            }
+            svg path{
+                stroke: #D9E4D4;
+            }
+            &.attractive
+            {
+                svg path{
+                    stroke: #7B9E6B;
+                }
+                .attrdistance{
+                    display: block;
+                }
+            }
+            &:hover{
+                svg path{
+                    stroke: #7B9E6B;
+                }
+            }
+        }
+        .attritem:nth-of-type(2).attractive
+        {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            position: initial;
+            z-index: 9999;
+            min-width: 100px;
+            &::after{
+                position: absolute;
+                content: "";
+                top: 250px;
+                height: 8px;
+                background: #7B9E6B;
+                left: calc(150px + 47px + 74px);
+                width: 8px;
+                border-radius: 50%;
+                box-shadow: 0px 0px 0px 8px #e6e3cf;
+                @media screen and (max-width:$lg__screen)
+                    {
+                        left: 150px;
+                    }
+            }
+            &::before{
+                    position: absolute;
+                    content: "";
+                    top: 100px;
+                    bottom: 0;
+                    left: calc(150px + 50px + 74px);
+                    width: 0;
+                    border: 1px dashed #7B9E6B;
+                    @media screen and (max-width:$lg__screen)
+                    {
+                        
+                        top: 250px;
+                        left: 154px;
+                        height: 125px;
+                    }
+            }
+            .attrdistance
+            {
+                position: absolute;
+                left: 210px;
+                right: 0;
+                color: #635245;
+                font-size: 16px;
+                font-weight: 500;
+                top: 245px;
+                display: none;
+                @media screen and (max-width:$lg__screen)
+                    {
+                        
+                        left: 137px;
+                        top: 185px;
+                    }
+
+            }
+            svg path{
+                stroke: #D9E4D4;
+            }
+            &.attractive
+            {
+                svg path{
+                    stroke: #7B9E6B;
+                }
+                .attrdistance{
+                    display: block;
+                }
+            }
+            &:hover{
+                svg path{
+                    stroke: #7B9E6B;
+                }
+            }
+        }
+        .attritem:nth-of-type(3).attractive
+        {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            position: initial;
+            z-index: 9999;
+            min-width: 100px;
+            &::after{
+                position: absolute;
+                content: "";
+                top: 250px;
+                height: 8px;
+                background: #7B9E6B;
+                left: calc(150px + 47px + 104px + 80px);
+                width: 8px;
+                border-radius: 50%;
+                box-shadow: 0px 0px 0px 8px #e6e3cf;
+            }
+            &::before{
+                    position: absolute;
+                    content: "";
+                    top: 100px;
+                    bottom: 0;
+                    left: calc(150px + 50px + 104px + 81px);
+                    width: 0;
+                    border: 1px dashed #7B9E6B;
+            }
+            .attrdistance
+            {
+                position: absolute;
+                left: 320px;
+                right: 0;
+                color: #635245;
+                font-size: 16px;
+                font-weight: 500;
+                top: 245px;
+                display: none;
+            }
+            svg path{
+                stroke: #D9E4D4;
+            }
+            &.attractive
+            {
+                svg path{
+                    stroke: #7B9E6B;
+                }
+                .attrdistance{
+                    display: block;
+                }
+            }
+            &:hover{
+                svg path{
+                    stroke: #7B9E6B;
+                }
+            }
+        }
+}
+}
+.nerrowdesc
+{
+    margin-top: 0 ;
+    margin-bottom: 0;;
+}

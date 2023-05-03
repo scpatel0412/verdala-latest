@@ -1,0 +1,19 @@
+$white: white;
+$mainGreen: #7B9E6B;
+$mainYellow: #F2EBDA;
+$brown: #635245;
+
+$containerWidth: 1200px;
+
+$font__main: 'Red Hat Text';
+$font__header: 'Danmark URW';
+
+// $sm__screen: 576px; // Mobile Phone
+$sm__screen: 699px;  // Mobile Phone
+$md__screen: 768px; // Tablet Portrait
+$lg__screen: 992px; // Tablet Portrait / Landscape
+$xl__screen: 1200px; // Normal Screen Size
+$xxl__screen: 1366px; // Normal Screen Size
+$xxxl__screen: 1500px;
+
+@import "./normalize.scss";

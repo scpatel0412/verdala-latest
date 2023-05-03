@@ -1,0 +1,29 @@
+.carouselCard {
+    border-bottom: 1px solid #6352454D;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .imageCont {
+        margin-bottom: 15px;
+    }
+
+    .title {
+        color: #635245;
+    }
+
+    .icon {
+        width: 25px;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    .text {
+        margin-top: 0;
+        font-size: 0.9em;
+    }
+}
+.locationimg {
+    max-width: 100%;
+    height: auto;
+}

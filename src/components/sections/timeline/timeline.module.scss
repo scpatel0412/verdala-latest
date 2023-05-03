@@ -1,0 +1,44 @@
+.marker {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #7B9E6B;
+    
+    // display: table-cell;
+    // vertical-align: middle;
+    
+    &:last-of-type {
+        opacity: 0;
+    }
+}
+
+.markerCont {
+    height: 100%;
+    width: 100%;    
+    // background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+
+.yearCol {
+    position: relative;
+    height: 100%;
+    height: 600px;
+}
+
+.year-cont {
+    font-size: 1.8em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    left: 0;
+}
+
+.timelineItem {
+    // position: relative;
+    height: 600px;
+}
