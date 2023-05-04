@@ -118,7 +118,7 @@ const TypeOfResidences = (props) => {
                 {residencesPage?.type_of_residence?.property_?.map(
                   (i, index2) => {
                     return (
-                      <div id={`residences-${index2}`}>
+                      <div id={`residences-${index2}`} key={index2}>
                         {i.property.map((item, index) => {
                           return (
                             <>
@@ -152,7 +152,7 @@ const TypeOfResidences = (props) => {
                   </div>
                 )
               })}
-              <button class="btn">all residences</button>
+              <button className="btn">all residences</button>
           </div>
       </div>
     </section>

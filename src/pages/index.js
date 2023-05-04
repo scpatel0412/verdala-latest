@@ -36,8 +36,6 @@ const Index = () => {
 		if (typeof data !== "undefined") {
 			if (Object.keys(data).length > 0) {
 				const pageLists = Object.keys(data);
-				console.log("pagelist", pageLists);
-				console.log("data", data);
 				const removedata = [];
 				for (let i = 0; i < pageLists.length; i++) {
 					if (pageLists[i] !== "fieldGroupName") {
@@ -61,10 +59,10 @@ const Index = () => {
 				<HomeHero data={data} />
 				<PageIntro data={data} />
 				<PageImageCols data={data} />
-				<PageHoverImage />
-				<PageGeneric />
-				<PageLocation />
-				<PageVGallery />
+				<PageHoverImage data={data} />
+				<PageGeneric data={data} />
+				<PageLocation data={data} />
+				<PageVGallery data={data} />
 				<Footer />
 			</> : null}
 		</>

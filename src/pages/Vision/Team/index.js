@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { ResizeContext } from '../../../components/resize'
 import SmallScreenTeam from './smallScreenTeam'
-import Container from "../../../components/layouts/container";
 import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
 
 const Team = (props) => {
@@ -100,10 +99,10 @@ const Team = (props) => {
                                                                                 className={`fadeinup ${currentTeamName === index2 && "active"}`}
                                                                             >
                                                                                 <a
-                                                                                    className={`#residences-${index2}`}
+                                                                                    className={`#team-${index2}`}
                                                                                     data-splitting
                                                                                     onClick={() => onClickTeam(index2)}
-                                                                                    href={`#residences-${index2}`}
+                                                                                    href={`#team-${index2}`}
                                                                                 >
                                                                                     {item.team_name}
                                                                                 </a>
@@ -117,13 +116,12 @@ const Team = (props) => {
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div className="col-9 col-lg-8">
                                             <div className="scroll-container">
                                                 {visionPage?.team_data?.map(
                                                     (i, index2) => {
                                                         return (
-                                                            <div id={`residences-${index2}`} key={index2}>
+                                                            <div id={`team-${index2}`} key={index2}>
                                                                 <div className="team-tab-image vison-team-tab">
                                                                     {i?.team_members?.map((items,index) => {
                                                                         return (

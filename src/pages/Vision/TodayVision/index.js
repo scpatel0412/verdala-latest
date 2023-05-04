@@ -16,8 +16,9 @@ const TodayVision = (props) => {
             <div className="subheading">todays vision</div>
             <h1>{visionPage?.title}</h1>
             <div className="today-vis-boxes">
-              {visionPage?.books?.map((i) => (
+              {visionPage?.books?.map((i, index) => (
                 <div
+                  key={index}
                   className="boxes-item"
                   style={{
                     background: i?.book_link != "" ? "white" : "",

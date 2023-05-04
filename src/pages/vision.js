@@ -173,18 +173,18 @@ const Vision = ({ pageTitle, children }) => {
                     fade={true}
                     ref={(slider) => (slider1 = slider)}
                     nextArrow={
-                      <SampleNextArrow className="customarrow customarrownext" />
+                      <SampleNextArrow class="customarrow customarrownext" />
                     }
                     prevArrow={
-                      <SamplePrevArrow className="customarrow customarrowprev" />
+                      <SamplePrevArrow class="customarrow customarrowprev" />
                     }
                   >
                     {data?.then_and_now?.slider_conent?.map((i, index) => {
                       return (
                         <div className="slider_content" key={index}>
-                          <h3>sdasd{`“${i.description}”`}</h3>
-                          <p>asddasd{i.author}</p>
-                          <span>asdasdasd{i.designation}</span>
+                          <h3>{`“${i.description}”`}</h3>
+                          <p>{i.author}</p>
+                          <span>{i.designation}</span>
                         </div>
                       );
                     })}

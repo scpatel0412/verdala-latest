@@ -30,7 +30,6 @@ const Gallery = () => {
     },
   ];
   const [selected, setSelected] = useState(Math.floor(data.length / 2));
-  console.log("selected ", selected);
   const onClickSelecte = (index) => {
     setSelected(index);
   };
@@ -44,7 +43,7 @@ const Gallery = () => {
       top: document.getElementById(selected).offsetTop,
       behavior: "smooth",
     });
-    console.log("aaa");
+    
   }, [selected]);
   return (
     <>
@@ -53,7 +52,7 @@ const Gallery = () => {
           <div className="gallery-left">
             <div className="gallery-title">
               {data.map((i, index) => {
-                console.log("index", index);
+                
                 return (
                   <div key={index}>
                     <h2

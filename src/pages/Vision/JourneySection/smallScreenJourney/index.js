@@ -21,7 +21,7 @@ const SmallScreenJourneySection = (props) => {
                             <div className="image-cont">
                                 <div className="image-top"><img src={i.image_1.url} /></div>
                                 {i.image_2?.url ? (
-                                    <div class="image-bottom">
+                                    <div className="image-bottom">
                                         <img className="bg-img" src={i.image_2?.url} alt="" />{" "}
                                     </div>
                                 ) : null}

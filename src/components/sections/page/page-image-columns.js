@@ -10,59 +10,48 @@ const PageImageCols = (props) => {
 
     useEffect(() => {
         if (typeof props.data !== "undefined") {
-            setHomePage(props.data);
+            setHomePage(props.data.about);
         }
     }, [props]);
-    
+
     return (
         <>
             {homePage != undefined ? <>
                 <section className={fervently.page_image_columns}>
                     <div className="crow ">
                         <div className="col-5 col-lg-12 order-lg-1 fadeinup">
-                            <img src={HeroImg} alt="" className={fervently.ferventlyimg} />
+                            <video controls width={'100%'}>
+                                <source src={homePage.about_video?.video?.url} type="video/mp4" />
+                            </video>
                         </div>
 
                         <div className="col-7 col-lg-12 order-lg-0">
                             <div className={fervently.fervently}>
                                 <div className="crow border-top fadeinup">
-                                    <div className="col-4 col-sm-12 fadeinup">
-                                        <IconTitleText
-                                            icon={TreeIcon}
-                                            title="Fervently progressive"
-                                            text="Located in Diagonal Mar, a contemporary and vibrant district of Barcelona, Antares sits a few minutes walk from the stylish Port Fòrum Marina and the Blue Flag-awarded Mar Bella beach."
-                                        />
-                                    </div>
-
-                                    <div className="col-4 col-sm-12 fadeinup">
-                                        <IconTitleText
-                                            icon={TreeIcon}
-                                            title="Fervently progressive"
-                                            text="Located in Diagonal Mar, a contemporary and vibrant district of Barcelona, Antares sits a few minutes walk from the stylish Port Fòrum Marina and the Blue Flag-awarded Mar Bella beach."
-                                        />
-                                    </div>
-
-                                    <div className="col-4 col-sm-12 fadeinup">
-                                        <IconTitleText
-                                            icon={TreeIcon}
-                                            title="Fervently progressive"
-                                            text="Located in Diagonal Mar, a contemporary and vibrant district of Barcelona, Antares sits a few minutes walk from the stylish Port Fòrum Marina and the Blue Flag-awarded Mar Bella beach."
-                                        />
-                                    </div>
+                                    {homePage.about_data?.map((item, index) => {
+                                        return (
+                                            <div className="col-4 col-sm-12 fadeinup" key={index}>
+                                                <IconTitleText
+                                                    icon={item.icon.url}
+                                                    title={item.title}
+                                                    text={item.description}
+                                                />
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                                 <div className={`fadeinup ${fervently.ferventlybutton}`}>
                                     <Button
+                                        link={"/vision"}
                                         styleClass="border-button right-align space-top "
                                         text="The Vision"
                                     />
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </section>
             </> : null}
-
         </>
     )
 }

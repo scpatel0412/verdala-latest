@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
-import Container from "../../../components/layouts/container";
+import React, { useState, useEffect, useContext } from "react";
+import { ResizeContext } from '../../../components/resize'
 import Button from "../../../components/partials/buttons";
 import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
 const DesignMeetsFunction = (props) => {
   const [residencesPage, setResidencesPage] = useState({});
-  const [currentLifestyleName, setCurrentLifestyleName] = useState(0);
-
+  const [currentMeetsName, setCurrentMeetsName] = useState(0);
+  const [smallCurrentMeets, setSmallCurrentMeets] = useState(0)
+  const { width } = useContext(ResizeContext)
+  const mobileScreen = width <= 699
   let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
   let mainSections = document.querySelectorAll(".scroll-container >  div");
   let headerheight1 = document.querySelector("header");
@@ -39,9 +41,9 @@ const DesignMeetsFunction = (props) => {
               if (
                 section?.offsetTop - headerheight?.offsetHeight <= fromTop &&
                 section?.offsetTop -
-                  headerheight.offsetHeight +
-                  section?.offsetHeight >
-                  fromTop
+                headerheight.offsetHeight +
+                section?.offsetHeight >
+                fromTop
               ) {
                 link.parentElement.classList.add("active");
               } else {
@@ -54,24 +56,27 @@ const DesignMeetsFunction = (props) => {
     }
   }, [props]);
 
-  const handlerLifestyle = (index) => {
-    setCurrentLifestyleName(index);
+  const handlerDesignMeets = (index) => {
+    setCurrentMeetsName(index);
   };
+  const onClickSmallScreenCurrentMeets = (index) => {
+    setSmallCurrentMeets(index)
+  }
 
   return (
     <>
-    <section className={` ${Pagegeneric.secgeneric}`}>
-      <div id={"designmeetsfunction"} className="designmeetfuncations-sec">
+      <section className={` ${Pagegeneric.secgeneric}`}>
+        <div id={"designmeetsfunction"} className="designmeetfuncations-sec">
           <div className="designmeet-sec">
-              <div className="designmeet-left">
-                 <div class="count-col"><span class="count-number">01</span><p className="count-title">{residencesPage.design_meets_function?.sub_title}</p></div>
-              </div>
-              <div className="designmeet-right">
-                  <h2 class="innerpage_h2">{residencesPage.design_meets_function?.title}</h2>
-                  <p>{residencesPage.design_meets_function?.description}</p>
-              </div>
+            <div className="designmeet-left">
+              <div className="count-col"><span className="count-number">01</span><p className="count-title">{residencesPage.design_meets_function?.sub_title}</p></div>
+            </div>
+            <div className="designmeet-right">
+              <h2 className="innerpage_h2">{residencesPage.design_meets_function?.title}</h2>
+              <p>{residencesPage.design_meets_function?.description}</p>
+            </div>
           </div>
-    
+
           <div className="crow">
             <div
               className="recidence-meet-left sticky-menu sticky-mobile"
@@ -88,15 +93,14 @@ const DesignMeetsFunction = (props) => {
                         return (
                           <div key={index2}>
                             <li
-                              className={`team-teamData-container fadeinup ${
-                                currentLifestyleName === index2 && "active"
-                              }`}
+                              className={`team-teamData-container fadeinup ${currentMeetsName === index2 && "active"
+                                }`}
                             >
                               <a
-                                className={`text lifestyle-${index2}`}
+                                className={`text designMeets-${index2}`}
                                 data-splitting
-                                onClick={() => handlerLifestyle(index2)}
-                                href={`#lifestyle-${index2}`}
+                                onClick={mobileScreen ? () => onClickSmallScreenCurrentMeets(index2) : () => handlerDesignMeets(index2)}
+                                href={`#designMeets-${index2}`}
                               >
                                 {item.label}
                               </a>
@@ -118,37 +122,41 @@ const DesignMeetsFunction = (props) => {
               </div>
             </div>
 
-            <div className="recidence-meet-right" >
-              <div className="scroll-container">
-                {residencesPage?.design_meets_function?.design_meets_data?.map(
-                  (i, index2) => {
-                    return (
-                      <div id={`lifestyle-${index2}`} key={index2} className="meets-main-div">
-                         <div className="meets-inner-img">
+            <div className="recidence-meet-right " >
+            <div className="scroll-container">
+                {mobileScreen ?
+                  <img src={residencesPage?.design_meets_function?.design_meets_data[smallCurrentMeets].image} />
+                  :
+                  residencesPage?.design_meets_function?.design_meets_data?.map(
+                    (i, index2) => {
+                      return (
+                        <div id={`designMeets-${index2}`} key={index2} className="meets-main-div">
+                          <div className="meets-inner-img">
                             <img src={i.image} />
                           </div>
                           <div className="meets-inner-sec">
                             <div className="title">{i.title}</div>
                             <div>{i.sub_title}</div>
                             <p>{i.description}</p>
+                          </div>
+
                         </div>
-                        
-                      </div>
-                    );
-                  }
-                )}
+                      );
+                    }
+                  )}
+
               </div>
-             
+
             </div>
             <button className="mainbtn mob-btn">
-                {
-                  residencesPage?.design_meets_function?.download_pdf
-                    .title
-                }
-              </button>
+              {
+                residencesPage?.design_meets_function?.download_pdf
+                  .title
+              }
+            </button>
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
     </>
   );
 };

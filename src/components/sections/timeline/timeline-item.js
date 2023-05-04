@@ -1,6 +1,4 @@
 import React from "react";
-// import { StaticQuery, graphql } from "gatsby"
-
 import * as Style from "./timeline.module.scss";
 
 const TimelineItem = (props) => {
@@ -34,7 +32,7 @@ const TextSection = (props) => {
   return (
     <>
       <div className={"col-3 " + (props.odd ? "order-3" : "order-1")}>
-        <div class="timeline-content">
+        <div className="timeline-content">
           {props.title != null && <h3>{props.title}</h3>}
           {typeof classNames !== "undefined" && classNames.length > 0 ? (
             <p className={`${classNames}`}>{props.text}</p>
@@ -48,13 +46,13 @@ const TextSection = (props) => {
 const ImageSection = (props) => (
   <>
     <div className={"col-3 " + (props.odd ? "order-1" : "order-3")}>
-      <div class="merge-image-count">
+      <div className="merge-image-count">
         <div className="image-cont">
-          <div class="image-top">
+          <div className="image-top">
             <img className="bg-img" src={props?.image?.image_1.url} alt="" />
           </div>
           {props?.image?.image_2?.url ? (
-            <div class="image-bottom">
+            <div className="image-bottom">
               <img className="bg-img" src={props?.image?.image_2?.url} alt="" />{" "}
             </div>
           ) : null}

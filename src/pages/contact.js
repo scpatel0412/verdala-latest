@@ -1,109 +1,189 @@
-import React from "react"
-import Container from '../components/layouts/container';
-import { graphql } from "gatsby"
+import React, { useEffect, useState } from "react";
+
+import Container from "../components/layouts/container";
+//import { graphql } from "gatsby";
 import SecondaryText from "../components/typography/secondaryText";
 import ContactForm from "../components/sections/forms/contactForms";
+import ButtonArrow from "../assets/svgs/button-arrow.svg";
+// import { ContactPageData } from "../queries/contact-queries";
+import axios from "axios";
 // import MyHeader from "../components/header/header";
 
 const Contact = ({ data }) => {
-    // MyHeader.toggleIsItOn();
-    // changeBg()
+  const [alldata, setAllData] = useState({});
+  console.log(alldata);
 
-    return (
-        <>
-            <section className="first-section">
-                <Container>
-                    <div className="lg-text">
-                        <h1>Let's Talk</h1>
-                    </div>
+  const [ContactPageOffice, setContactPageOffice] = useState([]);
+  const [ContactPageDaily, setContactPageDaily] = useState([]);
+  const [contactpagetime, setContactPageTime] = useState([]);
+  const [btitle, setBTitle] = useState([]);
+  const [newdata, setNewData] = useState([]);
+  const [newaddress, setNewAddress] = useState([]);
 
-                    <div className="row align-center">
-                        <div className="col-1">
-                            <div className="contact-details-row row">
-                                <div className="col-1">
-                                    <SecondaryText styleClass="inherit-color" text="Office" />
-                                </div>
+  // console.log(
+  //   "newdata",
+  //   newdata.map((el) => el.contact_info.contact_detail)
+  // );
 
-                                <div className="col-1">
-                                    <SecondaryText text="Verdala" />
-                                    <SecondaryText text="St George's Road" />
-                                    <SecondaryText text="Paceville, St Julians" />
-                                    <SecondaryText text="STJ 3202" />
-                                </div>
-                            </div>
-
-                            <div className="contact-details-row row">
-                                <div className="col-1">
-                                    <SecondaryText styleClass="inherit-color" text="Daily" />
-                                </div>
-
-                                <div className="col-1">
-                                    <SecondaryText text="From 9:00 - 17:00" />
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-1">
-                                    <SecondaryText styleClass="inherit-color" text="Contact" />
-                                </div>
-
-                                <div className="col-1">
-                                    <SecondaryText text="+356 22222222" />
-                                    <SecondaryText text="info@verdala.com.mt" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-1">
-                            <div className="contact-form">
-                                <ContactForm />
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </section>
-
-            {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
-        </>
-    )
-}
-
-export const query = graphql`
-  {
-    wpProject {
-        id
-        title
-        featuredImage {
-          node {
-              altText
-            sourceUrl
-          }
-        }
+  useEffect(() => {
+    if (typeof alldata !== "undefined") {
     }
-    allWpProperty {
-        edges {
-            node {
-                id
-                title
-                slug
-                propertiesData {
-                    propertyPlanOnline {
-                        id
-                        sourceUrl
-                    }
-                    floorArea
-                    floorNumber
-                    bedrooms
-                    internalArea
-                    externalArea
-                    price
-                    saleStatus
-                    views
-                }
-            }
-        }
-    }
-  }
-`
+    axios
+      .get("https://verdalastage.bison-studio.com/wp-json/acf/v3/pages/738")
+      .then((res) => {
+        setAllData(res.data.acf);
+        setNewData(res.data.acf.contact_data);
+      })
+      .catch((err) => console.log(err));
+  }, [alldata.length]);
 
-export default Contact
+  useEffect(() => {
+    if (Object.keys(alldata).length > 0) {
+      setContactPageOffice(alldata.contact_data[0].contact_title);
+      setContactPageDaily(alldata.contact_data[1].contact_title);
+      setContactPageTime(alldata.contact_data[1].contact_info.contact_detail);
+      setBTitle(alldata.contact_data[0].contact_info.button.title);
+
+      const address = alldata.contact_data[0].contact_info.contact_detail;
+      const array = address.split(",");
+      setNewAddress(array);
+    }
+  }, [alldata]);
+
+  // const contactDATAS = alldata.contact_data.map((res) =>
+  //  console.log("MapRes", res)
+  //  );
+
+  // console.log("dfsdf", contactDATAS);
+  // const address =
+  //   contactdata.wpPage.contactPageCustomSections.contactData[0].contactInfo
+  //     .contactDetail;
+  // const array2 = address.split(",");
+  return (
+    <>
+      <section className="first-section">
+        <Container>
+          {/* <h1>{alldata.contact_data[0]}</h1> */}
+          <div className="contact-title">
+            <h1>{alldata.page_title}</h1>
+          </div>
+          <div className="crow">
+            <div className="col-6 col-lg-12">
+              <div className="contact-detail-1">
+                <div className="contact-details-row crow">
+                  <div className="col-4">
+                    <SecondaryText
+                      styleClass="inherit-color"
+                      text={ContactPageOffice}
+                    />
+                  </div>
+                  <div className="col-8">
+                    {newaddress.map((el) => {
+                      return <SecondaryText text={el + ","} />;
+                    })}
+                    <div className="map-route">
+                      <div className="flex">
+                        <SecondaryText text={btitle} />
+                        <div className="arrow">
+                          <ButtonArrow />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* <div className="contact-detail-2">
+                      <div className="row">
+                        <div className="col-1"></div>
+                        <div className="col-1">
+                          <div className="d-flex justify-content-between align-items-center">
+                            <SecondaryText
+                              text={
+                                btitle
+                              }
+                            />
+                          </div>
+                          <div className="">
+                            <div className="">
+                              <ButtonArrow />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> */}
+
+                <div className="contact-details-row crow">
+                  <div className="col-4">
+                    <SecondaryText
+                      styleClass="inherit-color"
+                      text={ContactPageDaily}
+                    />
+                  </div>
+
+                  <div className="col-8">
+                    <SecondaryText text={contactpagetime} />
+                  </div>
+                </div>
+
+                <div className="contact-details-row crow">
+                  <div className="col-4 col-sm-12"></div>
+                  <div className="col-8 col-sm-12">
+                    <div className="contact-us">
+                      <SecondaryText text={alldata.phone} />
+                      <SecondaryText text={alldata.email} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-6 col-lg-12">
+              <div className="contact-form">
+                <ContactForm />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+};
+
+// export const query = graphql`
+//   {
+//     wpProject {
+//       id
+//       title
+//       featuredImage {
+//         node {
+//           altText
+//           sourceUrl
+//         }
+//       }
+//     }
+//     allWpProperty {
+//       edges {
+//         node {
+//           id
+//           title
+//           slug
+//           propertiesData {
+//             propertyPlanOnline {
+//               id
+//               sourceUrl
+//             }
+//             floorArea
+//             floorNumber
+//             bedrooms
+//             internalArea
+//             externalArea
+//             price
+//             saleStatus
+//             views
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
+export default Contact;

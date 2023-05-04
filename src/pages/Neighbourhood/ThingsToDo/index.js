@@ -10,6 +10,7 @@ function ThingsToDo(props) {
 
   var settings = {
     // speed: 5000,
+    // autoplay: true,
     autoplay: false,
     autoplaySpeed: 0,
     cssEase: "linear",

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import HeroImg from "../../../assets/images/test-images/home-image.png";
 import Container from "../../layouts/container";
 import TimelineItem from "./timeline-item";
 import { ResizeContext } from "../../resize";

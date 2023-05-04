@@ -48,7 +48,7 @@ function Amenities(props) {
         <div className="amenities-left">
           <div className="count-col">
             <span className="count-number">01</span>
-            <p className="count-title">{lifestylePage.amenities?.subTitle}</p>
+            <p className="count-title">{lifestylePage.amenities?.sub_title}</p>
           </div>
           <h1>{lifestylePage.amenities?.title}</h1>
         </div>
@@ -61,7 +61,7 @@ function Amenities(props) {
       </div>
       <div className="lifestyle-icon-mobile-sec">
         <div className="lifestyle-icon-inner">
-          { <div className="icon-img">{/*<img src={leaf}></img> */}</div> }
+          {<div className="icon-img">{/*<img src={leaf}></img> */}</div>}
           <div className="icon-title">Fervently progressive</div>
           <div className="icon-descrp">
             Located in Diagonal Mar, a contemporary and vibrant district of
@@ -79,7 +79,7 @@ function Amenities(props) {
           </div>
         </div>
         <div className="lifestyle-icon-inner">
-          <div className="icon-img">{ /*<img src={leaf}></img> */}</div>
+          <div className="icon-img">{/*<img src={leaf}></img> */}</div>
           <div className="icon-title">Fervently progressive</div>
           <div className="icon-descrp">
             Located in Diagonal Mar, a contemporary and vibrant district of
@@ -98,8 +98,16 @@ function Amenities(props) {
                     <div className="slider-img">
                       <img src={item.icon}></img>
                     </div>
-                    <h3>
-                      <Link to="/lifestyle-amenities">{item.title}</Link>
+                    <h3
+                      style={{
+                        wordBreak: "break-word",
+                        maxWidth: "200px",
+                        whiteSpace: "break-space",
+                      }}
+                    >
+                      <Link to="/lifestyle-amenities">
+                        {item.title.split(/\r?\n/)}
+                      </Link>
                     </h3>
                   </div>
                 </div>

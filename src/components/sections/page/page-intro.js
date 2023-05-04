@@ -18,9 +18,9 @@ const PageIntro = (props) => {
                     <Container>
                         <SectionTitle
                             number="01"
-                            text={`${homePage.sub_title} verdala`}
-                            title={homePage?.description}
-                            ptext={homePage?.description_2}
+                            text={homePage?.sub_title}
+                            title={homePage?.title}
+                            ptext={homePage?.description}
                         />
                     </Container>
                 </section>
