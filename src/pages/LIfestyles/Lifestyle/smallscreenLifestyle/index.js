@@ -6,7 +6,7 @@ const SmallscreenLifestyle = (props) => {
   const [slider, setSliderSlider] = useState({ nav1: null, nav2: null });
   let slider1 = useRef(null);
   return (
-    <div>
+    <div className="lifestyle-team-mob-slider">
       {data?.map((item, index) => {
         console.log(item, "item");
         var check = item.data.length > 1;
@@ -15,24 +15,19 @@ const SmallscreenLifestyle = (props) => {
         }
         return (
           <>
-            <div className="" key={index}>
-              <span className="">{item.tab_title}</span>
+            <div className="lifestyle-team-mob-slider-item" key={index}>
+              <h5 className="">{item.tab_title}</h5>
               <Slider
                 asNavFor={slider.nav1}
                 ref={(slider) => (slider1 = slider)}
-                slidesToShow={check ? 2 : 1}
+                slidesToShow={check ? 1 : 1}
                 swipeToSlide={true}
                 focusOnSelect={true}
               >
                 {item.data.map((i, index) => {
                   return (
                     <div className="" key={index}>
-                      <img
-                        src={i.image.url}
-                        style={{
-                          width: !item.data.less && "50%",
-                        }}
-                      />
+                      <div className="lifestyle-team-mob-slider-img"><img src={i.image.url}/></div>
                       <h3>{i.title}</h3>
                       <p>{i.description}</p>
                     </div>

@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import Container from "../../../components/layouts/container";
 import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
-import { ResizeContext } from "../../../components/resize";
 import SmallscreenLifestyle from "./smallscreenLifestyle";
 const Lifestyle = (props) => {
   const [lifestylePage, setLifestylePage] = useState({});
   const [currentLifestyleName, setCurrentLifestyleName] = useState(0);
-  const { width } = useContext(ResizeContext);
-  const mobileScreen = width <= 699;
 
   let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
   let mainSections = document.querySelectorAll(".scroll-container >  div");
@@ -73,16 +70,8 @@ const Lifestyle = (props) => {
             <h2 className="innerpage_h2">{lifestylePage.lifestyle?.title}</h2>
             <p>{lifestylePage.lifestyle?.description}</p>
           </div>
-        </div>
-        {mobileScreen ? (
-          <>
-            <SmallscreenLifestyle
-              data={lifestylePage?.lifestyle?.lifestyle_data}
-            />
-          </>
-        ) : (
-          <>
-            <div className="crow" style={{ display: "block" }}>
+          
+          <div className="crow">
               <div
                 className="col-3 col-lg-12 sticky-menu sticky-mobile"
                 style={{
@@ -153,9 +142,14 @@ const Lifestyle = (props) => {
                   })}
                 </div>
               </div>
-            </div>
-          </>
-        )}
+           </div>
+          
+        </div>
+        <div className="lifestyle-team-mob-view">
+          <SmallscreenLifestyle
+                data={lifestylePage?.lifestyle?.lifestyle_data}
+          />
+        </div>
       </section>
     </>
   );
