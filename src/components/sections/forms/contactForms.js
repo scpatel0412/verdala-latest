@@ -318,7 +318,7 @@ class ContactForm extends Component {
                   <span>{this.state.validationText}</span>
                 </div>
               </div>
-              <div className="mainbtn ">
+              <div className="">
                 <Button
                   type="form"
                   styleClass="border-button left-align extended-button"
