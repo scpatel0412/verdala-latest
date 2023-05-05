@@ -5,6 +5,8 @@ import Footer from '../../components/sections/footer/footer';
 import '../../assets/css/js_composer.min.css';
 import Container from '../../components/layouts/container';
 import PropertyMeta from '../../components/property/property-meta';
+import testImg from "../../assets/images/test-images/image 54.png";
+import * as Styles from "../../components/property/property.module.scss";
 // import parse from 'html-react-parser'
 
 
@@ -16,7 +18,7 @@ const SinglePropertyTemplate = ({ data }) => {
 
 	const post = data.wpProperty;
 
-    console.log(data);
+    // console.log(data);
 
 	return (
 	  <>
@@ -31,24 +33,31 @@ const SinglePropertyTemplate = ({ data }) => {
         </Container> */}
 
         <Container>
-            <div className="row">
-                <div className="col-3">
-                    <h1>Apartment</h1>
-                    <PropertyMeta
-                        {...post}
-                    />
-                </div>
+            <section className="first-section">
+                <div className={Styles.sglPropCont}>
+                    <div className="row">
+                        <div className="col-3">
+                            <h1 className={Styles.titleText}>Apartment</h1>
+                            <PropertyMeta
+                                {...post}
+                            />
+                        </div>
 
-                <div className="col-2">
-                    <div className="property-plan">
-                        <img src={post.propertiesData.propertyPlanOnline.sourceUrl} alt="" />
+                        <div className="col-2">
+                            <div className={Styles.propPlan}>
+                                {/* <img src={post.propertiesData.propertyPlanOnline.sourceUrl} alt="" /> */}
+                                <img src={testImg} alt="" />
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="grid-layout col-grid-2 remove-gap">
-                
-            </div>
+                {/* <div className="grid-layout col-grid-2 remove-gap">
+                    
+                </div> */}
+
+            </section>
         </Container>
 
 	  	{/* <HomeHero /> */}

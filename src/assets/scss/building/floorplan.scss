@@ -1,0 +1,30 @@
+.floorplan-container {
+    .image-container {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .masks-container {
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    
+        svg {
+            left: 50%;
+            
+            path,
+            polygon {
+                fill: transparent;
+                transition: fill 0.5s;
+                cursor: pointer;
+                
+                &:hover {
+                    // fill: #EFB697 !important;
+                }
+            }
+        }
+    }
+}

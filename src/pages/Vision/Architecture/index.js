@@ -20,15 +20,20 @@ const Architecture = (props) => {
             <div className="archi-quot-right-mob">
               <img src={Quote} />
             </div>
-            <h2>{visionPage?.description}</h2>
+            <div className="architopHead">
+              <h2>{visionPage?.description}</h2>
+              <div className="archi-quot-right">
+                <img src={Quote} />
+              </div>
+            </div>
             <div className="archi-quote">
               <div className="archi-quot-left">
                 <h4>{visionPage?.author}</h4>
                 <p>{visionPage?.designation}</p>
               </div>
-              <div className="archi-quot-right">
-                <img src={Quote} />
-              </div>
+            </div>
+            <div className="archi-description">
+              <p></p>
             </div>
           </div>
           <div className="architecture-right">

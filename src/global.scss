@@ -285,11 +285,34 @@ img {
 }
 
 .footer-nav {
+  @media screen and (max-width: $lg__screen) {
+    display: none;
+  }
+  nav {
+    @media screen and (max-width: $xl__screen) {
+      position: relative;
+      width: 100%;
+    }
+  }
   nav ul {
     justify-content: space-between;
     font-family: $font__header;
     font-size: 1.8em;
-
+    @media screen and (max-width: $xl__screen) {
+      visibility: visible;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      opacity: 1;
+      visibility: visible;
+      background-color: transparent;
+      color: #fff;
+      min-width: initial;
+      padding: 0;
+      box-shadow: none;
+    }
     a {
       text-decoration: underline;
       cursor: pointer;
@@ -711,7 +734,10 @@ img {
 
   .architecture-left {
     width: 50%;
-    padding-right: 172px;
+    /* New Css */
+    padding-right: 140px;
+    flex-direction: column;
+    /* New Css End*/
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -750,11 +776,33 @@ img {
         margin: 47px 0;
       }
     }
-
+    /* New Css */
+    .architopHead {
+      display: flex;
+      h2 {
+        width: calc(100% - 40px);
+        @media screen and (max-width: $sm__screen) {
+          width: 100%;
+        }
+      }
+      .archi-quot-right {
+        width: 40px;
+        @media screen and (max-width: $sm__screen) {
+          display: none;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    /* New Css End */
     .archi-quote {
-      align-self: flex-end;
       display: flex;
       width: 100%;
+      /* New Css */
+      padding-top: 27px;
+      /* End Css*/
       justify-content: space-between;
       @media screen and (max-width: $lg__screen) {
         margin: 20px 0px 40px;
@@ -777,6 +825,9 @@ img {
     video {
       height: 100%;
       width: 100%;
+      /* New Css */
+      object-fit: cover;
+      /* New Css End*/
     }
 
     @media screen and (max-width: $lg__screen) {
@@ -1137,10 +1188,15 @@ img {
 
     .col-3 {
       position: relative;
-
+      /* New css */
+      max-width: 40%;
+      /* New css end*/
       @media screen and (max-width: $lg__screen) {
         flex: unset;
         width: 100%;
+        /* New css */
+        max-width: 100%;
+        /* New css end*/
       }
     }
 
@@ -1660,7 +1716,7 @@ img {
         @media screen and (max-width: $lg__screen) {
           margin-left: 0;
           float: left;
-          padding: 0 0 70px 30px;
+          padding: 0 0 85px 30px;
         }
 
         @media screen and (max-width: $sm__screen) {
@@ -1726,6 +1782,9 @@ img {
         svg {
           left: 3px;
           position: relative;
+          @media screen and (max-width: $lg__screen) {
+            left: -3px;
+          }
         }
         @media screen and (max-width: $xxxl__screen) {
           right: auto;
@@ -1750,6 +1809,9 @@ img {
         svg {
           left: 3px;
           position: relative;
+          @media screen and (max-width: $lg__screen) {
+            left: -3px;
+          }
         }
         @media screen and (max-width: $xxxl__screen) {
           right: auto;
@@ -2113,7 +2175,7 @@ section {
   }
 }
 .life-style-slider {
-  padding: 110px 0 165px 172px;
+  padding: 110px 0 165px 20px;
   @media screen and (max-width: $xxxl__screen) {
     padding: 110px 0 142px 90px;
   }
@@ -2704,8 +2766,8 @@ button.btn {
         }
       }
       p {
-        font-weight: 500;
-        font-size: 20px;
+        font-weight: normal;
+        font-size: 18px;
         line-height: 140%;
         letter-spacing: -0.04em;
         max-width: 730px;
@@ -2998,7 +3060,7 @@ button.btn {
           line-height: 21px;
           margin-top: 0;
           margin-bottom: 20px;
-          font-weight: 500;
+          font-weight: normal;
           letter-spacing: -0.04em;
         }
       }
@@ -3013,7 +3075,7 @@ button.btn {
         order: 1;
       }
       div {
-        height: 901px;
+        height: 800px;
         overflow: hidden;
         img {
           width: 100%;
@@ -3119,8 +3181,9 @@ button.btn {
     }
   }
   p {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: normal;
     letter-spacing: -0.04em;
     @media screen and (max-width: $sm__screen) {
       font-size: 18px;
@@ -3318,6 +3381,7 @@ h2.innerpage_h2 {
         font-size: 18px;
         letter-spacing: -0.04em;
         line-height: 26px;
+        font-weight: normal;
         width: 45%;
         margin: 0;
         @media screen and (max-width: $xl__screen) {
@@ -3374,7 +3438,7 @@ h2.innerpage_h2 {
     }
     .mainbtn {
       position: absolute;
-      bottom: 60px;
+      bottom: 00px;
       left: 0;
       font-family: $font__main;
       font-weight: 600;
@@ -3450,7 +3514,7 @@ h2.innerpage_h2 {
           letter-spacing: -0.04em;
           margin: 26px 0 0 0;
           font-family: $font__main;
-          font-weight: 500;
+          font-weight: normal;
         }
       }
     }
@@ -3463,6 +3527,44 @@ h2.innerpage_h2 {
       width: 100%;
       text-align: left;
       height: 60px;
+    }
+  }
+  .designmeetfuncations-mob-view {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .mainbtn {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      font-family: $font__main;
+      font-weight: 600;
+    }
+    .recidence-meet-left {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      overflow: auto;
+      border-top: 1px solid rgb(99 82 69 / 50%);
+      padding: 10px 0;
+      .team-teamData-container {
+        .text {
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: -0.02em;
+          min-width: 250px;
+        }
+      }
+    }
+    .mob-b {
+      padding: 80px 40px 0;
+      display: inline-block;
+      width: 100%;
+      .mainbtn {
+        position: relative;
+        width: 100%;
+      }
     }
   }
 }
@@ -4092,13 +4194,12 @@ h2.innerpage_h2 {
     }
   }
   .churches-chapels-sec {
-    opacity: 0.25;
+    // opacity: 0.25;
     border-bottom: 1px solid #7b9e6b;
     .churches-title {
       display: flex;
       flex-wrap: nowrap;
       align-items: flex-start;
-      justify-content: space-between;
       padding: 20px 0 16px 0;
 
       h2 {
@@ -4137,6 +4238,16 @@ h2.innerpage_h2 {
     }
     .churches-slider {
       padding-bottom: 85px;
+      /* New Css start */
+      max-width: 70%;
+      margin-left: auto;
+      @media screen and (max-width: $xxxl__screen) {
+        max-width: 85%;
+      }
+      @media screen and (max-width: $lg__screen) {
+        max-width: 100%;
+      }
+      /* New Css end */
       .slick-slider {
         @media screen and (max-width: $sm__screen) {
           padding-right: 30px;
@@ -4155,7 +4266,7 @@ h2.innerpage_h2 {
       .slider-box {
         margin-right: 22px;
         .slider-img {
-          width: 288px;
+          /* New Css */
           height: 327px;
           overflow: hidden;
           margin-bottom: 22px;
@@ -4492,29 +4603,129 @@ h2.innerpage_h2 {
 }
 .footer-module--footergridmenu--dfd92 {
   margin: 45px 0 24px;
-  .footer-module--footermiddle_link--f04b6 span {
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    opacity: 0.5;
-    font-family: $font__main;
+  @media screen and (max-width: $sm__screen) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-module--footermiddle_link--f04b6 {
+    @media screen and (max-width: $sm__screen) {
+      gap: 0;
+      width: 100%;
+    }
+    span {
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      font-family: $font__main;
+      @media screen and (max-width: $sm__screen) {
+        font-size: 14px;
+        line-height: 16px;
+        width: 50%;
+      }
+    }
   }
 }
 .foote-bottom {
   .remove-top-space {
     padding-top: 200px;
+    @media screen and (max-width: $sm__screen) {
+      padding-top: 71px !important;
+    }
   }
   .footer-m-menu {
+    @media screen and (max-width: $lg__screen) {
+      padding: 80px 0 !important;
+    }
     .lg-text {
       font-size: 48px;
       line-height: 43px;
+      margin-bottom: 5px;
+      @media screen and (max-width: $xl__screen) {
+        font-size: 38px;
+      }
+      @media screen and (max-width: $sm__screen) {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+      a {
+        &:after {
+          @media screen and (max-width: $sm__screen) {
+            bottom: 0;
+          }
+        }
+      }
     }
   }
   .footer-nav {
     margin-bottom: 208px;
+    @media screen and (max-width: $sm__screen) {
+      margin-bottom: 0;
+    }
     a {
       font-size: 28px;
+      font-weight: normal;
+      font-family: $font__header;
+      @media screen and (max-width: $xl__screen) {
+        padding: 0;
+        font-size: 20px;
+      }
+    }
+  }
+  .copy-right-text {
+    @media screen and (max-width: $sm__screen) {
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: -0.04em;
+      width: 100%;
+      margin-top: 82px;
+    }
+  }
+  .footer-menu-merge {
+    div {
+      @media screen and (max-width: $xl__screen) {
+        padding: 0;
+      }
+      .footer-m-menu {
+        @media screen and (max-width: $sm__screen) {
+          padding: 80px 0 !important;
+        }
+      }
+    }
+    .secondary-text {
+      letter-spacing: 0.02em;
+      font-size: 18px;
+      font-weight: normal;
+      @media screen and (max-width: $xl__screen) {
+        font-size: 14px;
+      }
+    }
+    .footer-module--arrow--cf75a {
+      margin-left: 10px;
+      @media screen and (max-width: $xl__screen) {
+        top: -6px;
+        position: relative;
+      }
+      svg {
+        @media screen and (max-width: $xl__screen) {
+          top: 5px;
+          position: relative;
+        }
+      }
+      @media screen and (max-width: $sm__screen) {
+        height: 24px;
+        width: 24px;
+        svg {
+          top: 0px;
+          position: relative;
+          max-width: 9px;
+        }
+      }
     }
   }
 }

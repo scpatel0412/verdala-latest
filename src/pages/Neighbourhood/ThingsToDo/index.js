@@ -15,9 +15,10 @@ function ThingsToDo(props) {
     autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 4,
-    slidesToScroll: 4,
-    swipeToSlide: true,
+    slidesToScroll: 2,
+    // swipeToSlide: true,
     // infinite: true,
+    touchThreshold: 300,
     arrows: false,
     buttons: false,
     responsive: [

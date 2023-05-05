@@ -1,4 +1,30 @@
 @import './../../assets/scss/variable.scss';
+
+.titleText {
+    font-size: 8em;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(99, 82, 69, 0.3);
+}
+
+.sglPropCont {
+    border-top: 1px solid rgba(99, 82, 69, 0.3);
+    padding-bottom: 100px;
+}
+
+.propPlan {
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    border-left: 1px solid rgba(99, 82, 69, 0.3);
+}
+
+.valueField {
+    padding-bottom: 50px;
+}
+
 .residenceCard {
     padding-top: 120px;
     &:first-child{
@@ -118,6 +144,7 @@
 .propertyMeta {
     background-color: #fff;
     padding: 40px;
+    margin-top: 100px;
 }
 
 .filterBar {
@@ -137,3 +164,42 @@
         margin-top: 50px;
     }
 }
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.propertyMetaGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 50px;
+}
+
+// .gridLayout {
+//     grid-row-gap: 30px;
+//     grid-column-gap: 30px;
+//     display: grid;
+//     grid-auto-flow: row;
+//     grid-template-columns: repeat(3, 1fr);
+
+//     &.col-grid-2 {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+
+//     &.col-grid-3 {
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+    
+//     &.col-grid-4 {
+//         grid-template-columns: repeat(4, 1fr);
+//     }
+
+//     &.col-grid-6 {
+//         grid-template-columns: repeat(6, 1fr);
+//     }
+
+//     &.remove-gap {
+//         grid-gap: 0;
+//     }
+// }
