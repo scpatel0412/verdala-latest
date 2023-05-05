@@ -884,7 +884,7 @@ img {
     line-height: 16px;
     text-transform: uppercase;
     text-align: center;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.02em;
     @media screen and (max-width: $sm__screen) {
       font-size: 12px;
@@ -913,7 +913,7 @@ img {
       line-height: 52px;
       text-align: center;
       letter-spacing: -0.04em;
-      font-weight: 500;
+      font-weight: 400;
       max-width: 878px;
       margin: 42px auto 125px;
 
@@ -943,6 +943,11 @@ img {
         text-align: center;
         min-height: 404px;
         position: relative;
+        transition: background-color 0.5s;
+
+        &:hover {
+          background-color: #fff;
+        }
 
         @media screen and (max-width: $xl__screen) {
           padding: 30px 20px;
@@ -985,7 +990,7 @@ img {
         }
 
         h3 {
-          font-weight: 500;
+          font-weight: 400;
           font-size: 28px;
           color: #635245;
           @media screen and (max-width: $sm__screen) {
@@ -1057,8 +1062,8 @@ img {
     }
 
     p {
-      font-weight: 500;
-      font-size: 20px;
+      font-weight: 400;
+      font-size: 18px;
       line-height: 28px;
       letter-spacing: -0.04em;
       margin-bottom: 60px;
@@ -1419,13 +1424,13 @@ img {
       margin-top: 48px;
     }
     h3 {
-      font-weight: 500;
+      font-weight: 400;
       font-size: 32px;
       line-height: 32px;
       letter-spacing: -0.04em;
       text-transform: uppercase;
       color: #635245;
-      margin-bottom: 64px;
+      margin-bottom: 24px;
 
       @media screen and (max-width: $lg__screen) {
         margin-bottom: 10px;
@@ -1438,11 +1443,11 @@ img {
     }
 
     p {
-      font-size: 24px;
+      font-size: 18px;
       line-height: 32px;
       letter-spacing: -0.04em;
       font-family: $font__main;
-      font-weight: 500;
+      font-weight: 400;
 
       @media screen and (max-width: $lg__screen) {
         font-size: 20px;
@@ -1520,7 +1525,7 @@ img {
   ul {
     li {
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 400;
       color: #7b9e6b;
       letter-spacing: -0.02em;
       text-transform: uppercase;
@@ -2089,7 +2094,7 @@ section {
       line-height: 90%;
       letter-spacing: -0.04em;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 400;
       margin-left: 298px;
       max-width: 503px;
       margin: 103px 0 0 298px;
@@ -2123,7 +2128,7 @@ section {
         margin: 78px 0 0 0;
       }
       p {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 21px;
         line-height: 29px;
         letter-spacing: -0.04em;
@@ -2219,7 +2224,7 @@ section {
       }
       h3 {
         a {
-          font-weight: 500;
+          font-weight: 400;
           font-size: 28px;
           line-height: 28px;
           letter-spacing: -0.02em;
@@ -2310,7 +2315,7 @@ section {
         }
       }
       h2 {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 48px;
         line-height: 43px;
         letter-spacing: -0.04em;
@@ -2409,7 +2414,7 @@ section {
       }
     }
     h2 {
-      font-weight: 500;
+      font-weight: 400;
       font-size: 48px;
       line-height: 43px;
       letter-spacing: -0.04em;
@@ -2483,7 +2488,7 @@ section {
     }
     p {
       font-size: 24px;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 34px;
       width: 50%;
       letter-spacing: -0.04em;
@@ -2545,7 +2550,7 @@ section {
       h3 {
         font-size: 28px;
         line-height: 34px;
-        font-weight: 500;
+        font-weight: 400;
         letter-spacing: -0.02em;
         text-transform: uppercase;
         color: #635245;
@@ -2591,7 +2596,7 @@ section {
       line-height: 22px;
       letter-spacing: -0.02em;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 400;
       color: #7b9e6b;
       margin-bottom: 20px;
     }
@@ -2687,7 +2692,7 @@ button.btn {
       width: 50%;
       padding-right: 15px;
       font-family: $font__header;
-      font-weight: 500;
+      font-weight: 400;
     }
     .icon-descrp {
       font-size: 14px;
@@ -2696,7 +2701,7 @@ button.btn {
       color: #635245;
       width: 50%;
       font-family: $font__main;
-      font-weight: 500;
+      font-weight: 400;
     }
   }
 }
@@ -2726,7 +2731,7 @@ button.btn {
         }
       }
       .count-number {
-        font-weight: 500;
+        font-weight: 400;
         margin-right: 275px;
         @media screen and (max-width: $xxl__screen) {
           margin-right: 220px;
@@ -2757,7 +2762,7 @@ button.btn {
         // line-height: 90%;
         // letter-spacing: -0.04em;
         // text-transform: uppercase;
-        // font-weight: 500;
+        // font-weight: 400;
         max-width: 630px;
         margin: 0 0 24px 0;
         @media screen and (max-width: $sm__screen) {
@@ -3213,10 +3218,10 @@ button.btn {
           letter-spacing: -0.02em;
           text-transform: uppercase;
           color: #635245;
-          font-weight: 500;
+          font-weight: 400;
         }
         p {
-          font-weight: 500;
+          font-weight: 400;
           font-size: 16px;
           line-height: 24px;
           letter-spacing: -0.04em;
@@ -3262,15 +3267,15 @@ button.btn {
           }
         }
         .property-module--values--0cf99 {
-          font-weight: 500;
+          font-weight: 400;
           font-family: $font__main;
         }
         span {
-          font-weight: 500;
+          font-weight: 400;
           font-size: 24px;
           letter-spacing: -0.04em;
           color: #635245;
-          font-weight: 500;
+          font-weight: 400;
           font-family: $font__main;
         }
       }
@@ -3327,7 +3332,7 @@ h2.innerpage_h2 {
   line-height: 90%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   @media screen and (max-width: $sm__screen) {
     font-size: 32px;
     line-height: 29px;
@@ -4112,7 +4117,7 @@ h2.innerpage_h2 {
               line-height: 34px;
               letter-spacing: -0.02em;
               text-transform: uppercase;
-              font-weight: 500;
+              font-weight: 400;
               color: #635245;
             }
           }
@@ -4181,7 +4186,7 @@ h2.innerpage_h2 {
     }
     p {
       width: 31%;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 24px;
       line-height: 34px;
       letter-spacing: -0.04em;
@@ -4207,7 +4212,7 @@ h2.innerpage_h2 {
         line-height: 130px;
         letter-spacing: -0.02em;
         text-transform: uppercase;
-        font-weight: 500;
+        font-weight: 400;
         @media screen and (max-width: $xxl__screen) {
           font-size: 64px;
           line-height: 70px;
@@ -4222,7 +4227,7 @@ h2.innerpage_h2 {
         }
       }
       span {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 24px;
         line-height: 140%;
         letter-spacing: -0.04em;
@@ -4426,7 +4431,7 @@ h2.innerpage_h2 {
   .loctxt {
     font-size: 32px;
     line-height: 41px;
-    font-weight: 500;
+    font-weight: 400;
     word-break: break-all;
     @media screen and (max-width: $xl__screen) {
       font-size: 24px;
@@ -4537,8 +4542,8 @@ h2.innerpage_h2 {
     padding: 36px 40px 65px;
   }
   p {
-    font-size: 21px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 .home-PageLocation-sec {
@@ -4628,6 +4633,13 @@ h2.innerpage_h2 {
     }
   }
 }
+
+.footer {
+  .footer-nav,.crow {
+    padding-bottom: 50px;
+  }
+}
+
 .foote-bottom {
   .remove-top-space {
     padding-top: 200px;
@@ -4679,7 +4691,7 @@ h2.innerpage_h2 {
   .copy-right-text {
     @media screen and (max-width: $sm__screen) {
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       text-align: center;
       letter-spacing: -0.04em;
       width: 100%;
@@ -4699,10 +4711,10 @@ h2.innerpage_h2 {
     }
     .secondary-text {
       letter-spacing: 0.02em;
-      font-size: 18px;
+      font-size: 10px;
       font-weight: normal;
       @media screen and (max-width: $xl__screen) {
-        font-size: 14px;
+        font-size: 10px;
       }
     }
     .footer-module--arrow--cf75a {
