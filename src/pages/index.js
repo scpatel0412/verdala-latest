@@ -56,14 +56,14 @@ const Index = () => {
 	return (
 		<>
 			{data != undefined ? <>
-				<HomeHero data={data} />
-				<PageIntro data={data} />
-				<PageImageCols data={data} />
-				<PageHoverImage data={data} />
-				<PageGeneric data={data} />
-				<PageLocation data={data} />
-				<PageVGallery data={data} />
-				<Footer />
+				<div className='home-banner-sec'><HomeHero data={data} /></div>
+				<div className='home-about-sec'><PageIntro data={data} /></div>
+				<div className='home-video-sec'><PageImageCols data={data} /></div>
+				<div className='home-PageHoverImage-sec'><PageHoverImage data={data} /></div>
+				<div className='home-typeresidence-sec'><PageGeneric data={data} /></div>
+				<div className='home-PageLocation-sec'><PageLocation data={data} /></div>
+				<div className='home-gallery-sec'><PageVGallery data={data} /></div>
+				<div className='footer'><Footer /></div>
 			</> : null}
 		</>
 	)
