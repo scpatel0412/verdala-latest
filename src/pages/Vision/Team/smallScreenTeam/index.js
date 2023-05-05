@@ -6,7 +6,7 @@ const SmallScreenTeam = (props) => {
   const [slider, setSliderSlider] = useState({ nav1: null, nav2: null });
   let slider1 = useRef(null);
   return (
-    <div>
+    <div className='visionpage-team-section'>
       {data?.map((item,index) => {
         var check = item.team_members.length > 1
         if (check) {

@@ -504,6 +504,8 @@ img {
         text-transform: uppercase;
         color: #7b9e6b;
         font-size: 18px;
+        margin-bottom: 6px;
+    display: inherit;
       }
     }
     .tab-image-mob {
@@ -676,15 +678,18 @@ img {
   .slick-next {
     display: none !important;
   }
-
+ 
   .team-section {
     @media screen and (max-width: $sm__screen) {
       padding-left: 0;
       padding-right: 0;
+      margin-bottom: 0;
     }
   }
 }
-
+.visionpage-team-section{
+  padding-bottom: 60px;
+}
 .architecture-sec {
   display: flex;
   flex-wrap: wrap;
@@ -970,7 +975,6 @@ img {
 .our-mission {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 42px 42px 26px 42px;
 
   @media screen and (max-width: $sm__screen) {
@@ -982,7 +986,7 @@ img {
   }
 
   .mission-middle {
-    width: 43%;
+    width: 51%;
 
     h1 {
       font-size: 3em;
@@ -1004,8 +1008,10 @@ img {
     p {
       font-weight: 500;
       font-size: 20px;
+      line-height: 28px;
       letter-spacing: -0.04em;
       margin-bottom: 60px;
+      max-width: 500px;
 
       @media screen and (max-width: $xl__screen) {
         line-height: 29px;
@@ -1056,7 +1062,7 @@ img {
     align-items: flex-end;
 
     .mission-img {
-      width: 290px;
+      width: 397px;
       height: 252px;
       margin-right: 0;
       margin-left: auto;
@@ -1109,7 +1115,7 @@ img {
 
   h1 {
     margin-bottom: 77px;
-
+    font-size: 48px;
     @media screen and (max-width: $lg__screen) {
       margin-bottom: 35px;
     }
@@ -1121,10 +1127,6 @@ img {
       margin-bottom: 80px;
     }
   }
-
-  // .timeline-module--year-cont--55af8{
-  //     left: 0px;
-  // }
   .timeline-module--timelineItem--4ee68 {
     height: auto;
 
@@ -1362,7 +1364,8 @@ img {
     }
     h3 {
       font-weight: 500;
-      font-size: 2em;
+      font-size: 32px;
+      line-height: 32px;
       letter-spacing: -0.04em;
       text-transform: uppercase;
       color: #635245;
@@ -1380,8 +1383,10 @@ img {
 
     p {
       font-size: 24px;
-      line-height: 30px;
+      line-height: 32px;
       letter-spacing: -0.04em;
+      font-family: $font__main;
+      font-weight: 500;
 
       @media screen and (max-width: $lg__screen) {
         font-size: 20px;
@@ -1576,8 +1581,8 @@ img {
         padding-left: 79px;
       }
       p {
-        font-size: 24px;
-        line-height: 33.6px;
+        font-size: 19px;
+        line-height: 27px;
         letter-spacing: -0.04em;
 
         @media screen and (max-width: $lg__screen) {
@@ -1629,10 +1634,12 @@ img {
         display: flex;
         align-items: center;
       }
-
+      .slick-list{
+        width: 100%;
+      }
       .slick-slide {
         opacity: 0;
-        width: auto !important;
+        // width: auto !important;
       }
 
       .slick-slide.slick-active {
@@ -1695,11 +1702,15 @@ img {
         }
       }
 
-      .customarrow {
+      .slick-arrow {
         width: 64px !important;
         height: 64px !important;
         background: #fff;
-
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        bottom: 0;
+        top: auto;
         @media screen and (max-width: $lg__screen) {
           width: 50px !important;
           height: 50px !important;
@@ -1709,10 +1720,13 @@ img {
         }
       }
 
-      .customarrownext {
+      .slick-next {
         right: 470px;
         left: auto;
-
+        svg{
+          left: 3px;
+          position: relative;
+        }
         @media screen and (max-width: $xxxl__screen) {
           right: auto;
           left: 75px;
@@ -1730,10 +1744,13 @@ img {
         }
       }
 
-      .customarrowprev {
+      .slick-prev {
         right: 550px;
         left: auto;
-
+        svg{
+          left: 3px;
+          position: relative;
+        }
         @media screen and (max-width: $xxxl__screen) {
           right: auto;
           left: 0px;
@@ -3499,10 +3516,97 @@ h2.innerpage_h2 {
   }
 }
 .footer-module--locationtitle--830b5 {
+  padding-top: 200px !important;
+  @media screen and (max-width: $xxxl__screen){
+     padding-left: 0 !important;
+  }
   @media screen and (max-width: $lg__screen) {
-    padding-top: 50px !important;
+    padding-top: 80px !important;
     padding-bottom: 50px !important;
   }
+  .footer-module--locationtitle--830b5{
+    @media screen and (max-width: $xxxl__screen) {
+      padding-left: 50px;
+    }
+    
+  }
+  .footer-module--footergrid--5b7dc{
+    padding-left: 0;
+    flex-wrap: nowrap;
+    @media screen and (max-width: $xl__screen) {
+      flex-wrap: wrap
+    }
+    @media screen and (max-width: $sm__screen){
+      margin-top: 58px;
+      margin-bottom: 155px;
+    }
+    .footer-module--footerCard--9a296{
+      padding: 46px;
+      @media screen and (max-width: $lg__screen){
+        padding: 40px;
+        flex-basis: 285px;
+      }
+      @media screen and (max-width: $sm__screen){
+        flex-basis: 100%;
+        max-width: 100%;
+        padding: 38px;
+        flex-direction: row;
+        min-height: auto;
+      }
+      div{
+        @media screen and (max-width: $sm__screen){
+          display: flex;
+          align-items: center;
+        }
+         
+      }
+      .footer-module--icon--3731f{
+        width: 28px;
+        margin-bottom: 44px;
+        @media screen and (max-width: $sm__screen){
+          margin-bottom: 0;
+        }
+      }
+      .footer-module--ctaCont--c2cc3{
+        &:hover{
+          
+        }
+      }
+      .text-cont {
+        @media screen and (max-width: $sm__screen){
+          margin-left: 41px;
+        }
+
+        h3{
+          font-size: 28px !important;
+          @media screen and (max-width: $sm__screen){
+            font-size: 18px !important;
+          }
+        }
+      }
+      .footer-module--ctaCont--c2cc3{
+        @media screen and (max-width: $sm__screen){
+          width: 48px;
+          height: 48px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg{
+            max-width: 15px;
+          }
+        }
+
+      }
+    }
+  }
+  h2{
+    font-size: 48px;
+    @media screen and (max-width: $sm__screen){
+      font-size: 32px;
+    }
+  }
+ 
 }
 
 .designmeetfuncations-sec ::-webkit-scrollbar {
@@ -3519,6 +3623,8 @@ h2.innerpage_h2 {
 }
 
 .rabatandadina-sec {
+  max-width: 1920px;
+  margin:0 auto;
   .rabatandadina-inner {
     display: flex;
     flex-wrap: wrap;
@@ -3564,7 +3670,7 @@ h2.innerpage_h2 {
   .rabatandadina-bottom-inner {
     display: flex;
     flex-wrap: wrap;
-    padding: 40px 20px 50px;
+    padding: 40px 40px 250px;
     @media screen and (max-width: $sm__screen) {
       padding: 40px 20px 80px;
     }
@@ -3738,11 +3844,28 @@ h2.innerpage_h2 {
         }
       }
     }
+    .slick-slider {
+      .slick-list{
+        margin-left: -39px;
+        -webkit-clip-path: inset(-100vw 0 -100vw 0);
+        clip-path: inset(-100vw 0 -100vw 0);
+        overflow: visible;
+        @media screen and (max-width: $sm__screen){
+          padding-right: 70px;
+          overflow: visible;
+
+        }
+      }
+       
+    }
     .neighborhood-bottom-inner {
-      display: flex;
+      display: flex !important;
       flex-wrap: wrap;
       align-items: flex-start;
-
+      padding-left: 39px;
+      @media screen and (max-width: $xl__screen){
+        padding-left: 60px;
+      }
       .neighborhood-circle-btn-list {
         display: flex;
         flex-wrap: wrap;
@@ -3797,6 +3920,27 @@ h2.innerpage_h2 {
               transform: translate(-50%, -50%);
               border-radius: 50px;
             }
+            &:before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 45px;
+              right: -999px;
+              background: #7b9e6b;
+              width: auto;
+              height: 1px;
+              /* transform: translate(-50%, -50%); */
+              border-radius: 50px;
+              @media screen and (max-width: $lg__screen){
+                left: 24px;
+                right: 0;
+                width: 1px;
+                height: 135px;
+              }
+              @media screen and (max-width: $sm__screen){
+                left: 19px;
+              }
+            }
           }
         }
         .neighborhood-circle-line {
@@ -3845,6 +3989,8 @@ h2.innerpage_h2 {
         flex-wrap: wrap;
         align-items: flex-end;
         width: 60%;
+        z-index: 1;
+        background: #f2ebda;
         @media screen and (max-width: $lg__screen) {
           width: 100%;
           flex-direction: column;
@@ -3868,6 +4014,14 @@ h2.innerpage_h2 {
           div {
             max-width: 290px;
             margin: 0 auto 0 21px;
+            h3{
+              font-size: 28px;
+              line-height: 34px;
+              letter-spacing: -0.02em;
+              text-transform: uppercase;
+              font-weight: 500;
+              color: #635245;
+            }
           }
           @media screen and (max-width: $lg__screen) {
             width: 100%;
@@ -3879,6 +4033,7 @@ h2.innerpage_h2 {
                 font-size: 18px;
                 line-height: 22px;
                 letter-spacing: 0.2px;
+
               }
               p {
                 font-size: 14px;
@@ -3907,9 +4062,12 @@ h2.innerpage_h2 {
     }
   }
 }
+
 .things-sec {
   padding: 40px 40px 140px;
   background: #f8f8f2;
+  max-width: 1920px;
+  margin: 0 auto;
   @media screen and (max-width: $sm__screen) {
     padding: 80px 20px 80px;
   }
@@ -3948,8 +4106,9 @@ h2.innerpage_h2 {
     border-bottom: 1px solid #7b9e6b;
     .churches-title {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: flex-start;
+      justify-content: space-between;
       padding: 20px 0 16px 0;
 
       h2 {
@@ -3959,8 +4118,8 @@ h2.innerpage_h2 {
         text-transform: uppercase;
         font-weight: 500;
         @media screen and (max-width: $xxl__screen) {
-          font-size: 94px;
-          line-height: 110px;
+          font-size: 64px;
+          line-height: 70px;
         }
         @media screen and (max-width: $lg__screen) {
           font-size: 50px;
@@ -3981,6 +4140,9 @@ h2.innerpage_h2 {
         position: relative;
         display: inline-block;
         margin-left: 50px;
+        @media screen and (max-width: $xxl__screen){
+          top: 0;
+        }
       }
     }
     .churches-slider {
@@ -4007,6 +4169,9 @@ h2.innerpage_h2 {
           height: 327px;
           overflow: hidden;
           margin-bottom: 22px;
+          @media screen and (max-width: $xxl__screen) {
+            width: auto;
+          }
           @media screen and (max-width: $sm__screen) {
             height: 246px;
           }

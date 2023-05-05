@@ -24,10 +24,10 @@ const Vision = ({ pageTitle, children }) => {
     useEffect(() => {
       setSlidecount(props.slideCount);
     }, [props.slideCount]);
-    const { classNameName, style, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <div
-        classNameName={props.className}
+        className={props.className}
         style={{ ...style, display: "flex", zIndex: 99999 }}
         onClick={onClick}
       >
@@ -56,10 +56,10 @@ const Vision = ({ pageTitle, children }) => {
   }
 
   function SamplePrevArrow(props) {
-    const { classNameName, style, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <div
-        classNameName={props.className}
+        className={props.className}
         style={{ ...style, display: "flex", zIndex: 9999999 }}
         onClick={onClick}
       >
@@ -125,7 +125,7 @@ const Vision = ({ pageTitle, children }) => {
   return (
     <>
       <Resize>
-        <div className="vision-page-banner">
+        <div className="lifestyle-amenities-banner">
           <PageHero headerData={data?.header_section} />
         </div>
         <div>
@@ -173,10 +173,10 @@ const Vision = ({ pageTitle, children }) => {
                     fade={true}
                     ref={(slider) => (slider1 = slider)}
                     nextArrow={
-                      <SampleNextArrow class="customarrow customarrownext" />
+                      <SampleNextArrow className="customarrow customarrownext" />
                     }
                     prevArrow={
-                      <SamplePrevArrow class="customarrow customarrowprev" />
+                      <SamplePrevArrow className="customarrow customarrowprev" />
                     }
                   >
                     {data?.then_and_now?.slider_conent?.map((i, index) => {

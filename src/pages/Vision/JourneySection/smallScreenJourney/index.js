@@ -34,7 +34,7 @@ const SmallScreenJourneySection = (props) => {
                             <p className="count-num" style={{ textAlign: 'center' }}>{i.year}</p>
 
                             <div className="timeline-module--markerCont--8bb73">
-                                <div classNameName='timeline-line-mob'><img src={lineimg}></img></div>
+                                <div className='timeline-line-mob'><img src={lineimg}></img></div>
                                 <div className="timeline-module--marker--c9edb"></div>
                                 <div className="timeline-module--marker--c9edb"></div>
                                 <div className="timeline-module--marker--c9edb"></div>
