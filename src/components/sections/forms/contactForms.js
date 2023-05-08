@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Button from "../../partials/buttons";
 
-
 class ContactForm extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +20,7 @@ class ContactForm extends Component {
       fields: [
         // {name: "subject", type: "text", placeholder: "Working together on a project", value: null, required: false},
         {
-          name: "name", 
+          name: "name",
           type: "text",
           placeholder: "Your name*",
           value: null,
@@ -93,7 +92,7 @@ class ContactForm extends Component {
           <div className="select-field">
             <label htmlFor={field.name}>{field.placeholder}</label>
             <select
-              onChange={this.inputFieldHandler.bind(this,key)}
+              onChange={this.inputFieldHandler.bind(this, key)}
               id={field.name}
               name={field.name}
             >
@@ -142,7 +141,7 @@ class ContactForm extends Component {
 
   sendForm(e) {
     e.preventDefault();
-    console.log("Hi");
+    // console.log("Hi");
     // e.preventDefault();
     // // console.log("clicked", this.state.submittingForm, this.validateForm());
     // if ( !this.state.submittingForm && !this.state.submittedForm && this.validateForm() ) {
@@ -241,7 +240,7 @@ class ContactForm extends Component {
   }
 
   inputFieldHandler(key, field) {
-    console.log(field);
+    // console.log(field);
     field.target.classList.add("field-active");
     if (this.state.fields[key].required) {
       if (this.state.fields[key].name === "email") {
@@ -281,7 +280,6 @@ class ContactForm extends Component {
     });
   }
   handleClick() {
-    console.log("hello");
     console.log(this.state);
   }
 
@@ -299,15 +297,23 @@ class ContactForm extends Component {
             <div className="inner-cont">
               <div className="text-cont">
                 <div className="contact-row crow">
-                  <div className="col-6 col-xl-12">{this.state.renderedFields[0]}</div>
+                  <div className="col-6 col-xl-12">
+                    {this.state.renderedFields[0]}
+                  </div>
 
-                  <div className="col-6 col-xl-12">{this.state.renderedFields[1]}</div>
+                  <div className="col-6 col-xl-12">
+                    {this.state.renderedFields[1]}
+                  </div>
                 </div>
 
                 <div className="contact-row crow">
-                  <div className="col-6 col-xl-12">{this.state.renderedFields[2]}</div>
+                  <div className="col-6 col-xl-12">
+                    {this.state.renderedFields[2]}
+                  </div>
 
-                  <div className="col-6 col-xl-12">{this.state.renderedFields[3]}</div>
+                  <div className="col-6 col-xl-12">
+                    {this.state.renderedFields[3]}
+                  </div>
                 </div>
 
                 <div className="contact-row">

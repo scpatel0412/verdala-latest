@@ -8,7 +8,6 @@ const SmallscreenLifestyle = (props) => {
   return (
     <div className="lifestyle-team-mob-slider">
       {data?.map((item, index) => {
-        console.log(item, "item");
         var check = item.data.length > 1;
         if (check) {
           item.data.less = true;
@@ -27,7 +26,9 @@ const SmallscreenLifestyle = (props) => {
                 {item.data.map((i, index) => {
                   return (
                     <div className="" key={index}>
-                      <div className="lifestyle-team-mob-slider-img"><img src={i.image.url}/></div>
+                      <div className="lifestyle-team-mob-slider-img">
+                        <img src={i.image.url} />
+                      </div>
                       <h3>{i.title}</h3>
                       <p>{i.description}</p>
                     </div>

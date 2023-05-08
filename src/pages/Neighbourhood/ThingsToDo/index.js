@@ -1,23 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Link } from "gatsby";
 
 function ThingsToDo(props) {
+  const [togglestate, setToggleState1] = useState(0);
   useEffect(() => {
     if (Object.keys(props).length > 0) {
     }
   }, [props]);
 
+  function toggleAccordion(item, index) {
+    setToggleState1(index);   
+  }
+
   var settings = {
-    // speed: 5000,
-    // autoplay: true,
-    autoplay: false,
+    speed: 5000,
+    autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 4,
     slidesToScroll: 2,
-    // swipeToSlide: true,
-    // infinite: true,
+    swipeToSlide: true,
+    infinite: true,
     touchThreshold: 300,
     arrows: false,
     buttons: false,
@@ -64,37 +68,49 @@ function ThingsToDo(props) {
             </div>
 
             {props.data?.data.data?.map((item, index) => {
+              item.open = false;
               return (
                 <>
-                  <div className="churches-chapels-main-sec" key={index}>
-                    <div className="churches-chapels-sec">
+                  <div
+                    className="churches-chapels-main-sec"
+                    key={index}
+                    onClick={() => toggleAccordion(item, index)}
+                  >
+                    <div
+                      className="churches-chapels-sec"
+                      style={
+                        index === togglestate
+                          ? { opacity: "1", borderTop: "1px solid #7b9e6b" }
+                          : { opacity: "0.25", borderTop: "1px solid #7b9e6b" }
+                      }
+                    >
                       <div className="churches-title">
                         <h2>{item.group_title}</h2>
                         <span className="">05</span>
                       </div>
-                      <div className="churches-slider">
-                        <Slider {...settings}>
-                          {item.all_data?.map((innerItem, ind) => {
-                            {
-                              /* console.log("innerItemmap", innerItem); */
-                            }
-                            return (
-                              <div key={ind}>
-                                <div className="slider-box">
-                                  <div className="slider-img">
-                                    <img src={innerItem.image.url}></img>
+
+                      {index === togglestate ? (
+                        <div className="churches-slider">
+                          <Slider {...settings}>
+                            {item.all_data?.map((innerItem, ind) => {
+                              return (
+                                <div key={ind}>
+                                  <div className="slider-box">
+                                    <div className="slider-img">
+                                      <img src={innerItem.image.url}></img>
+                                    </div>
+                                    <h3>
+                                      <Link to="/neighbourhood">
+                                        {innerItem.title}
+                                      </Link>
+                                    </h3>
                                   </div>
-                                  <h3>
-                                    <Link to="/neighbourhood">
-                                      {innerItem.title}
-                                    </Link>
-                                  </h3>
                                 </div>
-                              </div>
-                            );
-                          })}
-                        </Slider>
-                      </div>
+                              );
+                            })}
+                          </Slider>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </>

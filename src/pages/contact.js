@@ -11,8 +11,6 @@ import axios from "axios";
 
 const Contact = ({ data }) => {
   const [alldata, setAllData] = useState({});
-  console.log(alldata);
-
   const [ContactPageOffice, setContactPageOffice] = useState([]);
   const [ContactPageDaily, setContactPageDaily] = useState([]);
   const [contactpagetime, setContactPageTime] = useState([]);
@@ -20,10 +18,10 @@ const Contact = ({ data }) => {
   const [newdata, setNewData] = useState([]);
   const [newaddress, setNewAddress] = useState([]);
 
-  console.log(
-    "newdata",
-    newdata.map((el) => el.contact_info.contact_detail)
-  );
+  // console.log(
+  //   "newdata",
+  //   newdata.map((el) => el.contact_info.contact_detail)
+  // );
 
   useEffect(() => {
     if (typeof alldata !== "undefined") {
