@@ -18,9 +18,9 @@ const VerticalGallery = (props) => {
         <>
             {Object.keys(homePage).length > 0 ? <>
                 <section className={Styles.p0}>
-                    <Container type="extend-container px-xl-0 p-xl-0">
+                    <Container type="extend-container px-xl-0 p-xl-0 home-architecture-image-sec">
                         <div className="crow">
-                            <div className="col-3 col-lg-12">
+                            <div className="col-3 col-lg-10 home-first-vertical-img">
                                 <GalleryCard
                                     image={homePage[0].architecture_image?.url}
                                     text={homePage[0].architecture_title}
@@ -29,7 +29,7 @@ const VerticalGallery = (props) => {
 
                             <div className="col-2 col-lg-12"></div>
 
-                            <div className="col-6 col-lg-12">
+                            <div className="col-6 col-lg-10 home-second-vertical-img">
                                 <GalleryCard
                                     image={homePage[1].architecture_image?.url}
                                     text={homePage[1].architecture_title}
@@ -42,7 +42,7 @@ const VerticalGallery = (props) => {
                         <div className="crow">
                             <div className="col-2 col-lg-12"></div>
 
-                            <div className="col-4 col-lg-12">
+                            <div className="col-4 col-lg-12 home-third-vertical-img">
                                 <GalleryCard
                                     image={homePage[2].architecture_image?.url}
                                     text={homePage[2].architecture_title}
@@ -51,7 +51,7 @@ const VerticalGallery = (props) => {
 
                             <div className="col-3 col-lg-12"></div>
 
-                            <div className="col-3 col-lg-12">
+                            <div className="col-3 col-lg-10 home-four-vertical-img">
                                 <GalleryCard
                                     image={homePage[3].architecture_image?.url}
                                     text={homePage[3].architecture_title}
@@ -62,16 +62,18 @@ const VerticalGallery = (props) => {
 
                         <div className={`crow ${Styles.pb0}`}>
                             <div className="col-1 col-lg-12"></div>
-                            <div className="col-7 col-lg-12">
+                            <div className="col-7 col-lg-10 home-five-vertical-img">
                                 <GalleryCard
                                     image={homePage[4].architecture_image?.url}
                                     text={homePage[4].architecture_title}
                                 />
                             </div>
 
-                            <div className="col-1 col-lg-12"></div>
+                            <div className="col-1 col-lg-12">
+                                
+                            </div>
 
-                            <div className={`fadeinup col-3 col-lg-12 ${Styles.alignself}`}>
+                            <div className={`gall-main-btn fadeinup  ${Styles.alignself}` }>
                                 <Button
                                     link={"/vision"}
                                     styleClass="border-button right-align space-top "

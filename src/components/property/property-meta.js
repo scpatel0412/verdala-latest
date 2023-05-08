@@ -6,34 +6,34 @@ import * as Styles from "./property.module.scss";
 const PropertyMeta = (props) => (
     <>
         <div className={Styles.propertyMeta}>
-            <div className={Styles.propertyMetaGrid}>
-                <div className={Styles.valueField}>
+            <div className="grid-layout col-grid-4">
+                <div className="value-field">
                     <span><SecondaryText styleClass="inherit-color" text="Level"/></span>
                     <span><SecondaryText text={props.propertiesData.floorNumber}/></span>
                 </div>
                 
-                <div className={Styles.valueField}>
+                <div className="value-field">
                     <span><SecondaryText styleClass="inherit-color" text="Bedrooms"/></span>
                     <span><SecondaryText text={props.propertiesData.bedrooms}/></span>
                 </div>
 
-                <div className={Styles.valueField}>
+                <div className="value-field">
                     <span><SecondaryText styleClass="inherit-color" text="Price"/></span>
                     <span><SecondaryText text={"€" + props.propertiesData.price}/></span>
                 </div>
 
-                <div className={Styles.valueField}>
+                <div className="value-field">
                     <Button
                         text = "Enquiry"
                     />
                 </div>
                 
-                <div className={Styles.valueField}>
+                <div className="value-field">
                     <span><SecondaryText styleClass="inherit-color" text="Floor Area"/></span>
                     <span><SecondaryText text={props.propertiesData.floorArea}/></span>
                 </div>
 
-                <div className={Styles.valueField}>
+                <div className="value-field">
                     <span><SecondaryText styleClass="inherit-color" text="External Area"/></span>
                     <span><SecondaryText text={props.propertiesData.externalArea}/></span>
                 </div>
@@ -41,10 +41,8 @@ const PropertyMeta = (props) => (
 
             <div className="row">
                 <div className="col-1">
-                    <div className={Styles.valueField}>
-                        <span><SecondaryText styleClass="inherit-color pb-20" text="Sales Manager"/></span>
-                        <span><SecondaryText text="john davies"/></span>
-                        <span><SecondaryText text="+2764327081"/></span>
+                    <div className="value-field">
+                        <span><SecondaryText styleClass="inherit-color" text="Sales Manager"/></span>
                         <span><SecondaryText text="john@verdala.com"/></span>
                     </div>
                 </div>

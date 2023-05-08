@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Galleryimg } from "../images";
+import React, { useEffect, useState } from "react";
 import Resize from "../components/resize/index";
+import GalleryImages from "./Gallery/index";
 const Gallery = () => {
   const data = [
     {
@@ -33,18 +33,15 @@ const Gallery = () => {
   const onClickSelecte = (index) => {
     setSelected(index);
   };
-  // const element = document.getElementById("myDIV");
-  // const myFunction = () => {
-  //     const element = document.getElementById("myDiv");
-  //     element.scroll(50, 10);
-  //   }
+
   useEffect(() => {
     window.scrollTo({
       top: document.getElementById(selected).offsetTop,
       behavior: "smooth",
     });
-    
+
   }, [selected]);
+
   return (
     <>
       <Resize>
@@ -52,20 +49,21 @@ const Gallery = () => {
           <div className="gallery-left">
             <div className="gallery-title">
               {data.map((i, index) => {
-                
+
                 return (
                   <div key={index}>
-                    <h2
+                    <div className="small-title-text"
                       style={{
-                        textAlign: "center",
                         color:
                           index == selected
                             ? "rgba(123, 158, 107, 1)"
-                            : "rgba(123, 158, 107, 0.25)",
+                            : "rgba(123, 158, 107, 0)",
                         opacity: 1,
                       }}
-                      onClick={() => onClickSelecte(index)}
-                    >
+                    >media centre</div>
+                    <h2
+                      className={index == selected ? 'active-h2' : ""}
+                      onClick={() => onClickSelecte(index)}>
                       {i.title}
                     </h2>
                   </div>
@@ -79,29 +77,10 @@ const Gallery = () => {
             id={selected}
           >
             <div className="gall-right-inner">
-              {data.map((i, index) => {
-                return (
-                  <div key={index}>
-                    <span>
-                      <img
-                        src={i.image}
-                        onClick={() => onClickSelecte(index)}
-                        style={{ opacity: index == selected ? 1 : 0.25 }}
-                      />
-                    </span>
-                  </div>
-                );
-              })}
+              <GalleryImages data={data} selected={selected} onClickSelecte={onClickSelecte} />
             </div>
           </div>
         </div>
-        {/* <div
-                    id="myDiv"
-                    ref={divRef}
-                    style={{ height: "2550px", width: "2550px", overflow: "auto",background:'pink' }}
-                >
-                    <h1>dddd</h1>
-                </div> */}
       </Resize>
     </>
   );

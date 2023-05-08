@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Quote } from "../../../images";
-import videoImg from "../../../assets/images/test-images/video-preview.jpg";
+import HeroImg from "../../../assets/images/test-images/home-image.png"
 
 const Architecture = (props) => {
   const [visionPage, setVisionPage] = useState({});
@@ -41,8 +41,7 @@ const Architecture = (props) => {
             {/* <video controls>
               <source src={visionPage?.video?.url} type="video/mp4" />
             </video> */}
-
-            <img src={videoImg} alt="" />
+            <img src={HeroImg} alt="visionImg" />
           </div>
         </div>
       ) : null}

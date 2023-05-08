@@ -9,7 +9,7 @@ const CarouselCard = (props) => (
             </div>
 
             <div className="text-cont">
-                <div className="crow">
+                <div className="crow home-carousel-module-sec">
                     <div className="col-2">
                         <div className={Styles.icon}>
                             <img src={props.icon} alt="" />

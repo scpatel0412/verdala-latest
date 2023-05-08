@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import Container from "../../layouts/container";
 import SectionTitle from "../../partials/section-title";
 import SecondaryText from "../../typography/secondaryText";
@@ -6,8 +6,12 @@ import Carousel from "../carousel/carousel";
 import Button from "../../partials/buttons";
 import WalkDistance from '../../../assets/svgs/walkdistance.svg'
 import CarDistance from '../../../assets/svgs/cardistance.svg'
-
+import { ResizeContext } from '../../../components/resize';
 import * as Styles from "./page.module.scss"
+import Slider from "react-slick";
+import walkimg from "../../../images/walk.svg";
+import carimg from "../../../images/car.svg";
+import neighline from "../../../images/neigh-line.svg";
 
 const PageLocation = (props) => {
     const [isActive, setActive] = useState(0);
@@ -21,7 +25,42 @@ const PageLocation = (props) => {
     const ToggleClass = (index) => {
         setActive(index);
     };
+    const { width } = useContext(ResizeContext)
+    // console.log("width++",width);
 
+    var settings = {
+        speed: 5000,
+        // autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: "linear",
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+        // infinite: true,
+        arrows: false,
+        buttons: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ],
+      };
+      console.log("home ++",homePage);
     return (
         <>
             {homePage != undefined ? <>
@@ -56,7 +95,7 @@ const PageLocation = (props) => {
                         </section>
 
                         <section className={Styles.pb0}>
-                            <div className="crow">
+                            <div className="crow home-connectivity-sec">
                                 <div className="col-5 col-xl-12">
                                     <Container>
                                         <div className={`fadeinup locationtitle ${Styles.locationtitle}`}>
@@ -77,46 +116,46 @@ const PageLocation = (props) => {
                         {homePage?.connectivity?.connectivity_places.map((item,index) => {
                             return (
                                 <section className={Styles.pt80} key={index}>
-                                    <div className="crow">
-                                        <div className="col-5 col-lg-12 fadeinup">
-                                            <div className={`${Styles.mainattrcontainer} ${Styles.h100}`}>
+                                    <div className="crow home-connectivity-bottom">
+                                    <div className="col-5 col-lg-12 fadeinup">
+                                        <div className={`${Styles.mainattrcontainer} ${Styles.h100}`}>
 
-                                                <Container type={`extend-container ${Styles.h100} ${Styles[`activattr_${isActive}`]}`}>
-                                                    <div className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`} >
-                                                        <div className={Styles.connectattr}>
-                                                            <div className={`${Styles.attritem}  ${isActive === 0 ? Styles.attractive : ""}`} onClick={() => ToggleClass(0)}>
-                                                                <WalkDistance />
-                                                                <div className={Styles.attrdistance}>{item.place_reach_time_by_walk}</div>
-                                                            </div>
-                                                            <div className={`${Styles.attritem}  ${isActive === 1 ? Styles.attractive : ""}`} onClick={() => ToggleClass(1)}>
-                                                                <div className={Styles.attrdistance}>{item.place_reach_time_by_car}</div>
-                                                                <CarDistance />
-                                                            </div>
+                                            <Container type={`extend-container ${Styles.h100} ${Styles[`activattr_${isActive}`]}`}>
+                                                <div className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`} >
+                                                    <div className={Styles.connectattr}>
+                                                        <div className={`${Styles.attritem}  ${isActive === 0 ? Styles.attractive : ""}`} onClick={() => ToggleClass(0)}>
+                                                            <WalkDistance />
+                                                            <div className={Styles.attrdistance}>{item.place_reach_time_by_walk}</div>
                                                         </div>
-
+                                                        <div className={`${Styles.attritem}  ${isActive === 1 ? Styles.attractive : ""}`} onClick={() => ToggleClass(1)}>
+                                                            <div className={Styles.attrdistance}>{item.place_reach_time_by_car}</div>
+                                                            <CarDistance />
+                                                        </div>
                                                     </div>
-                                                </Container>
-                                            </div>
-                                        </div>
 
-                                        <div className="col-7 col-lg-12">
-
-                                            <div className={`crow align-bottom ${Styles.connectivity}`}>
-                                                <div className="col-8 col-sm-12 fadeinup">
-                                                    <img src={item.place_image.url} alt="" />
                                                 </div>
-                                                <div className="col-4 col-sm-12 fadeinup">
-                                                    <h3 className={`text-color ${Styles.schoolheading}`}>{item.place_title}</h3>
-                                                    <p>{item.place_description}</p>
-                                                </div>
-                                            </div>
-
-                                            <Button
-                                                styleClass="border-button"
-                                                text={homePage.button_link.title}
-                                            />
+                                            </Container>
                                         </div>
                                     </div>
+
+                                    <div className="col-7 col-lg-12">
+
+                                        <div className={`crow align-bottom ${Styles.connectivity}`}>
+                                            <div className="col-8 col-sm-12 fadeinup">
+                                                <img src={item.place_image.url} alt="" />
+                                            </div>
+                                            <div className="col-4 col-sm-12 fadeinup">
+                                                <h3 className={`text-color ${Styles.schoolheading}`}>{item.place_title}</h3>
+                                                <p>{item.place_description}</p>
+                                            </div>
+                                        </div>
+
+                                        <Button
+                                            styleClass="border-button"
+                                            text={homePage.button_link.title}
+                                        />
+                                    </div>
+                                </div>
                                 </section>
                             )
                         })}

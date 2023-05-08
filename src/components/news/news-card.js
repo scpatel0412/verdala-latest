@@ -6,6 +6,7 @@ import Button from "../partials/buttons";
 
 const NewsCard = (props) => (
     <>
+    <div className="col-3 col-xl-4 col-lg-6 col-sm-12">
         <Link to={"/news/" + props.node.slug}>
             <div className="">
                 <div className="image">
@@ -18,11 +19,13 @@ const NewsCard = (props) => (
 
                     <Button
                         styleClass = "text-button"
-                        text = "Read More"                
+                        text = "Read More" 
+                        classname= "readmore"               
                     />
                 </div>           
             </div>
         </Link>
+    </div>
     </>
 )
 

@@ -42,22 +42,23 @@ const HoverImage = (props) => {
                                             })}
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-12  order-md-0">
-                            <div className={Styles.lifedesc}>
-                                <div className={Styles.lifedescinner}>
-                                    <div className="space-top fadeinup">
-                                        <Button
+                                    <Button
                                             link={"/lifestyle-amenities"}
                                             styleClass="border-button"
                                             text={homePage.button_link?.title}
                                         />
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                        {/* <div className="col-12 col-md-12  order-md-0">
+                            <div className={Styles.lifedesc}>
+                                <div className={Styles.lifedescinner}>
+                                    <div className="space-top fadeinup">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
                 </section>
             </> : null}

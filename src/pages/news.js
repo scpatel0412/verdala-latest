@@ -62,18 +62,25 @@ const News = ({ pageTitle, children }) => {
         </Container>
 
         <Container>
-            <div>
-                <h3 className="text-color">{data.allWpPost.edges.length} posts found</h3>
-            </div>
+            <div className="news-section">
+                <div className="news-filter">
+                    {/* <h3 className="text-color">{data.allWpPost.edges.length} posts found</h3> */}
+                    <select>
+                        <option>filter</option>
+                        <option>filter 1</option>
+                        <option>filter 2</option>
+                    </select>
+                </div>
 
-            <div className="grid-layout col-grid-4 remove-gap">
-                {data.allWpPost.edges.map( (post) => {
-                    return(
-                        <NewsCard
-                            {...post}
-                        />
-                    )
-                } )}
+                <div className="crow news">
+                    {data.allWpPost.edges.map( (post) => {
+                        return(
+                            <NewsCard
+                                {...post}
+                            />
+                        )
+                    } )}
+                </div>
             </div>
         </Container>
 

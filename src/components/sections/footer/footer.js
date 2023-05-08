@@ -36,7 +36,7 @@ const Footer = (props) => (
         </Container>
     </section>
 
-    <section className="dark-section red-top-space">
+    <section className="dark-section red-top-space foote-bottom">
         <Container>
             <div className="footer-nav">
                 <nav>
@@ -65,8 +65,8 @@ const Footer = (props) => (
             </div>
 
             <section>
-                <div className="crow align-center justify-center space-center text-center">
-                    <div className="col-3 col-md-12">
+                <div className="footer-menu-merge crow align-center justify-center space-center text-center">
+                    <div className="col-3 col-md-12 col-lg-12">
                         <div>
                             <span className="secondary-text inherit-color">+443 3637 3759</span>
                             
@@ -76,14 +76,14 @@ const Footer = (props) => (
                         </div>
                     </div>
 
-                    <div className="col-6 col-md-12">
+                    <div className="col-6 col-md-12 col-lg-12 footer-m-menu">
                         <div><div className="lg-text"><Link>Vision</Link></div></div>
                         <div><div className="lg-text"><Link>The Hotel</Link></div></div>
                         <div><div className="lg-text"><Link>Serviced Apartments</Link></div></div>
                         <div><div className="lg-text"><Link>AX Priviledge</Link></div></div>
                     </div>
 
-                    <div className="col-3 col-md-12">
+                    <div className="col-3 col-md-12 col-lg-12">
                         <div>
                             <span className="secondary-text inherit-color">email@verdala.com</span>
                             <div className={Styles.arrow}>
@@ -111,7 +111,7 @@ const Footer = (props) => (
                             <span className="secondary-text inherit-color">Privacy Policy</span>
                             <span className="secondary-text inherit-color">Terms & Conditions</span>
                     </div>
-                    <div className="text-right">
+                    <div className="copy-right-text text-right">
                         <span>©2022 All rights reserved.</span>
                     </div>
                     </div>

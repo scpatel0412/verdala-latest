@@ -7,7 +7,7 @@ const SectionTitle = ( props ) => {
 return(
     <>
     <div>
-        <div className="crow">
+        <div className="crow home-count">
             <div className={props.number=="01" ? "col-3 col-md-6 col-lg-12 col-xl-6 fadeinup": "col-5 col-xl-12 fadeinup"}>
                 <Container>
                 <div className={Styles.sectitle}>

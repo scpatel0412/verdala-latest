@@ -100,6 +100,9 @@ const PageGeneric = (props) => {
                       }
                     )}
                   </ul>
+                   <div className="stickybtn fadeinup">
+                    <Button styleClass="border-button" link={'/the-residences'} text={'all residences'} />
+                  </div>
                 </div>
               </div>
             </div>

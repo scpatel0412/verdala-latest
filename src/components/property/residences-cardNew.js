@@ -23,7 +23,8 @@ const ResidencesCard = (props) => {
         setFeatureImg(res?.data.featured_media);
       });
   }, [props])
-
+  console.log("residencesCardata", Math.round(residencesCardata?.external_area) +
+    Math.round(residencesCardata?.internal_area));
   const spaces = Math.round(residencesCardata?.external_area) +
     Math.round(residencesCardata?.internal_area)
   return (
