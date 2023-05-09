@@ -31,6 +31,14 @@ module.exports = {
         name: "Contact",
         link: "/contact",
       },
+      {
+        name: "Gallery",
+        link: "/gallery",
+      },
+      {
+        name: "News",
+        link: "/news",
+      },
     ],
   },
   plugins: [
