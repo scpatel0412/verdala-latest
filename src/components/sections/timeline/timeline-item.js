@@ -48,9 +48,11 @@ const ImageSection = (props) => (
     <div className={"col-3 " + (props.odd ? "order-1" : "order-3")}>
       <div className="merge-image-count">
         <div className="image-cont">
-          <div className="image-top">
-            <img className="bg-img" src={props?.image?.image_1.url} alt="" />
-          </div>
+          {props?.image?.image_1?.url ? (
+            <div className="image-top">
+              <img className="bg-img" src={props?.image?.image_1.url} alt="" />
+            </div>
+          ) : null}
           {props?.image?.image_2?.url ? (
             <div className="image-bottom">
               <img className="bg-img" src={props?.image?.image_2?.url} alt="" />{" "}

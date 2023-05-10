@@ -5,5 +5,8 @@ import Quote from './quote.png'
 import lineimg from './line-mob.png'
 import leaf from './leaf.svg'
 import arrow from './arrow.svg'
+import gallicon from './gall-icon.svg'
+import neighmapimg from './neigh-map-img.png'
 
-export { Image1, Image2, Download, Quote , lineimg , leaf , arrow}
+
+export { Image1, Image2, Download, Quote , lineimg , leaf , arrow , gallicon , neighmapimg}

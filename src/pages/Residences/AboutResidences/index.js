@@ -43,13 +43,18 @@ const AboutResidences = (props) => {
                         <div className="icon-img">
                           <img src={i?.icon}></img>
                         </div>
-                        <div className="icon-title">{i?.title}</div>
+
+                        <div
+                          className="icon-title"
+                          style={{ maxWidth: "150px" }}
+                        >
+                          {i?.title.split(/\r?\n/)}
+                        </div>
                         <div className="icon-descrp">{i?.description}</div>
                       </div>
                     </>
                   );
                 })}
-                
               </div>
               <button className="btn">check availability</button>
             </div>

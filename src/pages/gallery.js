@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Resize from "../components/resize/index";
 import GalleryImages from "./Gallery/index";
+
 const Gallery = () => {
   const data = [
     {

@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import walkimg from "../../../images/walk.svg";
 import carimg from "../../../images/car.svg";
 import neighline from "../../../images/neigh-line.svg";
+import neighmapimg from "../../../images/neigh-map-img.png";
+
 
 function Connectivity(props) {
   useEffect(() => {
@@ -55,6 +57,7 @@ function Connectivity(props) {
               <p className="count-title">{props.data.id}</p>
             </div>
             <div className="connectivity-location-sec">
+               {/* <div className="map-img"><img src={neighmapimg}></img></div> */}
               <div className="connectivity-location-inner">
                 <div className="connectivity-subtitle">
                   {props.data?.data.sub_title}

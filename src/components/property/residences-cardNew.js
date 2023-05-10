@@ -7,7 +7,7 @@ import ResidencesCardImg from "./residences-cardImg";
 import LinkedProjectCard from "./linkedProject-card";
 const ResidencesCard = (props) => {
   const [residencesCardata, setResidencesCardata] = useState({});
-  const [featureImg, setFeatureImg] = useState()
+  const [featureImg, setFeatureImg] = useState();
   useEffect(() => {
     axios
       .get(
@@ -18,15 +18,17 @@ const ResidencesCard = (props) => {
       });
   }, [props]);
   useEffect(() => {
-    axios.get(`https://verdalastage.bison-studio.com/wp-json/wp/v2/properties/${props.Id}`)
+    axios
+      .get(
+        `https://verdalastage.bison-studio.com/wp-json/wp/v2/properties/${props.Id}`
+      )
       .then((res) => {
         setFeatureImg(res?.data.featured_media);
       });
-  }, [props])
-  console.log("residencesCardata", Math.round(residencesCardata?.external_area) +
-    Math.round(residencesCardata?.internal_area));
-  const spaces = Math.round(residencesCardata?.external_area) +
-    Math.round(residencesCardata?.internal_area)
+  }, [props]);
+  const spaces =
+    Math.round(residencesCardata?.external_area) +
+    Math.round(residencesCardata?.internal_area);
   return (
     <>
       <div className={Styles.residenceCard} id={props.id}>
@@ -52,7 +54,10 @@ const ResidencesCard = (props) => {
                   {residencesCardata?.linked_project?.map((i, index) => {
                     return (
                       <>
-                        <div className="col-4 col-sm-12 property-value-title" key={index}>
+                        <div
+                          className="col-4 col-sm-12 property-value-title"
+                          key={index}
+                        >
                           <SecondaryText
                             text={i?.post_title?.split(" ")[1]}
                             styleClass={Styles.residencedesc}
@@ -64,7 +69,9 @@ const ResidencesCard = (props) => {
                           </span>
                         </div>
                         <div className="col-6 col-sm-12 property-value-image">
-                          <LinkedProjectCard data={residencesCardata.linked_project} />
+                          <LinkedProjectCard
+                            data={residencesCardata.linked_project}
+                          />
                         </div>
                       </>
                     );

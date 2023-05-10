@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Quote } from "../../../images";
-import HeroImg from "../../../assets/images/test-images/home-image.png"
+import HeroImg from "../../../assets/images/test-images/home-image.png";
 
 const Architecture = (props) => {
   const [visionPage, setVisionPage] = useState({});
@@ -22,7 +22,7 @@ const Architecture = (props) => {
               <img src={Quote} />
             </div>
             <div className="architopHead">
-              <h2>{visionPage?.description}</h2>
+              <h2>{visionPage?.title}</h2>
               <div className="archi-quot-right">
                 <img src={Quote} />
               </div>
@@ -34,7 +34,10 @@ const Architecture = (props) => {
               </div>
             </div>
             <div className="archi-description">
-              <p></p>
+              <p>{visionPage?.description?.split("The Verdala")[0]}</p>
+              <p>{`The Verdala ${
+                visionPage?.description?.split("The Verdala")[1]
+              }`}</p>
             </div>
           </div>
           <div className="architecture-right">

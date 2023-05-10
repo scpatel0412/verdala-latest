@@ -5,7 +5,7 @@ const JourneySection = (props) => {
   const [visionPage, setVisionPage] = useState({});
   useEffect(() => {
     if (typeof props.data !== "undefined") {
-      setVisionPage(props.data.timeline_section);
+      setVisionPage(props.data.the_verdala_legacy?.timeline_section);
     }
   }, [props]);
 

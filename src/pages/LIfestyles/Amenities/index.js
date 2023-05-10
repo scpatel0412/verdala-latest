@@ -114,9 +114,9 @@ function Amenities(props) {
                     </div>
                     <h3
                       style={{
-                        wordBreak: "break-word",
+                        // wordBreak: "break-word",
                         maxWidth: "200px",
-                        whiteSpace: "break-space",
+                        // whiteSpace: "break-space",
                       }}
                     >
                       <Link to="/lifestyle-amenities">
