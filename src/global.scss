@@ -2046,13 +2046,13 @@ img {
       letter-spacing: -0.04em;
       text-transform: uppercase;
       color: $mainGreen;
-      opacity: 0.25;
+     
       font-size: 6rem;
       text-align: right !important;
       width: calc(100% - 20%);
       text-align: center;
       color: rgba(123, 158, 107, 1);
-      opacity: 1;
+      opacity: 1 !important;
       cursor: pointer;
       &:after{
         content: "";
@@ -2091,7 +2091,7 @@ img {
       letter-spacing: -0.04em;
       text-transform: uppercase;
       color: $mainGreen;
-      opacity: 0.25;
+      opacity: 0.25!important;
       font-size: 6rem;
       text-align: right !important;
       width: calc(100% - 20%);
@@ -2375,7 +2375,7 @@ section {
 .life-style-slider {
   padding: 110px 0 165px 0px;
   @media screen and (max-width: $xxxl__screen) {
-    padding: 110px 0 142px 90px;
+    padding: 110px 0 142px 0px;
   }
   @media screen and (max-width: $sm__screen) {
     padding: 32px 45px 144px 0px;
@@ -4475,14 +4475,13 @@ h2.innerpage_h2 {
     }
     .churches-slider {
       padding-bottom: 85px;
-      max-width: 70%;
       margin-left: auto;
-      @media screen and (max-width: $xxxl__screen) {
-        max-width: 85%;
-      }
-      @media screen and (max-width: $lg__screen) {
-        max-width: 100%;
-      }
+      // @media screen and (max-width: $xxxl__screen) {
+      //   max-width: 85%;
+      // }
+      // @media screen and (max-width: $lg__screen) {
+      //   max-width: 100%;
+      // }
       .slick-slider {
         @media screen and (max-width: $sm__screen) {
           padding-right: 30px;

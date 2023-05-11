@@ -5,6 +5,7 @@ import Container from "../components/layouts/container";
 import SecondaryText from "../components/typography/secondaryText";
 import ContactForm from "../components/sections/forms/contactForms";
 import ButtonArrow from "../assets/svgs/button-arrow.svg";
+import Footer from "../components/sections/footer/footer";
 // import { ContactPageData } from "../queries/contact-queries";
 import axios from "axios";
 // import MyHeader from "../components/header/header";
@@ -142,6 +143,7 @@ const Contact = ({ data }) => {
           </div>
         </Container>
       </section>
+      <Footer />
     </>
   );
 };

@@ -28,14 +28,14 @@ const PageLocation = (props) => {
   const { width } = useContext(ResizeContext);
 
   var settings = {
-    speed: 5000,
+    speed: 1000,
     // autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
     swipeToSlide: true,
-    // infinite: true,
+    infinite: true,
     arrows: false,
     buttons: false,
     responsive: [
@@ -172,83 +172,85 @@ const PageLocation = (props) => {
                 </>
               ) : (
                 <>
-                  {homePage?.connectivity?.connectivity_places.map(
-                    (item, index) => {
-                      return (
-                        <section className={Styles.pt80} key={index}>
-                          <div className="crow home-connectivity-bottom">
-                            <div className="col-5 col-lg-12 fadeinup">
-                              <div
-                                className={`${Styles.mainattrcontainer} ${Styles.h100}`}
-                              >
-                                <Container
-                                  type={`extend-container ${Styles.h100} ${
-                                    Styles[`activattr_${isActive}`]
-                                  }`}
+                  <Slider {...settings}>
+                    {homePage?.connectivity?.connectivity_places?.map(
+                      (item, index) => {
+                        return (
+                          <section className={Styles.pt80} key={index}>
+                            <div className="crow home-connectivity-bottom">
+                              <div className="col-5 col-lg-12 fadeinup">
+                                <div
+                                  className={`${Styles.mainattrcontainer} ${Styles.h100}`}
                                 >
-                                  <div
-                                    className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
+                                  <Container
+                                    type={`extend-container ${Styles.h100} ${
+                                      Styles[`activattr_${isActive}`]
+                                    }`}
                                   >
-                                    <div className={Styles.connectattr}>
-                                      <div
-                                        className={`${Styles.attritem}  ${
-                                          isActive === 0
-                                            ? Styles.attractive
-                                            : ""
-                                        }`}
-                                        onClick={() => ToggleClass(0)}
-                                      >
-                                        <WalkDistance />
-                                        <div className={Styles.attrdistance}>
-                                          {item.place_reach_time_by_walk}
+                                    <div
+                                      className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
+                                    >
+                                      <div className={Styles.connectattr}>
+                                        <div
+                                          className={`${Styles.attritem}  ${
+                                            isActive === 0
+                                              ? Styles.attractive
+                                              : ""
+                                          }`}
+                                          onClick={() => ToggleClass(0)}
+                                        >
+                                          <WalkDistance />
+                                          <div className={Styles.attrdistance}>
+                                            {item?.place_reach_time_by_walk}
+                                          </div>
                                         </div>
-                                      </div>
-                                      <div
-                                        className={`${Styles.attritem}  ${
-                                          isActive === 1
-                                            ? Styles.attractive
-                                            : ""
-                                        }`}
-                                        onClick={() => ToggleClass(1)}
-                                      >
-                                        <div className={Styles.attrdistance}>
-                                          {item.place_reach_time_by_car}
+                                        <div
+                                          className={`${Styles.attritem}  ${
+                                            isActive === 1
+                                              ? Styles.attractive
+                                              : ""
+                                          }`}
+                                          onClick={() => ToggleClass(1)}
+                                        >
+                                          <div className={Styles.attrdistance}>
+                                            {item?.place_reach_time_by_car}
+                                          </div>
+                                          <CarDistance />
                                         </div>
-                                        <CarDistance />
                                       </div>
                                     </div>
+                                  </Container>
+                                </div>
+                              </div>
+
+                              <div className="col-7 col-lg-12">
+                                <div
+                                  className={`crow align-bottom ${Styles.connectivity}`}
+                                >
+                                  <div className="col-8 col-sm-12 fadeinup">
+                                    <img src={item.place_image.url} alt="" />
                                   </div>
-                                </Container>
+                                  <div className="col-4 col-sm-12 fadeinup">
+                                    <h3
+                                      className={`text-color ${Styles.schoolheading}`}
+                                    >
+                                      {item.place_title}
+                                    </h3>
+                                    <p>{item.place_description}</p>
+                                  </div>
+                                </div>
+
+                                <Button
+                                  styleClass="border-button"
+                                  text={homePage?.button_link?.title}
+                                />
                               </div>
                             </div>
-
-                            <div className="col-7 col-lg-12">
-                              <div
-                                className={`crow align-bottom ${Styles.connectivity}`}
-                              >
-                                <div className="col-8 col-sm-12 fadeinup">
-                                  <img src={item.place_image.url} alt="" />
-                                </div>
-                                <div className="col-4 col-sm-12 fadeinup">
-                                  <h3
-                                    className={`text-color ${Styles.schoolheading}`}
-                                  >
-                                    {item.place_title}
-                                  </h3>
-                                  <p>{item.place_description}</p>
-                                </div>
-                              </div>
-
-                              <Button
-                                styleClass="border-button"
-                                text={homePage.button_link.title}
-                              />
-                            </div>
-                          </div>
-                        </section>
-                      );
-                    }
-                  )}
+                          </section>
+                        );
+                      }
+                    )}
+                  </Slider>
                 </>
               )}
             </Container>

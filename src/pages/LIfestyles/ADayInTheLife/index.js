@@ -21,7 +21,7 @@ function ADayInTheLIfe(props) {
           />
         </div>
         <div className="dawn-content">
-          s
+          
           <div className="dawn-content-inner">
             <h2>{lifestylePage.a_day_in_the_life?.description}</h2>
             <p className="dawn-content-p-mob">
