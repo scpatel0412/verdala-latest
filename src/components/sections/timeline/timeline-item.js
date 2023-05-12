@@ -32,7 +32,7 @@ const TextSection = (props) => {
   return (
     <>
       <div className={"col-3 " + (props.odd ? "order-3" : "order-1")}>
-        <div className="timeline-content">
+        <div className="timeline-content anim-scroll-up">
           {props.title != null && <h3>{props.title}</h3>}
           {typeof classNames !== "undefined" && classNames.length > 0 ? (
             <p className={`${classNames}`}>{props.text}</p>
@@ -49,12 +49,12 @@ const ImageSection = (props) => (
       <div className="merge-image-count">
         <div className="image-cont">
           {props?.image?.image_1?.url ? (
-            <div className="image-top">
+            <div className="image-top anim-parallax">
               <img className="bg-img" src={props?.image?.image_1.url} alt="" />
             </div>
           ) : null}
           {props?.image?.image_2?.url ? (
-            <div className="image-bottom">
+            <div className="image-bottom anim-parallax">
               <img className="bg-img" src={props?.image?.image_2?.url} alt="" />{" "}
             </div>
           ) : null}

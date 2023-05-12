@@ -49,7 +49,7 @@ const HoverImage = (props) => {
     <>
       {width < 699 ?
         <>
-          <p className="fadeinup">{homePage.description}</p>
+          <p className="anim-scroll-up">{homePage.description}</p>
           <Slider {...settings}>
             {homePage.amenities?.map((i, index) => {
               return (
@@ -78,28 +78,28 @@ const HoverImage = (props) => {
                       <img
                         src={homePage.amenities[over.index].image}
                         alt=""
-                        className="fadeinup"
+                        className="anim-scroll-up"
                       />
                     ) : null}
                   </div>
                 </div>
 
-                <div className="col-7 col-md-12">
+                <div className="col-7 col-md-12 anim-parallax">
                   <div className={Styles.lifedesc}>
                     <div className={Styles.lifedescinner}>
                       <h2
-                        className={`fadeinup ${Styles.lifetitle}`}
+                        className={`anim-scroll-up ${Styles.lifetitle}`}
                         data-splitting
                       >
                         {homePage.title}
                       </h2>
-                      <p className="fadeinup">{homePage.description}</p>
+                      <p className="anim-scroll-up">{homePage.description}</p>
 
                       <div className={Styles.hoverList}>
                         <ul>
                           {homePage.amenities?.map((i, index) => {
                             return (
-                              <li className="fadeinup" key={index}>
+                              <li className="anim-scroll-up" key={index}>
                                 <a
                                   onMouseOver={() =>
                                     setOver({ index: index, display: true })

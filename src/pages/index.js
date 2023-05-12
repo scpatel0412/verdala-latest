@@ -8,20 +8,23 @@ import PageImageCols from "../components/sections/page/page-image-columns";
 import PageIntro from "../components/sections/page/page-intro";
 import PageLocation from "../components/sections/page/page-location";
 import PageVGallery from "../components/sections/page/page-vertical-gallery";
-import Splitting from "splitting";
-import ScrollOut from "scroll-out";
+// import Splitting from "splitting";
+// import ScrollOut from "scroll-out";
 import { allHome } from "../utils/api";
 import Resize from "../components/resize/index";
+import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis';
+import Loading from "../components/loading/loading";
+
 const Index = () => {
-  Splitting({
-    target: document.querySelector(["data-splitting"]),
-    by: "chars",
-    whitespace: true,
-  });
-  ScrollOut({
-    targets: "[data-splitting],.fadeinup",
-    once: true,
-  });
+//   Splitting({
+//     target: document.querySelector(["data-splitting"]),
+//     by: "chars",
+//     whitespace: true,
+//   });
+//   ScrollOut({
+//     targets: "[data-splitting],.anim-scroll-up",
+//     once: true,
+//   });
 
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -60,8 +63,11 @@ const Index = () => {
   return (
     <>
       <Resize>
+	  	
+		<Loading />
+
         {data != undefined ? (
-          <>
+			<>
             <div className="home-banner-sec">
               <HomeHero data={data} />
             </div>
@@ -86,7 +92,7 @@ const Index = () => {
             <div className="footer">
               <Footer />
             </div>
-          </>
+			</>
         ) : null}
       </Resize>
     </>

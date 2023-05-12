@@ -56,16 +56,16 @@ const PageGeneric = (props) => {
       <section className={` ${Pagegeneric.secgeneric1}`}>
         <div id={"typeofresidence"} className="typeresidence-sec">
           <div className="type-col-sec">
-            <div className="count-col">
+            <div className="count-col anim-scroll-up">
               <span className="count-number">03</span>
               <p className="count-title">
                 {homePage?.sub_title}
               </p>
             </div>
-            <h2 className="innerpage_h2">
+            <h2 className="innerpage_h2 anim-scroll-up">
               {homePage?.title}
             </h2>
-            <p>{homePage?.description}</p>
+            <p className="anim-scroll-up">{homePage?.description}</p>
           </div>
           <div className="crow sticky-tabing-sec">
             <div
@@ -77,13 +77,13 @@ const PageGeneric = (props) => {
                 style={{ top: headerheight1 ? headerheight1.offsetHeight : "" }}
               >
                 <div className="sticky-inner">
-                  <ul>
+                  <ul className="anim-scroll-up">
                     {homePage?.property_type?.map(
                       (item, index2) => {
                         return (
                           <div key={index2}>
                             <li
-                              className={`fadeinup ${currentPropertyName === index2 && "active"
+                              className={`anim-scroll-up ${currentPropertyName === index2 && "active"
                                 }`}
                             >
                               <a
@@ -100,7 +100,7 @@ const PageGeneric = (props) => {
                       }
                     )}
                   </ul>
-                   <div className="stickybtn fadeinup">
+                   <div className="stickybtn anim-scroll-up">
                     <Button styleClass="border-button" link={'/the-residences'} text={'all residences'} />
                   </div>
                 </div>

@@ -11,6 +11,55 @@
 @import "splitting/dist/splitting.css";
 @import "splitting/dist/splitting-cells.css";
 
+// custom css
+.anim-scroll-image {
+  overflow: hidden;
+}
+
+.bg-img {
+  height: 100%;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.loading-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99999;
+  background: #7B9E6B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+   pointer-events: none;
+} 
+
+// END custom css
+
 html {
   overflow-x: hidden;
 }
@@ -4682,6 +4731,15 @@ h2.innerpage_h2 {
   padding-bottom: 0 !important;
 }
 .home-banner-sec{
+
+  position: relative;
+
+  .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   .hero-module--textCont--4c429{
     height: 35px;
     @media screen and (max-width:$xxl__screen){
@@ -4837,6 +4895,7 @@ h2.innerpage_h2 {
     }
     &:before{
       top: 0;
+      z-index: 1;
     }
   }
 

@@ -37,7 +37,7 @@ const AboutResidences = (props) => {
                   return (
                     <>
                       <div
-                        className="lifestyle-icon-inner fadeinup"
+                        className="lifestyle-icon-inner anim-scroll-up"
                         key={index}
                       >
                         <div className="icon-img">

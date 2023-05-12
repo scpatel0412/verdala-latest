@@ -96,7 +96,7 @@ const Team = (props) => {
                                                                     return (
                                                                         <div key={index2}>
                                                                             <li
-                                                                                className={`fadeinup ${currentTeamName === index2 && "active"}`}
+                                                                                className={`anim-scroll-up ${currentTeamName === index2 && "active"}`}
                                                                             >
                                                                                 <a
                                                                                     className={`#team-${index2}`}

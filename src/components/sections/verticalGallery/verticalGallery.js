@@ -73,7 +73,7 @@ const VerticalGallery = (props) => {
                                 
                             </div>
 
-                            <div className={`gall-main-btn fadeinup  ${Styles.alignself}` }>
+                            <div className={`gall-main-btn anim-scroll-up  ${Styles.alignself}` }>
                                 <Button
                                     link={"/vision"}
                                     styleClass="border-button right-align space-top "

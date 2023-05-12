@@ -77,7 +77,7 @@ const PageLocation = (props) => {
                   <div className="col-5 col-xl-12">
                     <Container>
                       <div
-                        className={`fadeinup locationtitle ${Styles.locationtitle}`}
+                        className={`anim-scroll-up locationtitle ${Styles.locationtitle}`}
                       >
                         <SecondaryText
                           styleClass="main-title locationline"
@@ -102,7 +102,7 @@ const PageLocation = (props) => {
                   <div className="col-5 col-xl-12">
                     <Container>
                       <div
-                        className={`fadeinup locationtitle ${Styles.locationtitle}`}
+                        className={`anim-scroll-up locationtitle ${Styles.locationtitle}`}
                       >
                         <SecondaryText
                           styleClass="main-title locationline"
@@ -178,7 +178,7 @@ const PageLocation = (props) => {
                         return (
                           <section className={Styles.pt80} key={index}>
                             <div className="crow home-connectivity-bottom">
-                              <div className="col-5 col-lg-12 fadeinup">
+                              <div className="col-5 col-lg-12 anim-scroll-up">
                                 <div
                                   className={`${Styles.mainattrcontainer} ${Styles.h100}`}
                                 >
@@ -227,10 +227,10 @@ const PageLocation = (props) => {
                                 <div
                                   className={`crow align-bottom ${Styles.connectivity}`}
                                 >
-                                  <div className="col-8 col-sm-12 fadeinup">
+                                  <div className="col-8 col-sm-12 anim-scroll-up">
                                     <img src={item.place_image.url} alt="" />
                                   </div>
-                                  <div className="col-4 col-sm-12 fadeinup">
+                                  <div className="col-4 col-sm-12 anim-scroll-up">
                                     <h3
                                       className={`text-color ${Styles.schoolheading}`}
                                     >

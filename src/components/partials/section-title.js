@@ -4,7 +4,7 @@ import SecondaryText from "../typography/secondaryText";
 import * as Styles from "./section.module.scss";
 
 const SectionTitle = (props) => {
-  console.log(props, "------------------>>>>>>>>>>>>>>");
+//   console.log(props, "------------------>>>>>>>>>>>>>>");
   return (
     <>
       <div>
@@ -12,8 +12,8 @@ const SectionTitle = (props) => {
           <div
             className={
               props.number == "01"
-                ? "col-3 col-md-6 col-lg-12 col-xl-6 fadeinup"
-                : "col-5 col-xl-12 fadeinup"
+                ? "col-3 col-md-6 col-lg-12 col-xl-6 anim-scroll-up"
+                : "col-5 col-xl-12 anim-scroll-up"
             }
           >
             <Container>
@@ -31,8 +31,8 @@ const SectionTitle = (props) => {
           <div
             className={
               props.number == "01"
-                ? "col-5 col-lg-12 col-xl-6 fadeinup"
-                : "col-7 col-xl-12 fadeinup"
+                ? "col-5 col-lg-12 col-xl-6 anim-scroll-up"
+                : "col-7 col-xl-12 anim-scroll-up"
             }
           >
             {props.title == null ? (
@@ -43,14 +43,14 @@ const SectionTitle = (props) => {
               <>
                 <h2
                   className={`${Styles.secmaintitle} ${
-                    props.customclass == "bquote" ? Styles.bquote : ""
+                    props.customclass == "bquote" ? Styles.bquote + " anim-scroll-up " : " anim-scroll-up "
                   }`}
                   data-splitting
                 >
                   {props.title}
                 </h2>
                 {props.number == "05" && (
-                  <p className={`fadeinup ${Styles.architect}`}>
+                  <p className={`anim-scroll-up ${Styles.architect}`}>
                     {props.architect_name}
                     <span>{props.architect_designation}</span>
                   </p>
@@ -59,7 +59,7 @@ const SectionTitle = (props) => {
             )}
           </div>
 
-          <div className="col-4 col-xl-12 fadeinup">
+          <div className="col-4 col-xl-12 anim-scroll-up">
             {props.title == null ? (
               <></>
             ) : (

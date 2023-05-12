@@ -10,7 +10,7 @@ const PageHero = (props) => {
         className={
           props.redHeight
             ? heroStyles.heroContainer
-            : heroStyles.heroContainer + " " + heroStyles.heroContainerRed
+            : heroStyles.heroContainer + " anim-banner " + heroStyles.heroContainerRed
         }
       >
         <div className={heroStyles.heroImage}>
@@ -22,7 +22,7 @@ const PageHero = (props) => {
         </div>
 
         <div className={heroStyles.pageTextCont}>
-          <div className="title-cont text-center">
+          <div className={"title-cont text-center " + heroStyles.titleCont}>
             <h1 className={heroStyles.pageMainTitle}>
               {props.headerData?.header_title}
             </h1>

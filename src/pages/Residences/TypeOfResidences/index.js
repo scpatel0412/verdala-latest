@@ -91,7 +91,7 @@ const TypeOfResidences = (props) => {
                         return (
                           <div key={index2}>
                             <li
-                              className={`fadeinup ${
+                              className={`anim-scroll-up ${
                                 currentPropertyName === index2 && "active"
                               }`}
                             >

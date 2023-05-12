@@ -140,7 +140,7 @@ const Vision = ({ pageTitle, children }) => {
                 <div className="then-now-inner-left">
                   <div className="count-col">
                     <span className="count-number">03</span>
-                    <p className="count-title">
+                    <p className="count-title anim-scroll-up">
                       {data?.then_and_now?.sub_title}
                     </p>
                   </div>
@@ -151,15 +151,15 @@ const Vision = ({ pageTitle, children }) => {
                     />{" "}
                   </div>
                 </div>
-                <div className="then-now-inner-middle">
+                <div className="then-now-inner-middle anim-scroll-up">
                   <h1>{data?.then_and_now?.title}</h1>
                 </div>
-                <div className="then-now-inner-right">
+                <div className="then-now-inner-right anim-scroll-up">
                   <p>{`${data?.then_and_now?.description.split("world")[0]
                     } world`}</p>
                   <p>{data?.then_and_now?.description.split("world")[1]}</p>
                 </div>
-                <div className="then-now-left-image-mobile">
+                <div className="then-now-left-image-mobile anim-scroll-up">
                   <img
                     src={data?.then_and_now?.image?.url}
                     alt={data?.then_and_now?.image?.url}

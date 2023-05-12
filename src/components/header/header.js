@@ -13,7 +13,7 @@ import Container from "../layouts/container";
 
 class Header extends Component {
   constructor(props) {
-    console.log(props, "------------------props");
+    // console.log(props, "------------------props");
     super(props);
     this.state = {
       active: false,
@@ -41,13 +41,14 @@ class Header extends Component {
       .set(this.transitionCover, { y: directionFrom })
       .to(this.transitionCover, {
         y: "0%",
-        ease: "power1.easeInOut",
+        ease: "Expo.easeIn",
         duration: seconds / 2,
       })
       .to(this.transitionCover, {
         y: directionTo,
-        ease: "power1.easeIn",
+        ease: "Expo.easeOut",
         duration: seconds / 2,
+        delay: 0.5
       });
   };
 
@@ -108,7 +109,7 @@ class Header extends Component {
   componentDidMount() {
     // console.log(this.props.data);
 
-    console.log(this.transitionCover);
+    // console.log(this.transitionCover);
   }
 
   render() {
@@ -178,7 +179,7 @@ class Header extends Component {
                                 <TransitionLink
                                   to={item.link}
                                   exit={{
-                                    length: 1,
+                                    length: 1.5,
                                     trigger: ({ exit }) =>
                                       this.verticalAnimation(exit, "up"),
                                     state: { test: "exit state" },
@@ -242,7 +243,7 @@ class Header extends Component {
             ref={(n) => (this.transitionCover = n)}
             style={{
               position: "fixed",
-              background: "#f8f8f1",
+              background: "#7B9E6B",
               top: 0,
               left: 0,
               width: "100vw",

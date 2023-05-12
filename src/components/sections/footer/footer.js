@@ -20,7 +20,7 @@ const Footer = (props) => (
     >
         <Container type={`extend-container`}
         >
-            <div className={`fadeinup ${Styles.locationtitle}`}>
+            <div className={`anim-scroll-up ${Styles.locationtitle}`}>
             <div className="crow">
                 <div className="col-4 col-xl-12">
                     <h2 className={Styles.title} data-splitting>Interested in Verdala?</h2>
@@ -125,7 +125,7 @@ const Footer = (props) => (
 const FooterCard = (props) => (
     <>
     
-        <div className={`fadeinup ${Styles.footerCard}`}>
+        <div className={`anim-scroll-up ${Styles.footerCard}`}>
             <div className={Styles.carddesc}>
                 <div className={Styles.icon}>
                     <img src={Call} alt="" />
@@ -142,7 +142,7 @@ const FooterCard = (props) => (
         </div>
     
 
-    <div className={`fadeinup ${Styles.footerCard}`}>
+    <div className={`anim-scroll-up ${Styles.footerCard}`}>
         <div className={Styles.carddesc}>
             <div className={Styles.icon}>
                 <img src={Home} alt="" />
@@ -158,7 +158,7 @@ const FooterCard = (props) => (
     </div>
     
 
-        <div className={`fadeinup ${Styles.footerCard}`}>
+        <div className={`anim-scroll-up ${Styles.footerCard}`}>
             <div className={Styles.carddesc}>
                 <div className={Styles.icon}>
                     <img src={Media} alt="" />
