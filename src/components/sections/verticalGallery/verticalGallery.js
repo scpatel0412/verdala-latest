@@ -24,6 +24,7 @@ const VerticalGallery = (props) => {
                                 <GalleryCard
                                     image={homePage[0].architecture_image?.url}
                                     text={homePage[0].architecture_title}
+                                    speed={20}
                                 />
                             </div>
 
@@ -33,6 +34,7 @@ const VerticalGallery = (props) => {
                                 <GalleryCard
                                     image={homePage[1].architecture_image?.url}
                                     text={homePage[1].architecture_title}
+                                    speed={60}
                                 />
                             </div>
 
@@ -46,6 +48,7 @@ const VerticalGallery = (props) => {
                                 <GalleryCard
                                     image={homePage[2].architecture_image?.url}
                                     text={homePage[2].architecture_title}
+                                    speed={10}
                                 />
                             </div>
 
@@ -55,6 +58,7 @@ const VerticalGallery = (props) => {
                                 <GalleryCard
                                     image={homePage[3].architecture_image?.url}
                                     text={homePage[3].architecture_title}
+                                    speed={50}
                                 />
                             </div>
 
@@ -66,6 +70,7 @@ const VerticalGallery = (props) => {
                                 <GalleryCard
                                     image={homePage[4].architecture_image?.url}
                                     text={homePage[4].architecture_title}
+                                    speed={70}
                                 />
                             </div>
 

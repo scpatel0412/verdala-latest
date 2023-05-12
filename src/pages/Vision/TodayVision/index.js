@@ -13,13 +13,13 @@ const TodayVision = (props) => {
       {visionPage != undefined ? (
         <div className="today-vision-sec">
           <div className="today-vis-inner">
-            <div className="subheading">todays vision</div>
-            <h1>{visionPage?.title}</h1>
+            <div className="subheading anim-text-enter">todays vision</div>
+            <h1 className="anim-text-enter">{visionPage?.title}</h1>
             <div className="today-vis-boxes">
               {visionPage?.books?.map((i, index) => (
                 <div
                   key={index}
-                  className="boxes-item"
+                  className="boxes-item anim-scroll-up"
                   style={{
                     background: i?.book_link != "" ? "white" : "",
                     border: i?.book_link != "" ? "none" : "",

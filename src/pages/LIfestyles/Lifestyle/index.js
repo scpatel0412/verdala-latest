@@ -67,8 +67,8 @@ const Lifestyle = (props) => {
             <p class="count-title">{lifestylePage.lifestyle?.sub_title}</p>
           </div>
           <div className="team-content">
-            <h2 className="innerpage_h2">{lifestylePage.lifestyle?.title}</h2>
-            <p>{lifestylePage.lifestyle?.description}</p>
+            <h2 className="innerpage_h2 anim-text-enter">{lifestylePage.lifestyle?.title}</h2>
+            <p className="anim-text-enter">{lifestylePage.lifestyle?.description}</p>
           </div>
           
           <div className="crow">

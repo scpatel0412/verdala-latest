@@ -63,17 +63,17 @@ const TypeOfResidences = (props) => {
     {Object.keys(residencesPage).length > 0 ? <>
       <section className={` ${Pagegeneric.secgeneric1}`}>
       <div id={"typeofresidence"} className="typeresidence-sec">
-        <div className="type-col-sec">
+        <div className="type-col-sec anim-scroll-up">
           <div className="count-col">
             <span className="count-number">03</span>
             <p className="count-title">
               {residencesPage?.type_of_residence?.sub_title}
             </p>
           </div>
-          <h2 className="innerpage_h2">
+          <h2 className="innerpage_h2 anim-text-enter">
             {residencesPage?.type_of_residence?.title}
           </h2>
-          <p>{residencesPage?.type_of_residence?.description}</p>
+          <p className="anim-text-enter">{residencesPage?.type_of_residence?.description}</p>
         </div>
         <div className="crow sticky-tabing-sec">
             <div

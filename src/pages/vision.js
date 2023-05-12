@@ -167,7 +167,7 @@ const Vision = ({ pageTitle, children }) => {
                 </div>
               </div>
               <div className="then-now-slider-Right">
-                <div className="content-slider">
+                <div className="content-slider anim-scroll-up">
                   <Slider
                     asNavFor={slider3.nav2}
                     fade={true}

@@ -22,6 +22,49 @@ const BisAnimate = ({ children, location }) => {
                 // const element = ref.current;
                 // console.log(element.querySelector("#thirdCircle"));
 
+                let lineSections = gsap.utils.toArray('.anim-text-enter');
+        
+                lineSections.forEach((section) => {
+                    let splitLine = SplitText.create(section, {type:"lines"});
+
+                    gsap.from(splitLine.lines, { // <- selector text, scoped to this component!
+                        scaleY: 0.5,
+                        opacity: 0,
+                        y: 20,
+                        ease: "Expo.easeOut",
+                        duration: 2,
+                        // delay: 1,
+                        stagger: 0.1,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 85%",
+                            // end: "bottom top",
+                        //   stagger: 1,
+                            scrub: true,
+                            // markers: true
+                        },
+                    });
+                })
+
+
+                // gsap.from(splitLine.lines, { // <- selector text, scoped to this component!
+                //     scaleY: 0.5,
+                //     opacity: 0,
+                //     y: 20,
+                //     ease: "Expo.easeOut",
+                //     duration: 2,
+                //     // delay: 1,
+                //     stagger: 0.1,
+                //     scrollTrigger: {
+                //         trigger: splitLine.lines,
+                //         start: "top 85%",
+                //         // end: "bottom top",
+                //     //   stagger: 1,
+                //         scrub: true,
+                //         // markers: true
+                //     },
+                // });
+
                 let split = SplitText.create(".anim-banner .title-cont h1", {type:"chars"});
             
                 gsap.from(split.chars, { // <- selector text, scoped to this component!
@@ -29,7 +72,7 @@ const BisAnimate = ({ children, location }) => {
                     y: 200,
                     ease: "Expo.easeOut",
                     duration: 2,
-                    delay: 4,
+                    delay: 1,
                     stagger: 0.02
                 });
         
@@ -68,7 +111,9 @@ const BisAnimate = ({ children, location }) => {
                 );                
                 
                 return () => split.revert(); // context cleanup
-            }, 1000);
+            }, 2000);
+
+            
 
             setTimeout(() => {
                 let imageSections = gsap.utils.toArray('.anim-scroll-image img');
@@ -108,18 +153,64 @@ const BisAnimate = ({ children, location }) => {
                         },
                     }
                 );
+                
+                let imageSlide = gsap.utils.toArray('.anim-image-enter-slide');
+        
+                imageSlide.forEach((section) => { 
+                    gsap.from(
+                        section,
+                        {
+                            width: "50%",
+                            scrollTrigger: {
+                                trigger: section,
+                                start: "top bottom",
+                                end: "bottom top",
+                            //   stagger: 1,
+                                scrub: true,
+                                // markers: true
+                            },
+                        }
+                    );
+                })
+    
+                gsap.fromTo(
+                    ".anim-banner .bg-img",
+                    {
+                        scale: 1
+                    },
+                    {
+                        scale: 1.05,
+                        ease: "Cubic.easeOut",
+                        scrollTrigger: {
+                            trigger: ".anim-banner .bg-img",
+                            start: "top top",
+                            end: "bottom top",
+                        //   stagger: 1,
+                            scrub: true,
+                            // markers: true
+                        },
+                    }
+                );
+
+                // anim-parallax-low
 
                 let sections = gsap.utils.toArray('.anim-parallax');
         
                 sections.forEach((section) => {
-        
+
+                    // console.log(section);
+                    // console.log(section.getAttribute('data-parallax'));
+
+                    let speed = (section.hasAttribute("data-parallax")) ? section.getAttribute('data-parallax') : 50
+
                     gsap.fromTo(
                         section,
                         {
-                            y: -50
+                            y: -speed
                         },
                         {
-                            y: 50,
+                            y: speed,
+                            overwrite: true,
                             scrollTrigger: {
                                 trigger: section,
                                 // start: "top bottom",
@@ -153,8 +244,11 @@ const BisAnimate = ({ children, location }) => {
         return () => ctx.revert(); // useLayoutEffect cleanup
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setAnimProps();
+    })
+
+    useLayoutEffect(() => {
         // set the location on initial load
         if (!myRef.current.location) myRef.current.location = location
         // then make sure dialog is closed on route change

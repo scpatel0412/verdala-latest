@@ -62,10 +62,10 @@ const PageGeneric = (props) => {
                 {homePage?.sub_title}
               </p>
             </div>
-            <h2 className="innerpage_h2 anim-scroll-up">
+            <h2 className="innerpage_h2 anim-text-enter">
               {homePage?.title}
             </h2>
-            <p className="anim-scroll-up">{homePage?.description}</p>
+            <p className="anim-text-enter">{homePage?.description}</p>
           </div>
           <div className="crow sticky-tabing-sec">
             <div

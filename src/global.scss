@@ -16,6 +16,15 @@
   overflow: hidden;
 }
 
+.anim-image-enter-slide {
+  overflow: hidden;
+}
+
+.anim-scroll-up {
+  opacity: 0;
+  transform: translate(0, 50px);
+}
+
 .bg-img {
   height: 100%;
   width: 100%;
@@ -63,6 +72,7 @@ html.lenis {
 html {
   overflow-x: hidden;
 }
+
 .fadeinup[data-scroll="in"] {
   animation: fadeinup 1s ease backwards;
 }
@@ -1135,7 +1145,7 @@ img {
 
     p {
       font-weight: 500;
-      font-size: 20px;
+      font-size: 17px;
       line-height: 28px;
       letter-spacing: -0.04em;
       margin-bottom: 60px;
@@ -1365,6 +1375,7 @@ img {
 
   .merge-image-count {
     padding-bottom: 120px;
+    padding-left: 30px;
     position: relative;
 
     @media screen and (max-width: $lg__screen) {
@@ -1474,12 +1485,12 @@ img {
   }
 
   .timeline-content {
-    max-width: 418px;
+    max-width: 400px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: auto;
-    right: 0;
+    right: 30px;
 
     @media screen and (max-width: $lg__screen) {
       max-width: 100%;
@@ -1494,7 +1505,7 @@ img {
     }
     h3 {
       font-weight: 500;
-      font-size: 32px;
+      font-size: 27px;
       line-height: 32px;
       letter-spacing: -0.04em;
       text-transform: uppercase;
@@ -1512,8 +1523,8 @@ img {
     }
 
     p {
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 14px;
+      line-height: 21px;
       letter-spacing: -0.04em;
       font-family: $font__main;
       font-weight: 500;
@@ -2358,18 +2369,19 @@ section {
       width: 100%;
     }
     div {
-      max-width: 620px;
-      margin: 140px 0 0 0;
-      padding-left: 20px;
-      @media screen and (max-width: $lg__screen) {
-        max-width: 100%;
-        margin: 78px 0 0 0;
-        padding-left: 0;
-      }
-      @media screen and (max-width: $sm__screen) {
-        margin: 78px 0 0 0;
-      }
       p {
+        max-width: 620px;
+        margin: 140px 0 0 0;
+        // padding-left: 20px;
+        @media screen and (max-width: $lg__screen) {
+          max-width: 100%;
+          margin: 78px 0 0 0;
+          padding-left: 0;
+        }
+        @media screen and (max-width: $sm__screen) {
+          margin: 78px 0 0 0;
+        }
+
         font-weight: 500;
         font-size: 21px;
         line-height: 29px;
@@ -2492,6 +2504,7 @@ section {
 }
 .dawn-till-sec {
   position: relative;
+  background-color: #7B9E6B;
 
   .dawn-till-inner {
     position: relative;
@@ -2499,9 +2512,9 @@ section {
     .dawn-till-img {
       position: absolute;
       top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
+      right: 0;
+      z-index: 0;
+      width: 50%;
       height: 100%;
       @media screen and (max-width: $lg__screen) {
         height: 640px;
@@ -2907,6 +2920,17 @@ button.btn {
     }
   }
 }
+
+button {
+  &:hover {
+    background: $mainGreen;
+    color: $white;
+    // &:hover:after {
+    //   background: $mainGreen;
+    // }
+  }
+}
+
 .lifestyle-icon-mobile-sec {
   display: none;
   @media screen and (max-width: $sm__screen) {

@@ -74,8 +74,8 @@ function Connectivity(props) {
                 <div className="connectivity-subtitle">
                   {props.data?.data.sub_title}
                 </div>
-                <h2 className="innerpage_h2">{props.data.data.title}</h2>
-                <p>{props.data?.data.description}</p>
+                <h2 className="innerpage_h2 anim-text-enter">{props.data.data.title}</h2>
+                <p className="anim-text-enter">{props.data?.data.description}</p>
               </div>
               <div className="mapimg">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -646,7 +646,7 @@ function Connectivity(props) {
                   <div className="connectivity-subtitle">
                     {props.data?.data.neighborhood.sub_title}
                   </div>
-                  <h2 className="innerpage_h2">
+                  <h2 className="innerpage_h2 anim-text-enter">
                     {props.data?.data.neighborhood.title}
                   </h2>
                 </div>

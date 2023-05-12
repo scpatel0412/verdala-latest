@@ -21,8 +21,8 @@ const RabatAndMdina = (props) => {
               </div>
               <div className="rabatandadina-right">
                 <div>
-                  <h2 className="innerpage_h2">{props.data?.data.title}</h2>
-                  <p>{props.data?.data.description}</p>
+                  <h2 className="innerpage_h2 anim-text-enter">{props.data?.data.title}</h2>
+                  <p className="anim-text-enter">{props.data?.data.description}</p>
                   <button className="btn">a day in the life</button>
                 </div>
               </div>

@@ -62,13 +62,13 @@ const Team = (props) => {
                 <>
                     <section className={` vision-tab-inspried-sec page-generic ${Pagegeneric.secgeneric}`}>
                         <div className="team-section team-section-vison" id="theteam">
-                            <div className="count-col">
+                            <div className="count-col anim-scroll-up">
                                 <span className="count-number">03</span>
-                                <p className="count-title">{visionPage?.sub_title}</p>
+                                <p className="count-title anim-text-enter">{visionPage?.sub_title}</p>
                             </div>
                             <div className="team-content">
-                                <h2>{visionPage?.title}</h2>
-                                <p>{visionPage?.description}</p>
+                                <h2 className="anim-text-enter">{visionPage?.title}</h2>
+                                <p className="anim-text-enter">{visionPage?.description}</p>
                             </div>
                         </div>
                         {mobileScreen ?

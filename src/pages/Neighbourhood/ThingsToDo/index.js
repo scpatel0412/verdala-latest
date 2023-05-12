@@ -63,8 +63,8 @@ function ThingsToDo(props) {
         <>
           <div className="things-sec" id={props.data?.id}>
             <div className="thing-inner-se">
-              <h2 className="innerpage_h2">{props.data?.data.title}</h2>
-              <p>{props.data?.data.description}</p>
+              <h2 className="innerpage_h2 anim-text-enter">{props.data?.data.title}</h2>
+              <p className="anim-text-enter">{props.data?.data.description}</p>
             </div>
 
             {props.data?.data.data?.map((item, index) => {

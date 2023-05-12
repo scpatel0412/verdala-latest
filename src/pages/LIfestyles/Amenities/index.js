@@ -11,7 +11,7 @@ function Amenities(props) {
   }, [props]);
 
   var settings = {
-    speed: 5000,
+    speed: 6000,
     autoplay: true,
     autoplaySpeed: 0,
     cssEase: "linear",
@@ -60,15 +60,15 @@ function Amenities(props) {
     <>
       <div className="amenities-sec" id={"amenities"}>
         <div className="amenities-left">
-          <div className="count-col">
+          <div className="count-col anim-scroll-up">
             <span className="count-number">01</span>
             <p className="count-title">{lifestylePage.amenities?.sub_title}</p>
           </div>
-          <h1>{lifestylePage.amenities?.title}</h1>
+          <h1 className="anim-text-enter">{lifestylePage.amenities?.title}</h1>
         </div>
         <div className="amenities-right">
           <div>
-            <p>{lifestylePage.amenities?.description}</p>
+            <p className="anim-text-enter">{lifestylePage.amenities?.description}</p>
             <button>{lifestylePage.amenities?.button?.title}</button>
           </div>
         </div>

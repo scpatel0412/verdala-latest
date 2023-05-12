@@ -21,12 +21,12 @@ const AboutResidences = (props) => {
               </div>
             </div>
             <div className="aboutrecidences-right">
-              <h2 className="innerpage_h2">{residencesPage?.title}</h2>
-              <p>{residencesPage?.description}</p>
+              <h2 className="innerpage_h2 anim-text-enter">{residencesPage?.title}</h2>
+              <p className="anim-text-enter">{residencesPage?.description}</p>
             </div>
           </div>
           <div className="aboutrecidences-bottom-sec">
-            <div className="aboutrecidences-bottom-left">
+            <div className="aboutrecidences-bottom-left anim-parallax">
               <div>
                 <img src={residencesPage?.image_1?.url} />
               </div>
@@ -58,7 +58,7 @@ const AboutResidences = (props) => {
               </div>
               <button className="btn">check availability</button>
             </div>
-            <div className="aboutrecidences-bottom-right">
+            <div className="aboutrecidences-bottom-right anim-parallax" data-parallax="70">
               <div>
                 <img src={residencesPage?.image_2?.url} />
               </div>

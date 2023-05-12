@@ -69,14 +69,14 @@ const DesignMeetsFunction = (props) => {
           <div id={"designmeetsfunction"} className="designmeetfuncations-sec">
             <div className="designmeet-sec">
               <div className="designmeet-left">
-                <div className="count-col">
+                <div className="count-col anim-scroll-up">
                   <span className="count-number">01</span>
                   <p className="count-title">{residencesPage?.sub_title}</p>
                 </div>
               </div>
               <div className="designmeet-right">
-                <h2 className="innerpage_h2">{residencesPage?.title}</h2>
-                <p>{residencesPage?.description}</p>
+                <h2 className="innerpage_h2 anim-text-enter">{residencesPage?.title}</h2>
+                <p className="anim-text-enter">{residencesPage?.description}</p>
               </div>
             </div>
             <div className="">
