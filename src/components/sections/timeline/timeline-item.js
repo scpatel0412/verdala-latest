@@ -33,7 +33,7 @@ const TextSection = (props) => {
     <>
       <div className={"col-3 anim-scroll-up " + (props.odd ? "order-3" : "order-1")}>
         <div className="timeline-content anim-parallax" data-parallax="60">
-          {props.title != null && <h3>{props.title}</h3>}
+          {props.title !== null && <h3>{props.title}</h3>}
           {typeof classNames !== "undefined" && classNames.length > 0 ? (
             <p className={`${classNames}`}>{props.text}</p>
           ) : null}
@@ -46,15 +46,15 @@ const TextSection = (props) => {
 const ImageSection = (props) => (
   <>
     <div className={"col-3 " + (props.odd ? "order-1" : "order-3")}>
-      <div className="merge-image-count anim-scroll-up">
+      <div className="merge-image-count">
         <div className="image-cont">
           {props?.image?.image_1?.url ? (
-            <div className="image-top anim-parallax" data-parallax="70">
+            <div className="image-top">
               <img className="bg-img" src={props?.image?.image_1.url} alt="" />
             </div>
           ) : null}
           {props?.image?.image_2?.url ? (
-            <div className="image-bottom anim-parallax" data-parallax="30">
+            <div className="image-bottom">
               <img className="bg-img" src={props?.image?.image_2?.url} alt="" />{" "}
             </div>
           ) : null}
@@ -66,7 +66,7 @@ const ImageSection = (props) => (
 
 const YearSection = (props) => {
   const { years } = props;
-  var check = props.index == 0 || props.index == 3 || props.index == 4;
+  var check = props.index === 0 || props.index === 3 || props.index === 4;
   var isThiredIndex = props.index === 2;
   return (
     <>
@@ -86,11 +86,10 @@ const YearSection = (props) => {
         <div className={Style.yearCont}>
           <div
             style={{ textAlign: isThiredIndex && "left" }}
-            data-parallax="5"
             className={
               check
-                ? "year-cont font-header text-right anim-parallax"
-                : "year-cont font-header text-center anim-parallax"
+                ? "year-cont font-header text-right"
+                : "year-cont font-header text-center"
             }
           >
             <span>{years}</span>

@@ -85,7 +85,7 @@ const BisAnimate = ({ children, location }) => {
                 );
 
                 gsap.set(
-                    '.anim-banner .title-cont',
+                    '.anim-banner .title-cont, .anim-banner-compact .title-cont',
                     {
                         opacity: 1,
                     }
@@ -108,7 +108,26 @@ const BisAnimate = ({ children, location }) => {
                             // markers: true
                         },
                     }
-                );                
+                );
+                
+                gsap.fromTo(
+                    ".anim-banner-compact .title-cont",
+                    {
+                        y: 0
+                    },
+                    {
+                        y: -30,
+                        ease: "Cubic.easeOut",
+                        scrollTrigger: {
+                            trigger: ".anim-banner-compact .title-cont",
+                            // start: "top 80%",
+                            // end: "bottom top",
+                        //   stagger: 1,
+                            scrub: true,
+                            // markers: true
+                        },
+                    }
+                );    
                 
                 return () => split.revert(); // context cleanup
             }, 2000);
@@ -226,10 +245,10 @@ const BisAnimate = ({ children, location }) => {
                 ScrollTrigger.batch(".anim-scroll-up", {
                     //interval: 0.1, // time window (in seconds) for batching to occur. 
                     //batchMax: 3,   // maximum batch size (targets)
-                    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, duration: 1, ease: "Cubic.easeOut", stagger: 0.5}),
+                    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, duration: 1, ease: "Cubic.easeOut", stagger: 0.2}),
                     // onEnter: batch => batch.forEach((card, index) => gsap.to(card.children, {opacity: 1, y: 0, scale: 1, stagger: 0.5, delay: index * 0.3})),
                     onLeaveBack: batch => gsap.to(batch, {opacity: 0, y: 50, duration: 1, ease: "Cubic.easeOut", overwrite: true}),
-                    onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, duration: 1, ease: "Cubic.easeOut", stagger: 0.5, overwrite: true}),
+                    onEnterBack: batch => gsap.to(batch, {opacity: 1, y: 0, duration: 1, ease: "Cubic.easeOut", stagger: 0.2, overwrite: true}),
                     start: 'top 85%'
                     // onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
                     // you can also define things like start, end, etc.
@@ -245,7 +264,9 @@ const BisAnimate = ({ children, location }) => {
     }
 
     useEffect(() => {
-        setAnimProps();
+        setTimeout( () => {
+            setAnimProps();
+        }, 2500);
     })
 
     useLayoutEffect(() => {

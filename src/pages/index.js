@@ -8,23 +8,24 @@ import PageImageCols from "../components/sections/page/page-image-columns";
 import PageIntro from "../components/sections/page/page-intro";
 import PageLocation from "../components/sections/page/page-location";
 import PageVGallery from "../components/sections/page/page-vertical-gallery";
-// import Splitting from "splitting";
-// import ScrollOut from "scroll-out";
+import Splitting from "splitting";
+import ScrollOut from "scroll-out";
 import { allHome } from "../utils/api";
 import Resize from "../components/resize/index";
-import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis';
+// import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis';
 import Loading from "../components/loading/loading";
+import BisAnimate from "../utils/animations/PageAnim";
 
 const Index = () => {
-//   Splitting({
-//     target: document.querySelector(["data-splitting"]),
-//     by: "chars",
-//     whitespace: true,
-//   });
-//   ScrollOut({
-//     targets: "[data-splitting],.anim-scroll-up",
-//     once: true,
-//   });
+  Splitting({
+    target: document.querySelector(["data-splitting"]),
+    by: "chars",
+    whitespace: true,
+  });
+  ScrollOut({
+    targets: "[data-splitting],.fadeinup",
+    once: true,
+  });
 
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -64,35 +65,38 @@ const Index = () => {
     <>
       <Resize>
 	  	
-		<Loading />
 
-        {data != undefined ? (
-			<>
+        {data !== undefined ? (
+          <>
+          {/* <Loading /> */}
+          <BisAnimate>
             <div className="home-banner-sec">
-              <HomeHero data={data} />
+            <HomeHero data={data} />
             </div>
             <div className="home-about-sec">
-              <PageIntro data={data} />
+            <PageIntro data={data} />
             </div>
             <div className="home-video-sec">
-              <PageImageCols data={data} />
+            <PageImageCols data={data} />
             </div>
             <div className="home-PageHoverImage-sec">
-              <PageHoverImage data={data} />
+            <PageHoverImage data={data} />
             </div>
             <div className="home-typeresidence-sec">
-              <PageGeneric data={data} />
+            <PageGeneric data={data} />
             </div>
             <div className="home-PageLocation-sec">
-              <PageLocation data={data} />
+            <PageLocation data={data} />
             </div>
             <div className="home-gallery-sec">
-              <PageVGallery data={data} />
+            <PageVGallery data={data} />
             </div>
             <div className="footer">
-              <Footer />
+            <Footer />
             </div>
-			</>
+          </BisAnimate>
+          </>
+
         ) : null}
       </Resize>
     </>

@@ -1,174 +1,318 @@
-@import "./../../assets/scss/variable.scss";
-
-.titleText {
-  font-size: 8em;
-  margin: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(99, 82, 69, 0.3);
-}
-
-.sglPropCont {
-  border-top: 1px solid rgba(99, 82, 69, 0.3);
-  padding-bottom: 100px;
-}
-
-.propPlan {
-  height: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  padding-left: 50px;
-  border-left: 1px solid rgba(99, 82, 69, 0.3);
-}
-
-.valueField {
-  padding-bottom: 50px;
-}
-
+@import './../../assets/scss/variable.scss';
 .residenceCard {
-  padding-top: 120px;
-  &:first-child {
-    padding-top: 0;
-  }
+    padding-top: 120px;
+    &:first-child{
+        padding-top: 0;
+    }
 
-  p {
-    max-width: 390px;
-    font-weight: 500;
-    letter-spacing: 0px;
-    margin-bottom: 42px;
-    margin-top: 30px;
-  }
+    p {
+        max-width: 390px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        margin-bottom: 42px;
+        margin-top: 30px;
+    }
 
-  h3 {
-    color: #635245;
-  }
-  &:last-child {
-    padding-bottom: 55px;
-    margin-bottom: 0;
-  }
+    h3 {
+        color: #635245;
+    }
+    &:last-child
+    {
+        padding-bottom: 55px;
+        margin-bottom: 0;
+    }
 }
 
 .residencePlan {
-  margin-top: 200px;
-  padding-left: 10px;
-  border-left: 1px solid #6352454d;
-  @media screen and (max-width: $sm__screen) {
-    margin-top: 45px;
-  }
-  .values {
-    margin-top: 0;
-  }
+    margin-top: 200px;
+    padding-left: 10px;
+    border-left: 1px solid #6352454D;
+    @media screen and (max-width:$sm__screen)
+    {
+        margin-top: 45px;
+    }
+    .values {
+        margin-top: 0;
+    }
 }
 
 .residenceRow {
-  margin-top: 100px;
-  // .secondary-text span
-  // {
-  //     font-weight: 600;
-  //     font-size: 14px;
-  // }
+    margin-top: 100px;
+    // .secondary-text span
+    // {
+    //     font-weight: 600;
+    //     font-size: 14px;
+    // }
 }
-.residencedesc {
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-bottom: 45px;
-  @media screen and (max-width: $sm__screen) {
-    margin-bottom: 0px;
-    margin-top: 45px;
-  }
+.residencedesc{
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    @media screen and (max-width:$sm__screen)
+    {
+        margin-bottom: 0px;
+        margin-top: 45px;
+    }
 }
 
 .values {
-  display: block;
-  margin-top: 30px;
-  letter-spacing: -0.04em;
-  font-size: 1.7em;
-  line-height: 1;
-  color: #635245;
-  font-weight: 500;
+    display: block;
+    margin-top: 30px;
+    letter-spacing: -0.04em;
+    font-size: 1.7em;
+    line-height: 1;
+    color: #635245;
+    font-weight: 500;
 }
 
 .imageCont {
-  height: 100%;
-  img {
-    max-width: 620px;
-    min-height: 820px;
-  }
+    height: 100%;
+    img{
+        max-width: 620px;
+        min-height: 820px;
+    }
 }
 
 .propertyCard {
-  padding-bottom: 40px;
-  padding-top: 40px;
-  border-right: solid 1px rgba(99, 82, 69, 0.3);
-  border-bottom: solid 1px rgba(99, 82, 69, 0.3);
-  padding-right: 50px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    border-right: solid 1px rgba(99, 82, 69, 0.3);
+    border-bottom: solid 1px rgba(99, 82, 69, 0.3);
+    padding-right: 50px;
+    
+    &:nth-of-type(2n) {
+        // border: solid 1px red;
+        border-right: none;
+        padding-right: 0;
+        padding-left: 50px;
+    }
 
-  &:nth-of-type(2n) {
-    // border: solid 1px red;
-    border-right: none;
-    padding-right: 0;
-    padding-left: 50px;
-  }
-
-  // &:last-of-type,
-  // &:nth-last-of-type(2) {
-  //     // border: solid 1px red;
-  //     border-bottom: none;
-  // }
+    // &:last-of-type,
+    // &:nth-last-of-type(2) {
+    //     // border: solid 1px red;
+    //     border-bottom: none;
+    // }
 }
 
 .propertyTitle {
-  font-size: 120px;
-  letter-spacing: -12px;
-  margin-bottom: 40px;
+    font-size: 120px;
+    letter-spacing: -12px;
+    margin-bottom: 40px;
 }
 
 .propertyImage {
-  mix-blend-mode: multiply;
-  padding-left: 50px;
+    mix-blend-mode: multiply;
+    padding-left: 50px;
 }
 
 .propertySection {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 
 .propertySectionPrice {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 .propertyMeta {
-  background-color: #fff;
-  padding: 40px;
-  margin-top: 100px;
+    background-color: #fff;
+    padding: 40px;
 }
 
 .filterBar {
-  background-color: #7b9e6b;
-  padding-top: 60px;
-  padding-bottom: 50px;
-  color: white;
+    background-color: #7B9E6B;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    color: white;
 }
-.residentwrap {
-  padding-left: 60px;
-  @media screen and (max-width: $md__screen) {
-    padding-left: 0;
-  }
-  h3 {
-    margin-top: 50px;
-  }
+.residentwrap
+{
+    padding-left: 60px;
+    @media screen and (max-width:$md__screen)
+    {
+        padding-left: 0;
+    }
+    h3{
+        margin-top: 50px;
+    }
+}
+@import './../../assets/scss/variable.scss';
+
+.titleText {
+    font-size: 8em;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(99, 82, 69, 0.3);
+}
+
+.sglPropCont {
+    border-top: 1px solid rgba(99, 82, 69, 0.3);
+    padding-bottom: 100px;
+}
+
+.propPlan {
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+    border-left: 1px solid rgba(99, 82, 69, 0.3);
+}
+
+.valueField {
+    padding-bottom: 50px;
+}
+
+.residenceCard {
+    padding-top: 120px;
+    &:first-child{
+        padding-top: 0;
+    }
+
+    p {
+        max-width: 390px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        margin-bottom: 42px;
+        margin-top: 30px;
+    }
+
+    h3 {
+        color: #635245;
+    }
+    &:last-child
+    {
+        padding-bottom: 55px;
+        margin-bottom: 0;
+    }
+}
+
+.residencePlan {
+    margin-top: 200px;
+    padding-left: 10px;
+    border-left: 1px solid #6352454D;
+    @media screen and (max-width:$sm__screen)
+    {
+        margin-top: 45px;
+    }
+    .values {
+        margin-top: 0;
+    }
+}
+
+.residenceRow {
+    margin-top: 100px;
+    // .secondary-text span
+    // {
+    //     font-weight: 600;
+    //     font-size: 14px;
+    // }
+}
+.residencedesc{
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    @media screen and (max-width:$sm__screen)
+    {
+        margin-bottom: 0px;
+        margin-top: 45px;
+    }
+}
+
+.values {
+    display: block;
+    margin-top: 30px;
+    letter-spacing: -0.04em;
+    font-size: 1.7em;
+    line-height: 1;
+    color: #635245;
+    font-weight: 500;
+}
+
+.imageCont {
+    height: 100%;
+    img{
+        max-width: 620px;
+        min-height: 820px;
+    }
+}
+
+.propertyCard {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    border-right: solid 1px rgba(99, 82, 69, 0.3);
+    border-bottom: solid 1px rgba(99, 82, 69, 0.3);
+    padding-right: 50px;
+    
+    &:nth-of-type(2n) {
+        // border: solid 1px red;
+        border-right: none;
+        padding-right: 0;
+        padding-left: 50px;
+    }
+
+    // &:last-of-type,
+    // &:nth-last-of-type(2) {
+    //     // border: solid 1px red;
+    //     border-bottom: none;
+    // }
+}
+
+.propertyTitle {
+    font-size: 120px;
+    letter-spacing: -12px;
+    margin-bottom: 40px;
+}
+
+.propertyImage {
+    mix-blend-mode: multiply;
+    padding-left: 50px;
+}
+
+.propertySection {
+    margin-top: 40px;
+}
+
+.propertySectionPrice {
+    margin-top: 80px;
+}
+
+.propertyMeta {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+.filterBar {
+    background-color: #7B9E6B;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    color: white;
+}
+.residentwrap
+{
+    padding-left: 60px;
+    @media screen and (max-width:$md__screen)
+    {
+        padding-left: 0;
+    }
+    h3{
+        margin-top: 50px;
+    }
 }
 
 .gridLayout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .propertyMetaGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 50px;
 }
 
 // .gridLayout {
@@ -185,7 +329,7 @@
 //     &.col-grid-3 {
 //         grid-template-columns: repeat(3, 1fr);
 //     }
-
+    
 //     &.col-grid-4 {
 //         grid-template-columns: repeat(4, 1fr);
 //     }

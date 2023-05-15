@@ -11,9 +11,9 @@ const Mansions = (props) => {
 
   return (
     <>
-      {residencesPage != undefined ? (
+      {residencesPage !== undefined ? (
         <div id={"mansions"} className="mansions-main-sec">
-          <div className="count-col anim-scroll-up">
+          <div className="count-col">
             <span className="count-number">02</span>
             <p className="count-title">MANSIONS</p>
           </div>
@@ -24,8 +24,8 @@ const Mansions = (props) => {
                 <span>A</span>
               </div>
               <div className="mansions-content">
-                <h2 className="anim-text-enter">{residencesPage?.mansion_1?.title}</h2>
-                <div className="mansions-content-inner anim-parallax">
+                <h2>{residencesPage?.mansion_1?.title}</h2>
+                <div className="mansions-content-inner">
                   <h3>{residencesPage?.mansion_1?.sub_title}</h3>
                   <p>{residencesPage?.mansion_1?.description.split("At")[0]}</p>
                   <p>{`At ${
@@ -33,20 +33,20 @@ const Mansions = (props) => {
                   }`}</p>
                 </div>
               </div>
-              <div className="mansions-img anim-scroll-image">
+              <div className="mansions-img">
                 <div>
                   <img src={residencesPage?.mansion_1?.image} />
                 </div>
               </div>
             </div>
-            <div className="mansions-right-sec anim-parallax" data-parallax="20">
+            <div className="mansions-right-sec">
               <div className="mansions-mobile-blocks">
                 <p className="rotated-text">Block</p>
                 <span>B</span>
               </div>
               <div className="mansions-content">
-                <h2 className="anim-text-enter">{residencesPage?.mansion_1?.title}</h2>
-                <div className="mansions-content-inner anim-parallax" data-parallax="30">
+                <h2>{residencesPage?.mansion_1?.title}</h2>
+                <div className="mansions-content-inner">
                   <h3>{residencesPage?.mansion_2?.sub_title}</h3>
                   <p>{residencesPage?.mansion_2?.description.split("By")[0]}</p>
                   <p>{`By ${
@@ -54,7 +54,7 @@ const Mansions = (props) => {
                   }`}</p>
                 </div>
               </div>
-              <div className="mansions-img anim-scroll-image">
+              <div className="mansions-img">
                 <div>
                   <img src={residencesPage?.mansion_2?.image} />
                 </div>

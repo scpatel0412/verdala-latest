@@ -33,13 +33,13 @@ const ResidencesCard = (props) => {
     <>
       <div className={Styles.residenceCard} id={props.id}>
         <div className="crow">
-          <div className="col-6 col-md-12 property-module-img">
+          <div className="col-6 col-md-12 fadeinup property-module-img">
             <div className={Styles.imageCont}>
               <ResidencesCardImg data={featureImg} />
             </div>
           </div>
 
-          <div className="col-6 col-md-12 anim-scroll-up property-module-content">
+          <div className="col-6 col-md-12 fadeinup property-module-content">
             <div className={Styles.residentwrap}>
               <h3 data-splitting>{props.title}</h3>
               <p>{residencesCardata?.property_description}</p>

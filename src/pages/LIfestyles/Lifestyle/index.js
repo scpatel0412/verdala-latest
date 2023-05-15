@@ -1,16 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
-import Container from "../../../components/layouts/container";
+import React, { useState, useEffect } from "react";
+// import Container from "../../../components/layouts/container";
 import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
 import SmallscreenLifestyle from "./smallscreenLifestyle";
 const Lifestyle = (props) => {
   const [lifestylePage, setLifestylePage] = useState({});
   const [currentLifestyleName, setCurrentLifestyleName] = useState(0);
 
-  let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-  let mainSections = document.querySelectorAll(".scroll-container >  div");
-  let headerheight1 = document.querySelector("header");
-  let lastId;
-  let cur = [];
+  // let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
+  // let mainSections = document.querySelectorAll(".scroll-container >  div");
+  let headerheight1 = 0;
+  if (typeof document !== "undefined") {
+    headerheight1 = document.querySelector("header");
+  }
+  // let lastId;
+  // let cur = [];
 
   useEffect(() => {
     if (typeof props !== "undefined") {
@@ -21,16 +24,20 @@ const Lifestyle = (props) => {
   useEffect(() => {
     if (typeof document !== "undefined") {
       let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-      let mainSections = document.querySelectorAll(".scroll-container >  div");
-      let headerheight1 = document.querySelector("header");
-      let lastId;
-      let cur = [];
+      // let mainSections = document.querySelectorAll(".scroll-container >  div");
+      // let headerheight1 = document.querySelector("header");
+      // let lastId;
+      // let cur = [];
       if (typeof window !== "undefined") {
         window.addEventListener("scroll", (event) => {
           let fromTop = window.pageYOffset;
           mainNavLinks.forEach((link) => {
             let section = document.querySelector(link.hash);
-            let headerheight = document.querySelector("header");
+            let headerheight = 0;
+            if (typeof document !== "undefined") {
+              headerheight = document.querySelector("header");
+            }
+
             if (
               section?.offsetTop !== null &&
               headerheight.offsetHeight !== null &&
@@ -62,13 +69,13 @@ const Lifestyle = (props) => {
     <>
       <section className={` ${Pagegeneric.secgeneric}`}>
         <div id={"lifestyle"} className="lifestyle-team-sec">
-          <div class="count-col">
+          <div class="count-col anim-scroll-up">
             <span class="count-number">03</span>
             <p class="count-title">{lifestylePage.lifestyle?.sub_title}</p>
           </div>
           <div className="team-content">
-            <h2 className="innerpage_h2 anim-text-enter">{lifestylePage.lifestyle?.title}</h2>
-            <p className="anim-text-enter">{lifestylePage.lifestyle?.description}</p>
+            <h2 className="innerpage_h2">{lifestylePage.lifestyle?.title}</h2>
+            <p>{lifestylePage.lifestyle?.description}</p>
           </div>
           
           <div className="crow">
@@ -91,7 +98,7 @@ const Lifestyle = (props) => {
                           return (
                             <div key={index2}>
                               <li
-                                className={`team-teamData-container anim-scroll-up ${
+                                className={`team-teamData-container fadeinup ${
                                   currentLifestyleName === index2 && "active"
                                 }`}
                               >
@@ -128,11 +135,11 @@ const Lifestyle = (props) => {
                                 key={index}
                                 className="lifestyle-inner-scroll-item"
                               >
-                                <div className="lifestyle-inner-scroll-img">
+                                <div className="lifestyle-inner-scroll-img anim-scroll-up">
                                   <img src={item.image.url}></img>
                                 </div>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
+                                <h3 className="anim-text-enter">{item.title}</h3>
+                                <p className="anim-text-enter">{item.description}</p>
                               </div>
                             </>
                           );

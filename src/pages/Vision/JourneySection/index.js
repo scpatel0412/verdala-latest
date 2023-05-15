@@ -11,7 +11,7 @@ const JourneySection = (props) => {
 
   return (
     <>
-      {visionPage != undefined ? (
+      {visionPage !== undefined ? (
         <div className="journey-sec">
           <Timeline timelineSection={visionPage} />
         </div>

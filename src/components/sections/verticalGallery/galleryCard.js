@@ -5,7 +5,7 @@ import * as Styles from "./../hoverImage/hoverImage.module.scss"
 
 const GalleryCard = (props) => (
     <>
-    <div className="anim-scroll-up anim-scroll-image anim-parallax" style={{marginBottom:"80px"}}>
+    <div className="anim-scroll-up anim-scroll-image anim-parallax" data-parallax={props.speed} style={{marginBottom:"80px"}}>
         <img src={props.image} alt="" className="anim-scroll-up"/>
         <h4 className={`anim-scroll-up ${Styles.gallerytitle}`}>{props.text}</h4>
     </div>

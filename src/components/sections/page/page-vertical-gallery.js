@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Container from "../../layouts/container";
 import SectionTitle from "../../partials/section-title";
 import VerticalGallery from "../verticalGallery/verticalGallery";
-import Quote from '../../../assets/svgs/quote.svg'
+// import Quote from '../../../assets/svgs/quote.svg'
 const PageVGallery = (props) => {
     const [homePage, setHomePage] = useState({});
 
@@ -14,7 +14,7 @@ const PageVGallery = (props) => {
     
     return (
         <>
-            {homePage != undefined ? <>
+            {homePage !== undefined ? <>
                 <section className="page-generic red-top-space">
 
                     <Container type="fullwidthcontainer extend-container">

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Container from "../../../components/layouts/container";
+// import Container from "../../../components/layouts/container";
 import ResidencesCard from "../../../components/property/residences-cardNew";
 import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
 import { arrow } from '../../../images'
 import SmallCard from "../../../components/property/small-card";
 
 const TypeOfResidences = (props) => {
-  let headerheight1 = document.querySelector("header");
+  let headerheight1 = 0;
+  if (typeof document !== "undefined") {
+    headerheight1 = document.querySelector("header");
+  }
   
   const [residencesPage, setResidencesPage] = useState({});
   const [currentPropertyName, setCurrentPropertyName] = useState(0);
@@ -20,17 +23,20 @@ const TypeOfResidences = (props) => {
   useEffect(() => {
     if (typeof document !== "undefined") {
       let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-      let mainSections = document.querySelectorAll(".scroll-container >  div");
-      let headerheight1 = document.querySelector("header");
-      let lastId;
-      let cur = [];
+      // let mainSections = document.querySelectorAll(".scroll-container >  div");
+      // let headerheight1 = document.querySelector("header");
+      // let lastId;
+      // let cur = [];
 
       if (typeof window !== "undefined") {
         window.addEventListener("scroll", (event) => {
           let fromTop = window.pageYOffset;
           mainNavLinks.forEach((link) => {
             let section = document.querySelector(link.hash);
-            let headerheight = document.querySelector("header");
+            let headerheight = 0;
+            if (typeof document !== "undefined") {
+              headerheight = document.querySelector("header");
+            }
             if (
               section?.offsetTop !== null &&
               headerheight.offsetHeight !== null &&
@@ -63,17 +69,17 @@ const TypeOfResidences = (props) => {
     {Object.keys(residencesPage).length > 0 ? <>
       <section className={` ${Pagegeneric.secgeneric1}`}>
       <div id={"typeofresidence"} className="typeresidence-sec">
-        <div className="type-col-sec anim-scroll-up">
+        <div className="type-col-sec">
           <div className="count-col">
             <span className="count-number">03</span>
             <p className="count-title">
               {residencesPage?.type_of_residence?.sub_title}
             </p>
           </div>
-          <h2 className="innerpage_h2 anim-text-enter">
+          <h2 className="innerpage_h2">
             {residencesPage?.type_of_residence?.title}
           </h2>
-          <p className="anim-text-enter">{residencesPage?.type_of_residence?.description}</p>
+          <p>{residencesPage?.type_of_residence?.description}</p>
         </div>
         <div className="crow sticky-tabing-sec">
             <div
@@ -91,7 +97,7 @@ const TypeOfResidences = (props) => {
                         return (
                           <div key={index2}>
                             <li
-                              className={`anim-scroll-up ${
+                              className={`fadeinup ${
                                 currentPropertyName === index2 && "active"
                               }`}
                             >

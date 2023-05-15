@@ -17,16 +17,16 @@ const GalleryImages = (props) => {
           </div>
         </>
       ) : (
-        props.data.map((i, index) => {
+        props?.data?.map((i, index) => {
           return (
             <div
               key={index}
-              className={index == props.selected ? "activegalleryimg" : ""}
-              style={{ opacity: index == props.selected ? 1 : 0.25 }}
+              className={index === props.selected ? "activegalleryimg" : ""}
+              style={{ opacity: index === props.selected ? 1 : 0.25 }}
             >
               <span>
                 <img src={i.image} />
-                {index == props.selected && (
+                {index === props.selected && (
                   <div className="gall-view-design">
                     view design<img src={gallicon}></img>
                   </div>

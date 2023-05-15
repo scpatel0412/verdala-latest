@@ -19,10 +19,13 @@ const PageGeneric = (props) => {
     setCurrentPropertyName(index);
   };
   let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-  let mainSections = document.querySelectorAll(".scroll-container >  div");
-  let headerheight1 = document.querySelector("header");
-  let lastId;
-  let cur = [];
+  // let mainSections = document.querySelectorAll(".scroll-container >  div");
+  let headerheight1 = 0;
+    if (typeof document !== "undefined") {
+        headerheight1 = document.querySelector("header");
+    }
+  // let lastId;
+  // let cur = [];
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", (event) => {
@@ -30,7 +33,10 @@ const PageGeneric = (props) => {
 
       mainNavLinks.forEach((link) => {
         let section = document.querySelector(link.hash);
-        let headerheight = document.querySelector("header");
+        let headerheight = 0;
+        if (typeof document !== "undefined") {
+          headerheight = document.querySelector("header");
+        }
         if (
           section?.offsetTop !== null &&
           headerheight.offsetHeight !== null &&
@@ -56,16 +62,16 @@ const PageGeneric = (props) => {
       <section className={` ${Pagegeneric.secgeneric1}`}>
         <div id={"typeofresidence"} className="typeresidence-sec">
           <div className="type-col-sec">
-            <div className="count-col anim-scroll-up">
+            <div className="count-col">
               <span className="count-number">03</span>
               <p className="count-title">
                 {homePage?.sub_title}
               </p>
             </div>
-            <h2 className="innerpage_h2 anim-text-enter">
+            <h2 className="innerpage_h2">
               {homePage?.title}
             </h2>
-            <p className="anim-text-enter">{homePage?.description}</p>
+            <p>{homePage?.description}</p>
           </div>
           <div className="crow sticky-tabing-sec">
             <div
@@ -77,13 +83,13 @@ const PageGeneric = (props) => {
                 style={{ top: headerheight1 ? headerheight1.offsetHeight : "" }}
               >
                 <div className="sticky-inner">
-                  <ul className="anim-scroll-up">
+                  <ul>
                     {homePage?.property_type?.map(
                       (item, index2) => {
                         return (
                           <div key={index2}>
                             <li
-                              className={`anim-scroll-up ${currentPropertyName === index2 && "active"
+                              className={`fadeinup ${currentPropertyName === index2 && "active"
                                 }`}
                             >
                               <a
@@ -100,7 +106,7 @@ const PageGeneric = (props) => {
                       }
                     )}
                   </ul>
-                   <div className="stickybtn anim-scroll-up">
+                   <div className="stickybtn fadeinup">
                     <Button styleClass="border-button" link={'/the-residences'} text={'all residences'} />
                   </div>
                 </div>

@@ -113,7 +113,9 @@
 }
 .connectivity
 {
-    padding-bottom: 80px;
+    padding-bottom: 200px;
+    margin-right: 50px;
+    
     @media screen and (max-width:$lg__screen)
     {
         padding-top: 280px;
@@ -200,10 +202,12 @@
     }
    
 
-    .connectattr
+    .connectattr,
+    .connectattrSec
     {
         display: flex;
         gap: 8px;
+        
         .attritem
         {
             width: 100px;
@@ -240,6 +244,7 @@
                 }
             }
         }
+        // What is this
         .attritem:nth-of-type(1).attractive
         {
             width: 100px;
@@ -270,20 +275,20 @@
                     }
             }
             &::before{
-                    position: absolute;
-                    content: "";
-                    top: 100px;
-                    bottom: 0;
-                    left: calc(150px + 20px);
-                    width: 0;
-                    border: 1px dashed #7B9E6B;
-                    @media screen and (max-width:$lg__screen)
-                    {
-                        
-                        top: 250px;
-                        left: 50px;
-                        height: 125px;
-                    }
+                position: absolute;
+                content: "";
+                top: 100px;
+                bottom: 0;
+                left: calc(150px + 20px);
+                width: 0;
+                border: 1px dashed #7B9E6B;
+                @media screen and (max-width:$lg__screen)
+                {
+                    
+                    top: 250px;
+                    left: 50px;
+                    height: 125px;
+                }
             }
             .attrdistance
             {
@@ -320,6 +325,7 @@
                 }
             }
         }
+        // What is this?
         .attritem:nth-of-type(2).attractive
         {
             width: 100px;
@@ -400,6 +406,7 @@
                 }
             }
         }
+        // What is this?
         .attritem:nth-of-type(3).attractive
         {
             width: 100px;
@@ -462,7 +469,23 @@
                 }
             }
         }
-}
+    }
+
+    .connectattrSec {
+        .attritem,
+        .attritem:nth-of-type(1).attractive,
+        .attritem:nth-of-type(2).attractive {
+            background-color: transparent;
+
+            &::before{
+                top: 2px;
+            }
+            
+            svg {
+                display: none;
+            }
+        }
+    }
 }
 .nerrowdesc
 {

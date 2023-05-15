@@ -3,3 +3,53 @@
         color: $brown;
     }
 }
+
+nav a {
+    transition: opacity 0.5s;
+    
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.headerbtns {
+    .button {
+        position: relative;
+
+        &:hover {
+            .type-selector {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+    }
+}
+
+.type-selector {
+    // background-color: #f8f8f1;
+    display: flex;
+    position: absolute;
+    right: 0%;
+    transform: scaleY(0);
+    padding-top: 20px;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.22, 0.61, 0.25, 0.99);
+    transform-origin: center top;
+
+    a:first-of-type .type {
+        // border-right: solid 1px;
+        background-color: #f2ebda !important; 
+    }
+
+    .type {
+        padding: 50px;
+        color: #635245;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        background-color: #ffff;
+        cursor: pointer;
+        height: 100%;        
+    }
+}

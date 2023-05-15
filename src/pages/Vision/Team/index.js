@@ -9,7 +9,10 @@ const Team = (props) => {
     }
     const { width } = useContext(ResizeContext)
     const mobileScreen = width <= 699
-    let headerheight1 = document.querySelector("header");
+    let headerheight1 = 0;
+    if (typeof document !== "undefined") {
+        headerheight1 = document.querySelector("header");
+    }
 
     const [visionPage, setVisionPage] = useState({});
     const [currentTeamName, setCurrentTeamName] = useState(0);
@@ -23,17 +26,20 @@ const Team = (props) => {
     useEffect(() => {
         if (typeof document !== "undefined") {
             let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-            let mainSections = document.querySelectorAll(".scroll-container >  div");
-            let headerheight1 = document.querySelector("header");
-            let lastId;
-            let cur = [];
+            // let mainSections = document.querySelectorAll(".scroll-container >  div");
+            // let headerheight1 = document.querySelector("header");
+            // let lastId;
+            // let cur = [];
 
             if (typeof window !== "undefined") {
                 window.addEventListener("scroll", (event) => {
                     let fromTop = window.pageYOffset;
                     mainNavLinks.forEach((link) => {
                         let section = document.querySelector(link.hash);
-                        let headerheight = document.querySelector("header");
+                        let headerheight = 0;
+                        if (typeof document !== "undefined") {
+                            headerheight = document.querySelector("header");
+                        }
                         if (
                             section?.offsetTop !== null &&
                             headerheight.offsetHeight !== null &&
@@ -58,17 +64,17 @@ const Team = (props) => {
     }, [props]);
     return (
         <>
-            {visionPage != undefined ? (
+            {(visionPage === undefined) ? (
                 <>
                     <section className={` vision-tab-inspried-sec page-generic ${Pagegeneric.secgeneric}`}>
                         <div className="team-section team-section-vison" id="theteam">
-                            <div className="count-col anim-scroll-up">
+                            <div className="count-col">
                                 <span className="count-number">03</span>
-                                <p className="count-title anim-text-enter">{visionPage?.sub_title}</p>
+                                <p className="count-title">{visionPage?.sub_title}</p>
                             </div>
                             <div className="team-content">
-                                <h2 className="anim-text-enter">{visionPage?.title}</h2>
-                                <p className="anim-text-enter">{visionPage?.description}</p>
+                                <h2>{visionPage?.title}</h2>
+                                <p>{visionPage?.description}</p>
                             </div>
                         </div>
                         {mobileScreen ?
@@ -96,7 +102,7 @@ const Team = (props) => {
                                                                     return (
                                                                         <div key={index2}>
                                                                             <li
-                                                                                className={`anim-scroll-up ${currentTeamName === index2 && "active"}`}
+                                                                                className={`fadeinup ${currentTeamName === index2 && "active"}`}
                                                                             >
                                                                                 <a
                                                                                     className={`#team-${index2}`}

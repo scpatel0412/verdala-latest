@@ -11,14 +11,14 @@ function Amenities(props) {
   }, [props]);
 
   var settings = {
-    speed: 6000,
-    autoplay: true,
+    speed: 1000,
+    autoplay: false,
     autoplaySpeed: 0,
-    cssEase: "linear",
+    // cssEase: "linear",
     slidesToShow: 5,
     slidesToScroll: 1,
-    swipeToSlide: true,
-    infinite: true,
+    swipeToSlide: false,
+    infinite: false,
     arrows: false,
     buttons: false,
     responsive: [
@@ -60,15 +60,15 @@ function Amenities(props) {
     <>
       <div className="amenities-sec" id={"amenities"}>
         <div className="amenities-left">
-          <div className="count-col anim-scroll-up">
+          <div className="count-col">
             <span className="count-number">01</span>
             <p className="count-title">{lifestylePage.amenities?.sub_title}</p>
           </div>
-          <h1 className="anim-text-enter">{lifestylePage.amenities?.title}</h1>
+          <h1>{lifestylePage.amenities?.title}</h1>
         </div>
         <div className="amenities-right">
           <div>
-            <p className="anim-text-enter">{lifestylePage.amenities?.description}</p>
+            <p>{lifestylePage.amenities?.description}</p>
             <button>{lifestylePage.amenities?.button?.title}</button>
           </div>
         </div>
@@ -108,7 +108,7 @@ function Amenities(props) {
             {lifestylePage?.amenities?.amenities_data?.map((item, index) => {
               return (
                 <div key={index}>
-                  <div className="slider-box">
+                  <div className="slider-box anim-scroll-up" data-stagger="0.1">
                     <div className="slider-img">
                       <img src={item.icon}></img>
                     </div>

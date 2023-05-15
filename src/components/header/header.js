@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { gsap } from "gsap";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import TransitionLink, {
   TransitionPortal,
 } from "gatsby-plugin-transition-link";
@@ -13,7 +12,7 @@ import Container from "../layouts/container";
 
 class Header extends Component {
   constructor(props) {
-    // console.log(props, "------------------props");
+    console.log(props, "------------------props");
     super(props);
     this.state = {
       active: false,
@@ -41,14 +40,13 @@ class Header extends Component {
       .set(this.transitionCover, { y: directionFrom })
       .to(this.transitionCover, {
         y: "0%",
-        ease: "Expo.easeIn",
+        ease: "power1.easeInOut",
         duration: seconds / 2,
       })
       .to(this.transitionCover, {
         y: directionTo,
-        ease: "Expo.easeOut",
+        ease: "power1.easeIn",
         duration: seconds / 2,
-        delay: 0.5
       });
   };
 
@@ -109,151 +107,203 @@ class Header extends Component {
   componentDidMount() {
     // console.log(this.props.data);
 
-    // console.log(this.transitionCover);
+    console.log(this.transitionCover);
   }
 
   render() {
-    const data = StaticQuery(graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            menuLinks {
-              name
-              link
-            }
-          }
-        }
-      }
-    `);
+    // const data = StaticQuery(graphql`
+    //   query {
+    //     site {
+    //       siteMetadata {
+    //         title
+    //         menuLinks {
+    //           name
+    //           link
+    //         }
+    //       }
+    //     }
+    //   }
+    // `);
 
     // console.log(data);
-
-    return (
-      <>
-        <Container>
-          <div className="header_inner">
-            <a href="/">
-              {window.location.href.includes("/contact") ||
-              window.location.href.includes("/gallery") ? (
-                <VerdalaLogoalt />
-              ) : (
-                <VerdalaLogo />
-              )}
-            </a>
-
-            <nav
-              ref={(n) => (this.layoutContents = n)}
-              className={this.state.active ? "active" : null}
-            >
-              <ul>
-                <span className="closebtn" onClick={this.toggleClass}>
-                  X
-                </span>
-                <StaticQuery
-                  query={graphql`
-                    query {
-                      site {
-                        siteMetadata {
-                          title
-                          menuLinks {
-                            name
-                            link
+    if(typeof window !== 'undefined'){
+      return (
+        <>
+        
+          <Container>
+            <div className="header_inner">
+              <a href="/">
+  
+                {window.location.href.includes("/contact") ||
+                window.location.href.includes("/gallery") ||  
+                window.location.href.includes("/building") ||
+                window.location.href.includes("/property") ? (
+                  <VerdalaLogoalt />
+                ) : (
+                  <VerdalaLogo />
+                )}
+              </a>
+  
+              <nav
+                ref={(n) => (this.layoutContents = n)}
+                className={this.state.active ? "active" : null}
+              >
+                <ul>
+                  <span className="closebtn" onClick={this.toggleClass}>
+                    X
+                  </span>
+                  <StaticQuery
+                    query={graphql`
+                      query {
+                        site {
+                          siteMetadata {
+                            title
+                            menuLinks {
+                              name
+                              link
+                            }
                           }
                         }
                       }
-                    }
-                  `}
-                  render={(data) => {
-                    return (
-                      <>
-                        {data.site.siteMetadata.menuLinks
-                          .slice(1)
-                          .map((item, key) => {
-                            return (
-                              <li key={key}>
-                                {/* <AniLink paintDrip to={item.link}
-                                                    >
-                                                        {item.name}
-                                                    </AniLink> */}
-                                <TransitionLink
-                                  to={item.link}
-                                  exit={{
-                                    length: 1.5,
-                                    trigger: ({ exit }) =>
-                                      this.verticalAnimation(exit, "up"),
-                                    state: { test: "exit state" },
-                                  }}
-                                  entry={{
-                                    delay: 0.5,
-                                    trigger: ({ entry, node }) => {
-                                      this.test(entry, node);
-                                    },
-                                  }}
-                                  style={{
-                                    textDecoration:
-                                      window.location.pathname ==
-                                      `${item.link}/`
-                                        ? "underline"
-                                        : "",
-                                    color:
-                                      window.location.href.includes(
-                                        "/contact"
-                                      ) ||
-                                      window.location.href.includes("/gallery")
-                                        ? "#635245"
-                                        : "#FFFFFF",
-                                  }}
-                                >
-                                  {item.name}
-                                </TransitionLink>
-                              </li>
-                            );
-                          })}
-                      </>
-                    );
-                  }}
-                />
-              </ul>
-            </nav>
-            <div className="headerbtns">
-              <div className={`button ${headerStyles.searchbtnwrap}`}>
-                <div className="inner-button search-btn">
-                  <Searchicn />
-                  <span className={headerStyles.searchtxt}>
-                    Search Apartment
-                  </span>
+                    `}
+                    render={(data) => {
+                      return (
+                        <>
+                          {data.site.siteMetadata.menuLinks
+                            .slice(1)
+                            .map((item, key) => {
+                              return (
+                                <li key={key}>
+                                  {/* <AniLink paintDrip to={item.link}
+                                                      >
+                                                          {item.name}
+                                                      </AniLink> */}
+                                  <TransitionLink
+                                    to={item.link}
+                                    exit={{
+                                      length: 1.5,
+                                      trigger: ({ exit }) =>
+                                        this.verticalAnimation(exit, "up"),
+                                      state: { test: "exit state" },
+                                    }}
+                                    entry={{
+                                      delay: 0.5,
+                                      trigger: ({ entry, node }) => {
+                                        this.test(entry, node);
+                                      },
+                                    }}
+                                    style={{
+                                      textDecoration:
+                                        window?.location.pathname ==
+                                        `${item.link}/`
+                                          ? "underline"
+                                          : "",
+                                      color:
+                                        window.location.href.includes(
+                                          "/contact"
+                                        ) ||
+                                        window.location.href.includes("/gallery") ||  
+                                        window.location.href.includes("/building") ||
+                                        window.location.href.includes("/property") 
+                                          ? "#635245"
+                                          : "#FFFFFF",
+                                    }}
+                                  >
+                                    {item.name}
+                                  </TransitionLink>
+                                </li>
+                              );
+                            })}
+                        </>
+                      );
+                    }}
+                  />
+                </ul>
+              </nav>
+              <div className="headerbtns">
+                <div className={`button ${headerStyles.searchbtnwrap}`}>
+                  <div className="inner-button search-btn">
+                    <Searchicn />
+                    <span className={headerStyles.searchtxt}>
+                      Search Apartment
+                    </span>
+                  </div>
+  
+                  <div className="type-selector">
+                    <TransitionLink
+                      to={'/building'}
+                      exit={{
+                        length: 1.5,
+                        trigger: ({ exit }) =>
+                          this.verticalAnimation(exit, "up"),
+                        state: { test: "exit state" },
+                      }}
+                      entry={{
+                        delay: 0.5,
+                        trigger: ({ entry, node }) => {
+                          this.test(entry, node);
+                        },
+                      }}
+                    >
+                      <div className="type">
+                        <span>Visual Search by Building</span>
+                      </div>
+                    </TransitionLink>
+                    
+                    <TransitionLink
+                      to={'/apartments'}
+                      exit={{
+                        length: 1.5,
+                        trigger: ({ exit }) =>
+                          this.verticalAnimation(exit, "up"),
+                        state: { test: "exit state" },
+                      }}
+                      entry={{
+                        delay: 0.5,
+                        trigger: ({ entry, node }) => {
+                          this.test(entry, node);
+                        },
+                      }}
+                    >
+                      <div className="type">
+                        <span>Search by Feature</span>
+                      </div>
+                    </TransitionLink>
+                  </div>
+                </div>
+                <div
+                  className={headerStyles.menu_togglebtn}
+                  onClick={this.toggleClass}
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
               </div>
-              <div
-                className={headerStyles.menu_togglebtn}
-                onClick={this.toggleClass}
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
             </div>
-          </div>
-        </Container>
+          </Container>
+  
+          <TransitionPortal>
+            <div
+              className="test-cover"
+              ref={(n) => (this.transitionCover = n)}
+              style={{
+                position: "fixed",
+                background: "#7B9E6B",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                transform: "translateY(100%)",
+              }}
+            />
+          </TransitionPortal>
+        </>
+      );
 
-        <TransitionPortal>
-          <div
-            className="test-cover"
-            ref={(n) => (this.transitionCover = n)}
-            style={{
-              position: "fixed",
-              background: "#7B9E6B",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              transform: "translateY(100%)",
-            }}
-          />
-        </TransitionPortal>
-      </>
-    );
+    } else {
+      return null;
+    }
   }
 }
 

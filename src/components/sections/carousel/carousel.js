@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import CarouselCard from "./carousel-card";
 import * as Styles from "./carousel.module.scss";
-import HeroImg from "../../../assets/images/test-images/nature.jpg";
-import TreeIcon from "../../../assets/images/test-images/tree-icon.png";
+// import HeroImg from "../../../assets/images/test-images/nature.jpg";
+// import TreeIcon from "../../../assets/images/test-images/tree-icon.png";
 import Slider from "react-slick";
 const Carousel = (props) => {
   const [homePage, setHomePage] = useState({});

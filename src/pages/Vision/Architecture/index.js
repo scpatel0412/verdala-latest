@@ -11,7 +11,7 @@ const Architecture = (props) => {
   }, [props]);
   return (
     <>
-      {visionPage != undefined ? (
+      {visionPage !== undefined ? (
         <div className="architecture-sec" id="architecture">
           <div className="count-col">
             <span className="count-number">03</span>
@@ -22,7 +22,7 @@ const Architecture = (props) => {
               <img src={Quote} />
             </div>
             <div className="architopHead">
-              <h2 className="anim-text-enter">{visionPage?.title}</h2>
+              <h2>{visionPage?.title}</h2>
               <div className="archi-quot-right">
                 <img src={Quote} />
               </div>
@@ -30,17 +30,17 @@ const Architecture = (props) => {
             <div className="archi-quote">
               <div className="archi-quot-left">
                 <h4>{visionPage?.author}</h4>
-                <p className="anim-text-enter">{visionPage?.designation}</p>
+                <p>{visionPage?.designation}</p>
               </div>
             </div>
             <div className="archi-description">
-              <p className="anim-text-enter">{visionPage?.description?.split("The Verdala")[0]}</p>
-              <p className="anim-text-enter">{`The Verdala ${
+              <p>{visionPage?.description?.split("The Verdala")[0]}</p>
+              <p>{`The Verdala ${
                 visionPage?.description?.split("The Verdala")[1]
               }`}</p>
             </div>
           </div>
-          <div className="architecture-right anim-scroll-image">
+          <div className="architecture-right">
             {/* <video controls>
               <source src={visionPage?.video?.url} type="video/mp4" />
             </video> */}

@@ -47,7 +47,7 @@ const Timeline = (props) => {
 
   return (
     <>
-      {visionPage != undefined ? (
+      {visionPage !== undefined ? (
         <Container>
           <div className="count-col">
             <span className="count-number">01</span>

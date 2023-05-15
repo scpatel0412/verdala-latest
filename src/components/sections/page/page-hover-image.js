@@ -14,7 +14,7 @@ const PageHoverImage = (props) => {
     }, [props]);
     return (
         <>
-            {homePage != undefined ? <>
+            {homePage !== undefined ? <>
                 <section className={`page-hover-image accent-section ${lifestyle.seclifestyle}`}>
                     <Container>
                         <SectionTitle

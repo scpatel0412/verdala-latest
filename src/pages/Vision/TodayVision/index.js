@@ -10,27 +10,27 @@ const TodayVision = (props) => {
   }, [props]);
   return (
     <>
-      {visionPage != undefined ? (
+      {visionPage !== undefined ? (
         <div className="today-vision-sec">
           <div className="today-vis-inner">
-            <div className="subheading anim-text-enter">todays vision</div>
-            <h1 className="anim-text-enter">{visionPage?.title}</h1>
+            <div className="subheading">todays vision</div>
+            <h1>{visionPage?.title}</h1>
             <div className="today-vis-boxes">
               {visionPage?.books?.map((i, index) => (
                 <div
                   key={index}
-                  className="boxes-item anim-scroll-up"
+                  className="boxes-item"
                   style={{
-                    background: i?.book_link != "" ? "white" : "",
-                    border: i?.book_link != "" ? "none" : "",
+                    background: i?.book_link !== "" ? "white" : "",
+                    border: i?.book_link !== "" ? "none" : "",
                   }}
                 >
                   <div className="edition-div">{i?.sub_title}</div>
                   <h3>{i?.title}</h3>
                   <div>
                     <a href={i?.book_link?.url}>
-                      {i?.book_link != "" ? i?.book_link?.title : "coming soon"}
-                      {i?.book_link != "" && <img src={Download} />}
+                      {i?.book_link !== "" ? i?.book_link?.title : "coming soon"}
+                      {i?.book_link !== "" && <img src={Download} />}
                     </a>
                   </div>
                 </div>

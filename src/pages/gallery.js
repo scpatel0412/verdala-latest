@@ -55,7 +55,7 @@ const Gallery = () => {
                       className="small-title-text"
                       style={{
                         color:
-                          index == selected
+                          index === selected
                             ? "rgba(123, 158, 107, 1)"
                             : "rgba(123, 158, 107, 0)",
                       }}
@@ -63,7 +63,7 @@ const Gallery = () => {
                       media centre
                     </div>
                     <h2
-                      className={index == selected ? "active-h2" : ""}
+                      className={index === selected ? "active-h2" : ""}
                       style={{ opacity: index === selected ? 1 : 0.25 }}
                       onClick={() => onClickSelecte(index)}
                     >

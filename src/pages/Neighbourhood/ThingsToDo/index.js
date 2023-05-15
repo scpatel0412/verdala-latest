@@ -15,14 +15,14 @@ function ThingsToDo(props) {
 
   var settings = {
     speed: 5000,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 0,
-    cssEase: "linear",
+    // cssEase: "linear",
     slidesToShow: 4,
     slidesToScroll: 2,
     swipeToSlide: true,
-    infinite: true,
-    touchThreshold: 300,
+    infinite: false,
+    // touchThreshold: 300,
     arrows: false,
     buttons: false,
     responsive: [
@@ -63,8 +63,8 @@ function ThingsToDo(props) {
         <>
           <div className="things-sec" id={props.data?.id}>
             <div className="thing-inner-se">
-              <h2 className="innerpage_h2 anim-text-enter">{props.data?.data.title}</h2>
-              <p className="anim-text-enter">{props.data?.data.description}</p>
+              <h2 className="innerpage_h2">{props.data?.data.title}</h2>
+              <p>{props.data?.data.description}</p>
             </div>
 
             {props.data?.data.data?.map((item, index) => {
@@ -72,7 +72,7 @@ function ThingsToDo(props) {
               return (
                 <>
                   <div
-                    className="churches-chapels-main-sec"
+                    className="churches-chapels-main-sec anim-scroll-up"
                     key={index}
                     onClick={() => toggleAccordion(item, index)}
                   >
@@ -95,7 +95,7 @@ function ThingsToDo(props) {
                             {item.all_data?.map((innerItem, ind) => {
                               return (
                                 <div key={ind}>
-                                  <div className="slider-box">
+                                  <div className="slider-box anim-scroll-up" data-stagger="0.1">
                                     <div className="slider-img">
                                       <img src={innerItem.image.url}></img>
                                     </div>

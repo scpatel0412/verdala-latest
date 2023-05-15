@@ -1,10 +1,20 @@
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import React from "react"
-import ButtonArrow from '../../assets/svgs/button-arrow.svg'
+// import ButtonArrow from '../../assets/svgs/button-arrow.svg'
 
 const Button = ({ style, link, text,classname }) => (
-    <Link to={link} className={classname?classname:"mainbtn"}>
-        {text}
+    <AniLink 
+        cover
+        direction="left"
+        className={classname?classname:"mainbtn"}
+        duration={1}
+        bg="#7B9E6B"
+        to={link}
+    >
+        <div className="inner-button">
+            {text}
+        </div>
         {/* <div className={"button " + style}>
             <div className="inner-button">
                 <span>{text}</span>
@@ -14,7 +24,7 @@ const Button = ({ style, link, text,classname }) => (
                 </div>
             </div>
         </div> */}
-    </Link>
+    </AniLink>
 )
 
 export default Button;

@@ -13,7 +13,7 @@ function ADayInTheLIfe(props) {
   return (
     <div className="dawn-till-sec" id="adayinthelife">
       <div className="dawn-till-inner">
-        <div className="dawn-till-img anim-image-enter-slide">
+        <div className="dawn-till-img">
           <img
             src={lifestylePage.a_day_in_the_life?.image?.url}
             className=""
@@ -23,11 +23,11 @@ function ADayInTheLIfe(props) {
         <div className="dawn-content">
           
           <div className="dawn-content-inner">
-            <h2 className="anim-text-enter">{lifestylePage.a_day_in_the_life?.description}</h2>
-            <p className="dawn-content-p-mob anim-text-enter">
+            <h2>{lifestylePage.a_day_in_the_life?.description}</h2>
+            <p className="dawn-content-p-mob">
               {lifestylePage.a_day_in_the_life?.description_2}
             </p>
-            <button className="btn anim-scroll-up">
+            <button className="btn">
               {lifestylePage.a_day_in_the_life?.button?.title}
             </button>
           </div>

@@ -5,6 +5,33 @@
     }
 }
 
+.building-selector {
+    .Dropdown-control,
+    .Dropdown-root {
+        display: inline-block;
+        width: auto;
+        border: none;
+    }
+    .Dropdown-menu {
+        top: 70%;
+    }
+    .Dropdown-menu .Dropdown-option.is-selected {
+        background-color: #e2e2e2;
+        color: #686868;
+    }
+
+    .Dropdown-placeholder,
+    .Dropdown-option {
+        font-family: 'Danmark URW';
+        font-size: 48px;
+        color: #7B9E6B;
+    }
+
+    .Dropdown-option {
+        font-size: 25px;
+    }
+}
+
 // .property-single {
 //     min-height: 100vh;
 //     background-image: url('../../images/test/prop-bg.jpg');
@@ -524,6 +551,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: -80px;
+    margin-bottom: 40px;
     padding: 50px 100px;
     z-index: 99;
     

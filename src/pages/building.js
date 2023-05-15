@@ -1,8 +1,8 @@
 import React from "react"
-import Container from '../components/layouts/container';
+// import Container from '../components/layouts/container';
 import { graphql } from "gatsby"
-import SecondaryText from "../components/typography/secondaryText";
-import ContactForm from "../components/sections/forms/contactForms";
+// import SecondaryText from "../components/typography/secondaryText";
+// import ContactForm from "../components/sections/forms/contactForms";
 import BuildingModule from "../components/property/buildingModule";
 // import MyHeader from "../components/header/header";
 

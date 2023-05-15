@@ -1,7 +1,8 @@
 import React from "react";
-import { Children, createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-export const ResizeContext = createContext(null)
+export const ResizeContext = createContext(0);
+
 const ScreenContext = ({ children }) => {
     const [width, setWidth] = useState(window.innerWidth)
     const [height, setHeight] = useState(window.innerHeight)

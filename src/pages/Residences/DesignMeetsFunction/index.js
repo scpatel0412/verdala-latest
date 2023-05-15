@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ResizeContext } from "../../../components/resize";
 import Button from "../../../components/partials/buttons";
-import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
+// import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
 const DesignMeetsFunction = (props) => {
   const [residencesPage, setResidencesPage] = useState({});
   const [currentMeets, setCurrentMeets] = useState(0);
@@ -64,19 +64,19 @@ const DesignMeetsFunction = (props) => {
   };
   return (
     <>
-      {residencesPage != undefined ? (
+      {residencesPage !== undefined ? (
         <>
           <div id={"designmeetsfunction"} className="designmeetfuncations-sec">
             <div className="designmeet-sec">
               <div className="designmeet-left">
-                <div className="count-col anim-scroll-up">
+                <div className="count-col">
                   <span className="count-number">01</span>
                   <p className="count-title">{residencesPage?.sub_title}</p>
                 </div>
               </div>
               <div className="designmeet-right">
-                <h2 className="innerpage_h2 anim-text-enter">{residencesPage?.title}</h2>
-                <p className="anim-text-enter">{residencesPage?.description}</p>
+                <h2 className="innerpage_h2">{residencesPage?.title}</h2>
+                <p>{residencesPage?.description}</p>
               </div>
             </div>
             <div className="">
@@ -97,11 +97,11 @@ const DesignMeetsFunction = (props) => {
                                     className="text"
                                     style={{
                                       textDecoration:
-                                        currentMeets == index
+                                        currentMeets === index
                                           ? "underline"
                                           : "none",
                                       color:
-                                        currentMeets == index
+                                        currentMeets === index
                                           ? "rgba(123, 158, 107, 1)"
                                           : "rgba(123, 158, 107, 0.25)",
                                     }}
@@ -177,11 +177,11 @@ const DesignMeetsFunction = (props) => {
                                 className="text"
                                 style={{
                                   textDecoration:
-                                    currentMeets == index
+                                    currentMeets === index
                                       ? "underline"
                                       : "none",
                                   color:
-                                    currentMeets == index
+                                    currentMeets === index
                                       ? "rgba(123, 158, 107, 1)"
                                       : "rgba(123, 158, 107, 0.25)",
                                 }}

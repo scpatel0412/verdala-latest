@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PageNavigation from "../components/header/page-navigation";
 import { graphql } from "gatsby";
 // import HomeHero from '../components/hero/home-hero';
-import PageHero from "../components/hero/page-hero";
 import Footer from "../components/sections/footer/footer";
 import PropertyCard from "../components/property/property-card";
 import Container from "../components/layouts/container";
@@ -10,6 +9,7 @@ import Dropdown from "react-dropdown";
 // import Dropdown             from 'react-dropdown'
 import "../assets/css/js_composer.min.css";
 import * as propStyles from "../components/property/property.module.scss";
+import PageHeroCompact from "../components/hero/page-hero-compact";
 // import parse from 'html-react-parser'
 
 class Apartments extends Component {
@@ -96,7 +96,7 @@ class Apartments extends Component {
   render() {
     return (
       <>
-        <PageHero title="Residences" />
+        <PageHeroCompact title="Residences"  />
 
         <PageNavigation
           links={[

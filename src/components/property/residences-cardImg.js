@@ -22,13 +22,11 @@ const ResidencesCardImg = (props) => {
     },[props])
     return (
         img !== undefined ? <>
-        <div className="anim-scroll-image">
             <img
                 className="bg-img"
                 src={img?.guid?.rendered}
                 alt=""
             />
-        </div>
         </> : null
     )
 }
