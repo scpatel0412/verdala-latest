@@ -259,6 +259,7 @@ header {
 
     nav a {
       color: white !important;
+     
     }
 
     .button {
@@ -5135,6 +5136,7 @@ h2.innerpage_h2 {
     .section-module--title--b05c1{
       font-size: 28px;
       margin-bottom: 33px;
+      max-width: 100% !important;
       @media screen and (max-width:$lg__screen){
         width: 50%;
         font-size: 18px;
@@ -5190,6 +5192,14 @@ h2.innerpage_h2 {
        .hoverImage-module--laifeimg--2e769{
         img{
           min-height: 825px;
+          transition:none ;
+          .hoverImage-module--activeImage--30e8a{
+            animation: fadeIn ease 5s;
+            -webkit-animation: fadeIn ease 5s;
+            -moz-animation: fadeIn ease 5s;
+            -o-animation: fadeIn ease 5s;
+            -ms-animation: fadeIn ease 5s;
+          }
           @media screen and (max-width:$xl__screen){
             min-height: auto;
            }
@@ -5216,8 +5226,12 @@ h2.innerpage_h2 {
     
   }
   .hoverImage-module--laifesection--f6c12{
+   .hoverImage-module--lifedescinner--32d70{
+    max-width: 100%;
+   }
     h2{
       margin-bottom: 25px;
+      max-width: 600px;
       @media screen and (max-width:$xl__screen){
         margin-top: 0;
        }
@@ -5227,6 +5241,7 @@ h2.innerpage_h2 {
        
     }
     p{
+      max-width: 600px;
       @media screen and (max-width:$lg__screen){
         font-size: 18px;
        }
@@ -6019,5 +6034,57 @@ h2.innerpage_h2 {
   }
   @media all and (max-width: $lg__screen){
     left: 16px !important;
+  }
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+.property-module--gridLayout--08509{
+  .pro-card-align{
+    align-items: flex-end;
+  }
+  .pro-card-right{
+    text-align: right;
+  }
+  // .property-btn {
+  //   font-size: 16px;
+  //   line-height: 18px;
+  //   color: #7B9E6B;
+  //   text-transform: uppercase;
+  //   letter-spacing: 0.02em;
+  //   font-weight: 600;
+  //   position: relative;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   &:after{
+  //     content: '';
+  //     position: relative;
+  //     display: inline-block;
+  //     width: 32px;
+  //     height: 32px;
+  //     border-radius: 50px;
+  //     background-repeat: no-repeat;
+  //     background-position: center;
+  //     background-image: url(images/arrow.svg);
+  //     border: 1px solid rgba(99, 82, 69, 0.3);
+  //   }
+  // }
+}
+nav {
+  li {
+    
+    &:hover{
+      .type-selector-new{
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
   }
 }

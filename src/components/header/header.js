@@ -215,6 +215,34 @@ class Header extends Component {
                                   >
                                     {item.name}
                                   </TransitionLink>
+                                  <div className="type-selector-new">
+                                    <div className="type-selector-card-overlay">
+                                      <div className="type-selector-card">
+                                        <div className="type-card-img">
+                                          <img src={Image1}></img>
+                                        </div>
+                                        <h5>Timeline</h5>
+                                      </div>
+                                      <div className="type-selector-card">
+                                        <div className="type-card-img">
+                                          <img src={Image1}></img>
+                                        </div>
+                                        <h5>Timeline</h5>
+                                      </div>
+                                      <div className="type-selector-card">
+                                        <div className="type-card-img">
+                                          <img src={Image1}></img>
+                                        </div>
+                                        <h5>Timeline</h5>
+                                      </div>
+                                      <div className="type-selector-card">
+                                        <div className="type-card-img">
+                                          <img src={Image1}></img>
+                                        </div>
+                                        <h5>Timeline</h5>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </li>
                               );
                             })}
@@ -234,32 +262,8 @@ class Header extends Component {
                   </div>
 
                   <div className="type-selector">
-                    <div className="type-selector-card">
-                      <div className="type-card-img">
-                        <img src={Image1}></img>
-                      </div>
-                      <h5>Timeline</h5>
-                    </div>
-                    <div className="type-selector-card">
-                      <div className="type-card-img">
-                        <img src={Image1}></img>
-                      </div>
-                      <h5>Timeline</h5>
-                    </div>
-                    <div className="type-selector-card">
-                      <div className="type-card-img">
-                        <img src={Image1}></img>
-                      </div>
-                      <h5>Timeline</h5>
-                    </div>
-                    <div className="type-selector-card">
-                      <div className="type-card-img">
-                        <img src={Image1}></img>
-                      </div>
-                      <h5>Timeline</h5>
-                    </div>
-                    {/* <TransitionLink
-                      to={'/building'}
+                    <TransitionLink
+                      to={"/building"}
                       exit={{
                         length: 1.5,
                         trigger: ({ exit }) =>
@@ -277,9 +281,9 @@ class Header extends Component {
                         <span>Visual Search by Building</span>
                       </div>
                     </TransitionLink>
-                    
+
                     <TransitionLink
-                      to={'/apartments'}
+                      to={"/apartments"}
                       exit={{
                         length: 1.5,
                         trigger: ({ exit }) =>
@@ -296,7 +300,7 @@ class Header extends Component {
                       <div className="type">
                         <span>Search by Feature</span>
                       </div>
-                    </TransitionLink> */}
+                    </TransitionLink>
                   </div>
                 </div>
                 <div
@@ -335,38 +339,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// export default function MyHeader(props) {
-//     return (
-//         <StaticQuery
-//             query={graphql`
-//                 query {
-//                     site {
-//                         siteMetadata {
-//                             title
-//                             menuLinks {
-//                                 name
-//                                 link
-//                             }
-//                         }
-//                     }
-//                 }
-//             `}
-//             render={data => <Header data={data} {...props} />}
-//         />
-//     )
-// }
-
-// export const pageQuery = graphql`
-//     query {
-//         site {
-//             siteMetadata {
-//                 title
-//                 menuLinks {
-//                     name
-//                     link
-//                 }
-//             }
-//         }
-//     }
-// `
