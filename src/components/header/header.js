@@ -9,10 +9,10 @@ import * as headerStyles from "./header.module.scss";
 import VerdalaLogo from "../../assets/svgs/verdala-logo.svg";
 import VerdalaLogoalt from "../../assets/svgs/verdala-logo-alt.svg";
 import Container from "../layouts/container";
+import { Image1 } from "../../images";
 
 class Header extends Component {
   constructor(props) {
-    console.log(props, "------------------props");
     super(props);
     this.state = {
       active: false,
@@ -126,16 +126,14 @@ class Header extends Component {
     // `);
 
     // console.log(data);
-    if(typeof window !== 'undefined'){
+    if (typeof window !== "undefined") {
       return (
         <>
-        
           <Container>
             <div className="header_inner">
               <a href="/">
-  
                 {window.location.href.includes("/contact") ||
-                window.location.href.includes("/gallery") ||  
+                window.location.href.includes("/gallery") ||
                 window.location.href.includes("/building") ||
                 window.location.href.includes("/property") ? (
                   <VerdalaLogoalt />
@@ -143,7 +141,7 @@ class Header extends Component {
                   <VerdalaLogo />
                 )}
               </a>
-  
+
               <nav
                 ref={(n) => (this.layoutContents = n)}
                 className={this.state.active ? "active" : null}
@@ -202,9 +200,15 @@ class Header extends Component {
                                         window.location.href.includes(
                                           "/contact"
                                         ) ||
-                                        window.location.href.includes("/gallery") ||  
-                                        window.location.href.includes("/building") ||
-                                        window.location.href.includes("/property") 
+                                        window.location.href.includes(
+                                          "/gallery"
+                                        ) ||
+                                        window.location.href.includes(
+                                          "/building"
+                                        ) ||
+                                        window.location.href.includes(
+                                          "/property"
+                                        )
                                           ? "#635245"
                                           : "#FFFFFF",
                                     }}
@@ -228,9 +232,33 @@ class Header extends Component {
                       Search Apartment
                     </span>
                   </div>
-  
+
                   <div className="type-selector">
-                    <TransitionLink
+                    <div className="type-selector-card">
+                      <div className="type-card-img">
+                        <img src={Image1}></img>
+                      </div>
+                      <h5>Timeline</h5>
+                    </div>
+                    <div className="type-selector-card">
+                      <div className="type-card-img">
+                        <img src={Image1}></img>
+                      </div>
+                      <h5>Timeline</h5>
+                    </div>
+                    <div className="type-selector-card">
+                      <div className="type-card-img">
+                        <img src={Image1}></img>
+                      </div>
+                      <h5>Timeline</h5>
+                    </div>
+                    <div className="type-selector-card">
+                      <div className="type-card-img">
+                        <img src={Image1}></img>
+                      </div>
+                      <h5>Timeline</h5>
+                    </div>
+                    {/* <TransitionLink
                       to={'/building'}
                       exit={{
                         length: 1.5,
@@ -268,7 +296,7 @@ class Header extends Component {
                       <div className="type">
                         <span>Search by Feature</span>
                       </div>
-                    </TransitionLink>
+                    </TransitionLink> */}
                   </div>
                 </div>
                 <div
@@ -282,7 +310,7 @@ class Header extends Component {
               </div>
             </div>
           </Container>
-  
+
           <TransitionPortal>
             <div
               className="test-cover"
@@ -300,7 +328,6 @@ class Header extends Component {
           </TransitionPortal>
         </>
       );
-
     } else {
       return null;
     }

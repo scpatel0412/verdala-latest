@@ -18,7 +18,8 @@ const Mapping = () => {
     const [over, setOver] = useState({ name: '', display: false, discription: "", image: '' });
     return (
         <div className="mapimg" >
-            {over.display && <div className="mask-information"
+            {over.display && 
+            <div className="mask-information"
             >
                 <div className="msk-popup">
                     <div className="img-mask"><img src={over.image} style={{ height: '100%' }} /></div>
@@ -26,7 +27,8 @@ const Mapping = () => {
                     {/* <p>{over.discription}</p> */}
                     <p>The Verdala Terraces offers a truly singular medley of amenities, amusements, and privileges with personalised levels of service and exclusivity. </p>
                 </div>
-            </div>}
+            </div>
+            }
             
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 5108 3633" style={{ enableBackground: 'new 0 0 5108 3633' }} xmlSpace="preserve" >
@@ -75,10 +77,13 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_10_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="232" height="381" xlinkHref={LandmarkPalazzoFalzon} transform="matrix(0.9806 0 0 0.9806 4496 2530.0391)"
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="232" height="381" xlinkHref={LandmarkPalazzoFalzon} transform="matrix(0.9806 0 0 0.9806 4470 2485.0391)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Palazzo Falzon', display: true, discription: "Landmark Palazzo Falzon description", image: LandmarkPalazzoFalzon })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -102,10 +107,13 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_14_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="544" height="497" xlinkHref={LandmarkGhajnHammiem} transform="matrix(0.9801 0 0 0.9801 4193.4233 1255.8691)"
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="544" height="497" xlinkHref={LandmarkGhajnHammiem} transform="matrix(0.9801 0 0 0.9801 4193.4233 1255.8691)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Ghajn Hammiem', display: true, discription: "Landmark Ghajn Hammiem description", image: LandmarkGhajnHammiem })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -130,11 +138,14 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_18_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="369" height="366" xlinkHref={LandmarkStPaulCathedral}
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="369" height="366" xlinkHref={LandmarkStPaulCathedral}
                                         transform="matrix(1.0267 0 0 1.0267 4119.0684 2760.2178)"
                                         onMouseOver={() =>
                                             setOver({ name: 'LandmarkSt Paul Cathedral', display: true, discription: "Landmark StPaul Cathedral description", image: LandmarkStPaulCathedral })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -160,11 +171,14 @@ const Mapping = () => {
                                     <use xlinkHref="#SVGID_21_" style={{ overflow: 'visible' }} />
                                 </clipPath>
                                 <g style={{ clippath: '(#SVGID_22_)' }}>
-                                    <image style={{ overflow: 'visible' }} width="636" height="356" xlinkHref={LandmarkDomusRomana}
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="636" height="356" xlinkHref={LandmarkDomusRomana}
                                         transform="matrix(0.9873 0 0 0.9873 3620 1573.3018)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Domus Romana', display: true, discription: "Landmark Domus Romana description", image: LandmarkDomusRomana })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -181,10 +195,13 @@ const Mapping = () => {
                                 <use xlinkHref="#SVGID_23_" style={{ overflow: 'visible' }} />
                             </clipPath>
                             <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_24_)' }}>
-                                <image style={{ overflow: 'visible' }} width="236" height="358" xlinkHref={LandmarkPalazzoVilhena} transform="matrix(0.9683 0 0 0.9683 3766.4805 2716.8438)"
+                                <image style={{ overflow: 'visible',cursor:'pointer' }} width="236" height="358" xlinkHref={LandmarkPalazzoVilhena} transform="matrix(0.9683 0 0 0.9683 3766.4805 2716.8438)"
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Palazzo Vilhena', display: true, discription: "Landmark Palazzo Vilhena description", image: LandmarkPalazzoVilhena })
                                     }
+                                    onMouseOut={()=>{
+                                      setOver({ display: false })
+                                    }}
                                 >
                                 </image>
                             </g>
@@ -208,7 +225,7 @@ const Mapping = () => {
                                 <rect id="SVGID_25_" x="3394.4" y="1589.6" width="194.2" height="334.8" />
                             </defs>
                             <clipPath id="SVGID_26_">
-                                <use xlinkHref="#SVGID_25_" style={{ overflow: 'visible' }} />
+                                <use xlinkHref="#SVGID_25_" style={{ overflow: 'visible',cursor:'pointer' }} />
                             </clipPath>
                             <g class="st6" style={{ clipPath: 'url(#SVGID_26_)' }}>
                                 <defs>
@@ -219,11 +236,14 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_28_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="185" height="319" xlinkHref={LandmarkSerkin}
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="185" height="319" xlinkHref={LandmarkSerkin}
                                         transform="matrix(1.0495 0 0 1.0495 3394.4189 1589.6006)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Serkin', display: true, discription: "Landmark Serkin description", image: LandmarkSerkin })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -245,11 +265,14 @@ const Mapping = () => {
                                     <use xlinkHref="#SVGID_29_" style={{ overflow: 'visible' }} />
                                 </clipPath>
                                 <g style={{ clipPath: 'url(#SVGID_30_)' }}>
-                                    <image style={{ overflow: 'visible' }} width="225" height="347" xlinkHref={LandmarkPenitentMagdalene}
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="225" height="347" xlinkHref={LandmarkPenitentMagdalene}
                                         transform="matrix(1.0013 0 0 1.0013 2704.6982 1515.5352)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Penitent Magdalene', display: true, discription: "Landmark Penitent Magdalene description", image: LandmarkPenitentMagdalene })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -273,10 +296,13 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_34_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="271" height="362" xlinkHref={LandmarkCasaBernard} transform="matrix(1.015 0 0 1.015 2915.4106 1135.2893)"
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="271" height="362" xlinkHref={LandmarkCasaBernard} transform="matrix(1.015 0 0 1.015 2915.4106 1135.2893)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Casa Bernard', display: true, discription: "Landmark Casa Bernard description", image: LandmarkCasaBernard })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -300,10 +326,13 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_38_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="496" height="258" xlinkHref={LandmarkRabatMarket} transform="matrix(0.9952 0 0 0.9952 3021.999 866.4561)"
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="496" height="258" xlinkHref={LandmarkRabatMarket} transform="matrix(0.9952 0 0 0.9952 3021.999 866.4561)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Rabat Marketm', display: true, discription: "Landmark Rabat Market description", image: LandmarkRabatMarket })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -327,10 +356,13 @@ const Mapping = () => {
                                 </clipPath>
                                 <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_42_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="215" height="311" xlinkHref={LandmarkFoundingWheel}
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="215" height="311" xlinkHref={LandmarkFoundingWheel}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Founding Wheel', display: true, discription: "Landmark Founding Wheel description", image: LandmarkFoundingWheel })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                         transform="matrix(0.9833 0 0 0.9833 2260.6636 1832)">
                                     </image>
                                 </g>
@@ -354,11 +386,14 @@ const Mapping = () => {
                                 </clipPath>
                                 <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_46_)' }}>
 
-                                    <image style={{ overflow: 'visible' }} width="416" height="426" xlinkHref={LandmarkStPaulBasilica}
+                                    <image style={{ overflow: 'visible',cursor:'pointer' }} width="416" height="426" xlinkHref={LandmarkStPaulBasilica}
                                         transform="matrix(0.9887 0 0 0.9887 2090.7534 1152.1025)"
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark StPaul Basilica', display: true, discription: "Landmark StPaul Basilica description", image: LandmarkStPaulBasilica })
                                         }
+                                        onMouseOut={()=>{
+                                          setOver({ display: false })
+                                        }}
                                     >
                                     </image>
                                 </g>
@@ -372,11 +407,14 @@ const Mapping = () => {
                                 <use xlinkHref="#SVGID_47_" style={{ overflow: 'visible' }} />
                             </clipPath>
                             <g class="st11" style={{ clippath: 'url(#SVGID_48_)' }}>
-                                <image style={{ overflow: 'visible' }} width="447" height="374" xlinkHref={LandmarkParrucan}
+                                <image style={{ overflow: 'visible',cursor:'pointer' }} width="447" height="374" xlinkHref={LandmarkParrucan}
                                     transform="matrix(1.0264 0 0 1.0264 2585.0649 716.4824)"
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Parrucan', display: true, discription: "Landmark Parrucans description", image: LandmarkParrucan })
                                     }
+                                    onMouseOut={()=>{
+                                      setOver({ display: false })
+                                    }}
                                 >
                                 </image>
                             </g>
@@ -390,11 +428,14 @@ const Mapping = () => {
                                 <use xlinkHref="#SVGID_51_" style={{ overflow: 'visible' }} />
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_52_)' }}>
-                                <image style={{ overflow: 'visible' }} width="289" height="270" xlinkHref={LandmarkCatacombs}
+                                <image style={{ overflow: 'visible',cursor:'pointer' }} width="289" height="270" xlinkHref={LandmarkCatacombs}
                                     transform="matrix(1.0294 0 0 1.0294 1766.7456 915.0498)"
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Catacombs', display: true, discription: "Landmark Catacombs description", image: LandmarkCatacombs })
                                     }
+                                    onMouseOut={()=>{
+                                      setOver({ display: false })
+                                    }}
                                 >
                                 </image>
 
@@ -409,10 +450,13 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_54_)' }}>
                                 <label>test</label>
-                                <image style={{ overflow: 'visible' }} width="1433" height="534" xlinkHref={LandmarkVerdala} transform="matrix(1.0232 0 0 1.0232 364.2627 2603.626)"
+                                <image style={{ overflow: 'visible',cursor:'pointer' }} width="1433" height="534" xlinkHref={LandmarkVerdala} transform="matrix(1.0232 0 0 1.0232 364.2627 2603.626)"
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Verdalas', display: true, discription: "Landmark Verdala description", image: LandmarkVerdala })
                                     }
+                                    onMouseOut={()=>{
+                                      setOver({ display: false })
+                                    }}
                                 >
                                 </image>
                             </g>
@@ -468,7 +512,7 @@ const Mapping = () => {
                           </clipPath>
                           <g style={{ clippath: 'url(#SVGID_60_)' }}>
 
-                            <image style={{ overflow: 'visible' }} width="5108" height="3633" xlinkHref={LandmarkFoundingWheel} transform="matrix(1 0 0 1 -7212 3653)">
+                            <image style={{ overflow: 'visible',cursor:'pointer' }} width="5108" height="3633" xlinkHref={LandmarkFoundingWheel} transform="matrix(1 0 0 1 -7212 3653)">
                             </image>
                           </g>
                         </g>
@@ -488,7 +532,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_64_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="232" height="381" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9806 0 0 0.9806 -2716 6183.0391)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="232" height="381" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9806 0 0 0.9806 -2716 6183.0391)">
                               </image>
                             </g>
                           </g>
@@ -509,7 +553,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_68_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="544" height="497" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9801 0 0 0.9801 -3018.5767 4908.8691)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="544" height="497" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9801 0 0 0.9801 -3018.5767 4908.8691)">
                               </image>
                             </g>
                           </g>
@@ -530,7 +574,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_72_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="369" height="366" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0267 0 0 1.0267 -3092.9316 6413.2178)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="369" height="366" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0267 0 0 1.0267 -3092.9316 6413.2178)">
                               </image>
                             </g>
                           </g>
@@ -551,7 +595,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_76_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="636" height="356" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9873 0 0 0.9873 -3592 5226.3018)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="636" height="356" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9873 0 0 0.9873 -3592 5226.3018)">
                               </image>
                             </g>
                           </g>
@@ -565,7 +609,7 @@ const Mapping = () => {
                           </clipPath>
                           <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_78_)' }}>
 
-                            <image style={{ overflow: 'visible' }} width="236" height="358" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9683 0 0 0.9683 -3445.5195 6369.8438)">
+                            <image style={{ overflow: 'visible',cursor:'pointer' }} width="236" height="358" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9683 0 0 0.9683 -3445.5195 6369.8438)">
                             </image>
                           </g>
                         </g>
@@ -585,7 +629,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_82_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="185" height="319" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0495 0 0 1.0495 -3817.5811 5242.6006)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="185" height="319" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0495 0 0 1.0495 -3817.5811 5242.6006)">
                               </image>
                             </g>
                           </g>
@@ -599,7 +643,7 @@ const Mapping = () => {
                           </clipPath>
                           <g style={{ clippath: 'url(#SVGID_84_)' }}>
 
-                            <image style={{ overflow: 'visible' }} width="225" height="347" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0013 0 0 1.0013 -4507.3018 5168.5352)">
+                            <image style={{ overflow: 'visible',cursor:'pointer' }} width="225" height="347" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0013 0 0 1.0013 -4507.3018 5168.5352)">
                             </image>
                           </g>
                         </g>
@@ -619,7 +663,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_88_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="271" height="362" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.015 0 0 1.015 -4296.5894 4788.2891)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="271" height="362" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.015 0 0 1.015 -4296.5894 4788.2891)">
                               </image>
                             </g>
                           </g>
@@ -640,7 +684,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_92_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="496" height="258" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9952 0 0 0.9952 -4190.001 4519.4561)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="496" height="258" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9952 0 0 0.9952 -4190.001 4519.4561)">
                               </image>
                             </g>
                           </g>
@@ -661,7 +705,7 @@ const Mapping = () => {
                             </clipPath>
                             <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_96_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="215" height="311" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9833 0 0 0.9833 -4951.3364 5485)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="215" height="311" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9833 0 0 0.9833 -4951.3364 5485)">
                               </image>
                             </g>
                           </g>
@@ -682,7 +726,7 @@ const Mapping = () => {
                             </clipPath>
                             <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_100_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="416" height="426" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9887 0 0 0.9887 -5121.2466 4805.1025)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="416" height="426" xlinkHref={LandmarkFoundingWheel} transform="matrix(0.9887 0 0 0.9887 -5121.2466 4805.1025)">
                               </image>
                             </g>
                           </g>
@@ -703,7 +747,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: '(#SVGID_104_)' }}>
 
-                              <image style={{ overflow: 'visible' }} width="447" height="374" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0264 0 0 1.0264 -4626.9351 4369.4824)">
+                              <image style={{ overflow: 'visible',cursor:'pointer' }} width="447" height="374" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0264 0 0 1.0264 -4626.9351 4369.4824)">
                               </image>
                             </g>
                           </g>
@@ -717,7 +761,7 @@ const Mapping = () => {
                           </clipPath>
                           <g style={{ clippath: 'url(#SVGID_106_)' }}>
 
-                            <image style={{ overflow: 'visible' }} width="289" height="270" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0294 0 0 1.0294 -5445.2544 4568.0498)">
+                            <image style={{ overflow: 'visible',cursor:'pointer' }} width="289" height="270" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0294 0 0 1.0294 -5445.2544 4568.0498)">
                             </image>
                           </g>
                         </g>
@@ -730,7 +774,7 @@ const Mapping = () => {
                           </clipPath>
                           <g style={{ clippath: 'url(#SVGID_108_)' }}>
 
-                            <image style={{ overflow: 'visible' }} width="1433" height="534" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0232 0 0 1.0232 -6847.7373 6256.626)"
+                            <image style={{ overflow: 'visible',cursor:'pointer' }} width="1433" height="534" xlinkHref={LandmarkFoundingWheel} transform="matrix(1.0232 0 0 1.0232 -6847.7373 6256.626)"
 
                             >
                             </image>

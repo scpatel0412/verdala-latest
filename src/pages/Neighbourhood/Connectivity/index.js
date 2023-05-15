@@ -764,13 +764,7 @@ function Connectivity(props) {
       {Object.keys(props).length > 0 ? (
         <>
           <div className="connectivity-sec" id={props?.data?.id}>
-            <div className="count-col">
-              <span className="count-number">02</span>
-              <p className="count-title">{props.data.id}</p>
-            </div>
-            
             <div className="connectivity-location-sec">
-
               <div className="connectivity-location-inner">
                 <div className="connectivity-location-inner-div">
                   <div className="count-col">

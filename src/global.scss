@@ -229,7 +229,21 @@ header {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    .headerbtns{
+      .button {
+        position: static;
+        border: 1px solid transparent;
+        &:hover{
+          border: 1px solid #fff;
+          background: transparent;
+          color: #fff;
+          svg{
+            filter: brightness(11);
+          }
+        }
 
+      }
+    }
     @media screen and (max-width: $xl__screen) {
       .headerbtns {
         display: flex;
@@ -4130,12 +4144,10 @@ h2.innerpage_h2 {
 }
 .connectivity-sec {
   background: $mainYellow;
-  padding: 30px 40px;
-  max-width: 1920px;
-  margin: 0 auto;
+  padding: 0px 0px 30px 40px;
   position: relative;
   @media screen and (max-width: $sm__screen) {
-    padding: 20px 20px 10px;
+    padding: 20px 0px 10px;
   }
   &:before {
     content: "";
@@ -4183,51 +4195,79 @@ h2.innerpage_h2 {
     letter-spacing: -0.04em;
   }
   .connectivity-location-sec {
-    padding: 0 135px;
+    padding: 0 0px 135px 135px;
+    display: flex;
+    flex-wrap: wrap;
     @media screen and (max-width: $xxl__screen) {
-      padding: 0 50px;
+      padding: 0 50px 100px;
     }
     @media screen and (max-width: $xl__screen) {
-      padding: 0 0px;
+      padding: 0 0px 100px;
     }
     @media screen and (max-width: $sm__screen) {
-      padding: 57px 0 0 0;
+      padding: 0px 20px 0 20px;
     }
     .connectivity-location-inner {
-      max-width: 447px;
-      margin: 0 auto 146px 0;
+      width: 40%;
       position: relative;
-      z-index: 1
-    }
-    .map-img{
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 65%;
-      z-index: 0;
-      height: 926px;
-      overflow: hidden;
-      img{
+      z-index: 1;
+      @media screen and (max-width: $lg__screen){
         width: 100%;
-        height: 100%;
-        object-fit: cover;
       }
+      .connectivity-location-inner-div{
+        max-width: 684px;
+        margin: 30px 0 146px auto;
+        @media screen and (max-width: $xxl__screen) {
+          max-width: 100%;
+          margin: 30px 0 146px auto;
+          padding: 0 40px 0 0;
+        }
+        @media screen and (max-width: $lg__screen){
+          margin: 30px 0 50px auto;
+        }
+        h2{
+          @media screen and (max-width: $xl__screen){
+            font-size: 41px;
+          }
+        }
+        p{
+          max-width: 447px;
+        }
+      }
+      
     }
     .mapimg {
-      width: calc(100% - 470px);
-      margin-right: -40px;
+      width: 60%;
       position: relative;
+      @media screen and (max-width: $lg__screen){
+        width: 100%;
+        padding-right: 40px;
+      }
+      @media screen and (max-width: $sm__screen){
+        padding: 0 0 40px 0;
+        display: none;
+      }
+      svg{
+        height: 100%;
+      }
       .msk-popup {
-        width: 283px;
         background: #fff;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         padding: 10px 10px 35px 10px;
+        @media screen and (max-width: $xxl__screen){
+          padding: 10px 10px 10px 10px;
+        }
         .img-mask {
-            height: 187px;
-
-            img {
-              object-fit: contain;
-            }
+          height: 187px;
+          margin-bottom: 12px;
+          @media screen and (max-width: $xxl__screen){
+            height: 110px;
+          }
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
         }
         h6{
           font-size: 20px;
@@ -4245,14 +4285,17 @@ h2.innerpage_h2 {
       }
       .mask-information{
         position: absolute;
-        top: 33%;
-        left: 13%;
+        bottom: 34%;
+        left: 20px;
+        width: 28%;
       }
       
     }
   }
   .neighborhood-sec {
-    padding: 0px 0px 86px 135px;
+    padding: 0px 40px 86px 135px;	
+    max-width: 1920px;	
+    margin: 0 auto;
     @media screen and (max-width: $xxl__screen) {
       padding: 0 0px 86px 50px;
     }
@@ -4260,7 +4303,7 @@ h2.innerpage_h2 {
       padding: 0 0px 86px 0px;
     }
     @media screen and (max-width: $sm__screen) {
-      padding: 0 0px 70px 0px;
+      padding: 0 20px 0px 20px;
       overflow:hidden;
     }
     .neighborhood-top-inner {
@@ -4302,7 +4345,7 @@ h2.innerpage_h2 {
         clip-path: inset(-100vw 0 -100vw 0);
         overflow: visible;
         @media screen and (max-width: $sm__screen){
-          padding-right: 70px;
+          padding-right: 00px;
           overflow: visible;
           margin-left: 0px;
           -webkit-clip-path: unset;

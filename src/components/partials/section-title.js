@@ -4,7 +4,6 @@ import SecondaryText from "../typography/secondaryText";
 import * as Styles from "./section.module.scss";
 
 const SectionTitle = (props) => {
-  console.log(props, "------------------>>>>>>>>>>>>>>");
   return (
     <>
       <div>
@@ -43,7 +42,9 @@ const SectionTitle = (props) => {
               <>
                 <h2
                   className={`${Styles.secmaintitle} ${
-                    props.customclass === "bquote" ? Styles.bquote + " anim-scroll-up " : " anim-scroll-up "
+                    props.customclass === "bquote"
+                      ? Styles.bquote + " anim-scroll-up "
+                      : " anim-scroll-up "
                   }`}
                   data-splitting
                 >
