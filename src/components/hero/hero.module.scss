@@ -115,6 +115,10 @@
     position: absolute;
 }
 
+.titleCont {
+    opacity: 0;
+}
+
 .textCont {
     position: absolute;
     bottom: 228px;
@@ -185,5 +189,9 @@
 
 .pageMainTitle {
     font-size: 9em;
+    // opacity: 0;
+
+    // div {
+    // }
 }
 

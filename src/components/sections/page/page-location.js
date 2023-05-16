@@ -239,11 +239,7 @@ const PageLocation = (props) => {
                                     <p className="anim-text-enter">{item.place_description}</p>
                                   </div>
                                 </div>
-
-                                {/* <Button
-                                  styleClass="border-button"
-                                  text={homePage?.button_link?.title}
-                                /> */}
+                               
                               </div>
                             </div>
                             <div className="crow home-connectivity-bottom secondary-locations">
@@ -309,10 +305,7 @@ const PageLocation = (props) => {
                                   </div>
                                 </div>
 
-                                {/* <Button
-                                  styleClass="border-button"
-                                  text={homePage?.button_link?.title}
-                                /> */}
+                             
                               </div>
                             </div>
 

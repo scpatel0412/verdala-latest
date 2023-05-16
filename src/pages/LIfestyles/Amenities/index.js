@@ -19,7 +19,7 @@ function Amenities(props) {
     slidesToScroll: 1,
     swipeToSlide: false,
     infinite: false,
-    arrows: false,
+    arrows: true,
     buttons: false,
     responsive: [
       {

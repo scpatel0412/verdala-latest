@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import HeroImg from "../../../assets/images/test-images/home-image.png"
+import HeroImg from "../../../assets/images/test-images/home-image-2.jpg"
 import Button from "../../partials/buttons";
 import IconTitleText from "../../partials/icon-title-text";
 // import TreeIcon from "../../../assets/images/test-images/tree-icon.png";

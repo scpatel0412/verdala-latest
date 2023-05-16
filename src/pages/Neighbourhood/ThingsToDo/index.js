@@ -10,7 +10,7 @@ function ThingsToDo(props) {
   }, [props]);
 
   function toggleAccordion(item, index) {
-    setToggleState1(index);   
+    setToggleState1(index);
   }
 
   var settings = {
@@ -23,7 +23,7 @@ function ThingsToDo(props) {
     swipeToSlide: true,
     infinite: false,
     // touchThreshold: 300,
-    arrows: false,
+    arrows: true,
     buttons: false,
     responsive: [
       {
@@ -95,7 +95,10 @@ function ThingsToDo(props) {
                             {item.all_data?.map((innerItem, ind) => {
                               return (
                                 <div key={ind}>
-                                  <div className="slider-box" data-stagger="0.1">
+                                  <div
+                                    className="slider-box"
+                                    data-stagger="0.1"
+                                  >
                                     <div className="slider-img">
                                       <img src={innerItem.image.url}></img>
                                     </div>

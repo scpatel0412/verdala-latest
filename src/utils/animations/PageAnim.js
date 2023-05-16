@@ -19,9 +19,28 @@ const BisAnimate = ({ children, location }) => {
         let ctx = gsap.context(() => {
 
             setTimeout(() => {
-                // const element = ref.current;
-                // console.log(element.querySelector("#thirdCircle"));
+                let split = SplitText.create(".anim-banner .title-cont h1", {type:"chars"});
+            
+                gsap.from(split.chars, { // <- selector text, scoped to this component!
+                    opacity: 0,
+                    y: 200,
+                    ease: "Expo.easeOut",
+                    duration: 2,
+                    delay: 1,
+                    stagger: 0.02
+                });
 
+                gsap.set(
+                    '.anim-banner .title-cont, .anim-banner-compact .title-cont',
+                    {
+                        opacity: 1,
+                    }
+                );
+
+                return () => split.revert(); // context cleanup
+            }, 100)
+
+            setTimeout(() => {
                 let lineSections = gsap.utils.toArray('.anim-text-enter');
         
                 lineSections.forEach((section) => {
@@ -46,95 +65,6 @@ const BisAnimate = ({ children, location }) => {
                     });
                 })
 
-
-                // gsap.from(splitLine.lines, { // <- selector text, scoped to this component!
-                //     scaleY: 0.5,
-                //     opacity: 0,
-                //     y: 20,
-                //     ease: "Expo.easeOut",
-                //     duration: 2,
-                //     // delay: 1,
-                //     stagger: 0.1,
-                //     scrollTrigger: {
-                //         trigger: splitLine.lines,
-                //         start: "top 85%",
-                //         // end: "bottom top",
-                //     //   stagger: 1,
-                //         scrub: true,
-                //         // markers: true
-                //     },
-                // });
-
-                let split = SplitText.create(".anim-banner .title-cont h1", {type:"chars"});
-            
-                gsap.from(split.chars, { // <- selector text, scoped to this component!
-                    opacity: 0,
-                    y: 200,
-                    ease: "Expo.easeOut",
-                    duration: 2,
-                    delay: 1,
-                    stagger: 0.02
-                });
-        
-                gsap.set(
-                    '.anim-scroll-up',
-                    {
-                        opacity: 0,
-                        y: 50,
-                    }
-                );
-
-                gsap.set(
-                    '.anim-banner .title-cont, .anim-banner-compact .title-cont',
-                    {
-                        opacity: 1,
-                    }
-                );
-    
-                gsap.fromTo(
-                    ".anim-banner .title-cont",
-                    {
-                        y: 0
-                    },
-                    {
-                        y: -100,
-                        ease: "Cubic.easeOut",
-                        scrollTrigger: {
-                            trigger: ".anim-banner .title-cont",
-                            // start: "top 80%",
-                            // end: "bottom top",
-                        //   stagger: 1,
-                            scrub: true,
-                            // markers: true
-                        },
-                    }
-                );
-                
-                gsap.fromTo(
-                    ".anim-banner-compact .title-cont",
-                    {
-                        y: 0
-                    },
-                    {
-                        y: -30,
-                        ease: "Cubic.easeOut",
-                        scrollTrigger: {
-                            trigger: ".anim-banner-compact .title-cont",
-                            // start: "top 80%",
-                            // end: "bottom top",
-                        //   stagger: 1,
-                            scrub: true,
-                            // markers: true
-                        },
-                    }
-                );    
-                
-                return () => split.revert(); // context cleanup
-            }, 2000);
-
-            
-
-            setTimeout(() => {
                 let imageSections = gsap.utils.toArray('.anim-scroll-image img');
         
                 imageSections.forEach((section) => { 
@@ -241,6 +171,21 @@ const BisAnimate = ({ children, location }) => {
                     );
                 
                 })
+
+                gsap.set(
+                    '.anim-scroll-up',
+                    {
+                        opacity: 0,
+                        y: 50,
+                    }
+                );
+                
+                gsap.set(
+                    '.anim-scroll-fade',
+                    {
+                        opacity: 0,
+                    }
+                );
         
                 ScrollTrigger.batch(".anim-scroll-up", {
                     //interval: 0.1, // time window (in seconds) for batching to occur. 
@@ -253,12 +198,15 @@ const BisAnimate = ({ children, location }) => {
                     // onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
                     // you can also define things like start, end, etc.
                 });
+                
+                ScrollTrigger.batch(".anim-scroll-fade", {
+                    onEnter: batch => gsap.to(batch, {opacity: 1, duration: 1, ease: "Cubic.easeOut", stagger: 0.2}),
+                    onLeaveBack: batch => gsap.to(batch, {opacity: 0, duration: 1, ease: "Cubic.easeOut", overwrite: true}),
+                    onEnterBack: batch => gsap.to(batch, {opacity: 1, duration: 1, ease: "Cubic.easeOut", stagger: 0.2, overwrite: true}),
+                    start: 'top 85%'
+                });
             }, 3000)
-
-            
         }, component); // <- scopes all selector text inside the context to this component (optional, default is document)
-
-        
             
         return () => ctx.revert(); // useLayoutEffect cleanup
     }
@@ -266,7 +214,7 @@ const BisAnimate = ({ children, location }) => {
     useEffect(() => {
         setTimeout( () => {
             setAnimProps();
-        }, 2500);
+        }, 3000);
     })
 
     useLayoutEffect(() => {

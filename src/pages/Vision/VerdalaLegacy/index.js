@@ -24,17 +24,17 @@ const VerdalaLegacy = (props) => {
               <p>{visionPage?.description}</p>
               <button>{visionPage?.button?.title}</button>
             </div>
-            <div className="misson-right anim-scroll-up">
+            <div className="misson-right anim-scroll-fade">
               <div className="mission-img anim-scroll-image anim-parallax">
                 <img src={visionPage?.image_1?.url} alt="visionPageImg" />
               </div>
             </div>
           </div>
           <div className="merge-images">
-            <div className="merge-img-left anim-scroll-up anim-scroll-image anim-parallax">
+            <div className="merge-img-left anim-scroll-fade anim-scroll-image anim-parallax">
               <img src={visionPage?.image_2?.url} />
             </div>
-            <div className="merge-img-right anim-scroll-up anim-scroll-image anim-parallax">
+            <div className="merge-img-right anim-scroll-fade anim-scroll-image anim-parallax">
               <img src={visionPage?.image_3?.url} />
             </div>
           </div>

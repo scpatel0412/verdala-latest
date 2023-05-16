@@ -14,6 +14,8 @@ import LandmarkSerkin from '../../../images/Landmark-Serkin.png'
 import LandmarkStPaulCathedral from '../../../images/Landmark-St. Paul Cathedral.png'
 import LandmarkStPaulBasilica from '../../../images/Landmark-St.Paul Basilica.png'
 import LandmarkVerdala from '../../../images/Landmark-Verdala.png'
+import neighmapimgsvg from '../../../images/neigh-map-img.svg'
+
 const Mapping = () => {
     const [over, setOver] = useState({ name: '', display: false, discription: "", image: '' });
     return (
@@ -56,11 +58,11 @@ const Mapping = () => {
                                 <use xlinkHref="#SVGID_5_" style={{ overflow: 'visible' }} />
                             </clipPath>
 
-                            <image style={{ overflow: 'visible', clippath: 'url(#SVGID_6_)' }} width="5108" height="3633" xlinkHref={neighmapimg}>
+                            <image style={{ overflow: 'visible', clippath: 'url(#SVGID_6_)' }} width="5108" height="3633" xlinkHref={neighmapimgsvg}>
                             </image>
                         </g>
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_7_" x="4496" y="2530" width="227.5" height="373.6" />
                             </defs>
@@ -92,7 +94,7 @@ const Mapping = () => {
                             </g>
                         </g>
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_11_" x="4193.4" y="1255.9" width="533.2" height="487.1" />
                             </defs>
@@ -123,7 +125,7 @@ const Mapping = () => {
                         </g>
 
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_15_" x="4119.1" y="2760.2" width="378.9" height="375.8" />
                             </defs>
@@ -157,7 +159,7 @@ const Mapping = () => {
 
 
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_19_" x="3620" y="1573.3" width="627.9" height="351.5" />
                             </defs>
@@ -189,7 +191,7 @@ const Mapping = () => {
 
 
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_23_" x="3766.5" y="2716.8" width="228.5" height="346.7" />
                             </defs>
@@ -229,14 +231,15 @@ const Mapping = () => {
                             <clipPath id="SVGID_26_">
                                 <use xlinkHref="#SVGID_25_" style={{ overflow: 'visible',cursor:'pointer' }} />
                             </clipPath>
-                            <g class="st6" style={{ clipPath: 'url(#SVGID_26_)' }}>
+                            <g class="st6  svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_26_)' }}>
                                 <defs>
                                     <rect id="SVGID_27_" x="3394.4" y="1589.6" width="194.2" height="334.8" />
                                 </defs>
                                 <clipPath id="SVGID_28_">
                                     <use xlinkHref="#SVGID_27_" style={{ overflow: 'visible' }} />
                                 </clipPath>
-                                <g style={{ clippath: 'url(#SVGID_28_)' }}>
+                                </g>
+                                <g className=' svg-menu__path__seleccion' style={{ clippath: 'url(#SVGID_28_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer' }} width="185" height="319" xlinkHref={LandmarkSerkin}
                                         transform="matrix(1.0495 0 0 1.0495 3394.4189 1589.6006)"
@@ -248,7 +251,7 @@ const Mapping = () => {
                                         }}
                                     >
                                     </image>
-                                </g>
+                              
                             </g>
                             {/* <g style={{clippath:'url(#SVGID_30_)'}}>
                               
@@ -259,7 +262,7 @@ const Mapping = () => {
 
 
 
-                            <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                            <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                                 <defs>
                                     <rect id="SVGID_29_" x="2704.7" y="1515.5" width="225.3" height="347.5" />
                                 </defs>
@@ -281,7 +284,7 @@ const Mapping = () => {
                             </g>
                         </g>
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_31_" x="2915.4" y="1135.3" width="275.1" height="367.4" />
                             </defs>
@@ -312,7 +315,7 @@ const Mapping = () => {
                         </g>
 
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_35_" x="3022" y="866.5" width="493.6" height="256.8" />
                             </defs>
@@ -342,7 +345,7 @@ const Mapping = () => {
                         </g>
 
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_39_" x="2260.7" y="1832" width="211.4" height="305.8" />
                             </defs>
@@ -372,7 +375,7 @@ const Mapping = () => {
                         </g>
 
 
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_43_" x="2090.8" y="1152.1" width="411.3" height="421.2" />
                             </defs>
@@ -401,7 +404,7 @@ const Mapping = () => {
                                 </g>
                             </g>
                         </g>
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_47_" x="2585.1" y="716.5" width="458.8" height="383.9" />
                             </defs>
@@ -422,7 +425,7 @@ const Mapping = () => {
                             </g>
 
                         </g>
-                        <g class="st1" style={{ clipPath: 'url(#SVGID_4_)' }}>
+                        <g class="st1 svg-menu__path__seleccion" style={{ clipPath: 'url(#SVGID_4_)' }}>
                             <defs>
                                 <rect id="SVGID_51_" x="1766.7" y="915" width="297.5" height="277.9" />
                             </defs>

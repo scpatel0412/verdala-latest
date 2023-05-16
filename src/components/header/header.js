@@ -25,7 +25,7 @@ class Header extends Component {
     this.transitionCover = React.createRef();
   }
   toggleClass() {
-    console.log("first");
+    // console.log("first");
     const currentState = this.state.active;
     this.setState({ active: !currentState });
   }
@@ -46,9 +46,9 @@ class Header extends Component {
       })
       .to(this.transitionCover, {
         y: directionTo,
-        ease: "power1.easeIn",
-        duration: seconds / 2,
-      });
+        ease: "power1.easeOut",
+        duration: seconds / 3,
+      }, "+=1.5");
   };
 
   test2(entry, node) {
@@ -108,7 +108,7 @@ class Header extends Component {
   componentDidMount() {
     // console.log(this.props.data);
 
-    console.log(this.transitionCover);
+    // console.log(this.transitionCover);
   }
 
   render() {
@@ -188,7 +188,7 @@ class Header extends Component {
                                     entry={{
                                       delay: 0.5,
                                       trigger: ({ entry, node }) => {
-                                        this.test(entry, node);
+                                        // this.test(entry, node);
                                       },
                                     }}
                                     style={{
@@ -303,7 +303,7 @@ class Header extends Component {
                       entry={{
                         delay: 0.5,
                         trigger: ({ entry, node }) => {
-                          this.test(entry, node);
+                          // this.test(entry, node);
                         },
                       }}
                       
@@ -325,7 +325,7 @@ class Header extends Component {
                       entry={{
                         delay: 0.5,
                         trigger: ({ entry, node }) => {
-                          this.test(entry, node);
+                          // this.test(entry, node);
                         },
                       }}
                     >

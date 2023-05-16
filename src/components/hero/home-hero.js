@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from "react"
 import Slider from "react-slick";
 import { gsap } from "gsap";
 // import SplitText from "gsap/SplitText";
-import Splitting from "splitting";
+// import Splitting from "splitting";
 import * as heroStyles from "./hero.module.scss"
 
 const HomeHero = (props) => {
@@ -96,7 +96,7 @@ const HomeHero = (props) => {
                     );
 
                     gsap.fromTo(
-                        ".anim-scroll-up,.customarrow",
+                        ".anim-scroll-up-home,.customarrow",
                         {
                             opacity: 0,
                             y: 100,
@@ -164,17 +164,17 @@ const HomeHero = (props) => {
                     }
                 );
 
-                Splitting({ target: document.querySelector('h1'), by: 'chars', whitespace: true });
+                // Splitting({ target: document.querySelector('h1'), by: 'chars', whitespace: true });
       
-                gsap.to(".char", { 
-                    opacity: 1,
-                    y: 100,
-                    ease: "back",
-                    duration: 1,
-                    delay: 1,
-                    stagger: 0.1,
-                    // onComplete: () => split.revert()
-                });
+                // gsap.to(".char", { 
+                //     opacity: 1,
+                //     y: 100,
+                //     ease: "back",
+                //     duration: 1,
+                //     delay: 1,
+                //     stagger: 0.1,
+                //     // onComplete: () => split.revert()
+                // });
                 
                 // return () => split.revert(); // context cleanup
           
@@ -182,20 +182,6 @@ const HomeHero = (props) => {
           
             return () => ctx.revert();
         }
-
-
-        // if (homePage !== undefined) {
-        //     const element = ref.current;
-
-        //     gsap.to(
-        //         ".title-cont",
-        //         {
-        //             opacity: 1,
-        //             y: -100,
-        //             duration: 1
-        //         }
-        //     );
-        // }
     }, []);
 
     return (
@@ -212,9 +198,9 @@ const HomeHero = (props) => {
                         >
                             {homePage?.header_section?.header_slider.map((item, index) => {
                                 return (
-                                    <div className={`anim-scroll-up ${heroStyles.cslide}`} key={index}>
+                                    <div className={`anim-scroll-up-home ${heroStyles.cslide}`} key={index}>
                                         <div>
-                                            <h3 className="anim-scroll-up">{item?.content_title}</h3>
+                                            <h3 className="anim-scroll-up-home">{item?.content_title}</h3>
                                             <div className={heroStyles.slide_desc} >
                                                 {item?.content_description}
                                             </div>
@@ -223,14 +209,14 @@ const HomeHero = (props) => {
                                 )
                             })}
                         </Slider>
-                        <div className={`anim-scroll-up ${heroStyles.slide_count}`}>
+                        <div className={`anim-scroll-up-home ${heroStyles.slide_count}`}>
                             <span>{(currentIndex + 1).toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })}</span>/<span>{slidecount.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })}</span>
                         </div>
                     </div>
                     <div className={heroStyles.textCont}>
                         <div className="title-cont">
-                            <h3 className={heroStyles.introTitle} data-splitting><span className={heroStyles.subtitle}>{homePage?.header_section?.header_slider[currentIndex]?.sub_heading}</span></h3>
-                            <h1 ref={titleRef} className={heroStyles.mainTitle} data-splitting>{homePage?.header_section?.header_slider[currentIndex]?.main_heading}</h1>
+                            <h3 className={heroStyles.introTitle}><span className={heroStyles.subtitle}>{homePage?.header_section?.header_slider[currentIndex]?.sub_heading}</span></h3>
+                            <h1 ref={titleRef} className={heroStyles.mainTitle}>{homePage?.header_section?.header_slider[currentIndex]?.main_heading}</h1>
                         </div>
                     </div>
                 </div>
