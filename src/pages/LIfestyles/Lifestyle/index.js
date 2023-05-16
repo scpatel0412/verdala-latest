@@ -98,7 +98,7 @@ const Lifestyle = (props) => {
                           return (
                             <div key={index2}>
                               <li
-                                className={`team-teamData-container fadeinup ${
+                                className={`team-teamData-container anim-scroll-up ${
                                   currentLifestyleName === index2 && "active"
                                 }`}
                               >

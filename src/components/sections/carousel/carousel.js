@@ -17,7 +17,7 @@ const Carousel = (props) => {
     // speed: 5000,
     autoplay: false,
     autoplaySpeed: 0,
-    cssEase: 'linear',
+    cssEase: 'ease-out',
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,

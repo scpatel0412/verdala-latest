@@ -42,7 +42,7 @@ module.exports = {
     ],
   },
   flags: {
-      gatsbyDEV_SSR: true
+      // gatsbyDEV_SSR: true
   },
   plugins: [
     {

@@ -8,6 +8,24 @@
     justify-content: space-between;
     flex-basis: 290px;
     max-width: 290px;
+    transition: background-color 0.3s cubic-bezier(0.5, 0, 0.5, 1);
+
+    h3,
+    img {
+        transition: all 0.3s cubic-bezier(0.5, 0, 0.5, 1);
+    }
+
+    &:hover {
+        background-color: $mainGreen;
+        
+        h3 {
+            color: white;
+        }
+
+        img {
+            filter: brightness(10);
+        }
+    }
 }
 .footergrid
 {

@@ -9,6 +9,7 @@ import VerdalaFooter from "../../../assets/svgs/verdala-footer.svg"
 import Container from "../../layouts/container";
 // import Button from "../../partials/buttons";
 import * as Styles from "./footer.module.scss";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const Footer = (props) => (
     <>
@@ -20,7 +21,7 @@ const Footer = (props) => (
     >
         <Container type={`extend-container`}
         >
-            <div className={`fadeinup ${Styles.locationtitle}`}>
+            <div className={`anim-scroll-up ${Styles.locationtitle}`}>
             <div className="crow">
                 <div className="col-4 col-xl-12">
                     <h2 className={Styles.title} data-splitting>Interested in Verdala?</h2>
@@ -124,8 +125,14 @@ const Footer = (props) => (
 
 const FooterCard = (props) => (
     <>
-    
-        <div className={`fadeinup ${Styles.footerCard}`}>
+        <AniLink 
+            cover
+            direction="left"
+            duration={1}
+            className={`anim-scroll-up ${Styles.footerCard}`}
+            bg="#7B9E6B"
+            to={"/contact"}
+        >
             <div className={Styles.carddesc}>
                 <div className={Styles.icon}>
                     <img src={Call} alt="" />
@@ -139,26 +146,38 @@ const FooterCard = (props) => (
             <div className={Styles.ctaCont}>
                 <ButtonArrow />
             </div>
-        </div>
-    
+        </AniLink>
 
-    <div className={`fadeinup ${Styles.footerCard}`}>
-        <div className={Styles.carddesc}>
-            <div className={Styles.icon}>
-                <img src={Home} alt="" />
+        <AniLink 
+            cover
+            direction="left"
+            duration={1}
+            className={`anim-scroll-up ${Styles.footerCard}`}
+            bg="#7B9E6B"
+            to={"/apartments"}
+        >
+            <div className={Styles.carddesc}>
+                <div className={Styles.icon}>
+                    <img src={Home} alt="" />
+                </div>
+
+                <div className="text-cont">
+                    <h3 className={Styles.cardTitle}>Find your home</h3>
+                </div>
             </div>
-
-            <div className="text-cont">
-                <h3 className={Styles.cardTitle}>Find your home</h3>
+            <div className={Styles.ctaCont}>
+                <ButtonArrow />
             </div>
-        </div>
-        <div className={Styles.ctaCont}>
-            <ButtonArrow />
-        </div>
-    </div>
+        </AniLink>
     
-
-        <div className={`fadeinup ${Styles.footerCard}`}>
+        <AniLink 
+            cover
+            direction="left"
+            duration={1}
+            className={`anim-scroll-up ${Styles.footerCard}`}
+            bg="#7B9E6B"
+            to={"/gallery"}
+        >
             <div className={Styles.carddesc}>
                 <div className={Styles.icon}>
                     <img src={Media} alt="" />
@@ -171,7 +190,7 @@ const FooterCard = (props) => (
             <div className={Styles.ctaCont}>
                 <ButtonArrow />
             </div>
-        </div>
+        </AniLink>
     
     </>
 )

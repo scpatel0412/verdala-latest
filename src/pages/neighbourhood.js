@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHero from "../components/hero/page-hero";
 import Footer from "../components/sections/footer/footer";
-// import RabatAndMdina from "./Neighbourhood/RabatAndMdina";
+import RabatAndMdina from "./Neighbourhood/RabatAndMdina";
 import Connectivity from "./Neighbourhood/Connectivity";
 import ThingsToDo from "./Neighbourhood/ThingsToDo";
 import SectionNavigation from "../components/sectionNavigation";
@@ -49,18 +49,20 @@ function Neighbourhood() {
       <div>
         <SectionNavigation data={navLinks} />
       </div>
+      <>
       {navLinks.length > 0 &&
         navLinks.map((i) => {
-          // if (i.id === "rabat_and_mdina") {
-          //   return <RabatAndMdina data={i} />;
-          // }
-          if (i.id === "connectivity") {
+          if (i.id === "rabat_and_mdina") {
+            return <RabatAndMdina data={i} />;
+          }
+          else if (i.id === "connectivity") {
             return <Connectivity data={i} />;
           }
-          if (i.id === "things_to_do") {
+          else if (i.id === "things_to_do") {
             return <ThingsToDo data={i} />;
           }
         })}
+      </>
 
       <Footer />
     </>

@@ -78,10 +78,12 @@ const Mapping = () => {
                                 <g style={{ clippath: 'url(#SVGID_10_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer' }} width="232" height="381" xlinkHref={LandmarkPalazzoFalzon} transform="matrix(0.9806 0 0 0.9806 4470 2485.0391)"
-                                        onMouseOver={() =>
+                                        onMouseOver={(e) =>
+                                          {
                                             setOver({ name: 'Landmark Palazzo Falzon', display: true, discription: "Landmark Palazzo Falzon description", image: LandmarkPalazzoFalzon })
+                                          }
                                         }
-                                        onMouseOut={()=>{
+                                        onMouseOut={(e)=> {
                                           setOver({ display: false })
                                         }}
                                     >

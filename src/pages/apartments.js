@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PageNavigation from "../components/header/page-navigation";
 import { graphql } from "gatsby";
+import Filter                   from '../utils/filter';
 // import HomeHero from '../components/hero/home-hero';
 import Footer from "../components/sections/footer/footer";
 import PropertyCard from "../components/property/property-card";
@@ -22,7 +23,7 @@ class Apartments extends Component {
     this.filter = this.filter.bind(this);
 
     this.filterStyle1 = [
-      { value: "-1", label: "All Floors" },
+      { value: "-99", label: "Floors" },
       { value: "0", label: "0" },
       { value: "1", label: "1" },
       { value: "2", label: "2" },
@@ -30,6 +31,13 @@ class Apartments extends Component {
       { value: "4", label: "4" },
       { value: "5", label: "5" },
     ];
+
+    this.filterStyle6 = [
+			{ value: '--99', label: 'Bedrooms' },
+			{ value: '1', label: '1' },
+			{ value: '2', label: '2' },
+			{ value: '3', label: '3' },
+		]
 
     this.state = {
       values: {},
@@ -40,57 +48,64 @@ class Apartments extends Component {
   componentDidMount() {
     this.setState({
       properties: this.props.data.allWpProperty.edges,
+      unfilteredProps: this.props.data.allWpProperty.edges,
     });
 
     // console.log(this.props.data.allWpProperty.edges);
   }
 
   filter(field, value) {
-    var currFilter = this.state.filters;
-    let filtered = this.props.properties;
+    let currFilter  = this.state.filters;
+    let filtered    = this.state.unfilteredProps;
+        
+    if ( field !== 'all' ) {
 
-    // console.log(value);
-
-    if (value === "-1") {
-      delete currFilter[field];
-    } else {
-      currFilter[field] = value;
-    }
-
-    // for (var key in currFilter) {
-
-    //     if (currFilter.hasOwnProperty(key)) {
-    //         if ( key === "building" ) {
-    //             filtered = Filter.filterBuilding(filtered, key, currFilter);
-
-    //             if ( this.state.buildingData && (currFilter[key] !== this.state.buildingData.name) ) {
-    //                 this.changeBuilding(currFilter[key]);
-    //             }
-    //         } else {
-    //             filtered = Filter.filterProperty(filtered, key, currFilter);
-    //         }
-    //     }
-    // }
-
-    let remDup = [];
-    let valueArr = filtered.map(function (item) {
-      return item.title.rendered;
-    });
-
-    filtered.some(function (item, idx) {
-      if (valueArr.indexOf(item.title.rendered) === idx) {
-        remDup.push(item);
+      if ( value === "-99" ) {
+          delete currFilter[field];
+      } else {
+          currFilter[field] = value;
       }
+  
+      for (var key in currFilter) {
+  
+          if (currFilter.hasOwnProperty(key)) {
+              if ( key === "building" ) {
+                  filtered = Filter.filterBuilding(filtered, key, currFilter);
+                  
+                  // if ( this.state.buildingData && (currFilter[key] !== this.state.buildingData.name) ) {
+                  //     this.changeBuilding(currFilter[key]);
+                  // }
+              } else {
+                  filtered = Filter.filterProperty(filtered, key, currFilter);
+              }
+          }
+      }
+  
+      let remDup = [];
+      let valueArr = filtered.map(function(item){ return item.node.title });
+  
+      filtered.some(function(item, idx){ 
+          if ( valueArr.indexOf(item.node.title) === idx ) {
+              remDup.push(item);
+          }
+  
+          return null;
+      });
+  
+      // console.log(remDup);
+  
+      this.setState({
+          properties: remDup,
+          filters: currFilter
+      })
+    } else {
+      this.setState({
+        filters: {},
+        properties: this.state.unfilteredProps
+      })
+    }
+        
 
-      return null;
-    });
-
-    // console.log(remDup);
-
-    this.setState({
-      properties: remDup,
-      filters: currFilter,
-    });
   }
 
   render() {
@@ -110,8 +125,25 @@ class Apartments extends Component {
         <div className={propStyles.filterBar}>
           <Container className="filter-container">
             <div className="inner-filter">
-              <Dropdown
-                onChange={(e) => this.filter("building", e.value)}
+              <Dropdown 
+                onChange={(e) => this.filter("floorNumber", e.value)} 
+                  options={this.filterStyle1} value={(this.state.filters.floorNumber) ? this.state.filters.floorNumber : this.filterStyle1[0] } 
+                  placeholder={this.filterStyle1[0].label} 
+                  arrowClosed={<span className="arrow-closed" />}
+                  arrowOpen={<span className="arrow-open" />}
+              />
+              
+              <Dropdown 
+                onChange={(e) => this.filter("bedrooms", e.value)} 
+                options={this.filterStyle6} 
+                value={(this.state.filters.bedrooms) ? this.state.filters.bedrooms : this.filterStyle6[0] } 
+                placeholder={this.filterStyle6[0].label}
+                arrowClosed={<span className="arrow-closed" />}
+                arrowOpen={<span className="arrow-open" />}
+              />
+
+              {/* <Dropdown
+                onChange={(e) => this.filter("floorNumber", e.value)}
                 options={this.filterStyle1}
                 value={
                   this.state.filters.building
@@ -121,7 +153,7 @@ class Apartments extends Component {
                 placeholder={this.filterStyle1[0].label}
                 arrowClosed={<span className="arrow-closed" />}
                 arrowOpen={<span className="arrow-open" />}
-              />
+              /> */}
               <Dropdown
                 onChange={(e) => this.filter("building", e.value)}
                 options={this.filterStyle1}
@@ -199,7 +231,7 @@ class Apartments extends Component {
                   </div>
 
                   <div className="col">
-                    <div className="clear-filters">
+                    <div className="clear-filters" onClick={() => this.filter('all', -99)}>
                       <span>Clear Filters</span>
 
                       <div className="Dropdown-arrow-wrapper">

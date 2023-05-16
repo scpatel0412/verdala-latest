@@ -11,13 +11,13 @@ const PageHero = (props) => {
         className={
           props.redHeight
             ? heroStyles.heroContainer
-            : heroStyles.heroContainer + " " + heroStyles.heroContainerRed
+            : heroStyles.heroContainer + " anim-banner " + heroStyles.heroContainerRed
         }
       >
         <div className={heroStyles.heroImage}>
           <img
             className="bg-img"
-            src={(props.headerData?.header_image?.url ? props.headerData?.header_image?.url : HomeImg)}
+            src={(props.headerData?.header_image?.url ? props.headerData?.header_image?.url : '')}
             alt=""
           />
         </div>

@@ -1,6 +1,12 @@
 @import './../../../assets/scss/variable.scss';
 .hoverList {
     margin-top: 85px;
+
+    @media screen and (max-width:$sm__screen){
+        display: none;
+    }
+
+
     ul {
         margin: 0;
         padding-left: 0;
@@ -11,9 +17,22 @@
             line-height: 1;
             
             a {
-                font-size: 3.2em;
+                // font-size: 41px;
+                letter-spacing: -0.04em;
+                // text-transform: uppercase;
+                // font-family: $font__header;
+                // @media screen and (max-width:$xl__screen){
+                //     font-size: 30px;
+                // }
+
+                &:hover{
+                    color:$mainGreen !important;
+                    text-decoration: underline !important;
+                }
+
+                font-size: 3.0em;
                 text-transform: uppercase;
-                font-family: "Danmark";
+                font-family: $font__header;
                 font-weight: lighter;
                 color: #635245;
                 position: relative;
@@ -33,13 +52,13 @@
                     font-size: 2.3em;
                 }
                 &:before {
-                    content: "";
-                    position: absolute;
-                    height: 1px;
-                    width: 100%;
-                    bottom: 2px;
-                    left: 0;
-                    background-color: #635245;
+                    // content: "";
+                    // position: absolute;
+                    // height: 1px;
+                    // width: 100%;
+                    // bottom: 2px;
+                    // left: 0;
+                    // background-color: #635245;
                 }
             }
 
@@ -67,16 +86,18 @@
         object-fit: cover;
         max-width: 600px;
         z-index: 2;
-        transform: translateX(-100%);
+        // transform: translateX(-100%);
         position: absolute;
-        transition: transform 0s cubic-bezier(0.22, 0.61, 0.25, 0.99);
+        opacity: 0;
+        transition: transform 0s cubic-bezier(0.22, 0.61, 0.25, 0.99), opacity 0s ease-in-out 0s;
         transition-delay: 0.4s;
 
-        &.activeImage{
-            z-index: 2;
-            transform: translateX(0%);
+        &.activeImage {
+            z-index: 3;
+            // transform: translateX(0%);
             transition-delay: 0s;
-            transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.25, 0.99);
+            opacity: 1;
+            transition: all 0.4s cubic-bezier(0.22, 0.61, 0.25, 0.99);
         }
     }
 }

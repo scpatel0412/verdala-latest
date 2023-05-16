@@ -41,52 +41,31 @@ class BuildingModule extends Component {
         ]
 		
 		this.filterStyle1 = [
-			{ value: '-1', label: 'Any' },
-			{ value: '3', label: '3' },
-			{ value: '4', label: '4' },
-			{ value: '5', label: '5' },
-			{ value: '6', label: '6' },
-			{ value: '7', label: '7' },
-			{ value: '8', label: '8' },
-			{ value: '9', label: '9' },
-			{ value: '13', label: '13' },
-			{ value: '14', label: '14' },
-			{ value: '15', label: '15' },
-			{ value: '16', label: '16' },
-			{ value: '17', label: '17' },
-			{ value: '18', label: '18' },
-			{ value: '19', label: '19' },
-			{ value: '20', label: '20' },
-			{ value: '21', label: '21' },
-			{ value: '22', label: '22' },		
-			{ value: '23', label: '23' },		
-			{ value: '24', label: '24' },		
-			{ value: '25', label: '25' },		
-			{ value: '26', label: '26' },		
-			{ value: '27', label: '27' },		
-			{ value: '28', label: '28' },		
-			{ value: '29', label: '29' },		
-			{ value: '30', label: '30' },		
-			{ value: '31', label: '31' }		
-        ]
-
-        this.filterStyle5 = [
-			{ value: '-1', label: 'Any' },
+			{ value: '-99', label: 'Floors' },
+			{ value: '0', label: '0' },
+			{ value: '1', label: '1' },
 			{ value: '2', label: '2' },
 			{ value: '3', label: '3' },
 			{ value: '4', label: '4' },
 			{ value: '5', label: '5' },
-			{ value: '6', label: '6' },
-			{ value: '7', label: '7' },
-			{ value: '8', label: '8' },
+        ]
+
+        this.filterStyle5 = [
+			{ value: '-99', label: 'Floors' },
+			{ value: '0', label: '0' },
+			{ value: '1', label: '1' },
+			{ value: '2', label: '2' },
+			{ value: '3', label: '3' },
+			{ value: '4', label: '4' },
+			{ value: '5', label: '5' },
         ]
         
-        this.filterStyle3 = [
-			{ value: '-1', label: 'All' },
-			{ value: '1', label: '1' },
-		]
+        // this.filterStyle3 = [
+		// 	{ value: '--99', label: 'All' },
+		// 	{ value: '1', label: '1' },
+		// ]
         this.filterStyle6 = [
-			{ value: '-1', label: 'All' },
+			{ value: '--99', label: 'Bedrooms' },
 			{ value: '1', label: '1' },
 			{ value: '2', label: '2' },
 			{ value: '3', label: '3' },
@@ -96,7 +75,7 @@ class BuildingModule extends Component {
 			{ value: 'available', label: 'Available' },
 			{ value: 'on-hold', label: 'On Hold' },
 			{ value: 'sold', label: 'Sold' },
-			{ value: '-1', label: 'All' },
+			{ value: '--99', label: 'Sold Status' },
         ]
         
         this.filterStyle4 = [
@@ -286,7 +265,7 @@ class BuildingModule extends Component {
             return parseInt(obj.node.title, 10) === parseInt(maskId.substring(1, maskId.length), 10);
         })
 
-        if ( result && result.acf.sold_status === "sold") {
+        if ( result && result.node.propertiesData.saleStatus === "sold") {
                    
             this.props.history.push({
                 pathname: '/plan/' + result.node.title,
@@ -326,6 +305,8 @@ class BuildingModule extends Component {
             return parseInt(obj.node.title, 10) === parseInt(index.substring(1, index.length), 10);
         })
 
+        // console.log(result);
+
         if (result) {
             // if ( result.acf.sold_status === "sold" ) {
             //     elem.firstChild.style.fill      = "rgba(185, 185, 185, 0.6)";
@@ -354,36 +335,39 @@ class BuildingModule extends Component {
             elem.firstChild.style.stroke    = "rgba(255,255,255,0.6)";  
         }
 
-        // if ( this.props.properties[index - 1] ) {
-            let windows = this.state.windows;
+        
+        let windows = this.state.windows;
+        
+        if ( result ) {
+            
+            if ( !this.checkDuplicateWindow(result, windows, true) ) {
+                let xPos = (elementPos.x < 130) ? elementPos.right + 10 : elementPos.right + 10;
 
-            if ( result ) {
-                if ( !this.checkDuplicateWindow(result, windows, true) ) {
-                    let xPos = (elementPos.x < 130) ? elementPos.right + 10 : elementPos.x - 130;
-
-                    let newWindow = {
-                        infoShow: true,
-                        selectedProp: result,
-                        infoPos: {top: (elementPos.y - 45), left: xPos}
-                    }
-        
-        
-                    windows.push(newWindow);
-        
-                    this.setState({
-                        windows: windows
-                    });
+                let newWindow = {
+                    infoShow: true,
+                    selectedProp: result,
+                    infoPos: {top: (elementPos.y - 45), left: xPos}
                 }
+    
+    
+                windows.push(newWindow);
+    
+                this.setState({
+                    windows: windows
+                });
             }
-        
-        // }
+        }
     }
 
     checkDuplicateWindow(object, list, setValue) {
+
+        // this.checkDuplicateWindow(result, windows, true) )
+        
         if ( list.length > 0 ) {
+
             for (var i = 0; i < list.length; i++) {
                 if (object) {
-                    if (list[i].selectedProp.id === object.id) {
+                    if (list[i].selectedProp.node.id === object.node.id) {
                         var windowsTmp          = list;
                         windowsTmp[i].infoShow  = setValue;
     
@@ -406,7 +390,7 @@ class BuildingModule extends Component {
         
         // console.log(value);
 
-        if ( value === "-1" ) {
+        if ( value === "-99" ) {
             delete currFilter[field];
         } else {
             currFilter[field] = value;
@@ -473,29 +457,23 @@ class BuildingModule extends Component {
                 if (field === "property_number") {
                     testA = parseInt(a.node.title);
                     testB = parseInt(b.node.title);
-                } else if (field === "size" || field === "external_area") {
-                    var a_gfa             = (a.acf.gfa_sqm) ? parseFloat(a.acf.gfa_sqm) : 0;
-                    var a_external_ne     = (a.acf.external_ne) ? parseFloat(a.acf.external_ne) : 0;
-                    var a_external_e      = (a.acf.external_e) ? parseFloat(a.acf.external_e) : 0;
-                    var a_external_se     = (a.acf.external_se) ? parseFloat(a.acf.external_se) : 0;
-                    var a_external_sw     = (a.acf.external_sw) ? parseFloat(a.acf.external_sw) : 0;
-                    var b_gfa             = (b.acf.gfa_sqm) ? parseFloat(b.acf.gfa_sqm) : 0;
-                    var b_external_ne     = (b.acf.external_ne) ? parseFloat(b.acf.external_ne) : 0;
-                    var b_external_e      = (b.acf.external_e) ? parseFloat(b.acf.external_e) : 0;
-                    var b_external_se     = (b.acf.external_se) ? parseFloat(b.acf.external_se) : 0;
-                    var b_external_sw     = (b.acf.external_sw) ? parseFloat(b.acf.external_sw) : 0;
+                } else if (field === "size" || field === "externalArea") {
+                    let a_gfa             = (a.node.propertiesData.internalArea) ? parseFloat(a.node.propertiesData.internalArea) : 0;
+                    let a_external        = (a.node.propertiesData.externalArea) ? parseFloat(a.node.propertiesData.externalArea) : 0;
+                    let b_gfa             = (b.node.propertiesData.internalArea) ? parseFloat(b.node.propertiesData.internalArea) : 0;
+                    let b_external        = (b.node.propertiesData.externalArea) ? parseFloat(b.node.propertiesData.externalArea) : 0;
 
                     if ( field === "size" ) {
-                        testA = a_gfa + a_external_ne + a_external_e + a_external_se + a_external_sw;
-                        testB = b_gfa + b_external_ne + b_external_e + b_external_se + b_external_sw;
+                        testA = a_gfa + a_external;
+                        testB = b_gfa + b_external;
                     } else {
-                        testA = a_external_ne + a_external_e + a_external_se + a_external_sw;
-                        testB = b_external_ne + b_external_e + b_external_se + b_external_sw;
+                        testA = a_external;
+                        testB = b_external;
                     }
 
                 } else {
-                    testA = parseInt(a.acf[field]);
-                    testB = parseInt(b.acf[field]);
+                    testA = parseInt(a.node.propertiesData[field]);
+                    testB = parseInt(b.node.propertiesData[field]);
                 }
 
                 if(testA > testB) { return -1; }
@@ -509,35 +487,29 @@ class BuildingModule extends Component {
             elem.classList.add("selected");
 
             this.state.properties.sort(function(a, b){
-                var testA;
-                var testB;
+                let testA;
+                let testB;
 
                 if (field === "property_number") {
                     testA = parseInt(a.node.title);
                     testB = parseInt(b.node.title);
-                } else if (field === "size" || field === "external_area") {
-                    var a_gfa             = (a.acf.gfa_sqm) ? parseFloat(a.acf.gfa_sqm) : 0;
-                    var a_external_ne     = (a.acf.external_ne) ? parseFloat(a.acf.external_ne) : 0;
-                    var a_external_e      = (a.acf.external_e) ? parseFloat(a.acf.external_e) : 0;
-                    var a_external_se     = (a.acf.external_se) ? parseFloat(a.acf.external_se) : 0;
-                    var a_external_sw     = (a.acf.external_sw) ? parseFloat(a.acf.external_sw) : 0;
-                    var b_gfa             = (b.acf.gfa_sqm) ? parseFloat(b.acf.gfa_sqm) : 0;
-                    var b_external_ne     = (b.acf.external_ne) ? parseFloat(b.acf.external_ne) : 0;
-                    var b_external_e      = (b.acf.external_e) ? parseFloat(b.acf.external_e) : 0;
-                    var b_external_se     = (b.acf.external_se) ? parseFloat(b.acf.external_se) : 0;
-                    var b_external_sw     = (b.acf.external_sw) ? parseFloat(b.acf.external_sw) : 0;
+                } else if (field === "size" || field === "externalArea") {
+                    let a_gfa             = (a.node.propertiesData.internalArea) ? parseFloat(a.node.propertiesData.internalArea) : 0;
+                    let a_external        = (a.node.propertiesData.externalArea) ? parseFloat(a.node.propertiesData.externalArea) : 0;
+                    let b_gfa             = (b.node.propertiesData.internalArea) ? parseFloat(b.node.propertiesData.internalArea) : 0;
+                    let b_external        = (b.node.propertiesData.externalArea) ? parseFloat(b.node.propertiesData.externalArea) : 0;
 
                     if ( field === "size" ) {
-                        testA = a_gfa + a_external_ne + a_external_e + a_external_se + a_external_sw;
-                        testB = b_gfa + b_external_ne + b_external_e + b_external_se + b_external_sw;
+                        testA = a_gfa + a_external;
+                        testB = b_gfa + b_external;
                     } else {
-                        testA = a_external_ne + a_external_e + a_external_se + a_external_sw;
-                        testB = b_external_ne + b_external_e + b_external_se + b_external_sw;
+                        testA = a_external;
+                        testB = b_external;
                     }
 
                 } else {
-                    testA = parseInt(a.acf[field]);
-                    testB = parseInt(b.acf[field]);
+                    testA = parseInt(a.node.propertiesData[field]);
+                    testB = parseInt(b.node.propertiesData[field]);
                 }
 
                 if(testA < testB) { return -1; }
@@ -554,7 +526,7 @@ class BuildingModule extends Component {
     rotate( next ) {
 
         if ( !this.state.animating ) {
-            let prevStop = this.state.stop;
+            // let prevStop = this.state.stop;
 
             if ( next ) {
 
@@ -562,15 +534,15 @@ class BuildingModule extends Component {
                     stop: (this.state.stop === this.state.buildingData.stops.length-1) ? 0 : (this.state.stop + 1)
                 })
 
-                if ( prevStop === this.state.buildingData.stops.length-1 && this.state.buildingData.name === "mercury-towers-p2" ) {
-                    this.prevInterval = setInterval(() => {
-                        this.prevAnim();
-                    },this.state.buildingData.delay)
-                } else {
-                    this.nextInterval = setInterval(() => {
-                        this.nextAnim();
-                    },this.state.buildingData.delay)
-                }
+                // if ( prevStop === this.state.buildingData.stops.length-1 && this.state.buildingData.name === "mercury-towers-p2" ) {
+                //     this.prevInterval = setInterval(() => {
+                //         this.prevAnim();
+                //     },this.state.buildingData.delay)
+                // } else {
+                // }
+                this.nextInterval = setInterval(() => {
+                    this.nextAnim();
+                },this.state.buildingData.delay)
 
                 this.setState({
                     animating: true,
@@ -582,15 +554,15 @@ class BuildingModule extends Component {
                     stop: (this.state.stop === 0) ? this.state.buildingData.stops.length-1 : (this.state.stop - 1)
                 })
 
-                if ( prevStop === 0 && this.state.buildingData.name === "mercury-towers-p2" ) {
-                    this.nextInterval = setInterval(() => {
-                        this.nextAnim();
-                    },this.state.buildingData.delay)
-                } else {
-                    this.prevInterval = setInterval(() => {
-                        this.prevAnim();
-                    },this.state.buildingData.delay)
-                }
+                // if ( prevStop === 0 && this.state.buildingData.name === "royal" ) {
+                //     this.nextInterval = setInterval(() => {
+                //         this.nextAnim();
+                //     },this.state.buildingData.delay)
+                // } else {
+                // }
+                this.prevInterval = setInterval(() => {
+                    this.prevAnim();
+                },this.state.buildingData.delay)
                 
                 this.setState({
                     animating: true,
@@ -685,9 +657,9 @@ class BuildingModule extends Component {
                 let prevID    = this.state.stop;
                 let dir       = this.getDirection(prevID, sideId, this.state.buildingData.stops);
 
-                if ( this.state.buildingData.name === "mercury-towers-p2") {
-                    dir = !dir;
-                }
+                // if ( this.state.buildingData.name === "royal") {
+                //     dir = !dir;
+                // }
 
                 this.setState({
                     stop: sideId,
@@ -1141,31 +1113,24 @@ class BuildingModule extends Component {
                                             <div className="filter-container row align-bottom ">
                                                 <div className="col-3 dropdown-container">
                                                     <div className="dropdown">
-                                                        <label className="secondary-text">Building</label>
-                                                        {/* <Dropdown onChange={(e) => this.filter("building", e.value)} options={this.filterStyle4} value={(this.state.filters.building) ? this.state.filters.building : this.filterStyle4[0] } placeholder={this.filterStyle4[0].label} /> */}
-                                                        <div className="arrow-icon"></div>
+                                                        {/* <Dropdown onChange={(e) => this.filter("building", e.value)} options={this.filterStyle1} value={(this.state.filters.floorNumber) ? this.state.filters.floorNumber : this.filterStyle1[0] } placeholder={this.filterStyle1[0].label} /> */}
+                                                        <Dropdown onChange={(e) => this.changeBuilding(e.value)} options={this.filterStyle4} value={(this.state.filters.building) ? this.state.filters.building : this.filterStyle4[0] } placeholder={this.filterStyle4[0].label} />
                                                     </div>
 
                                                     <div className="dropdown">
-                                                        <label className="secondary-text">Floor</label>
-
-                                                        {/* {(this.state.buildingData && this.state.buildingData.name === 'grand') ?
-                                                            <Dropdown onChange={(e) => this.filter("floor_number", e.value)} options={this.filterStyle1} value={(this.state.filters.floor_number) ? this.state.filters.floor_number : this.filterStyle1[0] } placeholder={this.filterStyle1[0].label} />
+                                                        {(this.state.buildingData && this.state.buildingData.name === 'grand') ?
+                                                            <Dropdown onChange={(e) => this.filter("floorNumber", e.value)} options={this.filterStyle1} value={(this.state.filters.floorNumber) ? this.state.filters.floorNumber : this.filterStyle1[0] } placeholder={this.filterStyle1[0].label} />
                                                             :
-                                                            <Dropdown onChange={(e) => this.filter("floor_number", e.value)} options={this.filterStyle5} value={(this.state.filters.floor_number) ? this.state.filters.floor_number : this.filterStyle5[0] } placeholder={this.filterStyle5[0].label} />
-                                                        } */}
-
-                                                        <div className="arrow-icon"></div>
+                                                            <Dropdown onChange={(e) => this.filter("floorNumber", e.value)} options={this.filterStyle5} value={(this.state.filters.floorNumber) ? this.state.filters.floorNumber : this.filterStyle5[0] } placeholder={this.filterStyle5[0].label} />
+                                                        }
                                                     </div>
 
                                                     <div className="dropdown">
-                                                        <label className="secondary-text">Bedrooms</label>
-                                                        {/* {(this.state.buildingData && this.state.buildingData.name === 'grand') ?
-                                                            // <Dropdown onChange={(e) => this.filter("floor_number", e.value)} options={this.filterStyle1} value={(this.state.filters.floor_number) ? this.state.filters.floor_number : this.filterStyle1[0] } placeholder={this.filterStyle1[0].label} />
-                                                            <Dropdown onChange={(e) => this.filter("bedrooms", e.value)} options={this.filterStyle3} value={(this.state.filters.bedrooms) ? this.state.filters.bedrooms : this.filterStyle3[0] } placeholder="All" />
+                                                        {(this.state.buildingData && this.state.buildingData.name === 'grand') ?
+                                                            <Dropdown onChange={(e) => this.filter("bedrooms", e.value)} options={this.filterStyle6} value={(this.state.filters.bedrooms) ? this.state.filters.bedrooms : this.filterStyle6[0] } placeholder="All" />
                                                             :
                                                             <Dropdown onChange={(e) => this.filter("bedrooms", e.value)} options={this.filterStyle6} value={(this.state.filters.bedrooms) ? this.state.filters.bedrooms : this.filterStyle6[0] } placeholder="All" />
-                                                        } */}
+                                                        }
                                                         <div className="arrow-icon"></div>
                                                     </div>
 
@@ -1181,11 +1146,11 @@ class BuildingModule extends Component {
 
                                         <div className="property-scroll-outer" data-lenis-prevent>
                                             <div className="property-row header-row">
-                                                <div className="property-row-item" onClick={(e) => this.sort("floor_number", e)}><span>Floor</span></div>
+                                                <div className="property-row-item" onClick={(e) => this.sort("floorNumber", e)}><span>Floor</span></div>
                                                 <div className="property-row-item" onClick={(e) => this.sort("property_number", e)}><span>Unit</span></div>
                                                 <div className="property-row-item" onClick={(e) => this.sort("bedrooms", e)}><span>Bedrooms</span></div>
-                                                <div className="property-row-item" onClick={(e) => this.sort("size", e)}><span>Internal Area</span></div>
-                                                <div className="property-row-item" onClick={(e) => this.sort("external_area", e)}><span>External Area</span></div>
+                                                <div className="property-row-item" onClick={(e) => this.sort("internalArea", e)}><span>Internal Area</span></div>
+                                                <div className="property-row-item" onClick={(e) => this.sort("externalArea", e)}><span>External Area</span></div>
                                                 {/* <div className="property-row-item" onClick={(e) => this.sort("price", e)}><span>Price</span></div> */}
                                                 <div className="property-row-item"><span></span></div>
                                             </div>

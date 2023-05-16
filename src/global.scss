@@ -2507,7 +2507,7 @@ section {
       h3 {
         a {
           font-weight: 500;
-          font-size: 28px;
+          font-size: 23px;
           line-height: 28px;
           letter-spacing: -0.02em;
           text-transform: uppercase;
@@ -2772,11 +2772,11 @@ section {
     }
     p {
       font-weight: 500;
-      font-size: 21px;
-      line-height: 29px;
+      font-size: 16px;
+      // line-height: 29px;
       letter-spacing: -0.04em;
-      line-height: 34px;
-      width: 50%;
+      line-height: 24px;
+      width: 39%;
       letter-spacing: -0.04em;
       margin: 0;
       @media screen and (max-width: $lg__screen){
@@ -4623,6 +4623,7 @@ h2.innerpage_h2 {
   }
   .churches-chapels-sec {
     border-bottom: 1px solid $mainGreen;
+
     .churches-title {
       display: flex;
       flex-wrap: nowrap;
@@ -4630,7 +4631,7 @@ h2.innerpage_h2 {
       padding: 20px 0 16px 0;
 
       h2 {
-        font-size: 120px;
+        font-size: 100px;
         line-height: 130px;
         letter-spacing: -0.02em;
         text-transform: uppercase;
@@ -5192,7 +5193,7 @@ h2.innerpage_h2 {
        .hoverImage-module--laifeimg--2e769{
         img{
           min-height: 825px;
-          transition:none ;
+          // transition:none ;
           .hoverImage-module--activeImage--30e8a{
             animation: fadeIn ease 5s;
             -webkit-animation: fadeIn ease 5s;
@@ -5246,26 +5247,7 @@ h2.innerpage_h2 {
         font-size: 18px;
        }
     }
-    .hoverImage-module--hoverList--4ff3c{
-      @media screen and (max-width:$sm__screen){
-       display: none;
-       }
-      li{
-        a{
-          font-size: 41px;
-          letter-spacing: -0.04em;
-          text-transform: uppercase;
-          font-family: $font__header;
-          @media screen and (max-width:$xl__screen){
-            font-size: 30px;
-          }
-          &:hover{
-            color:$mainGreen !important;
-            text-decoration: underline !important;
-          }
-        }
-      }
-    }
+    
     .mainbtn{
       margin-top: 64px;
     }
@@ -5514,12 +5496,14 @@ h2.innerpage_h2 {
         }
         .slick-prev{
           top: 50%;
-          margin-top: -80px;
+          transform: rotate(180deg);
+          // margin-top: -80px;
           
        }
        .slick-next{
          top: 50%;
-         margin-bottom: -80px;
+         margin-top: -80px;
+         transform: rotate(180deg);
          &:after{
           transform: rotate(180deg);
          }

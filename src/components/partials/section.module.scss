@@ -24,7 +24,8 @@
 
 .text {
     margin: 0;
-    font-size: 24px;
+    font-size: 18px;
+    margin-top: 20px;
     color: #635245;
     font-weight: 500;
     margin-left: auto;
@@ -83,7 +84,7 @@ section.page-intro {
 }
 .sectitle {
     display: flex;
-    gap: 134px;
+    gap: 90px;
     @media screen and (max-width:$md__screen)
         {
             gap: 40px;

@@ -95,7 +95,7 @@ function ThingsToDo(props) {
                             {item.all_data?.map((innerItem, ind) => {
                               return (
                                 <div key={ind}>
-                                  <div className="slider-box anim-scroll-up" data-stagger="0.1">
+                                  <div className="slider-box" data-stagger="0.1">
                                     <div className="slider-img">
                                       <img src={innerItem.image.url}></img>
                                     </div>

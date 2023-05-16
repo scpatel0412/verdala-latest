@@ -60,15 +60,15 @@ function Amenities(props) {
     <>
       <div className="amenities-sec" id={"amenities"}>
         <div className="amenities-left">
-          <div className="count-col">
+          <div className="count-col anim-scroll-up">
             <span className="count-number">01</span>
             <p className="count-title">{lifestylePage.amenities?.sub_title}</p>
           </div>
-          <h1>{lifestylePage.amenities?.title}</h1>
+          <h1 className="anim-text-enter">{lifestylePage.amenities?.title}</h1>
         </div>
         <div className="amenities-right">
           <div>
-            <p>{lifestylePage.amenities?.description}</p>
+            <p className="anim-text-enter">{lifestylePage.amenities?.description}</p>
             <button>{lifestylePage.amenities?.button?.title}</button>
           </div>
         </div>
@@ -80,7 +80,7 @@ function Amenities(props) {
           <div className="icon-descrp">
             Located in Diagonal Mar, a contemporary and vibrant district of
             Barcelona, Antares sits a few minutes walk from the stylish Port
-            Fòrum Marina and the Blue Flag-awarded Mar Bella beach.
+            FÃ²rum Marina and the Blue Flag-awarded Mar Bella beach.
           </div>
         </div>
         <div className="lifestyle-icon-inner">
@@ -89,7 +89,7 @@ function Amenities(props) {
           <div className="icon-descrp">
             Located in Diagonal Mar, a contemporary and vibrant district of
             Barcelona, Antares sits a few minutes walk from the stylish Port
-            Fòrum Marina and the Blue Flag-awarded Mar Bella beach.
+            FÃ²rum Marina and the Blue Flag-awarded Mar Bella beach.
           </div>
         </div>
         <div className="lifestyle-icon-inner">
@@ -98,7 +98,7 @@ function Amenities(props) {
           <div className="icon-descrp">
             Located in Diagonal Mar, a contemporary and vibrant district of
             Barcelona, Antares sits a few minutes walk from the stylish Port
-            Fòrum Marina and the Blue Flag-awarded Mar Bella beach.
+            FÃ²rum Marina and the Blue Flag-awarded Mar Bella beach.
           </div>
         </div>
       </div>

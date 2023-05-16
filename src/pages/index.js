@@ -23,7 +23,7 @@ const Index = () => {
     whitespace: true,
   });
   ScrollOut({
-    targets: "[data-splitting],.fadeinup",
+    targets: "[data-splitting],.anim-scroll-up",
     once: true,
   });
 
@@ -68,7 +68,7 @@ const Index = () => {
 
         {data !== undefined ? (
           <>
-          {/* <Loading /> */}
+          <Loading />
           <BisAnimate>
             <div className="home-banner-sec">
             <HomeHero data={data} />

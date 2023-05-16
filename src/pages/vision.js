@@ -24,7 +24,7 @@ const Vision = ({ pageTitle, children }) => {
     useEffect(() => {
       setSlidecount(props.slideCount);
     }, [props.slideCount]);
-    const { style, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <div
         className={props.className}
@@ -56,7 +56,7 @@ const Vision = ({ pageTitle, children }) => {
   }
 
   function SamplePrevArrow(props) {
-    const { style, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <div
         className={props.className}
@@ -133,14 +133,14 @@ const Vision = ({ pageTitle, children }) => {
         </div>
         <VerdalaLegacy data={data} />
         <JourneySection data={data} />
-        {data !== undefined ? (
+        {data != undefined ? (
           <div className="vision-midd-body-content">
             <div className="then-now-sec" id="thenandnow">
               <div className="then-now-inner">
                 <div className="then-now-inner-left">
                   <div className="count-col">
                     <span className="count-number">03</span>
-                    <p className="count-title">
+                    <p className="count-title anim-scroll-up">
                       {data?.then_and_now?.sub_title}
                     </p>
                   </div>
@@ -151,15 +151,15 @@ const Vision = ({ pageTitle, children }) => {
                     />{" "}
                   </div>
                 </div>
-                <div className="then-now-inner-middle">
+                <div className="then-now-inner-middle anim-scroll-up">
                   <h1>{data?.then_and_now?.title}</h1>
                 </div>
-                <div className="then-now-inner-right">
+                <div className="then-now-inner-right anim-scroll-up">
                   <p>{`${data?.then_and_now?.description.split("world")[0]
                     } world`}</p>
                   <p>{data?.then_and_now?.description.split("world")[1]}</p>
                 </div>
-                <div className="then-now-left-image-mobile">
+                <div className="then-now-left-image-mobile anim-scroll-up">
                   <img
                     src={data?.then_and_now?.image?.url}
                     alt={data?.then_and_now?.image?.url}
@@ -167,7 +167,7 @@ const Vision = ({ pageTitle, children }) => {
                 </div>
               </div>
               <div className="then-now-slider-Right">
-                <div className="content-slider">
+                <div className="content-slider anim-scroll-up">
                   <Slider
                     asNavFor={slider3.nav2}
                     fade={true}
@@ -182,7 +182,7 @@ const Vision = ({ pageTitle, children }) => {
                     {data?.then_and_now?.slider_conent?.map((i, index) => {
                       return (
                         <div className="slider_content" key={index}>
-                          <h3>{`“${i.description}”`}</h3>
+                          <h3>{`â€œ${i.description}â€`}</h3>
                           <p>{i.author}</p>
                           <span>{i.designation}</span>
                         </div>

@@ -2,8 +2,8 @@ class Filter {
     static filterProperty(object, key, array) {
         return object.filter( function (property) {
             // console.log(property.acf.property_data);
-            if ( property.acf ) {
-                return property.acf[key] === array[key]
+            if ( property.node.propertiesData[key] ) {
+                return property.node.propertiesData[key] == array[key];
             } else {
                 return null;
             }

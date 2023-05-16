@@ -10,6 +10,7 @@ import VerdalaLogo from "../../assets/svgs/verdala-logo.svg";
 import VerdalaLogoalt from "../../assets/svgs/verdala-logo-alt.svg";
 import Container from "../layouts/container";
 import { Image1 } from "../../images";
+import MenuImage from "../../assets/images/test-images/menu-image.png";
 
 class Header extends Component {
   constructor(props) {
@@ -262,6 +263,35 @@ class Header extends Component {
                   </div>
 
                   <div className="type-selector">
+                    {/* <div className="type-selector-new">
+                      <div className="type-selector-card-overlay">
+                        <div className="type-selector-card">
+                          <div className="type-card-img">
+                            <img src={Image1}></img>
+                          </div>
+                          <h5>Timeline</h5>
+                        </div>
+                        <div className="type-selector-card">
+                          <div className="type-card-img">
+                            <img src={Image1}></img>
+                          </div>
+                          <h5>Timeline</h5>
+                        </div>
+                        <div className="type-selector-card">
+                          <div className="type-card-img">
+                            <img src={Image1}></img>
+                          </div>
+                          <h5>Timeline</h5>
+                        </div>
+                        <div className="type-selector-card">
+                          <div className="type-card-img">
+                            <img src={Image1}></img>
+                          </div>
+                          <h5>Timeline</h5>
+                        </div>
+                      </div>
+                    </div> */}
+
                     <TransitionLink
                       to={"/building"}
                       exit={{
@@ -276,8 +306,10 @@ class Header extends Component {
                           this.test(entry, node);
                         },
                       }}
+                      
+                      // style={backgroundImage: "url"}
                     >
-                      <div className="type">
+                      <div className="type" style={{backgroundImage: `url(${MenuImage})`}} >
                         <span>Visual Search by Building</span>
                       </div>
                     </TransitionLink>

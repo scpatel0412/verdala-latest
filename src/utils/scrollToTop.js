@@ -1,4 +1,4 @@
-import { useRef, useEffect, React } from 'react';
+import { useRef, useEffect } from 'react';
 
 const ScrollToTop = ({ children, location }) => {
     const myRef = useRef({
