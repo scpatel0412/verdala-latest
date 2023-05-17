@@ -156,7 +156,14 @@ class Header extends Component {
                         <>
                           {this.props.data.slice(1).map((item, key) => {
                             return (
-                              <li key={key}>
+                              <li
+                                key={key}
+                                className={
+                                  !item.sub_menu
+                                    ? "display-menu"
+                                    : "display-menu-before"
+                                }
+                              >
                                 {/* <AniLink paintDrip to={item.link}
                                                       >
                                                           {item.name}
