@@ -1,6 +1,4 @@
 @import "./../../assets/scss/variable.scss";
-// @import "./../../assets/slick-carousel/slick/slick.css";
-// @import "./../../assets/slick-carousel/slick/slick-theme.css";
 
 .developmentProgressTitleSec{
     padding: 150px 40px 0;
@@ -19,6 +17,7 @@
       }
       @media screen and (max-width: $sm__screen){
         width: 100%;
+        padding: 50px 0px 50px 20px;
       }
     }
     .progressTitleRight{
@@ -46,7 +45,9 @@
 }
 .developmentProgressSliderSec {
   padding: 136px 0px 50px 40px;
-  
+  @media screen and (max-width: $sm__screen){
+    padding: 100px 0px 50px 20px;
+  }
   .progressSliderCard {
     padding: 0 42px;
     border-left: 1px solid rgba(99, 82, 69, 0.3);
@@ -139,23 +140,6 @@
     }
   }
 }
-
-// .slick-slider{
-//   padding-right:300px;
-//   @media all and (max-width: $xxl__screen){
-//     padding-right:150px;
-//     overflow: hidden;
-//   }
-//   @media all and (max-width: $lg__screen){
-//     padding-right:90px;
-//     overflow: hidden;
-//   }
- 
-//   .slick-list{
-//     overflow: visible;
-//   }
-// }
-
 .deveslider{
   padding-right:300px;
   @media all and (max-width: $xxl__screen){

@@ -2,6 +2,7 @@ import React from "react";
 import * as developementStyle from "./developmentProgress.module.scss";
 import { Processslideimg } from "../../images";
 import Slider from "react-slick";
+// import ProcessSlideImg from "../../images/img_2.png";
 
 const Developement = () => {
   const data = [
@@ -55,6 +56,53 @@ const Developement = () => {
     },
   ];
 
+  //   var settings = {
+  //     speed: 1000,
+  //     autoplay: false,
+  //     autoplaySpeed: 0,
+
+  //     slidesToShow: 2,
+  //     slidesToScroll: 1,
+  //     swipeToSlide: false,
+  //     infinite: false,
+  //     arrows: true,
+  //     buttons: false,
+  //     responsive: [
+  //       {
+  //         breakpoint: 1451,
+  //         settings: {
+  //           slidesToShow: 4,
+  //           slidesToScroll: 1,
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 1366,
+  //         settings: {
+  //           slidesToShow: 3,
+  //           slidesToScroll: 1,
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 1024,
+  //         settings: {
+  //           slidesToShow: 2,
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 600,
+  //         settings: {
+  //           slidesToShow: 1,
+  //         },
+  //       },
+  //       {
+  //         breakpoint: 480,
+  //         settings: {
+  //           slidesToShow: 1,
+  //         },
+  //       },
+  //     ],
+  //   };
+
   var settings = {
     speed: 1000,
     autoplay: false,
@@ -85,7 +133,7 @@ const Developement = () => {
         breakpoint: 699,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+         slidesToScroll: 1,
         },
       },
     ],
@@ -104,8 +152,9 @@ const Developement = () => {
       </div>
 
       <div className={`${developementStyle.developmentProgressSliderSec}`}>
-        <Slider {...settings}>
+        <Slider className={developementStyle.deveslider} {...settings}>
           {data?.map((i, index) => {
+            // console.log("i", i);
             return (
               <div>
                 <div className={`${developementStyle.progressSliderCard}`}>
@@ -130,6 +179,22 @@ const Developement = () => {
             );
           })}
         </Slider>
+
+        {/* <div className={`${developementStyle.progressSliderCard}`}>
+          <div className={`${developementStyle.progressSliderTop}`}>
+            <div className={`${developementStyle.progressSliderDate}`}>
+              <span> 08</span>august
+            </div>
+            <div className={`${developementStyle.progressSlideCount}`}>
+              {" "}
+              22{" "}
+            </div>
+          </div>
+          <div className={`${developementStyle.progressSliderImg}`}>
+            <img src={Processslideimg}></img>
+          </div>
+          <div className={`${developementStyle.readMoreBtn}`}>read more</div>
+        </div> */}
       </div>
     </>
   );
