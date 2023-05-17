@@ -3522,12 +3522,18 @@ button {
       }
       .property-value {
         .property-value-image {
-          div {
-            height: 225px;
-            img {
-              height: 100%;
-              width: 100%;
-              object-fit: contain;
+          .building-images {
+            display: flex;
+
+            .building-trace {
+              // height: 225px;
+              flex: 1;
+              
+              img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+              }
             }
           }
         }
@@ -6113,5 +6119,11 @@ nav {
         transform: scaleY(1);
       }
     }
+  }
+}
+
+.developmentProgress-module--deveslider--22dae {
+  .slick-list {
+    overflow: visible;
   }
 }

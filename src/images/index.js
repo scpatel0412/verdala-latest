@@ -22,6 +22,8 @@ import LandmarkStPaulCathedral from "./Landmark-St. Paul Cathedral.png";
 import LandmarkStPaulBasilica from "./Landmark-St.Paul Basilica.png";
 // import imagegradient from './image-gradient.svg'
 import Rectanglenew from "./Rectangle-new.svg";
+import Processslideimg from "./process-slider-img.png";
+
 
 export {
   Image1,
@@ -47,4 +49,5 @@ export {
   LandmarkStPaulCathedral,
   LandmarkStPaulBasilica,
   Rectanglenew,
+  Processslideimg,
 };

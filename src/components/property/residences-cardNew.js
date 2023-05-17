@@ -68,7 +68,7 @@ const ResidencesCard = (props) => {
                             {i?.post_title?.split(" ")[2]}
                           </span>
                         </div>
-                        <div className="col-6 col-sm-12 property-value-image">
+                        <div className="col-10 col-sm-12 property-value-image">
                           <LinkedProjectCard
                             data={residencesCardata.linked_project}
                           />

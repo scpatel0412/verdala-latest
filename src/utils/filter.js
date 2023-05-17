@@ -3,7 +3,7 @@ class Filter {
         return object.filter( function (property) {
             // console.log(property.acf.property_data);
             if ( property.node.propertiesData[key] ) {
-                return property.node.propertiesData[key] == array[key];
+                return property.node.propertiesData[key] === array[key];
             } else {
                 return null;
             }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import buildingImg from '../../assets/images/test-images/building-1.png';
+import building2Img from '../../assets/images/test-images/building-2.png';
 
 const LinkedProjectImg = (props) => {
   const [img, setImg] = useState()
@@ -19,11 +21,20 @@ const LinkedProjectImg = (props) => {
     }
   }, [props])
   return (
-    <div>
-      <img
-        src={img?.acf?.building_image?.url}
-        alt=""
-      />
+    <div className="building-images">
+      <div className="building-trace">
+        <img
+          src={buildingImg}
+          alt=""
+        />
+      </div>
+
+      <div className="building-trace">
+        <img
+          src={building2Img}
+          alt=""
+        />
+      </div>
     </div>
   )
 }
