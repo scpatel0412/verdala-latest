@@ -24,7 +24,17 @@ const HoverHeaderImage = (props) => {
 
   return img !== undefined ? (
     <>
-      <img src={img?.guid?.rendered} alt="" />
+      <div
+        style={{
+          opacity:
+            props.currentImage.current == props.headerActive.page &&
+            props.currentImage.index == props.headerActive.index
+              ? "1"
+              : "0.5",
+        }}
+      >
+        <img src={img?.guid?.rendered} alt="" />
+      </div>
     </>
   ) : null;
 };

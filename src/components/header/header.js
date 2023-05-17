@@ -17,6 +17,7 @@ class Header extends Component {
     super(props);
     this.state = {
       active: false,
+      headerActive: { index: 0, page: "Vision" },
     };
     this.toggleClass = this.toggleClass.bind(this);
     this.verticalAnimation = this.verticalAnimation.bind(this);
@@ -120,6 +121,7 @@ class Header extends Component {
                 {window.location.href.includes("/contact") ||
                 window.location.href.includes("/gallery") ||
                 window.location.href.includes("/building") ||
+                window.location.href.includes("/developmentprogress") ||
                 window.location.href.includes("/property") ? (
                   <VerdalaLogoalt />
                 ) : (
@@ -184,6 +186,9 @@ class Header extends Component {
                                         "/contact"
                                       ) ||
                                       window.location.href.includes(
+                                        "/developmentprogress"
+                                      ) ||
+                                      window.location.href.includes(
                                         "/gallery"
                                       ) ||
                                       window.location.href.includes(
@@ -209,16 +214,38 @@ class Header extends Component {
                                               <div className="type-card-img">
                                                 <HoverHeaderImage
                                                   id={items?.menu_image}
+                                                  headerActive={
+                                                    this.state.headerActive
+                                                  }
+                                                  currentImage={{
+                                                    current:
+                                                      item.menu_item.title,
+                                                    index,
+                                                  }}
                                                 />
                                               </div>
                                               <AniLink
-                                              to={`${item?.menu_item?.url}/${items?.sub_menu_item?.url}`}
-                                            >
-                                              <div>
-                                              <h5>{items?.sub_menu_item?.title}</h5>
-                                              </div>
-                                              
-                                            </AniLink>
+                                                to={`${item?.menu_item?.url}/${items?.sub_menu_item?.url}`}
+                                              >
+                                                <div>
+                                                  <h5
+                                                    onClick={() =>
+                                                      this.setState({
+                                                        headerActive: {
+                                                          index: index,
+                                                          page: item.menu_item
+                                                            .title,
+                                                        },
+                                                      })
+                                                    }
+                                                  >
+                                                    {
+                                                      items?.sub_menu_item
+                                                        ?.title
+                                                    }
+                                                  </h5>
+                                                </div>
+                                              </AniLink>
                                             </div>
                                           </>
                                         );
