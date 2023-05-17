@@ -172,7 +172,7 @@ const PageLocation = (props) => {
                 </>
               ) : (
                 <>
-                  <Slider {...settings}>
+                  {/* <Slider {...settings}> */}
                     {homePage?.connectivity?.connectivity_places?.map(
                       (item, index) => {
                         return (
@@ -200,7 +200,12 @@ const PageLocation = (props) => {
                                           onClick={() => ToggleClass(0)}
                                         >
                                           <WalkDistance />
-                                          <div className={Styles.attrdistance + " anim-parallax "}>
+                                          <div
+                                            className={
+                                              Styles.attrdistance +
+                                              " anim-parallax "
+                                            }
+                                          >
                                             {item?.place_reach_time_by_walk}
                                           </div>
                                         </div>
@@ -212,7 +217,12 @@ const PageLocation = (props) => {
                                           }`}
                                           onClick={() => ToggleClass(1)}
                                         >
-                                          <div className={Styles.attrdistance + " anim-parallax "}>
+                                          <div
+                                            className={
+                                              Styles.attrdistance +
+                                              " anim-parallax "
+                                            }
+                                          >
                                             {item?.place_reach_time_by_car}
                                           </div>
                                           <CarDistance />
@@ -236,10 +246,11 @@ const PageLocation = (props) => {
                                     >
                                       {item.place_title}
                                     </h3>
-                                    <p className="anim-text-enter">{item.place_description}</p>
+                                    <p className="anim-text-enter">
+                                      {item.place_description}
+                                    </p>
                                   </div>
                                 </div>
-                               
                               </div>
                             </div>
                             <div className="crow home-connectivity-bottom secondary-locations">
@@ -265,7 +276,7 @@ const PageLocation = (props) => {
                                           onClick={() => ToggleClass(0)}
                                         >
                                           <WalkDistance />
-                                          <div className={Styles.attrdistance }>
+                                          <div className={Styles.attrdistance}>
                                             {item?.place_reach_time_by_walk}
                                           </div>
                                         </div>
@@ -301,15 +312,15 @@ const PageLocation = (props) => {
                                     >
                                       {item.place_title}
                                     </h3>
-                                    <p className="anim-text-enter" >{item.place_description}</p>
+                                    <p className="anim-text-enter">
+                                      {item.place_description}
+                                    </p>
                                   </div>
                                 </div>
-
-                             
                               </div>
                             </div>
 
-							<div className="crow home-connectivity-bottom secondary-locations">
+                            <div className="crow home-connectivity-bottom secondary-locations">
                               <div className="col-5 col-lg-12 anim-scroll-up">
                                 <div
                                   className={`${Styles.mainattrcontainer} ${Styles.h100}`}
@@ -366,9 +377,11 @@ const PageLocation = (props) => {
                                     <h3
                                       className={`text-color anim-text-enter ${Styles.schoolheading}`}
                                     >
-                                    {item.place_title}
+                                      {item.place_title}
                                     </h3>
-                                    <p className="anim-text-enter">{item.place_description}</p>
+                                    <p className="anim-text-enter">
+                                      {item.place_description}
+                                    </p>
                                   </div>
                                 </div>
 
@@ -382,7 +395,7 @@ const PageLocation = (props) => {
                         );
                       }
                     )}
-                  </Slider>
+                  {/* </Slider> */}
                 </>
               )}
             </Container>

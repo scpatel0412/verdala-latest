@@ -65,10 +65,12 @@ const Index = () => {
     <>
       <Resize>
 	  	
+        <Loading
+          loadState = {(data !== undefined) ? true : false}
+        />
 
         {data !== undefined ? (
           <>
-          <Loading />
           <BisAnimate>
             <div className="home-banner-sec">
             <HomeHero data={data} />

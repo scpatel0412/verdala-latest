@@ -52,6 +52,7 @@ function Neighbourhood() {
       <>
       {navLinks.length > 0 &&
         navLinks.map((i) => {
+          console.log("i.id", i.id)
           if (i.id === "rabat_and_mdina") {
             return <RabatAndMdina data={i} />;
           }

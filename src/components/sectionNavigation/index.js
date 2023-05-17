@@ -11,6 +11,7 @@ const SectionNavigation = (props) => {
   return (
     <div className="vision-nav">
       {data?.map((i, index) => {
+        console.log("secNav", i);
         return (
           <div key={index}>
             <ul>

@@ -5,7 +5,7 @@ import Footer from '../../components/sections/footer/footer';
 import '../../assets/css/js_composer.min.css';
 import Container from '../../components/layouts/container';
 import PropertyMeta from '../../components/property/property-meta';
-import testImg from "../../assets/images/test-images/image 54.png";
+import testImg from "../../assets/images/test-images/test-plan.png";
 import * as Styles from "../../components/property/property.module.scss";
 // import parse from 'html-react-parser'
 
@@ -17,8 +17,6 @@ const SinglePropertyTemplate = ({ data }) => {
     // document.getElementsByClassName("global-header").classList.add("dark");
 
 	const post = data.wpProperty;
-
-    // console.log(data);
 
 	return (
 	  <>
@@ -37,7 +35,7 @@ const SinglePropertyTemplate = ({ data }) => {
                 <div className={Styles.sglPropCont}>
                     <div className="row">
                         <div className="col-3">
-                            <h1 className={Styles.titleText}>Apartment</h1>
+                            <h1 className={Styles.titleText}>APT. {post.title}</h1>
                             <PropertyMeta
                                 {...post}
                             />

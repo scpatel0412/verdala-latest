@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { Link, StaticQuery, graphql } from "gatsby";
 import { gsap } from "gsap";
 import TransitionLink, {
   TransitionPortal,
@@ -11,6 +11,7 @@ import VerdalaLogoalt from "../../assets/svgs/verdala-logo-alt.svg";
 import Container from "../layouts/container";
 import { Image1 } from "../../images";
 import MenuImage from "../../assets/images/test-images/menu-image.png";
+import HoverHeaderImage from "../headerImage";
 
 class Header extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ class Header extends Component {
     this.transitionCover = React.createRef();
   }
   toggleClass() {
-    // console.log("first");
     const currentState = this.state.active;
     this.setState({ active: !currentState });
   }
@@ -46,9 +46,9 @@ class Header extends Component {
       })
       .to(this.transitionCover, {
         y: directionTo,
-        ease: "power1.easeOut",
-        duration: seconds / 3,
-      }, "+=1.5");
+        ease: "power1.easeIn",
+        duration: seconds / 2,
+      });
   };
 
   test2(entry, node) {
@@ -108,7 +108,7 @@ class Header extends Component {
   componentDidMount() {
     // console.log(this.props.data);
 
-    // console.log(this.transitionCover);
+    console.log(this.transitionCover);
   }
 
   render() {
@@ -125,8 +125,6 @@ class Header extends Component {
     //     }
     //   }
     // `);
-
-    // console.log(data);
     if (typeof window !== "undefined") {
       return (
         <>
@@ -168,85 +166,84 @@ class Header extends Component {
                     render={(data) => {
                       return (
                         <>
-                          {data.site.siteMetadata.menuLinks
+                          {/* {data.site.siteMetadata.menuLinks
                             .slice(1)
-                            .map((item, key) => {
-                              return (
-                                <li key={key}>
-                                  {/* <AniLink paintDrip to={item.link}
+                            .map((item, key) => { */}
+                          {this.props.data.slice(1).map((item, key) => {
+                            return (
+                              <li key={key}>
+                                {/* <AniLink paintDrip to={item.link}
                                                       >
                                                           {item.name}
                                                       </AniLink> */}
-                                  <TransitionLink
-                                    to={item.link}
-                                    exit={{
-                                      length: 1.5,
-                                      trigger: ({ exit }) =>
-                                        this.verticalAnimation(exit, "up"),
-                                      state: { test: "exit state" },
-                                    }}
-                                    entry={{
-                                      delay: 0.5,
-                                      trigger: ({ entry, node }) => {
-                                        // this.test(entry, node);
-                                      },
-                                    }}
-                                    style={{
-                                      textDecoration:
-                                        window?.location.pathname ==
-                                        `${item.link}/`
-                                          ? "underline"
-                                          : "",
-                                      color:
-                                        window.location.href.includes(
-                                          "/contact"
-                                        ) ||
-                                        window.location.href.includes(
-                                          "/gallery"
-                                        ) ||
-                                        window.location.href.includes(
-                                          "/building"
-                                        ) ||
-                                        window.location.href.includes(
-                                          "/property"
-                                        )
-                                          ? "#635245"
-                                          : "#FFFFFF",
-                                    }}
-                                  >
-                                    {item.name}
-                                  </TransitionLink>
+                                <TransitionLink
+                                  to={item?.menu_item?.url}
+                                  exit={{
+                                    length: 1.5,
+                                    trigger: ({ exit }) =>
+                                      this.verticalAnimation(exit, "up"),
+                                    state: { test: "exit state" },
+                                  }}
+                                  entry={{
+                                    delay: 0.5,
+                                    trigger: ({ entry, node }) => {
+                                      this.test(entry, node);
+                                    },
+                                  }}
+                                  style={{
+                                    textDecoration:
+                                      window?.location.pathname ==
+                                      `${item?.menu_item?.url}/`
+                                        ? "underline"
+                                        : "",
+                                    color:
+                                      window.location.href.includes(
+                                        "/contact"
+                                      ) ||
+                                      window.location.href.includes(
+                                        "/gallery"
+                                      ) ||
+                                      window.location.href.includes(
+                                        "/building"
+                                      ) ||
+                                      window.location.href.includes("/property")
+                                        ? "#635245"
+                                        : "#FFFFFF",
+                                  }}
+                                >
+                                  {item?.menu_item?.title}
+                                </TransitionLink>
+                                {item.sub_menu ? (
                                   <div className="type-selector-new">
                                     <div className="type-selector-card-overlay">
-                                      <div className="type-selector-card">
-                                        <div className="type-card-img">
-                                          <img src={Image1}></img>
-                                        </div>
-                                        <h5>Timeline</h5>
-                                      </div>
-                                      <div className="type-selector-card">
-                                        <div className="type-card-img">
-                                          <img src={Image1}></img>
-                                        </div>
-                                        <h5>Timeline</h5>
-                                      </div>
-                                      <div className="type-selector-card">
-                                        <div className="type-card-img">
-                                          <img src={Image1}></img>
-                                        </div>
-                                        <h5>Timeline</h5>
-                                      </div>
-                                      <div className="type-selector-card">
-                                        <div className="type-card-img">
-                                          <img src={Image1}></img>
-                                        </div>
-                                        <h5>Timeline</h5>
-                                      </div>
+                                      {item?.sub_menu.map((items, index) => {
+                                        return (
+                                          <>
+                                            <div
+                                              className="type-selector-card"
+                                              key={index}
+                                            >
+                                              <div className="type-card-img">
+                                                <HoverHeaderImage
+                                                  id={items?.menu_image}
+                                                />
+                                              </div>
+                                              <Link
+                                                to={`${item?.menu_item?.url}/${items?.sub_menu_item?.url}`}
+                                              >
+                                                {items?.sub_menu_item?.title}
+                                              </Link>
+                                              {/* <h5>{items?.sub_menu_item?.title}</h5> */}
+                                            </div>
+                                          </>
+                                        );
+                                      })}
                                     </div>
                                   </div>
-                                </li>
-                              );
-                            })}
+                                ) : null}
+                              </li>
+                            );
+                          })}
                         </>
                       );
                     }}
@@ -263,35 +260,6 @@ class Header extends Component {
                   </div>
 
                   <div className="type-selector">
-                    {/* <div className="type-selector-new">
-                      <div className="type-selector-card-overlay">
-                        <div className="type-selector-card">
-                          <div className="type-card-img">
-                            <img src={Image1}></img>
-                          </div>
-                          <h5>Timeline</h5>
-                        </div>
-                        <div className="type-selector-card">
-                          <div className="type-card-img">
-                            <img src={Image1}></img>
-                          </div>
-                          <h5>Timeline</h5>
-                        </div>
-                        <div className="type-selector-card">
-                          <div className="type-card-img">
-                            <img src={Image1}></img>
-                          </div>
-                          <h5>Timeline</h5>
-                        </div>
-                        <div className="type-selector-card">
-                          <div className="type-card-img">
-                            <img src={Image1}></img>
-                          </div>
-                          <h5>Timeline</h5>
-                        </div>
-                      </div>
-                    </div> */}
-
                     <TransitionLink
                       to={"/building"}
                       exit={{
@@ -303,13 +271,16 @@ class Header extends Component {
                       entry={{
                         delay: 0.5,
                         trigger: ({ entry, node }) => {
-                          // this.test(entry, node);
+                          this.test(entry, node);
                         },
                       }}
-                      
+
                       // style={backgroundImage: "url"}
                     >
-                      <div className="type" style={{backgroundImage: `url(${MenuImage})`}} >
+                      <div
+                        className="type"
+                        style={{ backgroundImage: `url(${MenuImage})` }}
+                      >
                         <span>Visual Search by Building</span>
                       </div>
                     </TransitionLink>
@@ -325,7 +296,7 @@ class Header extends Component {
                       entry={{
                         delay: 0.5,
                         trigger: ({ entry, node }) => {
-                          // this.test(entry, node);
+                          this.test(entry, node);
                         },
                       }}
                     >

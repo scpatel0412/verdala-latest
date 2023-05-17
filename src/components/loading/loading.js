@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 
 import { withCookies } from 'react-cookie';
-import VerdalaLogo from '../../assets/svgs/verdala-logo.svg'
+import { gsap } from "gsap";
+import VerdalaLogo from '../../assets/svgs/Verdala-Loading-Logo.svg'
 
 // import MouseFollow from '../mouseFollowComponent/mouseFollow';
 
-const LoadingScreen = (props) => {
+const LoadingScreen = (props, ref) => {
 	return(
-		<div className={ "backlay " + ((props.active) ? "animate-logo " : "hide") }>
+		<div ref={ref} className={ "backlay " + ((props.active) ? "animate-logo " : "hide") }>
             <div className="loading-container ">
                 <div className="loading-wrapper">
                     <div className="loading">
@@ -25,6 +26,8 @@ class Loading extends Component {
 
         const { cookies } = props;
 
+        this.loadingScreen = React.createRef();
+
         this.state = {
             loadingVisible: cookies.get('loadingVisible') || false,
             active: false,
@@ -38,6 +41,20 @@ class Loading extends Component {
         this.setState({
             active: true
         })
+
+        // gsap
+        // .timeline()
+        // .set(this.transitionCover, { y: directionFrom })
+        // .to(this.transitionCover, {
+        //     y: "0%",
+        //     ease: "power1.easeInOut",
+        //     duration: seconds / 2,
+        // })
+        // .to(this.transitionCover, {
+        //     y: directionTo,
+        //     ease: "power1.easeOut",
+        //     duration: seconds / 3,
+        // }, "+=1.5");
 
     }
 
@@ -66,9 +83,9 @@ class Loading extends Component {
         let loading;
 
         if ( this.state.loadingScreen ) {
-            loading = LoadingScreen( this.state );
+            loading = LoadingScreen( this.state, this.loadingScreen );
         } else {
-            loading = LoadingScreen( this.state );
+            loading = LoadingScreen( this.state, this.loadingScreen );
             // loading = null;
         }
 

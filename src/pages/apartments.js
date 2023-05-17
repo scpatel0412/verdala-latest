@@ -154,7 +154,7 @@ class Apartments extends Component {
                 arrowClosed={<span className="arrow-closed" />}
                 arrowOpen={<span className="arrow-open" />}
               /> */}
-              <Dropdown
+              {/* <Dropdown
                 onChange={(e) => this.filter("building", e.value)}
                 options={this.filterStyle1}
                 value={
@@ -213,7 +213,7 @@ class Apartments extends Component {
                 placeholder={this.filterStyle1[0].label}
                 arrowClosed={<span className="arrow-closed" />}
                 arrowOpen={<span className="arrow-open" />}
-              />
+              /> */}
             </div>
           </Container>
         </div>

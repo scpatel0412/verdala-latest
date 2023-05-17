@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../partials/buttons";
 import SecondaryText from "../typography/secondaryText";
+import testPlanImg from "../../assets/images/test-images/test-plan.png";
 import * as Styles from "./property.module.scss";
 
 const PropertyCard = (props) => (
@@ -91,7 +92,7 @@ const PropertyCard = (props) => (
         <div className="col-3">
           <img
             className={Styles?.propertyImage}
-            src={props?.node?.propertiesData?.propertyPlanOnline?.sourceUrl}
+            src={(props?.node?.propertiesData?.propertyPlanOnline?.sourceUrl) ? props?.node?.propertiesData?.propertyPlanOnline?.sourceUrl : testPlanImg}
             alt=""
           />
         </div>
