@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import { gsap } from "gsap";
 import TransitionLink, {
   TransitionPortal,
@@ -9,10 +9,9 @@ import * as headerStyles from "./header.module.scss";
 import VerdalaLogo from "../../assets/svgs/verdala-logo.svg";
 import VerdalaLogoalt from "../../assets/svgs/verdala-logo-alt.svg";
 import Container from "../layouts/container";
-import { Image1 } from "../../images";
 import MenuImage from "../../assets/images/test-images/menu-image.png";
 import HoverHeaderImage from "../headerImage";
-
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -112,19 +111,6 @@ class Header extends Component {
   }
 
   render() {
-    // const data = StaticQuery(graphql`
-    //   query {
-    //     site {
-    //       siteMetadata {
-    //         title
-    //         menuLinks {
-    //           name
-    //           link
-    //         }
-    //       }
-    //     }
-    //   }
-    // `);
     if (typeof window !== "undefined") {
       return (
         <>
@@ -166,9 +152,6 @@ class Header extends Component {
                     render={(data) => {
                       return (
                         <>
-                          {/* {data.site.siteMetadata.menuLinks
-                            .slice(1)
-                            .map((item, key) => { */}
                           {this.props.data.slice(1).map((item, key) => {
                             return (
                               <li key={key}>
@@ -228,12 +211,14 @@ class Header extends Component {
                                                   id={items?.menu_image}
                                                 />
                                               </div>
-                                              <Link
-                                                to={`${item?.menu_item?.url}/${items?.sub_menu_item?.url}`}
-                                              >
-                                                {items?.sub_menu_item?.title}
-                                              </Link>
-                                              {/* <h5>{items?.sub_menu_item?.title}</h5> */}
+                                              <AniLink
+                                              to={`${item?.menu_item?.url}/${items?.sub_menu_item?.url}`}
+                                            >
+                                              <div>
+                                              <h5>{items?.sub_menu_item?.title}</h5>
+                                              </div>
+                                              
+                                            </AniLink>
                                             </div>
                                           </>
                                         );
