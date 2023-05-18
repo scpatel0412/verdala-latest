@@ -42,6 +42,7 @@
     "sass": "^1.55.0",
     "scroll-out": "^2.2.12",
     "slick-carousel": "^1.8.1",
-    "splitting": "^1.0.6"
+    "splitting": "^1.0.6",
+    "yet-another-react-lightbox": "^3.8.3"
   }
 }
