@@ -5,13 +5,12 @@ import { allMenu } from "../../utils/api";
 
 const Layout = ({ children, pageContext: { locale } }) => {
   const [scroll, setScroll] = useState(false);
-  const [menuData, setMenuData] = useState([]);
   const [data, setData] = useState([]);
   useEffect(() => {
     const func = async () => {
       try {
         const res = await allMenu();
-        setData(res.acf.add_menu);
+        setData(res.add_menu);
       } catch (error) {
         console.log("ERROR DURING GET MENU DATA");
       }

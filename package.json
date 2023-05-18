@@ -31,6 +31,7 @@
     "gsap": "npm:@gsap/shockingly@^3.11.5",
     "html-react-parser": "^3.0.6",
     "latest": "^0.2.0",
+    "moment": "^2.29.4",
     "n": "^9.0.1",
     "nvm": "^0.0.4",
     "react": "^18.1.0",
