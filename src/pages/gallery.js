@@ -8,7 +8,7 @@ const Gallery = () => {
 
   useEffect(() => {
     axios
-      .get("http://verdalastage.bison-studio.com/wp-json/acf/v3/pages/1303")
+      .get("https://verdalastage.bison-studio.com/wp-json/acf/v3/pages/1303")
       .then((response) => {
         setData(response.data.acf.gallery_data);
       });
