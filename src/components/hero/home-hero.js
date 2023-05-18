@@ -82,9 +82,12 @@ const HomeHero = (props) => {
                     gsap.to(
                         ".loading-container",
                         {
-                            scaleY: 0,
+                            opacity: 0,
                             duration: 0.5,
-                            ease: "Cubic.easeOut"
+                            ease: "Cubic.easeOut",
+                            onComplete: function() {
+                                gsap.set(".loading-container", {display: "none"});
+                            }
                         }
                     );
 

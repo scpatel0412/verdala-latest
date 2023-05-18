@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react"
-import HeroImg from "../../../assets/images/test-images/home-image.png"
+import HeroImg from "../../../assets/images/test-images/footer.jpg"
 import Call from "../../../assets/images/test-images/call.png"
 import Home from "../../../assets/images/test-images/home.png"
 import Media from "../../../assets/images/test-images/media.png"

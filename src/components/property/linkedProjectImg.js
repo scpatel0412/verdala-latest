@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import buildingImg from '../../assets/images/test-images/building-1.png';
-import building2Img from '../../assets/images/test-images/building-2.png';
+import buildingImg from '../../assets/images/test-images/building-overview---grand.png';
+import building2Img from '../../assets/images/test-images/building-overview---royal.png';
 
 const LinkedProjectImg = (props) => {
   const [img, setImg] = useState()

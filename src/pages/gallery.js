@@ -1,36 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Resize from "../components/resize/index";
 import GalleryImages from "./Gallery/index";
+import axios from "axios";
 
 const Gallery = () => {
-  const data = [
-    {
-      title: "progress",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-    },
-    {
-      title: "amenities",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-42-1.png",
-    },
-    {
-      title: "Design",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-    },
-    {
-      title: "lifestyle",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-42-1.png",
-    },
-    {
-      title: "interiors",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-    },
-  ];
-  const [selected, setSelected] = useState(Math.floor(data.length / 2));
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://verdalastage.bison-studio.com/wp-json/acf/v3/pages/1303")
+      .then((response) => {
+        setData(response.data.acf.gallery_data);
+      });
+  }, [data.length]);
+
+  const [selected, setSelected] = useState(0);
+  useEffect(() => {
+    setSelected(Math.floor(data.length / 2));
+  }, []);
+
   const onClickSelecte = (index) => {
     setSelected(index);
   };
@@ -67,7 +55,7 @@ const Gallery = () => {
                       style={{ opacity: index === selected ? 1 : 0.25 }}
                       onClick={() => onClickSelecte(index)}
                     >
-                      {i.title}
+                      {i.tab_title}
                     </h2>
                   </div>
                 );

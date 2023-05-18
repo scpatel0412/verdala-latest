@@ -395,7 +395,7 @@
                 cursor: pointer;
             }
 
-            &:not(:last-of-type) {
+            &:not(.button-row) {
                 &.selected {
                     &:before {
                         transform: rotate(180deg);
@@ -430,7 +430,7 @@
         padding-right: 20px;
 
         @media all and (min-width: 64em) {
-            text-align: left;
+            text-align: center;
             padding-right: 15px;
         }
 
@@ -449,7 +449,7 @@
             }
 
             .inner-button {
-                padding: 10px;
+                padding: 10px 30px;
                 background-color: #FFFF;
                 border-radius: 50px;
                 text-transform: uppercase;
@@ -459,6 +459,17 @@
 
                 span:before {
                     content: "More Info"
+                }
+            }
+            
+            &.locate-button {
+                .inner-button {
+                    background-color: transparent;
+                    border: 1px solid;
+
+                    span:before {
+                        content: "Locate"
+                    }
                 }
             }
         }
@@ -524,7 +535,8 @@
             & > a:nth-of-type(#{$i}) .apartment {
                 transition: all 0.3s ease-in-out;
                 // display: none;
-                transition: 1s ease-in-out (1s + (0.2s * $i));
+                // transition: 1s ease-in-out (1s + (0.2s * $i));
+                transition: 1s ease-in-out;
             }
         }
 
@@ -564,7 +576,7 @@
         // font-family: 'Butler';
         letter-spacing: 0.5px;
         transition: all 0.5s ease-in-out;
-        cursor: pointer;
+        // cursor: pointer;
 
         background-color: #f7f7f0;
 
@@ -620,18 +632,19 @@
         &:hover,
         &.active {
             background-color: #aad392 !important;
+            // transition-delay: 0s;
 
             .property-row {
                 color: black;
                 
                 .button-row {
                     .inner-button {
-                        color: #EFB697;
-                        background-color: #FFFF;
+                        // color: #EFB697;
+                        // background-color: #FFFF;
 
-                        span:before {
-                            content: "More Info"
-                        }
+                        // span:before {
+                        //     content: "More Info"
+                        // }
                     }
                 }
             }

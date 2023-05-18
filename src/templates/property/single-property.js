@@ -2,11 +2,12 @@ import React from 'react';
 import {  graphql } from 'gatsby'
 // import HomeHero from '../components/hero/home-hero';
 import Footer from '../../components/sections/footer/footer';
-import '../../assets/css/js_composer.min.css';
 import Container from '../../components/layouts/container';
 import PropertyMeta from '../../components/property/property-meta';
 import testImg from "../../assets/images/test-images/test-plan.png";
+import EnquireForm from "../../components/sections/forms/enquireForm";
 import * as Styles from "../../components/property/property.module.scss";
+import '../../assets/css/js_composer.min.css';
 // import parse from 'html-react-parser'
 
 
@@ -56,7 +57,9 @@ const SinglePropertyTemplate = ({ data }) => {
                 </div> */}
 
             </section>
+            {/* <EnquireForm /> */}
         </Container>
+
 
 	  	{/* <HomeHero /> */}
 		{/* <PageIntro />

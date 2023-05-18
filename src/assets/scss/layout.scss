@@ -139,6 +139,22 @@ section {
     }
 }
 
+.property-value {
+    .property-value-image {
+      .building-images {
+        .building-trace {
+            display: flex;
+            justify-content: flex-end;
+
+            img {
+                width: 80% !important;
+                // margin: 0 auto;
+            }
+        }
+      }
+    }
+  }
+
     .crow {
         display: flex;
         flex-wrap: wrap;

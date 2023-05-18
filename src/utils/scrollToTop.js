@@ -10,7 +10,12 @@ const ScrollToTop = ({ children, location }) => {
         if (!myRef.current.location) myRef.current.location = location
         // then make sure dialog is closed on route change
         else if (myRef.current.location !== location) {
-            window.scrollTo(0, 0);
+
+            setTimeout( function() {
+                console.log("scroll");
+                window.scrollTo(0, 0);
+            }, 2000);
+
             myRef.current.location = location
         }
     })

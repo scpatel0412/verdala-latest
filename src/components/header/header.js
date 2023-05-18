@@ -106,8 +106,6 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.props.data);
-
     console.log(this.transitionCover);
   }
 
@@ -121,7 +119,7 @@ class Header extends Component {
                 {window.location.href.includes("/contact") ||
                 window.location.href.includes("/gallery") ||
                 window.location.href.includes("/building") ||
-                window.location.href.includes("/developmentprogress") ||
+                window.location.href.includes("/development") ||
                 window.location.href.includes("/property") ? (
                   <VerdalaLogoalt />
                 ) : (
@@ -193,7 +191,7 @@ class Header extends Component {
                                         "/contact"
                                       ) ||
                                       window.location.href.includes(
-                                        "/developmentprogress"
+                                        "/development"
                                       ) ||
                                       window.location.href.includes(
                                         "/gallery"
@@ -293,8 +291,6 @@ class Header extends Component {
                           this.test(entry, node);
                         },
                       }}
-
-                      // style={backgroundImage: "url"}
                     >
                       <div
                         className="type"

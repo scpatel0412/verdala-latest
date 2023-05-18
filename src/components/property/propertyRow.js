@@ -1,3 +1,4 @@
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React, { Component } from 'react';
 // import '../../assets/scss/properties/row.scss';
 // import Building from '../building/building';
@@ -38,7 +39,16 @@ class PropertyRow extends Component {
                         <div className="property-row-item"><span>-</span></div>  
                     }
                     {/* <div className="property-row-item"><span>{(this.props.sold) ? "Sold" : ("€" + this.props.price)}</span></div> */}
-                    <div className="property-row-item button-row"><div className="inner-button"><span></span></div></div>
+                    <AniLink
+                        cover
+                        direction="left"
+                        duration={1}
+                        bg="#7B9E6B"
+                        to={this.props.link}
+                    >
+                        <div className="property-row-item button-row"><div className="inner-button"><span></span></div></div>
+                    </AniLink>
+                    <div className="property-row-item button-row locate-button"><div className="inner-button"><span></span></div></div>
                 </div>
             );
         }

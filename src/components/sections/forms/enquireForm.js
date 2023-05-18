@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from '../../buttons/buttons';
-import DataApi from '../../../utils/data-api';
-import ReactGA from 'react-ga';
+import Button from "../../partials/buttons";
+// import DataApi from '../../../utils/data-api';
+// import ReactGA from 'react-ga';
 
 class EnquireForm extends Component {
 
@@ -53,65 +53,65 @@ class EnquireForm extends Component {
     sendForm(e) {
 		e.preventDefault();
 		// console.log("clicked", this.state.submittingForm, this.validateForm());
-		if ( !this.state.submittingForm && !this.state.submittedForm && this.validateForm() ) {
-			this.setState({
-				submittingForm: true
-            })
+		// if ( !this.state.submittingForm && !this.state.submittedForm && this.validateForm() ) {
+		// 	this.setState({
+		// 		submittingForm: true
+        //     })
 
-            var valueArr = {};
+        //     var valueArr = {};
 
-            this.state.fields.map((field, key) => {
+        //     this.state.fields.map((field, key) => {
                 
-                if ( field.name === "subject" ) {
-                    valueArr[field.name] = field.value + " - Residence " + this.props.propId;
-                } else {
-                    valueArr[field.name] = field.value;
-                }
+        //         if ( field.name === "subject" ) {
+        //             valueArr[field.name] = field.value + " - Residence " + this.props.propId;
+        //         } else {
+        //             valueArr[field.name] = field.value;
+        //         }
 
-                return null;
-            })
+        //         return null;
+        //     })
 			
-			var form = new FormData();
-			form.append("message", JSON.stringify(valueArr));
+		// 	var form = new FormData();
+		// 	form.append("message", JSON.stringify(valueArr));
 
-			DataApi.postEndpoint("mail/", {
-				method: "POST",
-				// headers: {
-				// 	'Accept': 'application/json',
-				// 	'Content-Type': 'application/json',
-				// },
-				cors: true,
-				body: form
-			}).then( response => {
-				if ( response ) {
-					this.setState({
-						values: [],
-						submittingForm: false,
-						submittedForm: true,
-						validationText: "Thanks for your enquiry. We'll get back to you shortly."
-                    });
+		// 	DataApi.postEndpoint("mail/", {
+		// 		method: "POST",
+		// 		// headers: {
+		// 		// 	'Accept': 'application/json',
+		// 		// 	'Content-Type': 'application/json',
+		// 		// },
+		// 		cors: true,
+		// 		body: form
+		// 	}).then( response => {
+		// 		if ( response ) {
+		// 			this.setState({
+		// 				values: [],
+		// 				submittingForm: false,
+		// 				submittedForm: true,
+		// 				validationText: "Thanks for your enquiry. We'll get back to you shortly."
+        //             });
                     
-                    setTimeout( () => {
-                        ReactGA.pageview("/thank-you-enquire");
-                    }, 100);      
-				}
+        //             // setTimeout( () => {
+        //             //     ReactGA.pageview("/thank-you-enquire");
+        //             // }, 100);      
+		// 		}
 				
-				// console.log(response);
+		// 		// console.log(response);
 
-			}).catch(error => {
+		// 	}).catch(error => {
 
-				// console.log(error)
+		// 		// console.log(error)
 
-				return error;
-			});
-		} else {
-            this.setState({
-                values: [],
-                // submittingForm: false,
-                // submittedForm: true,
-                // validationText: "Fill out all fields"
-            });
-        }
+		// 		return error;
+		// 	});
+		// } else {
+        //     this.setState({
+        //         values: [],
+        //         // submittingForm: false,
+        //         // submittedForm: true,
+        //         // validationText: "Fill out all fields"
+        //     });
+        // }
     }
     
     validateForm() {

@@ -64,7 +64,7 @@ const Team = (props) => {
     }, [props]);
     return (
         <>
-            {(visionPage === undefined) ? (
+            {(visionPage != undefined) ? (         
                 <>
                     <section className={` vision-tab-inspried-sec page-generic ${Pagegeneric.secgeneric}`}>
                         <div className="team-section team-section-vison" id="theteam">

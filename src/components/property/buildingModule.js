@@ -1149,10 +1149,11 @@ class BuildingModule extends Component {
                                                 <div className="property-row-item" onClick={(e) => this.sort("floorNumber", e)}><span>Floor</span></div>
                                                 <div className="property-row-item" onClick={(e) => this.sort("property_number", e)}><span>Unit</span></div>
                                                 <div className="property-row-item" onClick={(e) => this.sort("bedrooms", e)}><span>Bedrooms</span></div>
-                                                <div className="property-row-item" onClick={(e) => this.sort("internalArea", e)}><span>Internal Area</span></div>
-                                                <div className="property-row-item" onClick={(e) => this.sort("externalArea", e)}><span>External Area</span></div>
+                                                <div className="property-row-item" onClick={(e) => this.sort("internalArea", e)}><span>Int. Area</span></div>
+                                                <div className="property-row-item" onClick={(e) => this.sort("externalArea", e)}><span>Ext. Area</span></div>
                                                 {/* <div className="property-row-item" onClick={(e) => this.sort("price", e)}><span>Price</span></div> */}
-                                                <div className="property-row-item"><span></span></div>
+                                                <div className="property-row-item button-row"><span></span></div>
+                                                <div className="property-row-item button-row"><span></span></div>
                                             </div>
 
                                             <div className={"property-scroll-inner " + ((this.state.properties && this.state.loaded) ? "loaded" : "")}>
@@ -1178,13 +1179,13 @@ class BuildingModule extends Component {
                                                         
                                                         // if (property.acf.sold_status === "sold") {
                                                             return (
-                                                                <AniLink 
-                                                                    cover
-                                                                    direction="left"
-                                                                    duration={1}
-                                                                    bg="#7B9E6B"
-                                                                    to={"/property/" + property.node.title + "-2"}
-                                                                >
+                                                                // <AniLink 
+                                                                //     cover
+                                                                //     direction="left"
+                                                                //     duration={1}
+                                                                //     bg="#7B9E6B"
+                                                                //     to={"/property/" + property.node.title + "-2"}
+                                                                // >
                                                                     <div 
                                                                         key             = {key}
                                                                         // onMouseEnter    = {() => this.apartmentController(parseInt(property.acf.building_side - 1), property.node.title)}
@@ -1198,9 +1199,10 @@ class BuildingModule extends Component {
                                                                             fArea       = {netArea}
                                                                             oArea       = {externalArea}
                                                                             price       = {0}
+                                                                            link        = {"/property/" + property.node.title + "-2"}
                                                                         />
                                                                     </div>
-                                                                </AniLink>
+                                                                // </AniLink>
                                                             )
                                                         // } else {
                                                         //     return (

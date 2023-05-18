@@ -6,6 +6,8 @@ const residencesUrl = `${BASE_URL}/119`;
 const visionUrl = `${BASE_URL}/112`;
 const homeUrl = `${BASE_URL}/6`;
 const menuUrl = `https://verdalastage.bison-studio.com/wp-json/acf/v3/options/option/add_menu`;
+const developmentProgressUrl = `${BASE_URL}/1397`;
+
 const getApi = async (url) => {
   const res = await axios({
     method: "get",
@@ -19,4 +21,5 @@ const allResidences = () => getApi(residencesUrl);
 const allVision = () => getApi(visionUrl);
 const allHome = () => getApi(homeUrl);
 const allMenu = () => getApi(menuUrl);
-export { allResidences, allVision, allHome, allMenu };
+const allDevelopmentProgress = () => getApi(developmentProgressUrl);
+export { allResidences, allVision, allHome, allMenu, allDevelopmentProgress };
