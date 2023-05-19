@@ -79,7 +79,7 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_10_)' }}>
 
-                                    <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out"  }} width="232" height="381" xlinkHref={LandmarkPalazzoFalzon} transform={over.display && over.image == LandmarkPalazzoFalzon ?  `matrix(0.9806 0 0 0.9806 4470 2485.0391) scale(1.1) ` :  `matrix(0.9806 0 0 0.9806 4470 2485.0391) scale(0.9)`}
+                                    <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out"  }} width="232" height="381" xlinkHref={LandmarkPalazzoFalzon} transform={over.display && over.image == LandmarkPalazzoFalzon ?  `matrix(0.9806 0 0 0.9806 4470 2485.0391) scale(1.0) ` :  `matrix(0.9806 0 0 0.9806 4470 2485.0391) scale(0.9)`}
                                         onMouseOver={(e) =>
                                           {
                                             setOver({ name: 'Landmark Palazzo Falzon', display: true, discription: "Landmark Palazzo Falzon description", image: LandmarkPalazzoFalzon })
@@ -111,15 +111,15 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: 'url(#SVGID_14_)' }}>
 
-                                    <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="544" height="497" xlinkHref={LandmarkGhajnHammiem} transform={over.display && over.image == LandmarkGhajnHammiem ? `matrix(0.9801 0 0 0.9801 4193.4233 1255.8691) scale(1.1) ` : "matrix(0.9801 0 0 0.9801 4193.4233 1255.8691)"}
-                                        onMouseOver={() =>
-                                            setOver({ name: 'Landmark Ghajn Hammiem', display: true, discription: "Landmark Ghajn Hammiem description", image: LandmarkGhajnHammiem })
-                                        }
-                                        onMouseOut={()=>{
-                                          setOver({ display: false })
-                                        }}
-                                    >
-                                    </image>
+                                <image style={{ overflow: 'visible', cursor: 'pointer', transition: "all .4s ease-in-out" }}  xlinkHref={LandmarkGhajnHammiem} transform={over.display && over.image == LandmarkGhajnHammiem ? `matrix(0.9801 0 0 0.9801 4193.4233 1255.8691) scale(1.00) ` : "matrix(0.9801 0 0 0.9801 4193.4233 1255.8691) scale(0.9)"}
+                    onMouseOver={() =>
+                      setOver({ name: 'Landmark Ghajn Hammiem', display: true, discription: "Landmark Ghajn Hammiem description", image: LandmarkGhajnHammiem })
+                    }
+                    onMouseOut={() => {
+                      setOver({ display: false })
+                    }}
+                  >
+                  </image>
                                 </g>
                             </g>
                         </g>
@@ -143,7 +143,7 @@ const Mapping = () => {
                                 <g style={{ clippath: 'url(#SVGID_18_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="369" height="366" xlinkHref={LandmarkStPaulCathedral}
-                                        transform={over.display && over.image == LandmarkStPaulCathedral ? `matrix(1.0267 0 0 1.0267 4119.0684 2760.2178) scale(1.1) ` : "matrix(1.0267 0 0 1.0267 4119.0684 2760.2178)"}
+                                        transform={over.display && over.image == LandmarkStPaulCathedral ? `matrix(1.0267 0 0 1.0267 4119.0684 2760.2178) scale(1.0) ` : "matrix(1.0267 0 0 1.0267 4119.0684 2760.2178) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'LandmarkSt Paul Cathedral', display: true, discription: "Landmark StPaul Cathedral description", image: LandmarkStPaulCathedral })
                                         }
@@ -176,7 +176,7 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clippath: '(#SVGID_22_)' }}>
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="636" height="356" xlinkHref={LandmarkDomusRomana}
-                                        transform={over.display && over.image == LandmarkDomusRomana ? `matrix(0.9873 0 0 0.9873 3620 1573.3018) scale(1.1) ` : "matrix(0.9873 0 0 0.9873 3620 1573.3018)"}
+                                        transform={over.display && over.image == LandmarkDomusRomana ? `matrix(0.9873 0 0 0.9873 3620 1573.3018) scale(1.0) ` : "matrix(0.9873 0 0 0.9873 3620 1573.3018) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Domus Romana', display: true, discription: "Landmark Domus Romana description", image: LandmarkDomusRomana })
                                         }
@@ -200,7 +200,7 @@ const Mapping = () => {
                             </clipPath>
                             <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_24_)' }}>
                                 <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="236" height="358" xlinkHref={LandmarkPalazzoVilhena} 
-                                transform={over.display && over.image == LandmarkPalazzoVilhena ? `matrix(0.9683 0 0 0.9683 3766.4805 2716.8438) scale(1.1) ` : "matrix(0.9683 0 0 0.9683 3766.4805 2716.8438)"}
+                                transform={over.display && over.image == LandmarkPalazzoVilhena ? `matrix(0.9683 0 0 0.9683 3766.4805 2716.8438) scale(1.0) ` : "matrix(0.9683 0 0 0.9683 3766.4805 2716.8438) scale(0.9)"}
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Palazzo Vilhena', display: true, discription: "Landmark Palazzo Vilhena description", image: LandmarkPalazzoVilhena })
                                     }
@@ -243,7 +243,7 @@ const Mapping = () => {
                                 <g className=' svg-menu__path__seleccion' style={{ clippath: 'url(#SVGID_28_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="185" height="319" xlinkHref={LandmarkSerkin}
-                                        transform={over.display && over.image == LandmarkSerkin ? `matrix(1.0495 0 0 1.0495 3394.4189 1589.6006) scale(1.1) ` : "matrix(1.0495 0 0 1.0495 3394.4189 1589.6006)"}
+                                        transform={over.display && over.image == LandmarkSerkin ? `matrix(1.0495 0 0 1.0495 3394.4189 1589.6006) scale(1.0) ` : "matrix(1.0495 0 0 1.0495 3394.4189 1589.6006) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Serkin', display: true, discription: "Landmark Serkin description", image: LandmarkSerkin })
                                         }
@@ -272,7 +272,7 @@ const Mapping = () => {
                                 </clipPath>
                                 <g style={{ clipPath: 'url(#SVGID_30_)' }}>
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="225" height="347" xlinkHref={LandmarkPenitentMagdalene}
-                                        transform={over.display && over.image == LandmarkPenitentMagdalene ? `matrix(1.0013 0 0 1.0013 2704.6982 1515.5352) scale(1.1) ` : "matrix(1.0013 0 0 1.0013 2704.6982 1515.5352)"}
+                                        transform={over.display && over.image == LandmarkPenitentMagdalene ? `matrix(1.0013 0 0 1.0013 2704.6982 1515.5352) scale(1.0) ` : "matrix(1.0013 0 0 1.0013 2704.6982 1515.5352) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Penitent Magdalene', display: true, discription: "Landmark Penitent Magdalene description", image: LandmarkPenitentMagdalene })
                                         }
@@ -303,7 +303,7 @@ const Mapping = () => {
                                 <g style={{ clippath: 'url(#SVGID_34_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="271" height="362" xlinkHref={LandmarkCasaBernard} 
-                                    transform={over.display && over.image == LandmarkCasaBernard ? `matrix(1.015 0 0 1.015 2915.4106 1135.2893) scale(1.1) ` : "matrix(1.015 0 0 1.015 2915.4106 1135.2893)"}
+                                    transform={over.display && over.image == LandmarkCasaBernard ? `matrix(1.015 0 0 1.015 2915.4106 1135.2893) scale(1.0) ` : "matrix(1.015 0 0 1.015 2915.4106 1135.2893) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Casa Bernard', display: true, discription: "Landmark Casa Bernard description", image: LandmarkCasaBernard })
                                         }
@@ -334,7 +334,7 @@ const Mapping = () => {
                                 <g style={{ clippath: 'url(#SVGID_38_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="496" height="258" xlinkHref={LandmarkRabatMarket} 
-                                    transform={over.display && over.image == LandmarkRabatMarket ? `matrix(0.9952 0 0 0.9952 3021.999 866.4561) scale(1.1) ` : "matrix(0.9952 0 0 0.9952 3021.999 866.4561)"}
+                                    transform={over.display && over.image == LandmarkRabatMarket ? `matrix(0.9952 0 0 0.9952 3021.999 866.4561) scale(1.0) ` : "matrix(0.9952 0 0 0.9952 3021.999 866.4561) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Rabat Marketm', display: true, discription: "Landmark Rabat Market description", image: LandmarkRabatMarket })
                                         }
@@ -365,7 +365,7 @@ const Mapping = () => {
                                 <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_42_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="215" height="311" xlinkHref={LandmarkFoundingWheel}
-                                    transform={over.display && over.image == LandmarkFoundingWheel ? `matrix(0.9833 0 0 0.9833 2260.6636 1832) scale(1.1) ` : "matrix(0.9833 0 0 0.9833 2260.6636 1832)"}
+                                    transform={over.display && over.image == LandmarkFoundingWheel ? `matrix(0.9833 0 0 0.9833 2260.6636 1832) scale(1.0) ` : "matrix(0.9833 0 0 0.9833 2260.6636 1832) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark Founding Wheel', display: true, discription: "Landmark Founding Wheel description", image: LandmarkFoundingWheel })
                                         }
@@ -396,7 +396,7 @@ const Mapping = () => {
                                 <g transform="matrix(1 0 0 1 0 0)" style={{ clippath: 'url(#SVGID_46_)' }}>
 
                                     <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="416" height="426" xlinkHref={LandmarkStPaulBasilica}
-                                        transform={over.display && over.image == LandmarkStPaulBasilica ? `matrix(0.9887 0 0 0.9887 2090.7534 1152.1025) scale(1.1) ` : "matrix(0.9887 0 0 0.9887 2090.7534 1152.1025)"}
+                                        transform={over.display && over.image == LandmarkStPaulBasilica ? `matrix(0.9887 0 0 0.9887 2090.7534 1152.1025) scale(1.0) ` : "matrix(0.9887 0 0 0.9887 2090.7534 1152.1025) scale(0.9)"}
                                         onMouseOver={() =>
                                             setOver({ name: 'Landmark StPaul Basilica', display: true, discription: "Landmark StPaul Basilica description", image: LandmarkStPaulBasilica })
                                         }
@@ -417,7 +417,7 @@ const Mapping = () => {
                             </clipPath>
                             <g class="st11" style={{ clippath: 'url(#SVGID_48_)' }}>
                                 <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="447" height="374" xlinkHref={LandmarkParrucan}
-                                    transform={over.display && over.image == LandmarkParrucan ? `matrix(1.0264 0 0 1.0264 2585.0649 716.4824) scale(1.1) ` : "matrix(1.0264 0 0 1.0264 2585.0649 716.4824)"}
+                                    transform={over.display && over.image == LandmarkParrucan ? `matrix(1.0264 0 0 1.0264 2585.0649 716.4824) scale(1.0) ` : "matrix(1.0264 0 0 1.0264 2585.0649 716.4824) scale(0.9)"}
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Parrucan', display: true, discription: "Landmark Parrucans description", image: LandmarkParrucan })
                                     }
@@ -438,7 +438,7 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_52_)' }}>
                                 <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="289" height="270" xlinkHref={LandmarkCatacombs}
-                                    transform={over.display && over.image == LandmarkCatacombs ? `matrix(1.0294 0 0 1.0294 1766.7456 915.0498) scale(1.1) ` : "matrix(1.0294 0 0 1.0294 1766.7456 915.0498)"}
+                                    transform={over.display && over.image == LandmarkCatacombs ? `matrix(1.0294 0 0 1.0294 1766.7456 915.0498) scale(1.0) ` : "matrix(1.0294 0 0 1.0294 1766.7456 915.0498) scale(0.9)"}
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Catacombs', display: true, discription: "Landmark Catacombs description", image: LandmarkCatacombs })
                                     }
@@ -459,7 +459,8 @@ const Mapping = () => {
                             </clipPath>
                             <g style={{ clippath: 'url(#SVGID_54_)' }}>
                                 <label>test</label>
-                                <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="1433" height="534" xlinkHref={LandmarkVerdala} transform="matrix(1.0232 0 0 1.0232 364.2627 2603.626)"
+                                <image style={{ overflow: 'visible',cursor:'pointer', transition: "all .4s ease-in-out" }} width="1433" height="534" xlinkHref={LandmarkVerdala} 
+                                transform={over.display && over.image == LandmarkVerdala ? `matrix(1.0232 0 0 1.0232 364.2627 2603.626) scale(1.0) ` : "matrix(1.0232 0 0 1.0232 364.2627 2603.626) scale(0.9)"}
                                     onMouseOver={() =>
                                         setOver({ name: 'Landmark Verdalas', display: true, discription: "Landmark Verdala description", image: LandmarkVerdala })
                                     }

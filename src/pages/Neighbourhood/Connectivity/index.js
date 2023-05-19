@@ -82,9 +82,7 @@ function Connectivity(props) {
                   </h2>
                 </div>
               </div>
-              {/* {props.data?.data.neighborhood.neighbourhood_data?.map(
-                      (item, index) => {
-                        return ( */}
+             
               <section className={Styles.pt80}>
                 <div className="crow home-connectivity-bottom">
                   <div className="col-5 col-lg-12 anim-parallax">
@@ -175,11 +173,6 @@ function Connectivity(props) {
                         </p>
                       </div>
                     </div>
-
-                    {/* <Button
-                                  styleClass="border-button"
-                                  text={homePage?.button_link?.title}
-                                /> */}
                   </div>
                 </div>
                 <div className="crow home-connectivity-bottom secondary-locations">
@@ -263,11 +256,6 @@ function Connectivity(props) {
                         </p>
                       </div>
                     </div>
-
-                    {/* <Button
-                                  styleClass="border-button"
-                                  text={homePage?.button_link?.title}
-                                /> */}
                   </div>
                 </div>
 
@@ -322,7 +310,7 @@ function Connectivity(props) {
                   </div>
 
                   <div className="col-7 col-xl-8 col-lg-12 connectivity-content">
-                    <div className={` align-bottom ${Styles.connectivity}`}>
+                    <div className={` crow align-bottom ${Styles.connectivity}`}>
                       <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
                         <img
                           src={
@@ -333,7 +321,7 @@ function Connectivity(props) {
                           alt=""
                         />
                       </div>
-                      <div className=" fadeinup connectivity-img-content">
+                      <div className="col-4 col-sm-12 fadeinup connectivity-img-content">
                         <h3
                           className={`text-color anim-text-enter ${Styles.schoolheading}`}
                         >
@@ -364,53 +352,6 @@ function Connectivity(props) {
                   </div>
                 </div>
               </section>
-              {/* );
-                      }
-                    )} */}
-              {/* <Slider {...settings}>
-                {props.data?.data.neighborhood.neighbourhood_data?.map(
-                 Container (item, ind) => {
-                  
-                    return (
-                      <div className="neighborhood-bottom-inner anim-scroll-up" key={ind}>
-                        <div className="neighborhood-circle-btn-list">
-                          <div className="neigh-circle">
-                            <img src={walkimg}></img>
-                          </div>
-                          <div className="neigh-circle">
-                            <img src={carimg}></img>
-                          </div>
-
-                          <div className="neighborhood-circle-line">
-                            <img src={neighline}></img>
-                          </div>
-                          <div className="neighborhood-connectivity-line">
-                            <p>{item.walking_distance}</p>
-                            <span className="cst-circle"></span>
-                          </div>
-                        </div>
-                        <div className="neighborhood-bottom-right-inner">
-                          <div className="neighborhood-bottom-right-img">
-                            <img src={item.image.url} alt="" />
-                          </div>
-                          <div className="neighborhood-bottom-right-content">
-                            <div>
-                              <h3>{item.title}</h3>
-                              <p>{item.description}</p>
-                            </div>
-                          </div>
-                          <Button
-                            text={
-                              props.data?.data.neighborhood
-                                .neighbourhood_data[0].button.title
-                            }
-                          />
-                        </div>
-                      </div>
-                    );
-                  }
-                )}
-              </Slider> */}
             </div>
           </div>
         </>

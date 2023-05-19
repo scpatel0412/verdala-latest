@@ -1,121 +1,67 @@
-import React from "react";
-import PageNavigation from "../components/header/page-navigation";
+import React, { useEffect, useState } from "react";
 import PageHero from "../components/hero/page-hero";
 import Footer from "../components/sections/footer/footer";
 import "../assets/css/js_composer.min.css";
 import Container from "../components/layouts/container";
 import NewsCard from "../components/news/news-card";
+import { allNews } from "../utils/api";
+import { allNewsData } from "../utils/api";
+import Parser from 'html-react-parser';
 
 const News = () => {
-  const newsData = [
-    {
-      id: "1",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "2",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "3",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "4",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "5",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "6",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "7",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-    {
-      id: "8",
-      image:
-        "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-      title: "news",
-      description:
-        "Greet the sun, awaken your body and start the day in harmony with yourself and your body.",
-    },
-  ];
-  const banner = {
-    header_title: "news",
-    header_image: {
-      url: "https://verdalastage.bison-studio.com/wp-content/uploads/2023/04/Rectangle-43-1.png",
-    },
-  };
+  const [headerData, setHeaderData] = useState({})
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const func = async () => {
+      try {
+        const res = await allNews();
+        setHeaderData(res.acf);
+        const response = await allNewsData();
+        setData(response);
+      } catch (error) {
+        console.log("ERROR DURING GET NEWS DATA");
+      }
+    };
+    func();
+  }, []);
   return (
     <>
-      <PageHero headerData={banner} />
+      {headerData != undefined ?
+        <>
+          <PageHero headerData={headerData} />
+          <Container className="filter-container"></Container>
 
-      <PageNavigation
-        links={[
-          "The Verdala Legacy",
-          "then and now",
-          "ARCHITECTURE",
-          "The Team",
-        ]}
-      />
+          <Container>
+            <div className="news-section">
+              <div className="news-filter">
+                <select>
+                  <option>filter</option>
+                  <option>filter 1</option>
+                  <option>filter 2</option>
+                </select>
+              </div>
 
-      <Container className="filter-container"></Container>
-
-      <Container>
-        <div className="news-section">
-          <div className="news-filter">
-            <select>
-              <option>filter</option>
-              <option>filter 1</option>
-              <option>filter 2</option>
-            </select>
-          </div>
-
-          <div className="crow news">
-            {newsData?.map((post) => {
-              return (
-                <>
-                  <NewsCard {...post} />
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </Container>
-      <Footer />
+              <div className="crow news">
+                {data != undefined ?
+                  <>
+                    {data?.map((post, key) => {
+                      return (
+                        <NewsCard
+                          title={Parser(post?.title?.rendered)}
+                          description={Parser(post?.excerpt?.rendered)}
+                          id={post?.featured_media}
+                          key={key}
+                        />
+                      );
+                    })}
+                  </>
+                  : null}
+              </div>
+            </div>
+          </Container>
+          <Footer />
+        </>
+        : null}
     </>
   );
 };
