@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PageNavigation from "../components/header/page-navigation";
 import { graphql } from "gatsby";
-import Filter                   from '../utils/filter';
+import Filter from "../utils/filter";
 // import HomeHero from '../components/hero/home-hero';
 import Footer from "../components/sections/footer/footer";
 import PropertyCard from "../components/property/property-card";
@@ -11,6 +11,7 @@ import Dropdown from "react-dropdown";
 import "../assets/css/js_composer.min.css";
 import * as propStyles from "../components/property/property.module.scss";
 import PageHeroCompact from "../components/hero/page-hero-compact";
+import ApartmentEnquiryForm from "../components/sections/forms/ApartmentEnquiryForm";
 // import parse from 'html-react-parser'
 
 class Apartments extends Component {
@@ -33,17 +34,26 @@ class Apartments extends Component {
     ];
 
     this.filterStyle6 = [
-			{ value: '--99', label: 'Bedrooms' },
-			{ value: '1', label: '1' },
-			{ value: '2', label: '2' },
-			{ value: '3', label: '3' },
-		]
+      { value: "--99", label: "Bedrooms" },
+      { value: "1", label: "1" },
+      { value: "2", label: "2" },
+      { value: "3", label: "3" },
+    ];
 
     this.state = {
       values: {},
       filters: {},
+      stateValue: false,
+      selectedValue: {},
     };
   }
+
+  updateStateValue = (params) => {
+    this.setState({ stateValue: params });
+  };
+  setSelectedvalue = (params2) => {
+    this.setState({ selectedValue: params2 });
+  };
 
   componentDidMount() {
     this.setState({
@@ -55,63 +65,61 @@ class Apartments extends Component {
   }
 
   filter(field, value) {
-    let currFilter  = this.state.filters;
-    let filtered    = this.state.unfilteredProps;
-        
-    if ( field !== 'all' ) {
+    let currFilter = this.state.filters;
+    let filtered = this.state.unfilteredProps;
 
-      if ( value === "-99" ) {
-          delete currFilter[field];
+    if (field !== "all") {
+      if (value === "-99") {
+        delete currFilter[field];
       } else {
-          currFilter[field] = value;
+        currFilter[field] = value;
       }
-  
+
       for (var key in currFilter) {
-  
-          if (currFilter.hasOwnProperty(key)) {
-              if ( key === "building" ) {
-                  filtered = Filter.filterBuilding(filtered, key, currFilter);
-                  
-                  // if ( this.state.buildingData && (currFilter[key] !== this.state.buildingData.name) ) {
-                  //     this.changeBuilding(currFilter[key]);
-                  // }
-              } else {
-                  filtered = Filter.filterProperty(filtered, key, currFilter);
-              }
+        if (currFilter.hasOwnProperty(key)) {
+          if (key === "building") {
+            filtered = Filter.filterBuilding(filtered, key, currFilter);
+
+            // if ( this.state.buildingData && (currFilter[key] !== this.state.buildingData.name) ) {
+            //     this.changeBuilding(currFilter[key]);
+            // }
+          } else {
+            filtered = Filter.filterProperty(filtered, key, currFilter);
           }
+        }
       }
-  
+
       let remDup = [];
-      let valueArr = filtered.map(function(item){ return item.node.title });
-  
-      filtered.some(function(item, idx){ 
-          if ( valueArr.indexOf(item.node.title) === idx ) {
-              remDup.push(item);
-          }
-  
-          return null;
+      let valueArr = filtered.map(function (item) {
+        return item.node.title;
       });
-  
+
+      filtered.some(function (item, idx) {
+        if (valueArr.indexOf(item.node.title) === idx) {
+          remDup.push(item);
+        }
+
+        return null;
+      });
+
       // console.log(remDup);
-  
+
       this.setState({
-          properties: remDup,
-          filters: currFilter
-      })
+        properties: remDup,
+        filters: currFilter,
+      });
     } else {
       this.setState({
         filters: {},
-        properties: this.state.unfilteredProps
-      })
+        properties: this.state.unfilteredProps,
+      });
     }
-        
-
   }
 
   render() {
     return (
       <>
-        <PageHeroCompact title="Residences"  />
+        <PageHeroCompact title="Residences" />
 
         <PageNavigation
           links={[
@@ -125,18 +133,27 @@ class Apartments extends Component {
         <div className={propStyles.filterBar}>
           <Container className="filter-container">
             <div className="inner-filter">
-              <Dropdown 
-                onChange={(e) => this.filter("floorNumber", e.value)} 
-                  options={this.filterStyle1} value={(this.state.filters.floorNumber) ? this.state.filters.floorNumber : this.filterStyle1[0] } 
-                  placeholder={this.filterStyle1[0].label} 
-                  arrowClosed={<span className="arrow-closed" />}
-                  arrowOpen={<span className="arrow-open" />}
+              <Dropdown
+                onChange={(e) => this.filter("floorNumber", e.value)}
+                options={this.filterStyle1}
+                value={
+                  this.state.filters.floorNumber
+                    ? this.state.filters.floorNumber
+                    : this.filterStyle1[0]
+                }
+                placeholder={this.filterStyle1[0].label}
+                arrowClosed={<span className="arrow-closed" />}
+                arrowOpen={<span className="arrow-open" />}
               />
-              
-              <Dropdown 
-                onChange={(e) => this.filter("bedrooms", e.value)} 
-                options={this.filterStyle6} 
-                value={(this.state.filters.bedrooms) ? this.state.filters.bedrooms : this.filterStyle6[0] } 
+
+              <Dropdown
+                onChange={(e) => this.filter("bedrooms", e.value)}
+                options={this.filterStyle6}
+                value={
+                  this.state.filters.bedrooms
+                    ? this.state.filters.bedrooms
+                    : this.filterStyle6[0]
+                }
                 placeholder={this.filterStyle6[0].label}
                 arrowClosed={<span className="arrow-closed" />}
                 arrowOpen={<span className="arrow-open" />}
@@ -231,7 +248,10 @@ class Apartments extends Component {
                   </div>
 
                   <div className="col">
-                    <div className="clear-filters" onClick={() => this.filter('all', -99)}>
+                    <div
+                      className="clear-filters"
+                      onClick={() => this.filter("all", -99)}
+                    >
                       <span>Clear Filters</span>
 
                       <div className="Dropdown-arrow-wrapper">
@@ -253,9 +273,29 @@ class Apartments extends Component {
           <div className={propStyles.gridLayout}>
             {this.state.properties &&
               this.state.properties.map((property) => {
-                return <PropertyCard {...property} />;
+                return (
+                  <>
+                    <PropertyCard
+                      {...property}
+                      childState={this.state.stateValue}
+                      updateState={this.updateStateValue}
+                      selectedValue={this.selectedvalue}
+                      updateSelectedValue={this.setSelectedvalue}
+                    />
+                  </>
+                );
               })}
           </div>
+
+          {this.state.stateValue ? (
+            <>
+              <ApartmentEnquiryForm
+                childState={this.state.stateValue}
+                updateState={this.updateStateValue}
+                selectedValue={this.state.selectedValue}
+              />
+            </>
+          ) : null}
         </Container>
 
         {/* <HomeHero /> */}

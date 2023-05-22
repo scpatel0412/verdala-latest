@@ -6257,3 +6257,249 @@ h2.innerpage_h2 {
     display: none;
   }
 }
+
+.modal_class :is(.global-header, .global-header.fixed) {
+  z-index: initial !important;
+}
+.apartment_form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(22, 22, 22, 0.7);
+  z-index: 99999;
+  padding: 45px;
+  @media all and (max-width: $sm__screen) {
+    padding: 10px;
+  }
+  .apartment_form_popup {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .close-btn {
+    width: 58px;
+    height: 58px;
+    background: #fff;
+    border: 0;
+    border-radius: 50px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 18px;
+      margin: 0 auto;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .apartment_form_inner {
+    width: 867px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media all and (max-width: $sm__screen) {
+      width: 100%;
+    }
+    .form_pop_info-main {
+      overflow: auto;
+      background: #7b9e6b;
+      padding: 43px 80px 80px;
+      max-height: 90vh;
+      -ms-overflow-style: none;
+      -webkit-overflow-style: none;
+      scrollbar-width: none;
+
+      @media all and (max-width: $lg__screen) {
+        padding: 43px 40px 40px;
+      }
+      @media all and (max-width: $sm__screen) {
+        padding: 43px 15px 40px;
+      }
+      .apartment_form_body {
+        padding: 93px 93px 76px 93px;
+        background: #f2ebda;
+        @media all and (max-width: $lg__screen) {
+          padding: 25px 40px 40px 40px;
+        }
+        @media all and (max-width: $sm__screen) {
+          padding: 25px 15px 40px 15px;
+        }
+        .form-input {
+          input {
+            border-width: 0 0 1px 0;
+            background-color: transparent;
+            padding-inline: 0;
+            border-color: #98a078;
+            font-size: 16px;
+            font-family: $font__main;
+            &:focus {
+              outline: none;
+            }
+          }
+          ::-webkit-input-placeholder {
+            color: #444;
+          }
+          :-ms-input-placeholder {
+            color: #444;
+          }
+          ::placeholder {
+            color: #444;
+          }
+        }
+
+        .form-check {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 22px 0;
+          position: relative;
+          input {
+            min-width: 25px;
+            min-height: 20px;
+            opacity: 0;
+            width: auto;
+            position: absolute;
+            left: 0;
+            top: 45%;
+            transform: translateY(-50%);
+          }
+          .form-check-label {
+            font-size: 12px;
+            line-height: 19px;
+            color: #444444;
+            padding-left: 35px;
+            &:before {
+              position: absolute;
+              content: "";
+              width: 25px;
+              height: 20px;
+              background-color: #d9d9d9;
+              left: 0;
+              top: 45%;
+              transform: translateY(-50%);
+              -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              cursor: pointer;
+            }
+            &:after {
+              position: absolute;
+              content: "";
+              width: 19px;
+              height: 14px;
+              background-color: $mainGreen;
+              left: 3.3px;
+              top: 45%;
+              transform: translateY(-50%);
+              opacity: 0;
+              -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              cursor: pointer;
+            }
+          }
+          input[type="checkbox"]:checked + .form-check-label:after {
+            opacity: 1;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+          }
+        }
+        .form-button {
+          button {
+            background: $mainGreen;
+            color: #fff;
+            font-weight: 600;
+            width: 100%;
+            height: 60px;
+            border: 0;
+            font-size: 16px;
+            line-height: 22px;
+            text-transform: uppercase;
+            margin-top: 22px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+      .form_popup_text {
+        font-size: 10px;
+        line-height: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-block-start: 38px;
+        padding-inline: 91px;
+        text-align: center;
+        @media all and (max-width: $lg__screen) {
+          margin-block-start: 26px;
+          padding-inline: 15px;
+        }
+      }
+      .form_pop_info {
+        margin: 15px 0 24px;
+        .pop_title {
+          font-size: 21px;
+          text-align: center;
+          letter-spacing: -0.05em;
+          text-transform: uppercase;
+          font-family: $font__header;
+          line-height: 30px;
+          color: #fff;
+        }
+        h2 {
+          color: #fff;
+          text-align: center;
+          font-size: 64px;
+          line-height: 43.52px;
+          letter-spacing: -0.05em;
+          text-transform: uppercase;
+        }
+        .pop_info_inner {
+          margin: 31px 0 0 0;
+          span {
+            font-size: 15px;
+            line-height: 19px;
+            color: #fff;
+            font-family: $font__main;
+            font-weight: 600;
+            display: inherit;
+            text-align: center;
+          }
+        }
+      }
+    }
+    // ::-webkit-scrollbar {
+    //   width: 5px;
+    // }
+    // ::-webkit-scrollbar-track {
+    //   background: #444;
+    // }
+    // ::-webkit-scrollbar-thumb {
+    //   background: #444;
+    // }
+  }
+}
+html.lenis:has(.modal_class) {
+  overflow-y: hidden;
+}
+.modal_class {
+  // height: 100vh;
+  overflow-y: hidden;
+  display: block;
+}
