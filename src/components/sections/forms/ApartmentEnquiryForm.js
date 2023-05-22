@@ -117,7 +117,7 @@ function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
       updateState(false);
       axios
         .post(
-          "http://verdalastage.bison-studio.com/wp-json/wp/v2/sendmail",
+          "https://verdalastage.bison-studio.com/wp-json/wp/v2/sendmail",
           mailData
         )
         .then(function (response) {
