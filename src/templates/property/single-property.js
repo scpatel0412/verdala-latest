@@ -20,57 +20,51 @@ const SinglePropertyTemplate = ({ data }) => {
 	const post = data.wpProperty;
 
 	return (
-	  <>
-		{/* <PageHero
+    <>
+      {/* <PageHero
 			title = "Residencess"
 		/> */}
 
-        {/* <Container
+      {/* <Container
             className = "filter-container"
         >
             <h1>{post.title}</h1>
         </Container> */}
 
-        <Container>
-            <section className="first-section">
-                <div className={Styles.sglPropCont}>
-                    <div className="row">
-                        <div className="col-3">
-                            <h1 className={Styles.titleText}>APT. {post.title}</h1>
-                            <PropertyMeta
-                                {...post}
-                            />
-                        </div>
+      <Container>
+        <section className="first-section">
+          <div className={Styles.sglPropCont}>
+            <div className="row">
+              <div className="col-3">
+                <h1 className={Styles.titleText}>Residence. {post.title}</h1>
+                <PropertyMeta {...post} />
+              </div>
 
-                        <div className="col-2">
-                            <div className={Styles.propPlan}>
-                                {/* <img src={post.propertiesData.propertyPlanOnline.sourceUrl} alt="" /> */}
-                                <img src={testImg} alt="" />
-                                
-                            </div>
-                        </div>
-                    </div>
+              <div className="col-2">
+                <div className={Styles.propPlan}>
+                  {/* <img src={post.propertiesData.propertyPlanOnline.sourceUrl} alt="" /> */}
+                  <img src={testImg} alt="" />
                 </div>
+              </div>
+            </div>
+          </div>
 
-                {/* <div className="grid-layout col-grid-2 remove-gap">
+          {/* <div className="grid-layout col-grid-2 remove-gap">
                     
                 </div> */}
+        </section>
+        {/* <EnquireForm /> */}
+      </Container>
 
-            </section>
-            {/* <EnquireForm /> */}
-        </Container>
-
-
-	  	{/* <HomeHero /> */}
-		{/* <PageIntro />
+      {/* <HomeHero /> */}
+      {/* <PageIntro />
 		<PageImageCols /> */}
 
-		{/* <div dangerouslySetInnerHTML={{__html: data.wpPage.content + data.wpPage.styleString}}></div> */}
-        
-		<Footer />
+      {/* <div dangerouslySetInnerHTML={{__html: data.wpPage.content + data.wpPage.styleString}}></div> */}
 
-	  </>
-	)
+      <Footer />
+    </>
+  );
 }
   
 export default SinglePropertyTemplate

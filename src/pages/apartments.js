@@ -12,6 +12,7 @@ import "../assets/css/js_composer.min.css";
 import * as propStyles from "../components/property/property.module.scss";
 import PageHeroCompact from "../components/hero/page-hero-compact";
 import ApartmentEnquiryForm from "../components/sections/forms/ApartmentEnquiryForm";
+import { ToastContainer, toast } from "react-toastify";
 // import parse from 'html-react-parser'
 
 class Apartments extends Component {
@@ -62,6 +63,10 @@ class Apartments extends Component {
     });
 
     // console.log(this.props.data.allWpProperty.edges);
+  }
+
+  toasterCalled() {
+    toast.success("Thanks for your enquiry. We'll get back to you shortly.");
   }
 
   filter(field, value) {
@@ -119,8 +124,8 @@ class Apartments extends Component {
   render() {
     return (
       <>
+        <ToastContainer />
         <PageHeroCompact title="Residences" />
-
         <PageNavigation
           links={[
             "The Verdala Legacy",
@@ -129,7 +134,7 @@ class Apartments extends Component {
             "The Team",
           ]}
         />
-
+        {/* <button onClick={this.toasterCalled}>submit</button> */}
         <div className={propStyles.filterBar}>
           <Container className="filter-container">
             <div className="inner-filter">
@@ -234,7 +239,6 @@ class Apartments extends Component {
             </div>
           </Container>
         </div>
-
         <Container>
           <div className="filter-selection-cont">
             <div className="align-center row">
@@ -293,17 +297,15 @@ class Apartments extends Component {
                 childState={this.state.stateValue}
                 updateState={this.updateStateValue}
                 selectedValue={this.state.selectedValue}
+                toasters={this.toasterCalled}
               />
             </>
           ) : null}
         </Container>
-
         {/* <HomeHero /> */}
         {/* <PageIntro />
                 <PageImageCols /> */}
-
         {/* <div dangerouslySetInnerHTML={{__html: data.wpPage.content + data.wpPage.styleString}}></div> */}
-
         <Footer />
       </>
     );

@@ -50,6 +50,7 @@ const SectionTitle = (props) => {
                 >
                   {props.title}
                 </h2>
+                {props.leftext && <p className={Styles.text}>{props.ptext}</p>}
                 {props.number === "05" && (
                   <p className={`anim-scroll-up ${Styles.architect}`}>
                     {props.architect_name}
@@ -60,13 +61,15 @@ const SectionTitle = (props) => {
             )}
           </div>
 
-          <div className="col-4 col-xl-12 anim-scroll-up">
-            {props.title === null ? (
-              <></>
-            ) : (
-              <p className={Styles.text}>{props.ptext}</p>
-            )}
-          </div>
+          {!props.leftext && (
+            <div className="col-4 col-xl-12 anim-scroll-up">
+              {props.title === null ? (
+                <></>
+              ) : (
+                <p className={Styles.text}>{props.ptext}</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </>

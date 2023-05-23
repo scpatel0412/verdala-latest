@@ -175,12 +175,16 @@ const Vision = ({ pageTitle, children }) => {
         for (let i = 0; i < pageLists.length; i++) {
           if (pageLists[i] !== "fieldGroupName") {
             if (pageLists[i] !== "header_section") {
-              if (pageLists[i] !== "timeline_section") {
-                const ab = {
-                  id: pageLists[i],
-                  data: data[pageLists[i]],
-                };
-                removedata.push(ab);
+              if (pageLists[i] !== "header_section_vision") {
+                if (pageLists[i] !== "architecture_vision") {
+                  if (pageLists[i] !== "timeline_section") {
+                    const ab = {
+                      id: pageLists[i],
+                      data: data[pageLists[i]],
+                    };
+                    removedata.push(ab);
+                  }
+                }
               }
             }
           }

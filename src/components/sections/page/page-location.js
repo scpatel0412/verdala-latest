@@ -70,6 +70,7 @@ const PageLocation = (props) => {
                 number="04"
                 text={homePage.sub_title}
                 ptext={homePage.description}
+                leftext={true}
               />
 
               <section className={Styles.locationarea}>
@@ -173,228 +174,228 @@ const PageLocation = (props) => {
               ) : (
                 <>
                   {/* <Slider {...settings}> */}
-                    {homePage?.connectivity?.connectivity_places?.map(
-                      (item, index) => {
-                        return (
-                          <section className={Styles.pt80} key={index}>
-                            <div className="crow home-connectivity-bottom">
-                              <div className="col-5 col-lg-12 anim-parallax">
-                                <div
-                                  className={`${Styles.mainattrcontainer} ${Styles.h100}`}
+                  {homePage?.connectivity?.connectivity_places?.map(
+                    (item, index) => {
+                      return (
+                        <section className={Styles.pt80} key={index}>
+                          <div className="crow home-connectivity-bottom">
+                            <div className="col-5 col-lg-12 anim-parallax">
+                              <div
+                                className={`${Styles.mainattrcontainer} ${Styles.h100}`}
+                              >
+                                <Container
+                                  type={`extend-container ${Styles.h100} ${
+                                    Styles[`activattr_${isActive}`]
+                                  }`}
                                 >
-                                  <Container
-                                    type={`extend-container ${Styles.h100} ${
-                                      Styles[`activattr_${isActive}`]
-                                    }`}
+                                  <div
+                                    className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
                                   >
-                                    <div
-                                      className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
-                                    >
-                                      <div className={Styles.connectattr}>
+                                    <div className={Styles.connectattr}>
+                                      <div
+                                        className={`${Styles.attritem}  ${
+                                          isActive === 0
+                                            ? Styles.attractive
+                                            : ""
+                                        }`}
+                                        onClick={() => ToggleClass(0)}
+                                      >
+                                        <WalkDistance />
                                         <div
-                                          className={`${Styles.attritem}  ${
-                                            isActive === 0
-                                              ? Styles.attractive
-                                              : ""
-                                          }`}
-                                          onClick={() => ToggleClass(0)}
+                                          className={
+                                            Styles.attrdistance +
+                                            " anim-parallax "
+                                          }
                                         >
-                                          <WalkDistance />
-                                          <div
-                                            className={
-                                              Styles.attrdistance +
-                                              " anim-parallax "
-                                            }
-                                          >
-                                            {item?.place_reach_time_by_walk}
-                                          </div>
-                                        </div>
-                                        <div
-                                          className={`${Styles.attritem}  ${
-                                            isActive === 1
-                                              ? Styles.attractive
-                                              : ""
-                                          }`}
-                                          onClick={() => ToggleClass(1)}
-                                        >
-                                          <div
-                                            className={
-                                              Styles.attrdistance +
-                                              " anim-parallax "
-                                            }
-                                          >
-                                            {item?.place_reach_time_by_car}
-                                          </div>
-                                          <CarDistance />
+                                          {item?.place_reach_time_by_walk}
                                         </div>
                                       </div>
-                                    </div>
-                                  </Container>
-                                </div>
-                              </div>
-
-                              <div className="col-7 col-lg-12">
-                                <div
-                                  className={`crow align-bottom ${Styles.connectivity}`}
-                                >
-                                  <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
-                                    <img src={item.place_image.url} alt="" />
-                                  </div>
-                                  <div className="col-4 col-sm-12 anim-scroll-up">
-                                    <h3
-                                      className={`text-color anim-text-enter ${Styles.schoolheading}`}
-                                    >
-                                      {item.place_title}
-                                    </h3>
-                                    <p className="anim-text-enter">
-                                      {item.place_description}
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="crow home-connectivity-bottom secondary-locations">
-                              <div className="col-5 col-lg-12 anim-scroll-up anim-parallax">
-                                <div
-                                  className={`${Styles.mainattrcontainer} ${Styles.h100}`}
-                                >
-                                  <Container
-                                    type={`extend-container ${Styles.h100} ${
-                                      Styles[`activattr_${isActive}`]
-                                    }`}
-                                  >
-                                    <div
-                                      className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
-                                    >
-                                      <div className={Styles.connectattrSec}>
+                                      <div
+                                        className={`${Styles.attritem}  ${
+                                          isActive === 1
+                                            ? Styles.attractive
+                                            : ""
+                                        }`}
+                                        onClick={() => ToggleClass(1)}
+                                      >
                                         <div
-                                          className={`${Styles.attritem}  ${
-                                            isActive === 0
-                                              ? Styles.attractive
-                                              : ""
-                                          }`}
-                                          onClick={() => ToggleClass(0)}
+                                          className={
+                                            Styles.attrdistance +
+                                            " anim-parallax "
+                                          }
                                         >
-                                          <WalkDistance />
-                                          <div className={Styles.attrdistance}>
-                                            {item?.place_reach_time_by_walk}
-                                          </div>
+                                          {item?.place_reach_time_by_car}
                                         </div>
-                                        <div
-                                          className={`${Styles.attritem}  ${
-                                            isActive === 1
-                                              ? Styles.attractive
-                                              : ""
-                                          }`}
-                                          onClick={() => ToggleClass(1)}
-                                        >
-                                          <div className={Styles.attrdistance}>
-                                            {item?.place_reach_time_by_car}
-                                          </div>
-                                          <CarDistance />
-                                        </div>
+                                        <CarDistance />
                                       </div>
                                     </div>
-                                  </Container>
-                                </div>
-                              </div>
-
-                              <div className="col-7 col-lg-12">
-                                <div
-                                  className={`crow align-bottom ${Styles.connectivity}`}
-                                >
-                                  <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
-                                    <img src={item.place_image.url} alt="" />
                                   </div>
-                                  <div className="col-4 col-sm-12 anim-scroll-up">
-                                    <h3
-                                      className={`text-color anim-text-enter ${Styles.schoolheading}`}
-                                    >
-                                      {item.place_title}
-                                    </h3>
-                                    <p className="anim-text-enter">
-                                      {item.place_description}
-                                    </p>
-                                  </div>
-                                </div>
+                                </Container>
                               </div>
                             </div>
 
-                            <div className="crow home-connectivity-bottom secondary-locations">
-                              <div className="col-5 col-lg-12 anim-scroll-up">
-                                <div
-                                  className={`${Styles.mainattrcontainer} ${Styles.h100}`}
-                                >
-                                  <Container
-                                    type={`extend-container ${Styles.h100} ${
-                                      Styles[`activattr_${isActive}`]
-                                    }`}
+                            <div className="col-7 col-lg-12">
+                              <div
+                                className={`crow align-bottom ${Styles.connectivity}`}
+                              >
+                                <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
+                                  <img src={item.place_image.url} alt="" />
+                                </div>
+                                <div className="col-4 col-sm-12 anim-scroll-up">
+                                  <h3
+                                    className={`text-color anim-text-enter ${Styles.schoolheading}`}
                                   >
-                                    <div
-                                      className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
-                                    >
-                                      <div className={Styles.connectattrSec}>
-                                        <div
-                                          className={`${Styles.attritem}  ${
-                                            isActive === 0
-                                              ? Styles.attractive
-                                              : ""
-                                          }`}
-                                          onClick={() => ToggleClass(0)}
-                                        >
-                                          <WalkDistance />
-                                          <div className={Styles.attrdistance}>
-                                            {item?.place_reach_time_by_walk}
-                                          </div>
-                                        </div>
-                                        <div
-                                          className={`${Styles.attritem}  ${
-                                            isActive === 1
-                                              ? Styles.attractive
-                                              : ""
-                                          }`}
-                                          onClick={() => ToggleClass(1)}
-                                        >
-                                          <div className={Styles.attrdistance}>
-                                            {item?.place_reach_time_by_car}
-                                          </div>
-                                          <CarDistance />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Container>
+                                    {item.place_title}
+                                  </h3>
+                                  <p className="anim-text-enter">
+                                    {item.place_description}
+                                  </p>
                                 </div>
-                              </div>
-
-                              <div className="col-7 col-xl-8 col-lg-12 connectivity-content">
-                                <div
-                                  className={` align-bottom ${Styles.connectivity}`}
-                                >
-                                  <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
-                                    <img src={item.place_image.url} alt="" />
-                                  </div>
-                                  <div className=" anim-scroll-up connectivity-img-content">
-                                    <h3
-                                      className={`text-color anim-text-enter ${Styles.schoolheading}`}
-                                    >
-                                      {item.place_title}
-                                    </h3>
-                                    <p className="anim-text-enter">
-                                      {item.place_description}
-                                    </p>
-                                  </div>
-                                </div>
-
-                                <Button
-                                  styleClass="border-button"
-                                  text={homePage?.button_link?.title}
-                                />
                               </div>
                             </div>
-                          </section>
-                        );
-                      }
-                    )}
+                          </div>
+                          <div className="crow home-connectivity-bottom secondary-locations">
+                            <div className="col-5 col-lg-12 anim-scroll-up anim-parallax">
+                              <div
+                                className={`${Styles.mainattrcontainer} ${Styles.h100}`}
+                              >
+                                <Container
+                                  type={`extend-container ${Styles.h100} ${
+                                    Styles[`activattr_${isActive}`]
+                                  }`}
+                                >
+                                  <div
+                                    className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
+                                  >
+                                    <div className={Styles.connectattrSec}>
+                                      <div
+                                        className={`${Styles.attritem}  ${
+                                          isActive === 0
+                                            ? Styles.attractive
+                                            : ""
+                                        }`}
+                                        onClick={() => ToggleClass(0)}
+                                      >
+                                        <WalkDistance />
+                                        <div className={Styles.attrdistance}>
+                                          {item?.place_reach_time_by_walk}
+                                        </div>
+                                      </div>
+                                      <div
+                                        className={`${Styles.attritem}  ${
+                                          isActive === 1
+                                            ? Styles.attractive
+                                            : ""
+                                        }`}
+                                        onClick={() => ToggleClass(1)}
+                                      >
+                                        <div className={Styles.attrdistance}>
+                                          {item?.place_reach_time_by_car}
+                                        </div>
+                                        <CarDistance />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </Container>
+                              </div>
+                            </div>
+
+                            <div className="col-7 col-lg-12">
+                              <div
+                                className={`crow align-bottom ${Styles.connectivity}`}
+                              >
+                                <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
+                                  <img src={item.place_image.url} alt="" />
+                                </div>
+                                <div className="col-4 col-sm-12 anim-scroll-up">
+                                  <h3
+                                    className={`text-color anim-text-enter ${Styles.schoolheading}`}
+                                  >
+                                    {item.place_title}
+                                  </h3>
+                                  <p className="anim-text-enter">
+                                    {item.place_description}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="crow home-connectivity-bottom secondary-locations">
+                            <div className="col-5 col-lg-12 anim-scroll-up">
+                              <div
+                                className={`${Styles.mainattrcontainer} ${Styles.h100}`}
+                              >
+                                <Container
+                                  type={`extend-container ${Styles.h100} ${
+                                    Styles[`activattr_${isActive}`]
+                                  }`}
+                                >
+                                  <div
+                                    className={`${Styles.locationtitle} ${Styles.h100} ${Styles.attrcontainer}`}
+                                  >
+                                    <div className={Styles.connectattrSec}>
+                                      <div
+                                        className={`${Styles.attritem}  ${
+                                          isActive === 0
+                                            ? Styles.attractive
+                                            : ""
+                                        }`}
+                                        onClick={() => ToggleClass(0)}
+                                      >
+                                        <WalkDistance />
+                                        <div className={Styles.attrdistance}>
+                                          {item?.place_reach_time_by_walk}
+                                        </div>
+                                      </div>
+                                      <div
+                                        className={`${Styles.attritem}  ${
+                                          isActive === 1
+                                            ? Styles.attractive
+                                            : ""
+                                        }`}
+                                        onClick={() => ToggleClass(1)}
+                                      >
+                                        <div className={Styles.attrdistance}>
+                                          {item?.place_reach_time_by_car}
+                                        </div>
+                                        <CarDistance />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </Container>
+                              </div>
+                            </div>
+
+                            <div className="col-7 col-xl-8 col-lg-12 connectivity-content">
+                              <div
+                                className={` align-bottom ${Styles.connectivity}`}
+                              >
+                                <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
+                                  <img src={item.place_image.url} alt="" />
+                                </div>
+                                <div className=" anim-scroll-up connectivity-img-content">
+                                  <h3
+                                    className={`text-color anim-text-enter ${Styles.schoolheading}`}
+                                  >
+                                    {item.place_title}
+                                  </h3>
+                                  <p className="anim-text-enter">
+                                    {item.place_description}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <Button
+                                styleClass="border-button"
+                                text={homePage?.button_link?.title}
+                              />
+                            </div>
+                          </div>
+                        </section>
+                      );
+                    }
+                  )}
                   {/* </Slider> */}
                 </>
               )}

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import close from "../../../images/close.svg";
 import axios from "axios";
-function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
+import { ToastContainer, toast } from "react-toastify";
+
+function ApartmentEnquiryForm({
+  childState,
+  updateState,
+  selectedValue,
+  toasters,
+}) {
   const validEmail = new RegExp(/\S+@\S+\.\S+/);
   const validNumber = new RegExp("^[0-9]{10}$");
 
@@ -99,34 +106,40 @@ function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // isValidData(event);
+    const errors = {};
 
-    console.log("mailData", mailData);
-    console.log("isChecked", isChecked);
-
-    if (isChecked === false) {
-      alert("Please accept our terms for personal data processing");
-    } else if (
-      addError.name === "" &&
-      addError.number === "" &&
-      addError.email === "" &&
-      isChecked === true
+    if (!mailData.name) {
+      errors.name = "Please enter your name.";
+    }
+    if (!mailData.number) {
+      errors.number = "Please enter a valid number.";
+    }
+    if (!mailData.email) {
+      errors.email = "Please enter a valid email address.";
+    }
+    if (
+      isChecked === false &&
+      mailData.name &&
+      mailData.number &&
+      mailData.email
     ) {
-      setAdding(false);
-      console.log("mailData", mailData);
-      updateState(false);
+      toast.error("Please accept our terms for personal data processing");
+    }
+
+    setError(errors);
+
+    if (Object.keys(errors).length === 0 && isChecked === true) {
       axios
         .post(
           "https://verdalastage.bison-studio.com/wp-json/wp/v2/sendmail",
           mailData
         )
         .then(function (response) {
-          console.log(response);
+          console.log("response", response, toast);
+          toasters();
           setAdding(false);
-          // resetForm();
-          updateState(false);
           setMailData("");
-          alert("Thanks for your enquiry. We'll get back to you shortly.");
+          updateState(false);
         })
         .catch(function (error) {
           setAdding(false);
@@ -170,7 +183,7 @@ function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
                     placeholder="Your Name"
                     value={mailData.name}
                     onChange={handleChange}
-                    required
+                    // required
                   />
                 </div>
                 {error.name && <span className="err">{error.name}</span>}
@@ -184,7 +197,7 @@ function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
                     placeholder="Telephone Number"
                     value={mailData.number}
                     onChange={handleChange}
-                    required
+                    // required
                   />
                 </div>
                 {error.number && <span className="err">{error.number}</span>}
@@ -198,7 +211,7 @@ function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
                     placeholder="Email"
                     value={mailData.email}
                     onChange={handleChange}
-                    required
+                    // required
                   />
                 </div>
                 {error.email && <span className="err">{error.email}</span>}
@@ -238,6 +251,7 @@ function ApartmentEnquiryForm({ childState, updateState, selectedValue }) {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );
