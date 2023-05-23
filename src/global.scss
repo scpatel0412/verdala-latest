@@ -11,7 +11,6 @@
 @import "slick-carousel/slick/slick-theme.css";
 @import "splitting/dist/splitting.css";
 @import "splitting/dist/splitting-cells.css";
-@import "react-toastify/dist/ReactToastify.min.css";
 
 html {
   overflow-x: hidden;
@@ -654,6 +653,9 @@ img {
 }
 .vision-tab-inspried-sec {
   padding: 0 40px;
+  @media screen and (max-width: $lg__screen) {
+    padding: 0 20px;
+  }
   @media screen and (max-width: $sm__screen) {
     padding: 0 20px;
   }
@@ -687,7 +689,7 @@ img {
       width: calc(50% - 15px);
       margin-right: 20px;
       margin-bottom: 20px;
-      .vison-team-tab-image-div {
+      .vison-team-tab-image-div{
         height: 750px;
         overflow: hidden;
         @media screen and (max-width: $xl__screen) {
@@ -707,7 +709,7 @@ img {
       &:nth-child(2n) {
         margin-right: 0;
       }
-      .vison-team-tab-title {
+      .vison-team-tab-title{
         font-size: 28px;
         line-height: 34px;
         letter-spacing: -0.02em;
@@ -715,12 +717,12 @@ img {
         color: #635245;
         margin-top: 13px;
       }
-      p {
+      p{
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.04em;
         color: #635245;
-        margin: 5px 0 0 0;
+        margin:5px 0 0 0;
         font-weight: 500;
       }
     }
@@ -994,33 +996,36 @@ img {
     .today-vis-boxes {
       display: flex;
       align-items: flex-start;
+      justify-content: center;
       flex-wrap: wrap;
       width: 100%;
 
       .boxes-item {
-        border: 1px solid rgba(99, 82, 69, 0.3);
         width: calc(25% - 15px);
         margin-right: 20px;
-        padding: 48px 30px;
-        text-align: center;
-        min-height: 404px;
         position: relative;
-
-        @media screen and (max-width: $xl__screen) {
-          padding: 30px 20px;
+        .boxes-item-inner{
+          border: 1px solid rgba(99, 82, 69, 0.3);
+          padding: 48px 30px;
+          text-align: center;
+          min-height: 404px;
+          @media screen and (max-width: $xl__screen) {
+            padding: 30px 20px;
+          }
+          @media screen and (max-width: $sm__screen){
+            min-height: 266px;
+            padding: 30px 11px;
+          }
         }
-
+        
         @media screen and (max-width: $lg__screen) {
           width: calc(50% - 15px);
           margin-bottom: 25px;
         }
-
         @media screen and (max-width: $sm__screen) {
           width: calc(50% - 10px);
           margin-bottom: 25px;
           margin-right: 10px;
-          min-height: 266px;
-          padding: 30px 11px;
         }
 
         &:nth-child(2n) {
@@ -1066,18 +1071,18 @@ img {
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 20px;
-          color: rgba(99, 82, 69, 0.3);
+          color: $mainGreen;
           text-transform: uppercase;
           align-self: flex-end;
-          position: absolute;
-          bottom: 48px;
-          left: 0;
           width: 100%;
+          letter-spacing: 0.02em;
+          font-family: $font__main;
+          font-weight: 600;
+          margin-top: 17px;
           @media screen and (max-width: $sm__screen) {
-            font-size: 13px;
-            bottom: 25px;
+            font-size: 14px;
           }
         }
       }
@@ -1422,6 +1427,7 @@ img {
         margin: 0 auto;
         width: unset;
         max-width: 560px;
+        transform: none !important;
       }
 
       @media screen and (max-width: $sm__screen) {
@@ -1478,6 +1484,7 @@ img {
       transform: none;
       left: auto;
       right: 0;
+      transform: none !important;
     }
     @media screen and (max-width: $sm__screen) {
       margin-top: 48px;
@@ -1508,7 +1515,6 @@ img {
       font-family: $font__main;
       font-weight: 500;
       text-transform: unset;
-
       @media screen and (max-width: $lg__screen) {
         font-size: 20px;
         margin-top: 0;
@@ -3333,42 +3339,77 @@ button {
         }
       }
       .mansions-content-inner {
-        background: $mainGreen;
-        width: 381px;
-        padding: 62px 63px;
-        display: flex;
-        flex-wrap: wrap;
-        min-width: 381px;
-        align-self: flex-end;
-        margin-bottom: 42px;
-        max-height: 535px;
+        margin:60px 0 40px;
         @media screen and (max-width: $sm__screen) {
           min-width: 276px;
           padding: 32px;
           width: 84%;
           max-height: auto;
+          background: $mainGreen;
         }
         h3 {
           font-size: 28px;
           line-height: 34px;
           letter-spacing: -0.02em;
           text-transform: uppercase;
-          margin-bottom: 76px;
-          color: $white;
+          margin-bottom: 25px;
+          color: #000000;
           @media screen and (max-width: $sm__screen) {
             font-size: 18px;
             line-height: 22px;
             margin-bottom: 50px;
+            color: $white;
           }
         }
         p {
           font-size: 14px;
-          color: $white;
+          color: #000000;
           line-height: 21px;
           margin-top: 0;
-          margin-bottom: 20px;
+          margin-bottom: 25px;
           font-weight: normal;
           letter-spacing: -0.04em;
+          @media screen and (max-width: $sm__screen){
+            color: $white;
+          }
+        }
+        .mansions-content-btn {
+          font-size: 13px;
+          line-height: 15px;
+          color: #7B9E6B;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          font-family: $font__main;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          margin-top: 25px;
+          &:after{
+            content: '';
+            position: relative;
+            top: 0;
+            background-image: url(images/arrow.svg);
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 1px solid;
+            border-radius: 50px;
+            margin-left: 16px;
+            @media screen and (max-width: $sm__screen){
+             filter: brightness(11);
+            }
+          }
+          &:hover{
+            color: #000;
+            &:after{
+              filter: brightness(0);
+            }
+          }
+          @media screen and (max-width: $sm__screen){
+            color: $white;
+          }
         }
       }
     }
@@ -3411,25 +3452,26 @@ button {
         width: 100%;
       }
       h2 {
-        color: $brown;
+        // color: $brown;
       }
       .mansions-content {
         order: 2;
         padding-right: 0;
-        text-align: right;
+        // text-align: right;
         padding-left: 45px;
-        justify-content: flex-end;
+        //justify-content: flex-end;
         @media screen and (max-width: $sm__screen) {
           text-align: left;
           padding-left: 0px;
           justify-content: flex-start;
         }
         .mansions-content-inner {
-          margin-left: -40px;
-          padding: 62px 43px;
-          background-color: $brown;
+          //margin-left: -40px;
+          // padding: 62px 43px;
+          // background-color: $brown;
           @media screen and (max-width: $sm__screen) {
             margin-left: 0;
+            background-color: $brown;
           }
         }
       }
@@ -4243,6 +4285,7 @@ h2.innerpage_h2 {
         h2 {
           @media screen and (max-width: $xl__screen) {
             font-size: 41px;
+            line-height: 45px;
           }
         }
         p {
@@ -4275,12 +4318,6 @@ h2.innerpage_h2 {
       svg {
         height: 100%;
       }
-      // .svg-menu__path__seleccion{
-      //   transition: all 0.25s ease-out;
-      //   &:hover{
-      //     transform: scale(1.1);
-      //   }
-      // }
       .msk-popup {
         background: #fff;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -4697,12 +4734,9 @@ h2.innerpage_h2 {
     .churches-slider {
       padding-bottom: 85px;
       margin-left: auto;
-      // @media screen and (max-width: $xxxl__screen) {
-      //   max-width: 85%;
-      // }
-      // @media screen and (max-width: $lg__screen) {
-      //   max-width: 100%;
-      // }
+      @media screen and (max-width: $sm__screen){
+        padding-bottom: 40px;
+      }
       .slick-slider {
         @media screen and (max-width: $sm__screen) {
           padding-right: 30px;
@@ -4793,11 +4827,16 @@ h2.innerpage_h2 {
             }
           }
         }
+        p{
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: -0.04em;
+          font-weight: normal;
+        }
       }
     }
   }
 }
-// Contact form css
 .contact-title {
   h1 {
     font-size: 7.5rem;
@@ -4921,20 +4960,6 @@ h2.innerpage_h2 {
     }
   }
 }
-
-.contact-us {
-  .loctxt {
-    // font-size: 32px;
-    // line-height: 41px;
-    // font-weight: 500;
-    // word-break: break-all;
-    // @media screen and (max-width:$xl__screen) {
-    //     font-size: 24px;
-    //     line-height: 30px;
-    // }
-  }
-}
-
 .contact-details-row {
   @media screen and (max-width: $lg__screen) {
     margin-bottom: 84px;
@@ -5236,6 +5261,9 @@ h2.innerpage_h2 {
   }
 }
 .home-PageHoverImage-sec {
+  .accent-section{
+    background-color: $white;
+  }
   .page-module--seclifestyle--c3a93 {
     @media screen and (max-width: $lg__screen) {
       padding: 20px 0 25px 0;
@@ -5254,7 +5282,6 @@ h2.innerpage_h2 {
       .hoverImage-module--laifeimg--2e769 {
         img {
           min-height: 825px;
-          // transition:none ;
           .hoverImage-module--activeImage--30e8a {
             animation: fadeIn ease 5s;
             -webkit-animation: fadeIn ease 5s;
@@ -5396,7 +5423,7 @@ h2.innerpage_h2 {
     div {
       padding: 0;
     }
-    p {
+    p{
       margin-left: 0;
     }
   }
@@ -5552,7 +5579,6 @@ h2.innerpage_h2 {
         .slick-prev {
           top: 50%;
           transform: rotate(180deg);
-          // margin-top: -80px;
         }
         .slick-next {
           top: 50%;
@@ -5774,7 +5800,7 @@ h2.innerpage_h2 {
   padding: 0;
 }
 .footer-module--footergridmenu--dfd92 {
-  margin: 45px 0 24px;
+  margin: 150px 0 24px;
   @media screen and (max-width: $sm__screen) {
     display: flex;
     justify-content: space-between;
@@ -5911,7 +5937,8 @@ h2.innerpage_h2 {
   > div
   .hero-module--slide_desc--9f7bb {
   font-weight: normal !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
+  line-height: 18px;
 }
 .hero-module--heroslider--67153
   .hero-module--slide_count--35a5f
@@ -6460,7 +6487,7 @@ h2.innerpage_h2 {
             }
           }
         }
-        .err {
+        .err{
           font-family: $font__main;
           font-size: 12px;
           line-height: 14px;
@@ -6523,4 +6550,10 @@ html.lenis:has(.modal_class) {
   // height: 100vh;
   overflow-y: hidden;
   display: block;
+}
+
+
+
+.year-cont.text-right span {
+  margin-right: 70px;
 }

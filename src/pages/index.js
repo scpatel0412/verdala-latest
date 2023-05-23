@@ -64,41 +64,37 @@ const Index = () => {
   return (
     <>
       <Resize>
-	  	
-        <Loading
-          loadState = {(data !== undefined) ? true : false}
-        />
+        <Loading loadState={data !== undefined ? true : false} />
 
         {data !== undefined ? (
           <>
-          <BisAnimate>
-            <div className="home-banner-sec">
-            <HomeHero data={data} />
-            </div>
-            <div className="home-about-sec">
-            <PageIntro data={data} />
-            </div>
-            <div className="home-video-sec">
-            <PageImageCols data={data} />
-            </div>
-            <div className="home-PageHoverImage-sec">
-            <PageHoverImage data={data} />
-            </div>
-            <div className="home-typeresidence-sec">
-            <PageGeneric data={data} />
-            </div>
-            <div className="home-PageLocation-sec">
-            <PageLocation data={data} />
-            </div>
-            <div className="home-gallery-sec">
-            <PageVGallery data={data} />
-            </div>
-            <div className="footer">
-            <Footer />
-            </div>
-          </BisAnimate>
+            <BisAnimate>
+              <div className="home-banner-sec">
+                <HomeHero data={data} />
+              </div>
+              <div className="home-about-sec">
+                <PageIntro data={data} />
+              </div>
+              <div className="home-video-sec">
+                <PageImageCols data={data} />
+              </div>
+              <div className="home-typeresidence-sec">
+                <PageGeneric data={data} />
+              </div>
+              <div className="home-PageHoverImage-sec">
+                <PageHoverImage data={data} />
+              </div>
+              <div className="home-PageLocation-sec">
+                <PageLocation data={data} />
+              </div>
+              <div className="home-gallery-sec">
+                <PageVGallery data={data} />
+              </div>
+              <div className="footer">
+                <Footer />
+              </div>
+            </BisAnimate>
           </>
-
         ) : null}
       </Resize>
     </>

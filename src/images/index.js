@@ -24,6 +24,8 @@ import LandmarkStPaulBasilica from "./Landmark-St.Paul Basilica.png";
 import Rectanglenew from "./Rectangle-new.svg";
 import Processslideimg from "./process-slider-img.png";
 import close from "../images/close.svg";
+import Downloadnew from "./download-new.svg";
+import pluse from "./pluse.svg";
 
 export {
   Image1,
@@ -51,4 +53,6 @@ export {
   Rectanglenew,
   Processslideimg,
   close,
+  Downloadnew,
+  pluse,
 };

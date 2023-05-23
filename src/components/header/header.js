@@ -12,6 +12,8 @@ import Container from "../layouts/container";
 import MenuImage from "../../assets/images/test-images/menu-image.png";
 import HoverHeaderImage from "../headerImage";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import arrow from "../../images/arrow.svg";
+import pluse from "../../images/pluse.svg";
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -248,6 +250,19 @@ class Header extends Component {
                                                       items?.sub_menu_item
                                                         ?.title
                                                     }
+                                                    <img
+                                                      src={
+                                                        item.menu_item.title ==
+                                                          this.state
+                                                            .headerActive
+                                                            .page &&
+                                                        index ==
+                                                          this.state
+                                                            .headerActive.index
+                                                          ? pluse
+                                                          : arrow
+                                                      }
+                                                    ></img>
                                                   </h5>
                                                 </div>
                                               </AniLink>

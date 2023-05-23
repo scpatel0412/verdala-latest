@@ -116,9 +116,9 @@ const Footer = (props) => (
           </div>
         </section>
 
-        <section className="remove-top-space">
+        {/* <section className="remove-top-space">
           <VerdalaFooter />
-        </section>
+        </section> */}
       </Container>
 
       <Container>
