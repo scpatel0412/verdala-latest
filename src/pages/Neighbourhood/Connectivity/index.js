@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../components/partials/buttons";
 import WalkDistance from "../../../assets/svgs/walkdistance.svg";
 import CarDistance from "../../../assets/svgs/cardistance.svg";
@@ -53,7 +53,7 @@ function Connectivity(props) {
     <>
       {Object.keys(props).length > 0 ? (
         <>
-          <div className="connectivity-sec" id={props?.data?.id}>
+          <div className="connectivity-sec" id={"connectivity"}>
             <div className="connectivity-location-sec">
               <div className="connectivity-location-inner">
                 <div className="connectivity-location-inner-div">
@@ -82,7 +82,7 @@ function Connectivity(props) {
                   </h2>
                 </div>
               </div>
-             
+
               <section className={Styles.pt80}>
                 <div className="crow home-connectivity-bottom">
                   <div className="col-5 col-lg-12 anim-parallax">
@@ -310,7 +310,9 @@ function Connectivity(props) {
                   </div>
 
                   <div className="col-7 col-xl-8 col-lg-12 connectivity-content">
-                    <div className={` crow align-bottom ${Styles.connectivity}`}>
+                    <div
+                      className={` crow align-bottom ${Styles.connectivity}`}
+                    >
                       <div className="col-8 col-sm-12 anim-scroll-up anim-parallax">
                         <img
                           src={

@@ -61,7 +61,7 @@ function ThingsToDo(props) {
     <>
       {Object.keys(props).length > 0 ? (
         <>
-          <div className="things-sec" id={props.data?.id}>
+          <div className="things-sec" id={"thingstodo"}>
             <div className="thing-inner-se">
               <h2 className="innerpage_h2">{props.data?.data.title}</h2>
               <p>{props.data?.data.description}</p>

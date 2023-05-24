@@ -11,7 +11,7 @@ const RabatAndMdina = (props) => {
     <>
       {Object.keys(props).length > 0 ? (
         <>
-          <div className="rabatandadina-sec" id={props.data?.id}>
+          <div className="rabatandadina-sec" id={"rabatandmdina"}>
             <div className="rabatandadina-inner">
               <div className="rabatandadina-left">
                 <div className="count-col anim-scroll-up">
@@ -21,8 +21,12 @@ const RabatAndMdina = (props) => {
               </div>
               <div className="rabatandadina-right">
                 <div>
-                  <h2 className="innerpage_h2 anim-text-enter">{props.data?.data.title}</h2>
-                  <p className="anim-text-enter">{props.data?.data.description}</p>
+                  <h2 className="innerpage_h2 anim-text-enter">
+                    {props.data?.data.title}
+                  </h2>
+                  <p className="anim-text-enter">
+                    {props.data?.data.description}
+                  </p>
                   <button className="btn">a day in the life</button>
                 </div>
               </div>

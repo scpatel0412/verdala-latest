@@ -1005,16 +1005,25 @@ img {
         margin-right: 20px;
         position: relative;
         .boxes-item-inner {
-          border: 1px solid rgba(99, 82, 69, 0.3);
-          padding: 48px 30px;
+          // border: 1px solid rgba(99, 82, 69, 0.3);
+          //padding: 48px 30px;
+          padding: 0px 10px;
+          background: white;
           text-align: center;
-          min-height: 404px;
+          height: 404px;
+          img {
+            width: 100% !important;
+            height: 100%;
+            padding: 0 !important;
+            margin: 0 !important;
+            object-fit: cover;
+          }
           @media screen and (max-width: $xl__screen) {
-            padding: 30px 20px;
+            padding: 0px 10px;
           }
           @media screen and (max-width: $sm__screen) {
-            min-height: 266px;
-            padding: 30px 11px;
+            height: 266px;
+            padding: 0px 10px;
           }
         }
 

@@ -11,7 +11,6 @@ const SectionNavigation = (props) => {
   return (
     <div className="vision-nav">
       {data?.map((i, index) => {
-        console.log("i.id replace", i.id.replace(/_/g, ""));
         return (
           <div key={index}>
             <ul>

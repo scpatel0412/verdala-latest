@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Download } from "../../../images";
+import { Downloadnew } from "../../../images";
 
 const TodayVision = (props) => {
   const [visionPage, setVisionPage] = useState({});
@@ -17,20 +17,16 @@ const TodayVision = (props) => {
             <h1 className="anim-text-enter">{visionPage?.title}</h1>
             <div className="today-vis-boxes">
               {visionPage?.books?.map((i, index) => (
-                <div
-                  key={index}
-                  className="boxes-item anim-scroll-up"
-                  style={{
-                    background: i?.book_link != "" ? "white" : "",
-                    border: i?.book_link != "" ? "none" : "",
-                  }}
-                >
-                  <div className="edition-div">{i?.sub_title}</div>
-                  <h3>{i?.title}</h3>
-                  <div>
+                <div key={index} className="boxes-item anim-scroll-up">
+                  <div className="boxes-item-inner">
+                    <img src={i?.book_image?.url} />
+                  </div>
+                  <div className="boxes-item-button-link">
                     <a href={i?.book_link?.url}>
-                      {i?.book_link != "" ? i?.book_link?.title : "coming soon"}
-                      {i?.book_link != "" && <img src={Download} />}
+                      {i?.book_link != ""
+                        ? i?.book_link?.title
+                        : "View our book"}
+                      {i?.book_link != "" && <img src={Downloadnew} />}
                     </a>
                   </div>
                 </div>
