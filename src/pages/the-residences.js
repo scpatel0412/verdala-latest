@@ -27,16 +27,17 @@ const Residences = ({ pageTitle, children }) => {
     if (typeof data !== "undefined") {
       if (Object.keys(data).length > 0) {
         const pageLists = Object.keys(data);
-
         const removedata = [];
         for (let i = 0; i < pageLists.length; i++) {
           if (pageLists[i] !== "fieldGroupName") {
             if (pageLists[i] !== "header_section") {
-              const ab = {
-                id: pageLists[i],
-                data: data[pageLists[i]],
-              };
-              removedata.push(ab);
+              if (pageLists[i] !== "header_sections") {
+                const ab = {
+                  id: pageLists[i],
+                  data: data[pageLists[i]],
+                };
+                removedata.push(ab);
+              }
             }
           }
         }

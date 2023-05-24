@@ -689,7 +689,7 @@ img {
       width: calc(50% - 15px);
       margin-right: 20px;
       margin-bottom: 20px;
-      .vison-team-tab-image-div{
+      .vison-team-tab-image-div {
         height: 750px;
         overflow: hidden;
         @media screen and (max-width: $xl__screen) {
@@ -709,7 +709,7 @@ img {
       &:nth-child(2n) {
         margin-right: 0;
       }
-      .vison-team-tab-title{
+      .vison-team-tab-title {
         font-size: 28px;
         line-height: 34px;
         letter-spacing: -0.02em;
@@ -717,12 +717,12 @@ img {
         color: #635245;
         margin-top: 13px;
       }
-      p{
+      p {
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.04em;
         color: #635245;
-        margin:5px 0 0 0;
+        margin: 5px 0 0 0;
         font-weight: 500;
       }
     }
@@ -1004,7 +1004,7 @@ img {
         width: calc(25% - 15px);
         margin-right: 20px;
         position: relative;
-        .boxes-item-inner{
+        .boxes-item-inner {
           border: 1px solid rgba(99, 82, 69, 0.3);
           padding: 48px 30px;
           text-align: center;
@@ -1012,12 +1012,12 @@ img {
           @media screen and (max-width: $xl__screen) {
             padding: 30px 20px;
           }
-          @media screen and (max-width: $sm__screen){
+          @media screen and (max-width: $sm__screen) {
             min-height: 266px;
             padding: 30px 11px;
           }
         }
-        
+
         @media screen and (max-width: $lg__screen) {
           width: calc(50% - 15px);
           margin-bottom: 25px;
@@ -3339,7 +3339,7 @@ button {
         }
       }
       .mansions-content-inner {
-        margin:60px 0 40px;
+        margin: 60px 0 40px;
         @media screen and (max-width: $sm__screen) {
           min-width: 276px;
           padding: 32px;
@@ -3369,14 +3369,14 @@ button {
           margin-bottom: 25px;
           font-weight: normal;
           letter-spacing: -0.04em;
-          @media screen and (max-width: $sm__screen){
+          @media screen and (max-width: $sm__screen) {
             color: $white;
           }
         }
         .mansions-content-btn {
           font-size: 13px;
           line-height: 15px;
-          color: #7B9E6B;
+          color: #7b9e6b;
           letter-spacing: 0.02em;
           text-transform: uppercase;
           font-family: $font__main;
@@ -3384,8 +3384,8 @@ button {
           display: flex;
           align-items: center;
           margin-top: 25px;
-          &:after{
-            content: '';
+          &:after {
+            content: "";
             position: relative;
             top: 0;
             background-image: url(images/arrow.svg);
@@ -3397,17 +3397,17 @@ button {
             border: 1px solid;
             border-radius: 50px;
             margin-left: 16px;
-            @media screen and (max-width: $sm__screen){
-             filter: brightness(11);
+            @media screen and (max-width: $sm__screen) {
+              filter: brightness(11);
             }
           }
-          &:hover{
+          &:hover {
             color: #000;
-            &:after{
+            &:after {
               filter: brightness(0);
             }
           }
-          @media screen and (max-width: $sm__screen){
+          @media screen and (max-width: $sm__screen) {
             color: $white;
           }
         }
@@ -3501,6 +3501,10 @@ button {
       max-width: 100%;
       object-fit: cover;
       width: 100%;
+      @media screen and (max-width: $sm__screen) {
+        min-height: 500px;
+        height: 500px;
+      }
     }
   }
   .property-module-content {
@@ -3595,7 +3599,10 @@ button {
         }
       }
       .property-value {
+        padding: 0 !important;
+
         .property-value-image {
+          padding: 0 !important;
           .building-images {
             display: flex;
 
@@ -4734,7 +4741,7 @@ h2.innerpage_h2 {
     .churches-slider {
       padding-bottom: 85px;
       margin-left: auto;
-      @media screen and (max-width: $sm__screen){
+      @media screen and (max-width: $sm__screen) {
         padding-bottom: 40px;
       }
       .slick-slider {
@@ -4827,7 +4834,7 @@ h2.innerpage_h2 {
             }
           }
         }
-        p{
+        p {
           font-size: 12px;
           line-height: 15px;
           letter-spacing: -0.04em;
@@ -5261,7 +5268,7 @@ h2.innerpage_h2 {
   }
 }
 .home-PageHoverImage-sec {
-  .accent-section{
+  .accent-section {
     background-color: $white;
   }
   .page-module--seclifestyle--c3a93 {
@@ -5368,6 +5375,19 @@ h2.innerpage_h2 {
 .home-typeresidence-sec {
   .typeresidence-sec {
     padding: 36px 40px 65px;
+    background: #f2ebda;
+    position: relative;
+    &:before {
+      content: "";
+      width: auto;
+      height: 100%;
+      background: #f2ebda;
+      left: -999px;
+      right: -999px;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
     @media screen and (max-width: $lg__screen) {
       padding: 36px 20px 65px;
     }
@@ -5423,7 +5443,7 @@ h2.innerpage_h2 {
     div {
       padding: 0;
     }
-    p{
+    p {
       margin-left: 0;
     }
   }
@@ -6487,7 +6507,7 @@ h2.innerpage_h2 {
             }
           }
         }
-        .err{
+        .err {
           font-family: $font__main;
           font-size: 12px;
           line-height: 14px;
@@ -6552,8 +6572,127 @@ html.lenis:has(.modal_class) {
   display: block;
 }
 
-
-
 .year-cont.text-right span {
   margin-right: 70px;
+}
+.sticky-tabing-slider-sec {
+  .sticky-tabing-sec {
+    display: flex;
+    flex-wrap: wrap;
+    @media all and (max-width: $sm__screen) {
+      display: none;
+    }
+    .sticky-menu.sticky-mobile {
+      width: 30%;
+      padding-right: 140px;
+      border-top: 0;
+      @media all and (max-width: $xxl__screen) {
+        width: 26%;
+        padding-right: 60px;
+      }
+      @media all and (max-width: $xl__screen) {
+        width: 100%;
+      }
+      @media all and (max-width: $lg__screen) {
+        background: transparent;
+        position: relative;
+        top: 0 !important;
+      }
+      .sticky-menu {
+        height: 100%;
+        border-top: 1px solid rgba(99, 82, 69, 0.3);
+        .sticky-inner {
+          min-height: 100%;
+        }
+      }
+      .stickybtn {
+        position: absolute;
+        bottom: 60px;
+        @media all and (max-width: $xl__screen) {
+          position: relative;
+          bottom: 0;
+          margin: 15px 0 30px;
+        }
+      }
+    }
+    .home-sticky-slider {
+      width: 70%;
+      @media all and (max-width: $xxl__screen) {
+        width: 74%;
+      }
+      @media all and (max-width: $xl__screen) {
+        width: 100%;
+      }
+    }
+    .property-value-title {
+      padding: 0 0 0 5px !important;
+    }
+    .property-value-content {
+      padding: 0 !important;
+    }
+    .property-module-content {
+      padding: 0 0 0 25px !important;
+      @media all and (max-width: $xxxl__screen) {
+        padding: 0 0 0 0px !important;
+      }
+      @media all and (max-width: $lg__screen) {
+        padding: 50px 0 0 20px !important;
+        width: 100% !important;
+      }
+    }
+    .property-module-img {
+      @media all and (max-width: $lg__screen) {
+        width: 100% !important;
+      }
+    }
+
+    .residentwrap {
+      h3 {
+        font-size: 36px;
+        line-height: 43px;
+        padding-right: 90px !important;
+      }
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .secondarybtn {
+        font-size: 18px;
+      }
+    }
+    .property-module--residencePlan--a6c4c {
+      margin-top: 206px !important;
+      .crow {
+        margin: 0 !important;
+      }
+    }
+    .slick-arrow {
+      width: 64px;
+      height: 64px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50px;
+      z-index: 1;
+      top: 35px;
+      left: auto;
+      right: -10px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: $lg__screen) {
+        top: 800px;
+      }
+      &:before {
+        display: none;
+      }
+      &:hover {
+        background: #fff;
+      }
+    }
+    .slick-next {
+      top: 110px;
+      @media screen and (max-width: $lg__screen) {
+        top: 870px;
+      }
+    }
+  }
 }

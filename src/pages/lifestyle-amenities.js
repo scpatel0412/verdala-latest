@@ -10,7 +10,6 @@ import ADayInTheLIfe from "./LIfestyles/ADayInTheLife";
 import Lifestyle from "./LIfestyles/Lifestyle";
 import axios from "axios";
 
-
 const LifestyleAmenities = ({ pageTitle, children }) => {
   const [navLinks, setNavLinks] = useState([]);
   const [data, setData] = useState({});
@@ -31,11 +30,15 @@ const LifestyleAmenities = ({ pageTitle, children }) => {
         for (let i = 0; i < pageLists.length; i++) {
           if (pageLists[i] !== "fieldGroupName") {
             if (pageLists[i] !== "header_section") {
-              const ab = {
-                id: pageLists[i],
-                data: data[pageLists[i]],
-              };
-              removedata.push(ab);
+              if (pageLists[i] !== "header_section_life") {
+                if (pageLists[i] !== "lifestyle_lifestylePage") {
+                  const ab = {
+                    id: pageLists[i],
+                    data: data[pageLists[i]],
+                  };
+                  removedata.push(ab);
+                }
+              }
             }
           }
         }

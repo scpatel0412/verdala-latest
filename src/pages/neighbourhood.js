@@ -23,16 +23,17 @@ function Neighbourhood() {
     if (typeof data !== "undefined") {
       if (Object.keys(data).length > 0) {
         const pageLists = Object.keys(data);
-
         const removedata = [];
         for (let i = 0; i < pageLists.length; i++) {
           if (pageLists[i] !== "fieldGroupName") {
             if (pageLists[i] !== "header_section") {
-              const ab = {
-                id: pageLists[i],
-                data: data[pageLists[i]],
-              };
-              removedata.push(ab);
+              if (pageLists[i] !== "header_section_neighbour") {
+                const ab = {
+                  id: pageLists[i],
+                  data: data[pageLists[i]],
+                };
+                removedata.push(ab);
+              }
             }
           }
         }
@@ -49,19 +50,18 @@ function Neighbourhood() {
       <div>
         <SectionNavigation data={navLinks} />
       </div>
+
       <>
-      {navLinks.length > 0 &&
-        navLinks.map((i) => {
-          if (i.id === "rabat_and_mdina") {
-            return <RabatAndMdina data={i} />;
-          }
-          else if (i.id === "connectivity") {
-            return <Connectivity data={i} />;
-          }
-          else if (i.id === "things_to_do") {
-            return <ThingsToDo data={i} />;
-          }
-        })}
+        {navLinks.length > 0 &&
+          navLinks.map((i) => {
+            if (i.id === "rabat_and_mdina") {
+              return <RabatAndMdina data={i} />;
+            } else if (i.id === "connectivity") {
+              return <Connectivity data={i} />;
+            } else if (i.id === "things_to_do") {
+              return <ThingsToDo data={i} />;
+            }
+          })}
       </>
 
       <Footer />
