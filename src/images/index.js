@@ -26,6 +26,10 @@ import Processslideimg from "./process-slider-img.png";
 import close from "../images/close.svg";
 import Downloadnew from "./download-new.svg";
 import pluse from "./pluse.svg";
+import Hotelimg1 from "./hotel-img-1.png";
+import Hotelimg2 from "./hotel-img-2.png";
+import Hotelimg3 from "./hotel-img-3.png";
+import Hotelimg4 from "./hotel-img-4.png";
 
 export {
   Image1,
@@ -55,4 +59,8 @@ export {
   close,
   Downloadnew,
   pluse,
+  Hotelimg1,
+  Hotelimg2,
+  Hotelimg3,
+  Hotelimg4,
 };

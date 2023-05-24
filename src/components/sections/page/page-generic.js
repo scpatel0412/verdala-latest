@@ -81,7 +81,6 @@ const PageGeneric = (props) => {
   useEffect(() => {
     if (typeof props.data !== "undefined") {
       setHomePage(props.data.residences);
-      // setSliderSlider3({ nav1: slider1, nav2: slider2 });
     }
   }, [props]);
 
@@ -89,13 +88,11 @@ const PageGeneric = (props) => {
     setCurrentPropertyName(index);
   };
   let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-  // let mainSections = document.querySelectorAll(".scroll-container >  div");
+
   let headerheight1 = 0;
   if (typeof document !== "undefined") {
     headerheight1 = document.querySelector("header");
   }
-  // let lastId;
-  // let cur = [];
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", (event) => {
