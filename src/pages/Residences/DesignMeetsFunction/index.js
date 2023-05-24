@@ -1,18 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ResizeContext } from "../../../components/resize";
 import Button from "../../../components/partials/buttons";
-import * as Pagegeneric from "../../../components/sections/page/page.module.scss";
 const DesignMeetsFunction = (props) => {
   const [residencesPage, setResidencesPage] = useState({});
   const [currentMeets, setCurrentMeets] = useState(0);
-  // const [smallCurrentMeets, setSmallCurrentMeets] = useState(0)
   const { width } = useContext(ResizeContext);
   const mobileScreen = width <= 699;
-  // let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-  // let mainSections = document.querySelectorAll(".scroll-container >  div");
-  // let headerheight1 = document.querySelector("header");
-  // let lastId;
-  // let cur = [];
 
   useEffect(() => {
     if (typeof props !== "undefined") {
@@ -20,48 +13,10 @@ const DesignMeetsFunction = (props) => {
     }
   }, [props]);
 
-  // useEffect(() => {
-  //   if (typeof document !== "undefined") {
-  //     let mainNavLinks = document.querySelectorAll(".sticky-inner ul li a");
-  //     let mainSections = document.querySelectorAll(".scroll-container >  div");
-  //     let headerheight1 = document.querySelector("header");
-  //     let lastId;
-  //     let cur = [];
-  //     if (typeof window !== "undefined") {
-  //       window.addEventListener("scroll", (event) => {
-  //         let fromTop = window.pageYOffset;
-  //         mainNavLinks.forEach((link) => {
-  //           let section = document.querySelector(link.hash);
-  //           let headerheight = document.querySelector("header");
-  //           if (
-  //             section?.offsetTop !== null &&
-  //             headerheight.offsetHeight !== null &&
-  //             section?.offsetHeight !== null
-  //           ) {
-  //             if (
-  //               section?.offsetTop - headerheight?.offsetHeight <= fromTop &&
-  //               section?.offsetTop -
-  //               headerheight.offsetHeight +
-  //               section?.offsetHeight >
-  //               fromTop
-  //             ) {
-  //               link.parentElement.classList.add("active");
-  //             } else {
-  //               link.parentElement.classList.remove("active");
-  //             }
-  //           }
-  //         });
-  //       });
-  //     }
-  //   }
-  // }, [props]);
-
   const handlerDesignMeets = (index) => {
     setCurrentMeets(index);
   };
-  const onClickSmallScreenCurrentMeets = (index) => {
-    setCurrentMeets(index);
-  };
+
   return (
     <>
       {residencesPage != undefined ? (
@@ -75,7 +30,9 @@ const DesignMeetsFunction = (props) => {
                 </div>
               </div>
               <div className="designmeet-right">
-                <h2 className="innerpage_h2 anim-text-enter">{residencesPage?.title}</h2>
+                <h2 className="innerpage_h2 anim-text-enter">
+                  {residencesPage?.title}
+                </h2>
                 <p className="anim-text-enter">{residencesPage?.description}</p>
               </div>
             </div>
@@ -208,29 +165,36 @@ const DesignMeetsFunction = (props) => {
                                 }
                               />
                             </div>
-                            <div className="meets-inner-sec">
-                              <div className="title">
-                                {
-                                  residencesPage?.design_meets_data[
-                                    currentMeets
-                                  ]?.title
-                                }
+                            {residencesPage?.design_meets_data[currentMeets]
+                              ?.title !== "" ||
+                            (residencesPage?.design_meets_data[currentMeets]
+                              ?.description !== "" &&
+                              residencesPage?.design_meets_data[currentMeets]
+                                ?.sub_title !== "") ? (
+                              <div className="meets-inner-sec">
+                                <div className="title">
+                                  {
+                                    residencesPage?.design_meets_data[
+                                      currentMeets
+                                    ]?.title
+                                  }
+                                </div>
+                                <div>
+                                  {
+                                    residencesPage?.design_meets_data[
+                                      currentMeets
+                                    ]?.sub_title
+                                  }
+                                </div>
+                                <p>
+                                  {
+                                    residencesPage?.design_meets_data[
+                                      currentMeets
+                                    ]?.description
+                                  }
+                                </p>
                               </div>
-                              <div>
-                                {
-                                  residencesPage?.design_meets_data[
-                                    currentMeets
-                                  ]?.sub_title
-                                }
-                              </div>
-                              <p>
-                                {
-                                  residencesPage?.design_meets_data[
-                                    currentMeets
-                                  ]?.description
-                                }
-                              </p>
-                            </div>
+                            ) : null}
                           </div>
                         </div>
                       </>
