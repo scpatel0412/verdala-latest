@@ -35,7 +35,13 @@ const ResidencesCard = (props) => {
         <div className="crow">
           <div className="col-6 col-xl-5 col-md-12 anim-scroll-up property-module-img">
             <div className={Styles.imageCont}>
-              <ResidencesCardImg data={featureImg} />
+              {/* <ResidencesCardImg data={featureImg} /> */}
+              <img
+                src={
+                  "https://verdalastage.bison-studio.com/wp-content/uploads/2023/05/SPIT_Ver_View-04_HQ-1.jpg"
+                }
+                className="bg-img"
+              />
             </div>
           </div>
 
@@ -77,40 +83,6 @@ const ResidencesCard = (props) => {
                     );
                   })}
                 </div>
-
-                {/* <div className={Styles.residenceRow + " crow property-blocks"}>
-                  <div className="col-4 col-sm-12 property-blocks-inner">
-                    <SecondaryText
-                      text="Floors"
-                      styleClass={Styles.residencedesc}
-                    />
-
-                    <span className={Styles.values}>
-                      {residencesCardata.floor_number}
-                    </span>
-                  </div>
-
-                  <div className="col-4 col-sm-12 property-blocks-inner">
-                    <SecondaryText
-                      text="Spaces"
-                      styleClass={Styles.residencedesc}
-                    />
-                    <span className={Styles.values}>
-                      {isNaN(spaces) ? "" : spaces}
-                    </span>
-                  </div>
-
-                  <div className="col-4 col-sm-12 property-blocks-inner">
-                    <SecondaryText
-                      text="Bedrooms"
-                      styleClass={Styles.residencedesc}
-                    />
-
-                    <span className={Styles.values}>
-                      {residencesCardata.bedrooms}
-                    </span>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
